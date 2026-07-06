@@ -2,7 +2,7 @@
 
 Surface milestone, the proving surface: the boot sequence and the home hero
 (the instrument panel) composed over real data. Its gate is what unlocks the
-parallel surface milestones (m03 to m07). Scoped tighter than the full home
+parallel surface milestones (m04 to m07). Scoped tighter than the full home
 page on purpose; the evidence sections are m03.
 
 **Gate**: the deployed preview against the boot frame
