@@ -2,7 +2,7 @@
 id: m01-t05
 milestone: m01
 kind: leaf
-status: todo
+status: done
 owns:
   - src/types/
   - src/constants/
