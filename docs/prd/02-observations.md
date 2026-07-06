@@ -203,13 +203,13 @@ marketing copy.
 
 ## 5. What to Prototype First
 
-The riskiest slice is the **cinematic system over real data**: design tokens + the
-type scales + the grain layer + the boot sequence + the home instrument
-panel, end to end. It exercises everything hardest at once — canvas performance,
-reduced-motion gating, the honest-readout rule wired to `constants/`, and whether the
-promoted accent system can carry a full page without the shadcn skin underneath.
-Build it first as the proving surface; the ledger and dossiers extend the proven
-system.
+The riskiest unknown is the **cinematic system over real data**. Foundations
+delivers the ingredients (design tokens, the type scales, the grain layer),
+gated on the `/design` specimen; the **proving surface** then composes them end
+to end: the boot sequence and the home instrument panel, exercising canvas
+performance, reduced-motion gating, the honest-readout rule wired to
+`constants/`, and whether the promoted accent system can carry a page without
+the shadcn skin underneath. The ledger and dossiers extend the proven system.
 
 ## Low Priority Features
 

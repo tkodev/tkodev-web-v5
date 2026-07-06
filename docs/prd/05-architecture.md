@@ -12,7 +12,7 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Styling | **Tailwind v4** (CSS-first `@theme`) |
 | Variants | **CVA** (`class-variance-authority`) + `cn()` = `twMerge(clsx(...))` |
 | Primitives | **shadcn** (new-york style, Radix underneath), themed to the v5 tokens |
-| Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color); no `next-themes` |
+| Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color) |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
 | State | **zustand** — global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
@@ -75,7 +75,7 @@ The data model:
 | Export | Shape | Notes |
 | --- | --- | --- |
 | `clientEntries` / `clientIds` | `Record<ClientId, ClientEntry>` + curated ordered array | name, href, base/light/dark logo srcs |
-| `jobEntries` | `JobEntry[]`, newest first | real `Date`s via `fromZonedTime(iso, appTimeZone)`; no `endDate` = current |
+| `jobEntries` | `JobEntry[]`, newest first | real `Date`s; no `endDate` = current |
 | `projectEntries` / `projectIds` | `Record<ProjectId, ProjectEntry>` + ordered array | see below |
 | `profileEntries` | `Record<ProfileId, ProfileEntry>` | Tony + collaborators |
 
@@ -92,5 +92,5 @@ The data model:
 
 ## Rendering model
 
-- All pages are fully static — data is compile-time constants; dynamic routes prebuild over their id lists.
+- All pages are fully static; data is compile-time constants.
 - One root `app/layout.tsx`: fonts on `<body>`, lifecycle provider, the persistent `layout` shell (anatomy owned by the components standard §Layout shell), metadata export, analytics.

@@ -51,3 +51,5 @@ voice is the design's.
 - **No em dashes.** Join clauses with a colon, a semicolon, parentheses, or a
   new sentence.
 - Words over symbols in prose ("and", not "&").
+- **Don't use the agent's built-in memory system.** The repo is the memory:
+  durable guidance belongs in the owning doc under `docs/`.

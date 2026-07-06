@@ -1,10 +1,10 @@
 # Solution
 
-The settled design — the Figma surfaces described at concept level, read through the
-research in [02-observations.md](02-observations.md). The structure lives in
+The settled design: the Figma surfaces described at concept level, read through
+the research in [02-observations.md](02-observations.md). The structure lives in
 [05-architecture.md](05-architecture.md); the token contract in [04-design.md](04-design.md).
-Where a concept has not yet landed in the Figma it is marked **direction** — the
-Figma (and its transcription in 04-design) wins until it adopts it.
+A concept not yet in the Figma is marked **direction**: research, not contract
+([process](../standards/process.md) §The PRD).
 
 ## The concept
 
@@ -138,12 +138,11 @@ Motion is a grammar, not garnish:
   strips); grab-reel becomes native touch scroll; hover-revealed metadata must have
   a visible-by-default equivalent.
 - **Media failure** — a loop that fails to load shows its monochrome poster, never
-  a black hole; posters ship with explicit dimensions to protect CLS.
+  a black hole.
 - **Work without motion media** — stills get the matte treatment; the system can't
   require video.
 - **Slow connections** — grain is generated (SVG/canvas), not a texture download;
-  the boot sequence doubles as genuine loading cover but never blocks interaction
-  once content is ready.
+  loading cover behaviour is §Boot sequence's.
 
 ## Why this shape
 

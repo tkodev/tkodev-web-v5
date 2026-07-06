@@ -1,6 +1,6 @@
 # Design
 
-The design-token contract — the source of truth for typography, color, radius, gap, and fonts in code. Transcribed from the Figma design system [tkodev-design-v5](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5). Where [02-observations.md](02-observations.md) proposes token or type directions not yet in the Figma (a data scale, a signal accent, brand-layer tokens), **this contract wins** until the Figma adopts them and this doc is re-transcribed.
+The design-token contract for typography, color, radius, gap, and fonts in code, transcribed from the Figma design system [tkodev-design-v5](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5). Directions proposed in [02-observations.md](02-observations.md) (a data scale, a signal accent, brand-layer tokens) land here only when the Figma adopts them and this doc is re-transcribed.
 
 Figma sources (node IDs are stable — fetch these when a value here needs verification):
 
