@@ -6,7 +6,7 @@ How change is recorded.
 
 1. **Work on the branch the process defines for the task** ([process.md](process.md) §Branches and PRs). Never push directly to `main`.
 2. **Create new commits rather than amending.** Never force-push or skip hooks without explicit permission.
-3. **Ticket PRs target their milestone branch; milestone PRs target the latest `main`.** Work outside a milestone stays on a feature branch and PRs only when explicitly asked.
+3. **Task PRs target their milestone branch; milestone PRs target the latest `main`.** Work outside a milestone stays on a feature branch and PRs only when explicitly asked.
 
 ## Conventional Commits
 
@@ -31,11 +31,11 @@ How change is recorded.
    ```
 
    - ≤ 40 characters, lowercase, hyphen-separated.
-   - Milestone and ticket branches carry their identifiers per
+   - Milestone and task branches carry their identifiers per
      [process.md](process.md) §Branches and PRs: `feat/m02-works`,
      `feat/m02-t04-works-ledger`.
    - Branches outside a milestone reference the affected area:
-     `fix/career-dates`, `docs/02-prd-experiments`.
+     `fix/career-dates`, `docs/initial-plan`.
 
 ## Attribution
 

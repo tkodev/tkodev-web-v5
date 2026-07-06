@@ -2,8 +2,8 @@
 
 How work happens: the sources of truth, how they stay honest with each other,
 and how work is planned, parallelized, and reviewed. This doc is the methodology
-layer and stays project-agnostic; the PRD, the milestone docs, and the
-tickets derive their structure from it. How change is recorded is
+layer and stays project-agnostic; the PRD and the milestone docs derive
+their structure from it. How change is recorded is
 [git.md](git.md)'s concern.
 
 ## The working loop
