@@ -14,11 +14,11 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Primitives | **shadcn** (new-york style, Radix underneath), themed to the v5 tokens |
 | Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color) |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
-| State | **zustand** — global stores only (§State and motion) |
+| State | **zustand**: global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
-| Linting | **ESLint** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`) — no Biome, no Prettier |
-| Testing | **Vitest** — `pnpm test` |
-| Fonts | `next/font/local` — Alliance No.2, Geist, Geist Mono |
+| Linting | **ESLint** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no Prettier |
+| Testing | **Vitest**: `pnpm test` |
+| Fonts | `next/font/local`: Alliance No.2, Geist, Geist Mono |
 | Dates | `date-fns` / `date-fns-tz` |
 
 ## Information architecture
@@ -44,8 +44,8 @@ Experiments are a works-index category (`experiment` medium), not a route. Figma
 ### Navigation
 
 - **Header nav**: **Works · Experience · About · Contact**; the current page's item is marked active.
-- **Nav overlay** — full-screen menu of the nav routes; the primary nav on mobile, available on all viewports; behaviour owned by [03-solution.md](03-solution.md) §Nav overlay.
-- **Boot / loading screen** — entry overlay preceding the requested page; behaviour owned by [03-solution.md](03-solution.md) §Boot sequence.
+- **Nav overlay**: full-screen menu of the nav routes; the primary nav on mobile, available on all viewports; behaviour owned by [03-solution.md](03-solution.md) §Nav overlay.
+- **Boot / loading screen**: entry overlay preceding the requested page; behaviour owned by [03-solution.md](03-solution.md) §Boot sequence.
 
 ## Repo structure
 
@@ -66,9 +66,9 @@ How the v5 pieces land in the standard folders: `app/` mirrors the route map abo
 
 ## Data layer
 
-**Source of truth:** the structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` — `types.ts`, `client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`. This repo **vendors a copy** into `types/` + `constants/` (the package is in a git-ignored notes area and can't be a workspace dependency of a deployable repo). Sync is one-way, notes → site; content edits happen in career-notes first, then get copied over. Never fork the schema silently — schema changes go back upstream.
+**Source of truth:** the structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` (`types.ts`, `client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`). This repo **vendors a copy** into `types/` + `constants/` (the package is in a git-ignored notes area and can't be a workspace dependency of a deployable repo). Sync is one-way, notes → site; content edits happen in career-notes first, then get copied over. Never fork the schema silently; schema changes go back upstream.
 
-Site copy is sourced from the career-notes repo (`profiles/website/`, `about/`) and its structured data package — never invented.
+Site copy is sourced from the career-notes repo (`profiles/website/`, `about/`) and its structured data package, never invented.
 
 The data model:
 
@@ -87,7 +87,7 @@ The data model:
 
 ## State and motion
 
-- The cinematic layer — boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions — implemented per the Motion stack choice above.
+- The cinematic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above.
 - Two **zustand** stores: the site **lifecycle** (`loading → ready`, driving the boot sequence and entrance choreography) and the **nav overlay** (open/closed, driving header/footer swaps and focus trapping).
 
 ## Rendering model

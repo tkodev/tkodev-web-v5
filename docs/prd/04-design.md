@@ -2,7 +2,7 @@
 
 The design-token contract for typography, color, radius, gap, and fonts in code, transcribed from the Figma design system [tkodev-design-v5](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5). Directions proposed in [02-observations.md](02-observations.md) (a data scale, a signal accent, brand-layer tokens) land here only when the Figma adopts them and this doc is re-transcribed.
 
-Figma sources (node IDs are stable — fetch these when a value here needs verification):
+Figma sources (node IDs are stable; fetch these when a value here needs verification):
 
 | Token page | Figma node |
 | --- | --- |
@@ -17,16 +17,16 @@ Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed thr
 | Font | Role | Weights used |
 | --- | --- | --- |
 | **Alliance No.2** | Display headings (`h1`–`h4`) and expressive/eyebrow text (`e1`–`e5`) | 400, 700 |
-| **Geist** | Body text, `h5`, UI labels — the default | variable |
+| **Geist** | Body text, `h5`, UI labels (the default) | variable |
 | **Geist Mono** | Inline and block code | 600 |
 
-Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed — the licensed-assets rule in the data standard applies.
+Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed: the licensed-assets rule in the data standard applies.
 
 ## Typography
 
-Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main`, `sm-main`) marks the **default step** of each ramp — the size a component gets when no explicit step is chosen.
+Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main`, `sm-main`) marks the **default step** of each ramp: the size a component gets when no explicit step is chosen.
 
-### Headings — Alliance No.2 Bold (h5: Geist Bold)
+### Headings: Alliance No.2 Bold (h5: Geist Bold)
 
 | Token | Family | Size | Line height | Tracking |
 | --- | --- | --- | --- | --- |
@@ -38,7 +38,7 @@ Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main
 
 The family break at `h5` is deliberate: `h5` is the bridge from display headings into UI/body typography.
 
-### Expressive — Alliance No.2 Regular, 25% tracking
+### Expressive: Alliance No.2 Regular, 25% tracking
 
 All-caps eyebrow/label register (specimen: "Engineering, Design, Technology"). Line height 100%, letter spacing **25%** (tracking renders as a fraction of size: 3px at `e4`, 2.5px at `e5`).
 
@@ -57,9 +57,9 @@ Two wider-tracked companions appear across the page designs:
 | `outer` | Alliance No.2 Regular 12px, **50%** tracking (6px) | Hero corner annotations (`1.0 / intro //`, `[ spec validated ]`), loading `SYNCHRONIZING`, card year slots |
 | eyebrow | Alliance No.2 Medium 14px, 50% tracking (7px) | Hero eyebrows (`TONY KO`, `ABOUT`, `SIGNAL ACQUIRED`) |
 
-### Body — Geist Regular
+### Body: Geist Regular
 
-Line height 100% at token level; prose blocks in components may carry relaxed leading — the component's Figma node is authoritative for multi-line paragraph leading.
+Line height 100% at token level; prose blocks in components may carry relaxed leading; the component's Figma node is authoritative for multi-line paragraph leading.
 
 | Token | Size |
 | --- | --- |
@@ -81,7 +81,7 @@ Line height 100% at token level; prose blocks in components may carry relaxed le
 
 ## Color
 
-Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + `light-vars`). **The active theme is hardcoded to dark** — no toggle, no system switching. The light theme exists for **inverse-color sections** (e.g. the loading core), applied as a scoped class. Dark values below; transcribe the light values from Figma when first used.
+Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + `light-vars`). **The active theme is hardcoded to dark**: no toggle, no system switching. The light theme exists for **inverse-color sections** (e.g. the loading core), applied as a scoped class. Dark values below; transcribe the light values from Figma when first used.
 
 ### Core
 
@@ -106,9 +106,9 @@ Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + 
 | `border` | `#ffffff29` (white @ 16%) | Hairlines, dividers |
 | `input` | `#27272a` | Form control borders |
 | `ring` | `#d4d4d8` | Focus rings |
-| `muted-gradient` | Figma style | Gradient variant of muted — pull from the Figma style when implementing |
+| `muted-gradient` | Figma style | Gradient variant of muted; pull from the Figma style when implementing |
 
-Note the customization vs stock shadcn zinc: `border` is **alpha white** (`#ffffff29`), not a solid gray — hairlines blend over imagery and gradients. Preserve the alpha approach.
+Note the customization vs stock shadcn zinc: `border` is **alpha white** (`#ffffff29`), not a solid gray; hairlines blend over imagery and gradients. Preserve the alpha approach.
 
 ### Chart
 
@@ -119,7 +119,7 @@ Note the customization vs stock shadcn zinc: `border` is **alpha white** (`#ffff
 | `chart-3` | `#e88c30` |
 | `chart-4` | `#af57db` |
 | `chart-5` | `#2eb88a` |
-| `chart-1-gradient`, `chart-2-gradient` | Figma styles — gradient fills derived from chart-1/chart-2 |
+| `chart-1-gradient`, `chart-2-gradient` | Figma styles; gradient fills derived from chart-1/chart-2 |
 
 ## Radius
 
