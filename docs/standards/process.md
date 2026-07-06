@@ -1,8 +1,8 @@
 # Process
 
-How work is planned, parallelized, and reviewed — from creative direction through
-delivery. Docs/code/Figma honesty is [workflow.md](workflow.md)'s concern; how
-change is recorded is [git.md](git.md)'s.
+How work happens — the sources of truth, how they stay honest with each other,
+and how work is planned, parallelized, and reviewed. How change is recorded is
+[git.md](git.md)'s concern.
 
 ## The working loop
 
@@ -22,14 +22,36 @@ is the signature pass.
 
 ## Division of truth
 
-The repo holds **law**; GitHub holds **state**.
+Three authorities, each owning a different kind of truth:
 
-- **Repo** — the PRD, the standards, the ticket template: versioned, under
-  [workflow.md](workflow.md)'s docs rules.
-- **GitHub** — issues (tickets), milestones (gates), the project board, PRs: the
-  live work state. Agents pull it with `gh`; it is never mirrored into the repo.
-  Tickets are work state, not contract — a fact that matters beyond its ticket
-  moves to the owning doc.
+- **The repo holds law** — the PRD, the standards, the ticket template:
+  versioned, canonical for intent and contract.
+- **Figma holds pixels** — design questions resolve against the Figma nodes, not
+  guesswork. Use structured design context (metadata/variables/code), not
+  screenshots, when reading Figma.
+- **GitHub holds state** — issues (tickets), milestones (gates), the project
+  board, PRs: the live work state. Agents pull it with `gh`; it is never mirrored
+  into the repo. Tickets are work state, not contract — a fact that matters
+  beyond its ticket moves to the owning doc.
+
+## Keeping it honest
+
+1. **Docs and code change together.** Behaviour or design changes update the
+   relevant doc and the code **in the same change**.
+2. **Write discoveries back.** When implementation discovers a fact the docs
+   missed (a token value, a variant, a breakpoint), write it back into the owning
+   doc — don't leave it in a commit message or a comment.
+3. **Docs describe intent and contract, not implementation detail.**
+   Function-level detail belongs in the code.
+4. **Each fact lives in exactly one place.** Every fact, rule, or decision has
+   one owning doc; everywhere else references or summarizes it, never restates
+   it. Before writing something down, check whether a doc already owns it — if it
+   does, point there; if it half-owns it, move it, don't fork it. When two docs
+   disagree, the owner wins and the other is stale.
+5. **Verify against the design.** A component isn't done until it's been compared
+   against its Figma node at desktop and mobile widths.
+6. **Ask when genuinely ambiguous** — after the docs, the code, and the Figma,
+   don't improvise the product.
 
 ## Milestones — the human gates
 
