@@ -1,0 +1,60 @@
+name: Ticket
+description: One unit of agent work, scoped to the files it owns
+labels: [ticket]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What done looks like, in one or two sentences.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      description: Trunk tickets touch shared files and serialize at milestone start; leaf tickets fan out in parallel worktrees.
+      options:
+        - trunk
+        - leaf
+    validations:
+      required: true
+  - type: textarea
+    id: owns
+    attributes:
+      label: Owned files
+      description: Globs this ticket may create or modify. Two tickets run in parallel only if their owned sets don't overlap.
+      render: text
+      placeholder: |
+        src/components/molecules/project-card.tsx
+        src/components/molecules/project-card.test.tsx
+    validations:
+      required: true
+  - type: input
+    id: depends
+    attributes:
+      label: Depends on
+      description: Ticket numbers that must merge first, e.g. "#12, #14". Leave empty if none.
+  - type: input
+    id: figma
+    attributes:
+      label: Figma node
+      description: Link to the authoritative frame or node, when the work is visual.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: The checklist the PR must satisfy. Visual work includes the Figma comparison at desktop and mobile widths.
+      value: |
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: Verification
+      description: Commands and checks that prove the criteria.
+      value: |
+        pnpm lint:check && pnpm type:check && pnpm test
+    validations:
+      required: true

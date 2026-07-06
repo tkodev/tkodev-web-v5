@@ -1,10 +1,10 @@
 # Solution
 
 The settled design — the Figma surfaces described at concept level, read through the
-research in [03-observations.md](03-observations.md). The structure lives in
-[05-architecture.md](05-architecture.md); the token contract in [06-design.md](06-design.md).
+research in [02-observations.md](02-observations.md). The structure lives in
+[04-architecture.md](04-architecture.md); the token contract in [05-design.md](05-design.md).
 Where a concept has not yet landed in the Figma it is marked **direction** — the
-Figma (and its transcription in 06-design) wins until it adopts it.
+Figma (and its transcription in 05-design) wins until it adopts it.
 
 ## The concept
 
@@ -41,7 +41,7 @@ The layers, top to bottom:
 
 Global: the **boot sequence** (entry overlay) and the **nav overlay**
 (full-screen). Routes and navigation live in
-[05-architecture.md](05-architecture.md) §Information architecture.
+[04-architecture.md](04-architecture.md) §Information architecture.
 
 ## Pages
 
@@ -147,7 +147,7 @@ Motion is a grammar, not garnish:
 
 ## Why this shape
 
-The hardest risks ([03-observations.md](03-observations.md)) are the costume and
+The hardest risks ([02-observations.md](02-observations.md)) are the costume and
 chrome-over-work; the brief's two pillars answer them. Everything else follows:
 one signature moment per surface keeps the cinema from becoming the mechanic, and
 the layers are separable — the site functions with the boot sequence and ambient

@@ -1,11 +1,19 @@
 # Observations
 
-Research findings and risks paired with the direction taken, following the
-**priority frame** from [01-process.md](01-process.md). Settled design lives in
-[04-solution.md](04-solution.md); the visual system in [06-design.md](06-design.md).
+Research findings and risks paired with the direction taken, structured by the
+**priority frame** — the order problems get worked in:
+
+1. **The Problem** — one or two sentences.
+2. **The Hardest Failure Mode** — what breaks worst; design around it first.
+3. **Key Design Decisions** — the load-bearing choices everything else hangs off.
+4. **What to Prototype First** — the riskiest slice to validate early.
+
+Settled design lives in [03-solution.md](03-solution.md); the visual system in
+[05-design.md](05-design.md); how work is planned and delivered in
+[../standards/process.md](../standards/process.md).
 
 Directions here are research, not contract: where a direction conflicts with the
-token contract in [06-design.md](06-design.md), **06-design wins** — a direction
+token contract in [05-design.md](05-design.md), **05-design wins** — a direction
 lands only when the Figma (and its transcription there) adopts it.
 
 ## 1. The Problem
@@ -28,7 +36,7 @@ cosplay — the exact opposite of the seasoned-engineer signal. This is not an
 argument against ornament; atmosphere is *why the aesthetic works*. It's an
 argument against cheap ornament.
 
-**Direction.** The two-tier readout/atmosphere rule — [02-brief.md](02-brief.md)
+**Direction.** The two-tier readout/atmosphere rule — [01-brief.md](01-brief.md)
 pillar 1. Applied concretely: the clock is the real time, the coordinates are
 Toronto's, the counters derive from the career constants, figure numbers actually
 increment, the version stamp is the real build — one obviously-fake readout poisons
@@ -42,7 +50,7 @@ sterility is what separates it from an admin panel.
 The site's job is social proof; the work is the evidence. A too-loud shell buries
 a 10,000-datapoint telemetry UI under its own decoration.
 
-**Direction.** The monochrome-chrome rule — [02-brief.md](02-brief.md) (the gmunk
+**Direction.** The monochrome-chrome rule — [01-brief.md](01-brief.md) (the gmunk
 inspiration). Work sits in uniform monochrome mattes so wildly different media
 (telemetry UIs, CAD renders, architectural drawings, Web 1.0 screenshots) read as
 one system, and every saturated pixel on screen is, by definition, the work.
@@ -98,7 +106,7 @@ horizontal reel); there is always one physical/textural layer a template can't s
 autonomous (autoplaying loops, intro sequences) so visuals carry the narrative.
 Text collapses to labels: coordinates, timestamps, `01 //` indices.
 
-Standout techniques adopted (see [04-solution.md](04-solution.md) for where):
+Standout techniques adopted (see [03-solution.md](03-solution.md) for where):
 
 - micheledu — single-viewport instrument panel; biography as live widgets.
 - ctxdc — hairline cell/ledger architecture; canvas as just another cell.
@@ -189,7 +197,7 @@ shadcn has no word for the concept. Same pattern for type: three named scales
 
 The noir direction is dark by definition; a light mode would be a second, half-committed design.
 
-**Direction.** The toggle dies ([06-design.md](06-design.md) §Color): depth over
+**Direction.** The toggle dies ([05-design.md](05-design.md) §Color): depth over
 breadth — grain, blend modes, and edge-lit hairlines designed once, properly. The
 light theme survives for inverse-color sections.
 

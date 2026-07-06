@@ -2,8 +2,8 @@
 
 > The distilled intent for tko.dev v5, settled July 2026. This is the authoritative
 > statement of what the site must be. Rationale and research live in
-> [03-observations.md](03-observations.md); the settled design in [04-solution.md](04-solution.md);
-> the structure in [05-architecture.md](05-architecture.md); the token contract in [06-design.md](06-design.md).
+> [02-observations.md](02-observations.md); the settled design in [03-solution.md](03-solution.md);
+> the structure in [04-architecture.md](04-architecture.md); the token contract in [05-design.md](05-design.md).
 
 ## What this site is
 
