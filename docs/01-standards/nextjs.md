@@ -31,7 +31,7 @@ Runtime, language, and what "done" requires.
        ├── components/   # atomic design: atoms/ · molecules/ · organisms/ · templates/
        ├── constants/    # typed compile-time content + site config
        ├── types/        # domain types
-       ├── themes/       # CSS token files (theme.css entry, colors, helpers)
+       ├── themes/       # CSS token files (theme.css entry, helpers)
        ├── fonts/        # next/font/local loader modules
        ├── stores/       # zustand stores: global state only
        ├── providers/    # context providers wired in the root layout

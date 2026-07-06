@@ -83,7 +83,7 @@ The data model:
 
 ## Theming architecture
 
-`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `colors.css` + `helpers.css`, defines the two theme blocks (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
+`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `helpers.css`, defines the two theme blocks inline (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
 
 ## State and motion
 
