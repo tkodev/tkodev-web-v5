@@ -21,7 +21,7 @@ PRD and the design; delivery runs each milestone through the same cycle
 
 ## The PRD
 
-`docs/prd/` is the numbered product pipeline, read in order; each stage derives
+`docs/02-prd/` is the numbered product pipeline, read in order; each stage derives
 from the ones before it:
 
 | Stage | Owns |

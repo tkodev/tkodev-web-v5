@@ -2,7 +2,7 @@
 
 Research findings and risks paired with the direction taken, structured by the
 **priority frame** and subject to the directions-are-research rule, both defined
-in [../standards/process.md](../standards/process.md) §The PRD. Where a direction
+in [../01-standards/process.md](../01-standards/process.md) §The PRD. Where a direction
 conflicts with the token contract, [04-design.md](04-design.md) wins. Settled
 design lives in [03-solution.md](03-solution.md).
 

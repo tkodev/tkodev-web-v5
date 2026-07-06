@@ -23,7 +23,7 @@ serially first; the leaves fan out.
 
 - **Owns**: `src/themes/`
 - **Depends**: t01
-- **Figma**: the token pages listed in [04-design](../prd/04-design.md)
+- **Figma**: the token pages listed in [04-design](../02-prd/04-design.md)
 - **Acceptance**: `theme.css` per the theming architecture (single entry,
   dark hardcoded on the root, `.light` as scoped inverse class, `@theme`
   block); every 04-design value present as a custom property.

@@ -6,7 +6,7 @@ The v5 redesign of [tko.dev](https://tko.dev/): Tony Ko's **cinematic personal p
 
 ## Tech stack
 
-Next.js App Router on Tailwind v4, with shadcn/Radix primitives, CVA variants, Framer Motion choreography, zustand state, and Vitest; the authoritative stack table (versions included) is [docs/prd/05-architecture.md §Stack](docs/prd/05-architecture.md).
+Next.js App Router on Tailwind v4, with shadcn/Radix primitives, CVA variants, Framer Motion choreography, zustand state, and Vitest; the authoritative stack table (versions included) is [docs/02-prd/05-architecture.md §Stack](docs/02-prd/05-architecture.md).
 
 ## Getting started
 
@@ -30,16 +30,17 @@ pnpm test         # vitest
 
 ## Docs
 
-Docs drive the implementation. The PRD ([docs/prd/](docs/prd/)) is read in numbered order; the rules ([docs/standards/](docs/standards/)) are split by topic:
+Docs drive the implementation, read in numbered order: the rules ([docs/01-standards/](docs/01-standards/)) split by topic, then the PRD ([docs/02-prd/](docs/02-prd/)) as a numbered pipeline, then the staging milestone plan ([docs/03-milestones/](docs/03-milestones/)) until it migrates to GitHub:
 
 | Doc | What it owns |
 | --- | --- |
-| [docs/prd/01-brief.md](docs/prd/01-brief.md) | The distilled intent: what the site is, who it's for, aesthetic, references |
-| [docs/prd/02-observations.md](docs/prd/02-observations.md) | Research, risks, and the direction taken on each |
-| [docs/prd/03-solution.md](docs/prd/03-solution.md) | The settled design: concept, surfaces, cinematic system |
-| [docs/prd/04-design.md](docs/prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
-| [docs/prd/05-architecture.md](docs/prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
-| [docs/standards/](docs/standards/) | Rules by topic: [process](docs/standards/process.md), [writing](docs/standards/writing.md), [nextjs](docs/standards/nextjs.md), [components](docs/standards/components.md), [data](docs/standards/data.md), [performance](docs/standards/performance.md), [accessibility](docs/standards/accessibility.md), [seo](docs/standards/seo.md), [git](docs/standards/git.md) |
+| [docs/01-standards/](docs/01-standards/) | Rules by topic: [process](docs/01-standards/process.md), [writing](docs/01-standards/writing.md), [nextjs](docs/01-standards/nextjs.md), [components](docs/01-standards/components.md), [data](docs/01-standards/data.md), [performance](docs/01-standards/performance.md), [accessibility](docs/01-standards/accessibility.md), [seo](docs/01-standards/seo.md), [git](docs/01-standards/git.md) |
+| [docs/02-prd/01-brief.md](docs/02-prd/01-brief.md) | The distilled intent: what the site is, who it's for, aesthetic, references |
+| [docs/02-prd/02-observations.md](docs/02-prd/02-observations.md) | Research, risks, and the direction taken on each |
+| [docs/02-prd/03-solution.md](docs/02-prd/03-solution.md) | The settled design: concept, surfaces, cinematic system |
+| [docs/02-prd/04-design.md](docs/02-prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
+| [docs/02-prd/05-architecture.md](docs/02-prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
+| [docs/03-milestones/](docs/03-milestones/) | The staging milestone graph and ticket cuts, pre-GitHub |
 
 ## Other
 

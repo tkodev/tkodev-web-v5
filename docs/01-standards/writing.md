@@ -38,7 +38,7 @@ voice is the design's.
    only as a pointer or a one-line summary; this is the prose form of the
    one-owning-doc rule.
 2. **Standards name the PRD by role, not by link.** "The design contract's
-   concern," not a path into `docs/prd/`; standards stay standalone and
+   concern," not a path into `docs/02-prd/`; standards stay standalone and
    portable. Standards may link standards; PRD docs link each other freely.
 3. **Link once.** A doc or term links at first mention; after that, plain text.
    Section references use `§Section`, in-doc and across docs alike.

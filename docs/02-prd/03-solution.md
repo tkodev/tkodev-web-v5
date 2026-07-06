@@ -4,7 +4,7 @@ The settled design: the Figma surfaces described at concept level, read through
 the research in [02-observations.md](02-observations.md). The structure lives in
 [05-architecture.md](05-architecture.md); the token contract in [04-design.md](04-design.md).
 A concept not yet in the Figma is marked **direction**: research, not contract
-([process](../standards/process.md) §The PRD).
+([process](../01-standards/process.md) §The PRD).
 
 ## The concept
 

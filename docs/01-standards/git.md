@@ -35,7 +35,7 @@ How change is recorded.
      [process.md](process.md) §Branches and PRs: `feat/m02-works`,
      `feat/m02-t04-works-ledger`.
    - Branches outside a milestone reference the affected area:
-     `fix/career-dates`, `docs/prd-experiments`.
+     `fix/career-dates`, `docs/02-prd-experiments`.
 
 ## Attribution
 

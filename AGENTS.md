@@ -5,17 +5,17 @@ Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 
 ## Read first, in order
 
 @README.md
-@docs/prd/01-brief.md
-@docs/prd/02-observations.md
-@docs/prd/03-solution.md
-@docs/prd/04-design.md
-@docs/prd/05-architecture.md
-@docs/standards/process.md
-@docs/standards/writing.md
-@docs/standards/nextjs.md
-@docs/standards/components.md
-@docs/standards/data.md
-@docs/standards/performance.md
-@docs/standards/accessibility.md
-@docs/standards/seo.md
-@docs/standards/git.md
+@docs/01-standards/process.md
+@docs/01-standards/writing.md
+@docs/01-standards/nextjs.md
+@docs/01-standards/components.md
+@docs/01-standards/data.md
+@docs/01-standards/performance.md
+@docs/01-standards/accessibility.md
+@docs/01-standards/seo.md
+@docs/01-standards/git.md
+@docs/02-prd/01-brief.md
+@docs/02-prd/02-observations.md
+@docs/02-prd/03-solution.md
+@docs/02-prd/04-design.md
+@docs/02-prd/05-architecture.md

@@ -1,7 +1,7 @@
-# Plan
+# Milestones
 
 The initial implementation plan: the milestone graph produced by the working
-loop's plan-implementation step ([process](../standards/process.md)). This
+loop's plan-implementation step ([process](../01-standards/process.md)). This
 folder is a **staging draft**. Migration moves each milestone into a GitHub
 Milestone (scope and definition of done in its description) and each ticket
 into an Issue from the ticket template; after migration GitHub holds the live
