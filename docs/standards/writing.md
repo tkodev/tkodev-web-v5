@@ -1,9 +1,9 @@
 # Writing
 
-How project prose reads — docs, ticket and milestone bodies, PR and commit
+How project prose reads: docs, ticket and milestone bodies, PR and commit
 bodies. Where facts live is [process.md](process.md) §Keeping it honest's
-concern; this doc owns the sentences. Site copy is out of scope — its voice is
-the design's.
+concern; this doc owns the sentences. Site copy is out of scope, since its
+voice is the design's.
 
 ## Voice
 
@@ -11,10 +11,11 @@ the design's.
    ideally happen. No hedging, no marketing filler.
 2. **Every sentence is load-bearing.** A sentence earns its place by adding a
    fact, a rule, or a reason; otherwise cut it. Conciseness comes from selecting
-   what to say, not compressing how it's said — full sentences stay, whole
+   what to say, not compressing how it's said: full sentences stay, whole
    points go.
-3. **Rationale rides along.** A rule carries its why in the same breath — an
-   em-dash or colon clause — never a separate paragraph of justification.
+3. **Rationale rides along.** A rule carries its why in the same sentence,
+   attached with a colon, semicolon, or parenthetical; never a separate
+   paragraph of justification.
 4. **One line of personality.** A doc's opening line may carry an aphorism;
    everything after it is working prose.
 
@@ -22,22 +23,22 @@ the design's.
 
 1. **Open with ownership.** A doc's first lines state what it owns and hand
    neighboring topics to their owners ("what the metadata contains is seo.md's
-   concern") — then get to work. No table of contents, no preview of what the
+   concern"), then get to work. No table of contents, no preview of what the
    doc is about to say.
 2. **Bold-lead rules.** Rule lists are numbered; each item opens with a bold
    lead naming the rule, then the detail.
-3. **Tables carry enumerable facts** — tokens, stages, routes. Reasoning stays
+3. **Tables carry enumerable facts** (tokens, stages, routes). Reasoning stays
    in the surrounding prose, never in cells.
-4. **Headings name what the section owns**, in sentence case, with an em-dash
-   gloss only when the bare name is opaque ("Milestones — the human gates").
+4. **Headings name what the section owns**, in sentence case, with a colon
+   gloss only when the bare name is opaque ("Milestones: the human gates").
 
 ## Economy
 
 1. **Summarize and point, never restate.** A neighboring doc's fact appears
-   only as a pointer or a one-line summary — the prose form of the one-owning-doc
-   rule.
+   only as a pointer or a one-line summary; this is the prose form of the
+   one-owning-doc rule.
 2. **Standards name the PRD by role, not by link.** "The design contract's
-   concern," not a path into `docs/prd/` — standards stay standalone and
+   concern," not a path into `docs/prd/`; standards stay standalone and
    portable. Standards may link standards; PRD docs link each other freely.
 3. **Link once.** A doc or term links at first mention; after that, plain text.
    Section references use `§Section`, in-doc and across docs alike.
@@ -47,4 +48,6 @@ the design's.
 - Filenames, tokens, commands, and identifiers in `code` format.
 - **Bold** for rule leads and load-bearing terms; *italics* for one word of
   stress at a time. Asterisk emphasis, never underscores.
-- Em-dashes join clauses; words over symbols in prose ("and", not "&").
+- **No em dashes.** Join clauses with a colon, a semicolon, parentheses, or a
+  new sentence.
+- Words over symbols in prose ("and", not "&").
