@@ -1,6 +1,12 @@
 # AGENTS.md
 
-Guidance for AI coding agents working in this repository — tkodev-web-v5, the v5 redesign of [tko.dev](https://tko.dev/), Tony Ko's cinematic personal portfolio. This file does not restate project details; it points at the canonical docs, which drive the implementation.
+Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 redesign of [tko.dev](https://tko.dev/), Tony Ko's cinematic personal portfolio. This file does not restate project details; it points at the canonical docs, which drive the implementation.
+
+## Rules
+
+- **Don't use Claude's built-in memory system.** The repo is the memory:
+  durable guidance belongs in the owning doc under `docs/`, orientation here.
+  If something seems worth remembering, write it into the doc that owns it.
 
 ## Read first, in order
 
