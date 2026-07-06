@@ -208,7 +208,7 @@ type scales + the grain layer + the boot sequence + the home instrument
 panel, end to end. It exercises everything hardest at once — canvas performance,
 reduced-motion gating, the honest-readout rule wired to `constants/`, and whether the
 promoted accent system can carry a full page without the shadcn skin underneath.
-Build it first as a walking skeleton; the ledger and dossiers extend the proven
+Build it first as the proving surface; the ledger and dossiers extend the proven
 system.
 
 ## Low Priority Features

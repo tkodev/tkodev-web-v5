@@ -37,7 +37,8 @@ from the ones before it:
   2. **The Hardest Failure Mode**: what breaks worst; design around it first.
   3. **Key Design Decisions**: the load-bearing choices everything else hangs
      off.
-  4. **What to Prototype First**: the riskiest slice to validate early; this names the thin slice first.
+  4. **What to Prototype First**: the riskiest slice to validate early; this
+     names the proving surface.
 - **Directions are research, not contract.** An observation's direction lands
   only when the design file (and its transcription in the design contract)
   adopts it; where they conflict, the design contract wins.
@@ -73,9 +74,11 @@ Every milestone runs the same three phases. The human steers at the two cheap
 points (the plan and the gate); agents and machines carry the middle.
 
 1. **Plan.** Scope comes from the PRD and the design frames: cut tickets by
-   file ownership, map dependencies, mark trunk vs leaf. The human approves the
-   ticket set before execution; steering a plan costs minutes, steering merged
-   code costs days.
+   file ownership, map dependencies, mark trunk vs leaf. An unknown that
+   blocks ticket-cutting gets a **spike** first: a throwaway experiment
+   answering one question; spike code is never merged, its answer is written
+   back to the owning doc. The human approves the ticket set before
+   execution; steering a plan costs minutes, steering merged code costs days.
 2. **Execute.** Trunk tickets merge serially first; leaf tickets fan out in
    parallel worktrees. Every ticket PR must pass the machine checks and an
    agent review before merge (§Review).
@@ -93,7 +96,7 @@ three kinds set what may run in parallel:
 
 | Kind | The work | Parallelism |
 | --- | --- | --- |
-| **System** | Creates or proves shared conventions: scaffold, tokens, the shell, the thin slice | Serial; nothing may consume unproven conventions |
+| **System** | Creates or proves shared conventions: scaffold, tokens, the shell | Serial; nothing may consume unproven conventions |
 | **Surface** | Delivers one surface on conventions already proven | Parallel with other surface milestones, as sibling branches with independent gates |
 | **Sweep** | One cross-cutting pass over everything: coherence, polish, audits, launch | Serial, after the surfaces it sweeps |
 
@@ -101,11 +104,14 @@ three kinds set what may run in parallel:
   merged and its inputs are settled: design frames in the design file, content
   in the data source. An unready surface (undesigned, content missing) is a
   waiting node, never a blocker for its siblings.
-- **The canonical arc.** Foundations (system) → the thin slice (system; the
-  riskiest slice named by the observations stage, one surface built through
-  every layer end to end to prove the conventions cheaply) → the remaining
-  surfaces in parallel → polish and launch sweeps. Parallelism is earned: it
-  begins only once the thin slice proves the conventions.
+- **The proving surface.** The first surface milestone is chosen deliberately:
+  the riskiest or most representative surface, named by the observations
+  stage, built through every layer end to end. Its gate is what unlocks
+  surface parallelism; the milestone graph may scope it tighter than a full
+  surface.
+- **The canonical arc.** Foundations (system) → the proving surface → the
+  remaining surfaces in parallel → polish and launch sweeps. Parallelism is
+  earned: it begins only once the proving surface's gate passes.
 - **Launch is a sweep** with a checklist gate: metadata and SEO verified,
   analytics live, performance budgets met, domain cut over.
 
