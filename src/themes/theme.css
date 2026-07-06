@@ -66,10 +66,6 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-
-  --font-alliance: var(--font-alliance-no2);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @theme {
@@ -86,6 +82,11 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
+
+  /* fonts */
+  --font-alliance: var(--font-alliance-no2);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 
   /* headings: Alliance No.2 Bold (h5 Geist Bold) */
   --text-h1: 3.75rem;
