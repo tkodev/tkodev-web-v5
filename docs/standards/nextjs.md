@@ -21,7 +21,7 @@ Runtime, language, and what "done" requires.
 
 ## Folder structure
 
-7. **Application code lives under `src/`**; `public/` stays at the repo root. The canonical layout:
+1. **Application code lives under `src/`**; `public/` stays at the repo root. The canonical layout:
 
    ```text
    .

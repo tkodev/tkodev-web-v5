@@ -30,7 +30,7 @@ pnpm test         # vitest
 
 ## Docs
 
-Docs drive the implementation. The PRD ([docs/prd/](docs/prd/)) is read in numbered order; the coding rules ([docs/standards/](docs/standards/)) are split by topic:
+Docs drive the implementation. The PRD ([docs/prd/](docs/prd/)) is read in numbered order; the rules ([docs/standards/](docs/standards/)) are split by topic:
 
 | Doc | What it owns |
 | --- | --- |

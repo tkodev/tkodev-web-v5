@@ -37,8 +37,7 @@ from the ones before it:
   2. **The Hardest Failure Mode**: what breaks worst; design around it first.
   3. **Key Design Decisions**: the load-bearing choices everything else hangs
      off.
-  4. **What to Prototype First**: the riskiest slice to validate early; this
-     call names the thin slice built first.
+  4. **What to Prototype First**: the riskiest slice to validate early; this names the thin slice first.
 - **Directions are research, not contract.** An observation's direction lands
   only when the design file (and its transcription in the design contract)
   adopts it; where they conflict, the design contract wins.
@@ -118,14 +117,16 @@ unattended, carrying goal, owned files, dependencies, acceptance criteria,
 verification commands, and the Figma node when visual.
 
 - **Scope by file ownership.** A ticket lists the file globs it owns; two
-  tickets may run in parallel only if their owned sets don't overlap.
+  tickets may run in parallel only if their owned sets don't overlap. The same
+  disjointness applies across sibling milestone branches.
 - **Trunk, then fan out.** Work touching shared files (theme, layout shell,
   constants, utils) is a *trunk* ticket, serialized at the start of its
   milestone; *leaf* tickets (components, pages) fan out afterwards in parallel
   worktrees.
-- **Shared discoveries become trunk work.** When parallel work uncovers a
-  shared need (a primitive two surfaces want), it becomes its own trunk
-  ticket; never two parallel copies of the same convention.
+- **Shared discoveries become system work.** When parallel work uncovers a
+  shared need (a primitive two surfaces want), it lands on `main` as its own
+  small system ticket and sibling branches merge `main` forward; never two
+  parallel copies of the same convention.
 - **Pull state at task start.** An agent picking up a ticket fetches it and
   its milestone's open tickets (`gh issue list --milestone <name>`) before
   writing code.

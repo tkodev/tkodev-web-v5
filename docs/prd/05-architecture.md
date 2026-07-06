@@ -58,7 +58,7 @@ The folder layout follows the Next.js folder-structure standard
 ├── public/              # nextjs static assets
 └── docs/
     ├── prd/             # the numbered product docs, read in order
-    └── standards/       # coding rules, split by topic
+    └── standards/       # rules, split by topic
 ```
 
 How the v5 pieces land in the standard folders: `app/` mirrors the route map above; `stores/` and `providers/` hold the state layer described in §State and motion; `public/` assets are sourced from career-notes.
