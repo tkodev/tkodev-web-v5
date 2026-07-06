@@ -20,7 +20,7 @@ Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed thr
 | **Geist** | Body text, `h5`, UI labels — the default | variable |
 | **Geist Mono** | Inline and block code | 600 |
 
-Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed and never leaves the repo/deployment.
+Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed — the licensed-assets rule in the data standard applies.
 
 ## Typography
 

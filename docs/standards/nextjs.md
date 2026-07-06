@@ -15,9 +15,9 @@ Runtime, language, and what "done" requires.
 1. **App Router conventions.** One root layout; pages compose section components inside `<main>`; the `app/` route tree mirrors the site's information architecture.
 2. **Server components by default.** `'use client'` only where state or browser APIs demand it (overlays, accordions, marquees, motion-driven sections) — and as low in the tree as possible.
 3. **Static generation everywhere.** No runtime content fetching. Dynamic routes prebuild with `generateStaticParams` over their id lists and return `notFound()` for unknown ids.
-4. **All media renders through `next/image`** with explicit width and height.
+4. **All images render through `next/image`** with explicit width and height. (Video loops are not images — they render as media elements with their own posters and dimensions.)
 5. **Fonts load through `next/font/local`**, exposed as CSS variables and applied on `<body>`.
-6. **Metadata via the Metadata API** — a full root export plus per-page overrides (never hand-rolled `<head>` tags).
+6. **Metadata via the Metadata API** — a full root export plus per-page overrides (never hand-rolled `<head>` tags). What the metadata contains is [seo.md](seo.md)'s concern.
 
 ## Folder structure
 

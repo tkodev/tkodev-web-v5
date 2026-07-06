@@ -1,4 +1,4 @@
-# Docs and git
+# Git
 
 How change is recorded.
 

@@ -6,24 +6,11 @@ The v5 redesign of [tko.dev](https://tko.dev/) — Tony Ko's **cinematic persona
 
 ## Tech stack
 
-| Tool / Library | Version / Notes                        |
-| -------------- | -------------------------------------- |
-| Node           | 24                                     |
-| Pnpm           | 11                                     |
-| Next.js        | 16, App Router                         |
-| Tailwind CSS   | 4                                      |
-| Shadcn/ui      | Component library                      |
-| Radix UI       | Primitive components                   |
-| CVA + twMerge  | Variant management and class merging   |
-| lucide-react   | Icons                                  |
-| Framer Motion  | Choreography CSS can't express         |
-| Zustand        | Global state (lifecycle, nav overlay)  |
-| ESLint         | Linting                                |
-| Vitest         | Testing                                |
+Next.js App Router on Tailwind v4, with shadcn/Radix primitives, CVA variants, Framer Motion choreography, zustand state, and Vitest — the authoritative stack table (versions included) is [docs/prd/05-architecture.md §Stack](docs/prd/05-architecture.md).
 
 ## Getting started
 
-Once phase 0 lands:
+Once the app scaffold lands:
 
 ```bash
 pnpm install      # install deps

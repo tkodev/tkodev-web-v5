@@ -6,15 +6,15 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 
 | Layer | Choice |
 | --- | --- |
-| Package manager | **pnpm**, Node ≥ 24 |
+| Package manager | **pnpm** 11, Node ≥ 24 |
 | Language | TypeScript, strict |
-| Framework | Next.js **App Router** |
+| Framework | Next.js **16**, **App Router** |
 | Styling | **Tailwind v4** (CSS-first `@theme`) |
 | Variants | **CVA** (`class-variance-authority`) + `cn()` = `twMerge(clsx(...))` |
 | Primitives | **shadcn** (new-york style, Radix underneath), themed to the v5 tokens |
 | Theming | Two themes, hardcoded to dark ([06-design.md](06-design.md) §Color); no `next-themes` |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
-| State | **zustand** — lifecycle and nav-overlay stores |
+| State | **zustand** — global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
 | Linting | **ESLint** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`) — no Biome, no Prettier |
 | Testing | **Vitest** — `pnpm test` |
@@ -38,12 +38,12 @@ v5 is a multi-page site under one persistent shell.
 | — (overlay, not route) | Loading / boot sequence | — |
 | — (overlay, not route) | Nav overlay | §Navigation below |
 
-Experiments are a works-index category (`experiment` medium), not a route. `/notes` is reserved, unbuilt. Figma frame links per page live in [02-brief.md](02-brief.md) §Figma Design.
+Experiments are a works-index category (`experiment` medium), not a route. Figma frame links per page live in [04-solution.md](04-solution.md) §Figma frames.
 
 ### Navigation
 
 - **Header nav**: **Works · Experience · About · Contact**; the current page's item is marked active.
-- **Nav overlay** — full-screen menu of the nav routes with a current-location marker; the primary nav on mobile, available on all viewports. While open, the header shows identity only and the footer swaps to a close button.
+- **Nav overlay** — full-screen menu of the nav routes; the primary nav on mobile, available on all viewports; behaviour owned by [04-solution.md](04-solution.md) §Nav overlay.
 - **Boot / loading screen** — entry overlay preceding the requested page; behaviour owned by [04-solution.md](04-solution.md) §Boot sequence.
 
 ## Repo structure
@@ -61,7 +61,7 @@ The folder layout follows the Next.js folder-structure standard
     └── standards/       # coding rules, split by topic
 ```
 
-How the v5 pieces land in the standard folders: routes are `/` + `works/` (+ `[workId]/`) + `experience/` + `about/` + `contact/`; `stores/` holds the lifecycle and nav-overlay stores; `providers/` the lifecycle provider; `public/` assets are sourced from career-notes.
+How the v5 pieces land in the standard folders: `app/` mirrors the route map above; `stores/` and `providers/` hold the state layer described in §State and motion; `public/` assets are sourced from career-notes.
 
 ## Data layer
 
@@ -78,7 +78,7 @@ The data model:
 | `projectEntries` / `projectIds` | `Record<ProjectId, ProjectEntry>` + ordered array | see below |
 | `profileEntries` | `Record<ProfileId, ProfileEntry>` | Tony + collaborators |
 
-`ProjectEntry` is the central type: required `basic` (title, intro, desc, roles, tools, skills, display-string dates) plus optional `extended` (win, impact, badges, stats, people), `sections` (ordered heading+body+media narrative blocks), `showcase` (media gallery), `testimonial` (quote, author, title, source). Home consumes `basic` + `extended` for project cards and `testimonial` for the quote cards; work details consume `sections`/`showcase`. Job dates are `Date` objects; project display dates are pre-formatted strings (`'Mar 2026'`).
+`ProjectEntry` is the central type: required `basic` (title, intro, desc, roles, tools, skills, display-string dates) plus optional `extended` (win, impact, badges, stats, people), `sections` (ordered heading+body+media narrative blocks), `showcase` (media gallery), `testimonial` (quote, author, title, source). Home consumes `basic` + `extended` for project cards and `testimonial` for the quote cards; work details consume `sections`/`showcase`.
 
 ## Theming architecture
 
@@ -91,6 +91,5 @@ The data model:
 
 ## Rendering model
 
-- All pages are fully static — data is compile-time constants. `/works/[workId]` prebuilds over the work id list.
-- One root `app/layout.tsx`: fonts on `<body>`, lifecycle provider, `layout` shell (header/main/footer + underlays/overlays), metadata export, analytics.
-- The shell's **underlays** slot hosts site-wide background layers (e.g. custom WebGL backgrounds) behind `main`; **overlays** hosts the loading screen and nav overlay above it.
+- All pages are fully static — data is compile-time constants; dynamic routes prebuild over their id lists.
+- One root `app/layout.tsx`: fonts on `<body>`, lifecycle provider, the persistent `layout` shell (anatomy owned by the components standard §Layout shell), metadata export, analytics.

@@ -1,4 +1,4 @@
-# Process
+# Workflow
 
 How docs, code and designs stay honest with each other.
 

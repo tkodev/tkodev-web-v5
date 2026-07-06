@@ -213,22 +213,6 @@ promoted accent system can carry a full page without the shadcn skin underneath.
 Build it first as a walking skeleton; the ledger and dossiers extend the proven
 system.
 
-## Edge cases
-
-- **Reduced motion** — boot sequence skipped entirely (straight to content), canvas
-  instruments render their static state, loops replaced by posters. Every state
-  readable with zero motion.
-- **Mobile** — the instrument panel recomposes (edge-density becomes top/bottom
-  strips); grab-reel becomes native touch scroll; hover-revealed metadata must have
-  a visible-by-default equivalent.
-- **Media failure** — a loop that fails to load shows its monochrome poster, never
-  a black hole; posters ship with explicit dimensions to protect CLS.
-- **Work without motion media** — stills get the matte treatment; the system can't
-  require video.
-- **Slow connections** — grain is generated (SVG/canvas), not a texture download;
-  the boot sequence doubles as genuine loading cover but never blocks interaction
-  once content is ready.
-
 ## Low Priority Features
 
 _Deliberately deferred — noted, not built._

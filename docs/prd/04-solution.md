@@ -25,6 +25,18 @@ The layers, top to bottom:
 | **Signal** | Direction: one accent color, small-scale and functional only |
 | **Proof** | The brief's readout rule applied: real career data behind every displayed value |
 
+## Figma frames
+
+| Frame | Link |
+| --- | --- |
+| Loading / boot sequence | [`9:797`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=9-797) |
+| Nav overlay | [`33:7043`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=33-7043) |
+| Home | [`9:2380`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=9-2380) |
+| Works index | [`67:1947`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=67-1947) |
+| Work detail | [`68:12288`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=68-12288) |
+| About | [`136:2405`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=136-2405) |
+| Experience, Contact | not designed yet |
+
 ## Surfaces
 
 Global: the **boot sequence** (entry overlay) and the **nav overlay**
@@ -116,6 +128,22 @@ Motion is a grammar, not garnish:
 - **Micro** — accordion expand/collapse (~0.2s); hover states fast (≤150ms).
 - Direction: page **cuts** (fast fades-through-black), **decode** label reveals,
   and **scan** figure wipes, adopted as the design matures.
+
+## Edge cases
+
+- **Reduced motion** — the boot sequence is absent (§Boot sequence); canvas
+  instruments render their static state, loops replaced by posters. Every state
+  readable with zero motion.
+- **Mobile** — the instrument panel recomposes (edge-density becomes top/bottom
+  strips); grab-reel becomes native touch scroll; hover-revealed metadata must have
+  a visible-by-default equivalent.
+- **Media failure** — a loop that fails to load shows its monochrome poster, never
+  a black hole; posters ship with explicit dimensions to protect CLS.
+- **Work without motion media** — stills get the matte treatment; the system can't
+  require video.
+- **Slow connections** — grain is generated (SVG/canvas), not a texture download;
+  the boot sequence doubles as genuine loading cover but never blocks interaction
+  once content is ready.
 
 ## Why this shape
 

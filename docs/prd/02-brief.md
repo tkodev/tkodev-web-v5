@@ -54,7 +54,7 @@ Two pillars, both non-negotiable:
    grain, darkness with density at the edges, media that plays itself. The COD MW2
    (original) loading-screen energy: information-dense, atmospheric, alive.
 
-**less saturation in the chrome; hue arrives only
+**Less saturation in the chrome; hue arrives only
 through the work imagery** — plus a single signal accent, used small and only where
 it means something.
 
@@ -80,15 +80,3 @@ it means something.
 | [Shopify Editions W26](https://www.shopify.com/editions/winter2026) | Scroll choreography for one flagship narrative |
 | COD MW2 loading screens | Cinematic briefing energy; the boot sequence |
 | Moodboards (July 2026 session) | HUD edge-density, grain posters with one red accent, dossier/ticket artifacts, wireframe spec-sheet work presentation, dot-matrix generative fields, small expanded uppercase accent type |
-
-## Figma Design
-
-| Frame | Link |
-| --- | --- |
-| Loading / boot sequence | [`9:797`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=9-797) |
-| Nav overlay | [`33:7043`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=33-7043) |
-| Home | [`9:2380`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=9-2380) |
-| Works index | [`67:1947`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=67-1947) |
-| Work detail | [`68:12288`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=68-12288) |
-| About | [`136:2405`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=136-2405) |
-| Experience, Contact | not designed yet |

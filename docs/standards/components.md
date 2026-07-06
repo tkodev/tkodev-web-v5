@@ -44,38 +44,38 @@ How components are added, shaped, styled, and organized. This file owns the auth
 
 ## Styling
 
-5. **CVA for all visual variants.** Each component defines a local `styles` object of `cva()` calls; never ad-hoc conditional className logic at call sites.
-6. **`cn()` for all className composition** — `twMerge(clsx(...))` from `utils/theme.ts`, which also re-exports `cva` and `VariantProps` so components have one import point.
-7. **Layout utilities at the call site, visual styles in the CVA.** `w-full`, grid placement, margins come from the parent; color, radius, type, borders live in the component's variants.
-8. **Semantic tokens only.** No raw hex, no palette utilities (`text-zinc-400`), no arbitrary color values in JSX. Backgrounds pair with their foregrounds (`bg-primary` → `text-primary-foreground`).
-9. **Type comes from the ramps.** Use the heading/expressive/body typography utilities defined by the design tokens — no arbitrary `text-[13px]`. Uppercase is CSS `uppercase`; content is written in normal case.
-10. **Tailwind v4 CSS-first.** All theme extension in `themes/theme.css` `@theme`; no `tailwind.config.ts`.
-11. **`asChild` + Radix `Slot`** when a component delegates rendering (`<Button asChild><Link …/></Button>`); never nest interactive elements.
+1. **CVA for all visual variants.** Each component defines a local `styles` object of `cva()` calls; never ad-hoc conditional className logic at call sites.
+2. **`cn()` for all className composition** — `twMerge(clsx(...))` from `utils/theme.ts`, which also re-exports `cva` and `VariantProps` so components have one import point.
+3. **Layout utilities at the call site, visual styles in the CVA.** `w-full`, grid placement, margins come from the parent; color, radius, type, borders live in the component's variants.
+4. **Semantic tokens only.** No raw hex, no palette utilities (`text-zinc-400`), no arbitrary color values in JSX. Backgrounds pair with their foregrounds (`bg-primary` → `text-primary-foreground`).
+5. **Type comes from the ramps.** Use the heading/expressive/body typography utilities defined by the design tokens — no arbitrary `text-[13px]`. Uppercase is CSS `uppercase`; content is written in normal case.
+6. **Tailwind v4 CSS-first.** All theme extension in `themes/theme.css` `@theme`; no `tailwind.config.ts`.
+7. **`asChild` + Radix `Slot`** when a component delegates rendering (`<Button asChild><Link …/></Button>`); never nest interactive elements.
 
 ## Organization: atomic design
 
-12. Components live in `components/` in an atomic-design structure:
+1. Components live in `components/` in an atomic-design structure:
     - `atoms/` — simple components. E.g. a button, a badge, the wordmark.
     - `molecules/` — collections of atoms. E.g. a search bar, a date picker, an accordion, a project card.
     - `organisms/` — collections of atoms/molecules. E.g. a page block, a dialog, a menu, an overlay.
     - `templates/` — layout-focused things: footer, header, layout, main, section.
-13. shadcn CLI imports land in `atoms/` (the `components.json` `ui` alias points there) and are reformatted on arrival.
+2. shadcn CLI imports land in `atoms/` (the `components.json` `ui` alias points there) and are reformatted on arrival.
 
 ## Layout shell
 
-14. **One persistent shell wraps every page**, composed from `templates/`:
+1. **One persistent shell wraps every page**, composed from `templates/`:
 
-    ```text
-    layout
-    ├── underlays    # site-wide background layers (e.g. custom webgl backgrounds)
-    ├── header       # top bar: identity + nav links
-    ├── main         # page content, sections in flow
-    ├── footer       # bottom bar: copyright, quick links
-    └── overlays     # takeover layers (e.g. loading screen, nav overlay)
-    ```
+   ```text
+   layout
+   ├── underlays    # site-wide background layers (e.g. custom webgl backgrounds)
+   ├── header       # top bar: identity + nav links
+   ├── main         # page content, sections in flow
+   ├── footer       # bottom bar: copyright, quick links
+   └── overlays     # takeover layers (e.g. loading screen, nav overlay)
+   ```
 
-15. **Pages are stacks of `section` shells.** Every section renders through the `section` template — a full-bleed wrapper with a centered inner container in one of three widths (`lg` / `md` / `sm`, values set by the design tokens) — never ad-hoc page-level wrappers.
+2. **Pages are stacks of `section` shells.** Every section renders through the `section` template — a full-bleed wrapper with a centered inner container in one of three widths (`lg` / `md` / `sm`, values set by the design tokens) — never ad-hoc page-level wrappers.
 
 ## Reusability
 
-16. **All components are reusable by construction.** Content is passed in via props or children — never defined inside a component. Content is defined in `constants/`, API calls, or pages (the consuming layer) only. A component with a hardcoded heading is a bug.
+1. **All components are reusable by construction.** Content is passed in via props or children — never defined inside a component. Content is defined in `constants/`, API calls, or pages (the consuming layer) only. A component with a hardcoded heading is a bug.
