@@ -19,6 +19,8 @@ depends: [<ticket ids>]
 figma: <node link, when the work is visual>
 ---
 
+# <id>: <title>
+
 ## Goal
 
 ## Acceptance criteria

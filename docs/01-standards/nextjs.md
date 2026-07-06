@@ -8,7 +8,7 @@ Runtime, language, and what "done" requires.
 
 1. **pnpm only.** Never npm or yarn. Node ≥ 24.
 2. **TypeScript strict.** No `any` escape hatches; domain types live in `types/`.
-3. **Unit tests are colocated** with what they test, added where they earn their place, run via `pnpm test`.
+3. **Tests are [testing.md](testing.md)'s concern.**
 
 ## Concepts
 

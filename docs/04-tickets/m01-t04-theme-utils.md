@@ -8,6 +8,8 @@ owns:
 depends: [m01-t01]
 ---
 
+# m01-t04: theme utils
+
 ## Goal
 
 The single styling import point for components.
@@ -16,7 +18,6 @@ The single styling import point for components.
 
 - [ ] `cn()` as `twMerge(clsx(...))`
 - [ ] re-exports `cva` and `VariantProps` (components standard)
-- [ ] colocated unit test
 
 ## Verification
 

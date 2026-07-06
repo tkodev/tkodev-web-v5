@@ -15,6 +15,8 @@ owns:
 depends: []
 ---
 
+# m01-t01: scaffold
+
 ## Goal
 
 Scaffold the app: Next.js 16 App Router on pnpm with strict TypeScript,
@@ -25,7 +27,7 @@ ESLint, and Vitest; every README script runs clean on the empty app.
 - [ ] Next.js 16 App Router, pnpm, Node ≥ 24
 - [ ] TypeScript strict, no `any` escapes
 - [ ] ESLint flat config via `@tkodev/eslint-config-next`; no Biome, no Prettier
-- [ ] Vitest wired with a passing placeholder test
+- [ ] Vitest wired; `pnpm test` passes with no tests (testing standard)
 - [ ] All README scripts run clean
 
 ## Verification

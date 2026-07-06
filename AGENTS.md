@@ -10,6 +10,7 @@ Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 
 @docs/01-standards/nextjs.md
 @docs/01-standards/components.md
 @docs/01-standards/data.md
+@docs/01-standards/testing.md
 @docs/01-standards/performance.md
 @docs/01-standards/accessibility.md
 @docs/01-standards/seo.md

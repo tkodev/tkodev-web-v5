@@ -9,6 +9,8 @@ owns:
 depends: [m01-t01]
 ---
 
+# m01-t05: vendored career data
+
 ## Goal
 
 Vendor the structured career package into the site as compile-time constants.
@@ -17,7 +19,6 @@ Vendor the structured career package into the site as compile-time constants.
 
 - [ ] one-way copy from career-notes `profiles/structured`; schema unforked
 - [ ] job dates via `fromZonedTime(iso, appTimeZone)`, never bare `new Date()`
-- [ ] entry-shape unit test over the exports
 
 ## Verification
 

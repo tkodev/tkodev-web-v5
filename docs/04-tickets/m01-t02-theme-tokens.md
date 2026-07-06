@@ -2,12 +2,14 @@
 id: m01-t02
 milestone: m01
 kind: trunk
-status: todo
+status: in-progress
 owns:
   - src/themes/
 depends: [m01-t01]
 figma: token pages in docs/02-prd/04-design.md (text 6007:3488, color 6009:161, visual 6029:2117)
 ---
+
+# m01-t02: theme tokens
 
 ## Goal
 

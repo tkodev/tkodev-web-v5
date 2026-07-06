@@ -9,6 +9,8 @@ owns:
 depends: [m01-t02, m01-t04]
 ---
 
+# m01-t06: layout shell
+
 ## Goal
 
 The persistent shell every page renders through.
