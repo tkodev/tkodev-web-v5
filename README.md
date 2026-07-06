@@ -39,7 +39,7 @@ Docs drive the implementation. The PRD ([docs/prd/](docs/prd/)) is read in numbe
 | [docs/prd/03-solution.md](docs/prd/03-solution.md) | The settled design — concept, surfaces, cinematic system |
 | [docs/prd/04-design.md](docs/prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
 | [docs/prd/05-architecture.md](docs/prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
-| [docs/standards/](docs/standards/) | Rules by topic: [process](docs/standards/process.md), [nextjs](docs/standards/nextjs.md), [components](docs/standards/components.md), [data](docs/standards/data.md), [performance](docs/standards/performance.md), [accessibility](docs/standards/accessibility.md), [seo](docs/standards/seo.md), [git](docs/standards/git.md) |
+| [docs/standards/](docs/standards/) | Rules by topic: [process](docs/standards/process.md), [writing](docs/standards/writing.md), [nextjs](docs/standards/nextjs.md), [components](docs/standards/components.md), [data](docs/standards/data.md), [performance](docs/standards/performance.md), [accessibility](docs/standards/accessibility.md), [seo](docs/standards/seo.md), [git](docs/standards/git.md) |
 
 ## Other
 
