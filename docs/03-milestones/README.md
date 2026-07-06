@@ -2,9 +2,8 @@
 
 The milestone graph: the working loop's plan-implementation output
 ([process](../01-standards/process.md) §Milestones). Each milestone doc binds
-concrete scope and a definition of done; tickets are cut at each milestone's
-plan step into [../04-tickets/](../04-tickets/). Only m01 is cut in full;
-m02 is sketched.
+concrete scope, a definition of done, and (once its plan step runs) the task
+cut with live per-task status. Only m01 is cut in full; m02 is sketched.
 
 ## The milestone graph
 

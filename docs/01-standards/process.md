@@ -48,23 +48,24 @@ from the ones before it:
 Three authorities, each owning a different kind of truth and each with the
 rules that keep it honest:
 
-- **The repo holds law and state**: the PRD, the standards, the milestone
-  graph (`docs/03-milestones/`), and the tickets (`docs/04-tickets/`);
-  versioned, canonical for intent, contract, and work status. Docs and code
+- **The repo holds law and state**: the PRD, the standards, and the
+  milestone docs (`docs/03-milestones/`: the graph plus each milestone's
+  scope, task cut, and live status); versioned, canonical for intent,
+  contract, and work status. Docs and code
   change together **in the same change**; a discovery the docs missed (a
   token value, a variant, a breakpoint) is written back to the owning doc,
   never left in a commit message or comment. Docs carry intent and contract;
   function-level detail belongs in the code. Each fact lives in exactly one
   owning doc: everywhere else points or summarizes, never restates, and when
-  two docs disagree the owner wins. Tickets are work state, not contract; a
-  fact that matters beyond its ticket moves to the owning doc.
+  two docs disagree the owner wins. Milestone docs are work state, not
+  contract; a fact that matters beyond a milestone moves to the owning doc.
 - **Figma holds pixels**: design questions resolve against the Figma nodes,
   not guesswork. Use structured design context (metadata/variables/code), not
   screenshots, when reading Figma. A component isn't done until it's been
   compared against its Figma node at desktop and mobile widths.
 - **GitHub holds review**: PRs, machine checks, preview deploys. Nothing
-  lives only on GitHub; a ticket's status flips in its file, in the same PR
-  as the work.
+  lives only on GitHub; a task's status flips in its milestone doc, in the
+  same PR as the work.
 
 When all three still leave a question genuinely ambiguous, ask; don't
 improvise the product.
@@ -74,25 +75,27 @@ improvise the product.
 Every milestone runs the same three phases. The human steers at the two cheap
 points (the plan and the gate); agents and machines carry the middle.
 
-1. **Plan.** Scope comes from the PRD and the design frames: cut tickets by
-   file ownership, map dependencies, mark trunk vs leaf. An unknown that
-   blocks ticket-cutting gets a **spike** first: a throwaway experiment
-   answering one question; spike code is never merged, its answer is written
-   back to the owning doc. The human approves the ticket set before
-   execution; steering a plan costs minutes, steering merged code costs days.
-2. **Execute.** Trunk tickets merge serially first; leaf tickets fan out in
-   parallel worktrees. Every ticket PR must pass the machine checks and an
+1. **Plan.** Scope comes from the PRD and the design frames: cut the
+   milestone into tasks by file ownership, map dependencies, mark trunk vs
+   leaf, all recorded in the milestone doc. An unknown that blocks the cut
+   gets a **spike** first: a throwaway experiment answering one question;
+   spike code is never merged, its answer is written back to the owning doc.
+   The human approves the cut before execution; steering a plan costs
+   minutes, steering merged code costs days.
+2. **Execute.** Trunk tasks merge serially first; leaf tasks fan out in
+   parallel worktrees. Every task PR must pass the machine checks and an
    agent review before merge (§Review).
 3. **Gate.** The human reviews outcomes on the milestone branch's deployed
    preview against the design frames at desktop and mobile widths, plus the
-   closed ticket list. Outcomes, not diffs; a human reads code only on
-   escalation.
+   milestone doc's completed task list. Outcomes, not diffs; a human reads
+   code only on escalation.
 
 ## Milestones: the human gates
 
 A milestone is a reviewable increment behind a human gate, instantiated as a
-**milestone doc** (`docs/03-milestones/`) binding it to concrete scope and a
-definition of done. Milestones form a dependency graph, not a fixed sequence;
+**milestone doc** (`docs/03-milestones/`) binding it to concrete scope, a
+definition of done, and, from its plan step onward, the task cut with live
+per-task status. Milestones form a dependency graph, not a fixed sequence;
 three kinds set what may run in parallel:
 
 | Kind | The work | Parallelism |
@@ -120,35 +123,34 @@ three kinds set what may run in parallel:
 - **Launch is a sweep** with a checklist gate: metadata and SEO verified,
   analytics live, performance budgets met, domain cut over.
 
-## Tickets: the agent work units
+## Tasks: the agent work units
 
-A ticket is a **file in `docs/04-tickets/`** (format owned by that folder's
-README): one unit of work an agent can complete unattended, carrying goal,
-kind, owned files, dependencies, acceptance criteria, verification commands,
-and the Figma node when visual.
+A task is an entry in its milestone's doc: one unit of work an agent can
+complete unattended, carrying goal, kind, owned files, dependencies,
+acceptance criteria, verification commands, and the Figma node when visual.
 
-- **Scope by file ownership.** A ticket lists the file globs it owns; two
-  tickets may run in parallel only if their owned sets don't overlap. The same
+- **Scope by file ownership.** A task lists the file globs it owns; two
+  tasks may run in parallel only if their owned sets don't overlap. The same
   disjointness applies across sibling milestone branches.
 - **Trunk, then fan out.** Work touching shared files (theme, layout shell,
-  constants, utils) is a *trunk* ticket, serialized at the start of its
-  milestone; *leaf* tickets (components, pages) fan out afterwards in parallel
+  constants, utils) is a *trunk* task, serialized at the start of its
+  milestone; *leaf* tasks (components, pages) fan out afterwards in parallel
   worktrees.
 - **Shared discoveries become system work.** When parallel work uncovers a
   shared need (a primitive two surfaces want), it lands on `main` as its own
-  small system ticket and sibling branches merge `main` forward; never two
+  small system task and sibling branches merge `main` forward; never two
   parallel copies of the same convention.
-- **Pull state at task start.** An agent picking up a ticket reads its file
-  and its milestone's open tickets (status frontmatter) before writing code.
-- **Status flips with the work.** A ticket's `status` moves
+- **Read the milestone doc at task start**, whole: the sibling tasks and
+  their owned sets bound what may run in parallel.
+- **Status flips with the work.** A task's status moves
   (todo → in-progress → in-review → done) in the same PR as the change it
   describes; blocked is a status, not a comment.
 
 ## Branches and PRs
 
 - One branch per milestone (`feat/m02-works`), cut from `main`.
-- One branch per ticket (`feat/m02-t04-works-ledger`), PR'd into the milestone
-  branch; the PR flips its ticket's status in the same diff.
+- One branch per task (`feat/m02-t04-works-ledger`), PR'd into the milestone
+  branch; the PR flips its task's status in the same diff.
 - The milestone branch PRs into `main` at the gate; merge `main` forward into
   any milestone branch that runs long.
 
@@ -158,14 +160,14 @@ Three tiers, split by kind, not by priority:
 
 - **Machines check mechanics.** Lint, types, tests, build, and a green preview
   deploy gate every PR; a human never spends attention on what CI can catch.
-- **Agents review correctness.** Every ticket PR, against the standards and
-  the ticket's acceptance criteria.
+- **Agents review correctness.** Every task PR, against the standards and
+  the task's acceptance criteria.
 - **Humans review taste.** At plan and gate only (§The delivery cycle): the
   qualities no check can score; fidelity to the design, motion feel, whether
   the thing is good.
 
 ## The board
 
-The board is a query, not a service: ticket status lives in frontmatter, so
-the tickets folder is always the live board and git history is the audit
-trail. Nothing is mirrored to an external tracker.
+The board is a query, not a service: task status lives in the milestone
+docs, so `docs/03-milestones/` is always the live board and git history is
+the audit trail. Nothing is mirrored to an external tracker.

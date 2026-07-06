@@ -3,7 +3,7 @@
 Surface milestone, the proving surface: the boot sequence and the home hero
 (the instrument panel) composed over real data. Its gate is what unlocks the
 parallel surface milestones (m04 to m07). Scoped tighter than the full home
-page on purpose; the evidence sections are m03.
+page on purpose; the evidence sections are m04.
 
 **Gate**: the deployed preview against the boot frame
 ([`9:797`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=9-797))
@@ -24,9 +24,9 @@ back to the owning doc.
   the mix-blend-exclusion core across browsers.
 - Boot progress wiring: what real loading signal drives the readout.
 
-## Draft ticket cut
+## Draft task cut
 
-Final cut and full bodies happen at the milestone's plan step:
+The full cut lands in this doc at the milestone's plan step:
 
 - lifecycle store (zustand: `loading → ready`) and boot overlay sequence
 - grain underlay layer
