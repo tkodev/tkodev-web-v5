@@ -1,6 +1,6 @@
 # Architecture
 
-How the app is shaped: stack, information architecture, repo structure, data layer, theming. What we're building lives in [01-brief.md](01-brief.md); tokens in [05-design.md](05-design.md); component anatomy in the Figma design system.
+How the app is shaped: stack, information architecture, repo structure, data layer, theming. What we're building lives in [01-brief.md](01-brief.md); tokens in [04-design.md](04-design.md); component anatomy in the Figma design system.
 
 ## Stack
 
@@ -12,7 +12,7 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Styling | **Tailwind v4** (CSS-first `@theme`) |
 | Variants | **CVA** (`class-variance-authority`) + `cn()` = `twMerge(clsx(...))` |
 | Primitives | **shadcn** (new-york style, Radix underneath), themed to the v5 tokens |
-| Theming | Two themes, hardcoded to dark ([05-design.md](05-design.md) §Color); no `next-themes` |
+| Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color); no `next-themes` |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
 | State | **zustand** — global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
@@ -82,7 +82,7 @@ The data model:
 
 ## Theming architecture
 
-`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `colors.css` + `helpers.css`, defines the two theme blocks (values from [05-design.md](05-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
+`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `colors.css` + `helpers.css`, defines the two theme blocks (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
 
 ## State and motion
 

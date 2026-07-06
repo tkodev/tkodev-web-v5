@@ -10,8 +10,8 @@ The `docs/` tree is the source of truth — read it before writing code. `docs/p
 @docs/prd/01-brief.md
 @docs/prd/02-observations.md
 @docs/prd/03-solution.md
-@docs/prd/04-architecture.md
-@docs/prd/05-design.md
+@docs/prd/04-design.md
+@docs/prd/05-architecture.md
 @docs/standards/process.md
 @docs/standards/workflow.md
 @docs/standards/nextjs.md

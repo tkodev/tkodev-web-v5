@@ -6,7 +6,7 @@ The v5 redesign of [tko.dev](https://tko.dev/) — Tony Ko's **cinematic persona
 
 ## Tech stack
 
-Next.js App Router on Tailwind v4, with shadcn/Radix primitives, CVA variants, Framer Motion choreography, zustand state, and Vitest — the authoritative stack table (versions included) is [docs/prd/04-architecture.md §Stack](docs/prd/04-architecture.md).
+Next.js App Router on Tailwind v4, with shadcn/Radix primitives, CVA variants, Framer Motion choreography, zustand state, and Vitest — the authoritative stack table (versions included) is [docs/prd/05-architecture.md §Stack](docs/prd/05-architecture.md).
 
 ## Getting started
 
@@ -37,8 +37,8 @@ Docs drive the implementation. The PRD ([docs/prd/](docs/prd/)) is read in numbe
 | [docs/prd/01-brief.md](docs/prd/01-brief.md) | The distilled intent: what the site is, who it's for, aesthetic, references |
 | [docs/prd/02-observations.md](docs/prd/02-observations.md) | Research, risks, and the direction taken on each |
 | [docs/prd/03-solution.md](docs/prd/03-solution.md) | The settled design — concept, surfaces, cinematic system |
-| [docs/prd/04-architecture.md](docs/prd/04-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
-| [docs/prd/05-design.md](docs/prd/05-design.md) | Design tokens (typography, color, radius, gap, fonts) |
+| [docs/prd/04-design.md](docs/prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
+| [docs/prd/05-architecture.md](docs/prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
 | [docs/standards/](docs/standards/) | Rules by topic: [process](docs/standards/process.md), [workflow](docs/standards/workflow.md), [nextjs](docs/standards/nextjs.md), [components](docs/standards/components.md), [data](docs/standards/data.md), [performance](docs/standards/performance.md), [accessibility](docs/standards/accessibility.md), [seo](docs/standards/seo.md), [git](docs/standards/git.md) |
 
 ## Other

@@ -9,11 +9,11 @@ Research findings and risks paired with the direction taken, structured by the
 4. **What to Prototype First** — the riskiest slice to validate early.
 
 Settled design lives in [03-solution.md](03-solution.md); the visual system in
-[05-design.md](05-design.md); how work is planned and delivered in
+[04-design.md](04-design.md); how work is planned and delivered in
 [../standards/process.md](../standards/process.md).
 
 Directions here are research, not contract: where a direction conflicts with the
-token contract in [05-design.md](05-design.md), **05-design wins** — a direction
+token contract in [04-design.md](04-design.md), **04-design wins** — a direction
 lands only when the Figma (and its transcription there) adopts it.
 
 ## 1. The Problem
@@ -197,7 +197,7 @@ shadcn has no word for the concept. Same pattern for type: three named scales
 
 The noir direction is dark by definition; a light mode would be a second, half-committed design.
 
-**Direction.** The toggle dies ([05-design.md](05-design.md) §Color): depth over
+**Direction.** The toggle dies ([04-design.md](04-design.md) §Color): depth over
 breadth — grain, blend modes, and edge-lit hairlines designed once, properly. The
 light theme survives for inverse-color sections.
 

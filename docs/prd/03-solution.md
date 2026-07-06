@@ -2,9 +2,9 @@
 
 The settled design — the Figma surfaces described at concept level, read through the
 research in [02-observations.md](02-observations.md). The structure lives in
-[04-architecture.md](04-architecture.md); the token contract in [05-design.md](05-design.md).
+[05-architecture.md](05-architecture.md); the token contract in [04-design.md](04-design.md).
 Where a concept has not yet landed in the Figma it is marked **direction** — the
-Figma (and its transcription in 05-design) wins until it adopts it.
+Figma (and its transcription in 04-design) wins until it adopts it.
 
 ## The concept
 
@@ -41,7 +41,7 @@ The layers, top to bottom:
 
 Global: the **boot sequence** (entry overlay) and the **nav overlay**
 (full-screen). Routes and navigation live in
-[04-architecture.md](04-architecture.md) §Information architecture.
+[05-architecture.md](05-architecture.md) §Information architecture.
 
 ## Pages
 

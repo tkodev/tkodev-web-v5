@@ -10,7 +10,7 @@ Figma sources (node IDs are stable — fetch these when a value here needs verif
 | Color tokens | [`6009:161`](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5?node-id=6009-161) |
 | Visual tokens (radius, gap) | [`6029:2117`](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5?node-id=6029-2117) |
 
-Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed through Tailwind v4 `@theme` (see [04-architecture.md](04-architecture.md) §Theming).
+Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed through Tailwind v4 `@theme` (see [05-architecture.md](05-architecture.md) §Theming).
 
 ## Fonts
 

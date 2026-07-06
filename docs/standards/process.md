@@ -14,7 +14,7 @@ The brief and observations ([01-brief.md](../prd/01-brief.md),
 [02-observations.md](../prd/02-observations.md)) are the path toward the design —
 gathering, distillation, and direction-setting, worked through the priority frame
 the observations doc opens with. The **Figma file is the designed solution** that
-path produces, transcribed into [05-design.md](../prd/05-design.md). Once
+path produces, transcribed into [04-design.md](../prd/04-design.md). Once
 direction settles, delivery: **plan → thin slice → harden → make it shine**. The
 thin slice is one page built end-to-end through the riskiest layer (the cinematic
 system over real data); hardening extends the proven system across pages; polish
