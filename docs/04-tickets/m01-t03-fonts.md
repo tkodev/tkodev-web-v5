@@ -2,7 +2,7 @@
 id: m01-t03
 milestone: m01
 kind: leaf
-status: todo
+status: done
 owns:
   - src/fonts/
   - public/fonts/
