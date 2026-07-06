@@ -10,7 +10,7 @@ m02 is sketched.
 
 | Id | Milestone | Kind | Depends on | Status | Scope |
 | --- | --- | --- | --- | --- | --- |
-| m01 | [Foundations](m01-foundations.md) | System | none | todo | Scaffold, tooling, tokens, fonts, data, shell, `/design` specimen |
+| m01 | [Foundations](m01-foundations.md) | System | none | in-review | Scaffold, tooling, tokens, fonts, data, shell, `/design` specimen |
 | m02 | [Proving surface](m02-proving-surface.md) | Surface | m01 | todo | Boot sequence + home hero, composed over real data |
 | m03 | Nav overlay | Surface | m01 | todo | Full-screen menu rebuilt in the annotation language |
 | m04 | Home | Surface | m02 | todo | Home evidence sections: selected works, statement, overview, testimonials, contact block |
