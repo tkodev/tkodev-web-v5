@@ -1,7 +1,7 @@
 # Writing
 
 How project prose reads: docs, ticket and milestone bodies, PR and commit
-bodies. Where facts live is [process.md](process.md) §Keeping it honest's
+bodies. Where facts live is [process.md](process.md) §Division of truth's
 concern; this doc owns the sentences. Site copy is out of scope, since its
 voice is the design's.
 

@@ -4,7 +4,7 @@ Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 
 
 ## Rules
 
-- **Don't use Claude's built-in memory system.** The repo is the memory:
+- **Don't use agent's built-in memory system.** The repo is the memory:
   durable guidance belongs in the owning doc under `docs/`, orientation here.
   If something seems worth remembering, write it into the doc that owns it.
 

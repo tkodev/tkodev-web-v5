@@ -44,36 +44,28 @@ from the ones before it:
 
 ## Division of truth
 
-Three authorities, each owning a different kind of truth:
+Three authorities, each owning a different kind of truth and each with the
+rules that keep it honest:
 
 - **The repo holds law**: the PRD, the standards, the ticket template;
-  versioned, canonical for intent and contract.
-- **Figma holds pixels**: design questions resolve against the Figma nodes, not
-  guesswork. Use structured design context (metadata/variables/code), not
-  screenshots, when reading Figma.
+  versioned, canonical for intent and contract. Docs and code change together
+  **in the same change**; a discovery the docs missed (a token value, a
+  variant, a breakpoint) is written back to the owning doc, never left in a
+  commit message or comment. Docs carry intent and contract; function-level
+  detail belongs in the code. Each fact lives in exactly one owning doc:
+  everywhere else points or summarizes, never restates, and when two docs
+  disagree the owner wins.
+- **Figma holds pixels**: design questions resolve against the Figma nodes,
+  not guesswork. Use structured design context (metadata/variables/code), not
+  screenshots, when reading Figma. A component isn't done until it's been
+  compared against its Figma node at desktop and mobile widths.
 - **GitHub holds state**: issues (tickets), milestones (gates), the project
   board, PRs; the live work state. Agents pull it with `gh`; it is never
   mirrored into the repo. Tickets are work state, not contract; a fact that
   matters beyond its ticket moves to the owning doc.
 
-## Keeping it honest
-
-1. **Docs and code change together.** Behaviour or design changes update the
-   relevant doc and the code **in the same change**.
-2. **Write discoveries back.** When implementation discovers a fact the docs
-   missed (a token value, a variant, a breakpoint), write it back into the
-   owning doc, not a commit message or a comment.
-3. **Docs describe intent and contract, not implementation detail.**
-   Function-level detail belongs in the code.
-4. **Each fact lives in exactly one place.** Every fact, rule, or decision has
-   one owning doc; everywhere else references or summarizes it, never restates
-   it. Before writing something down, check whether a doc already owns it: if
-   it does, point there; if it half-owns it, move it, don't fork it. When two
-   docs disagree, the owner wins and the other is stale.
-5. **Verify against the design.** A component isn't done until it's been
-   compared against its Figma node at desktop and mobile widths.
-6. **Ask when genuinely ambiguous.** After the docs, the code, and the Figma,
-   don't improvise the product.
+When all three still leave a question genuinely ambiguous, ask; don't
+improvise the product.
 
 ## The delivery cycle
 
