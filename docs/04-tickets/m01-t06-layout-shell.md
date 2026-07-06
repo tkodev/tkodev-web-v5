@@ -2,7 +2,7 @@
 id: m01-t06
 milestone: m01
 kind: leaf
-status: todo
+status: done
 owns:
   - src/components/templates/
   - src/app/layout.tsx
