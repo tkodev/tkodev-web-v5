@@ -2,7 +2,7 @@
 id: m01-t02
 milestone: m01
 kind: trunk
-status: in-progress
+status: done
 owns:
   - src/themes/
 depends: [m01-t01]
