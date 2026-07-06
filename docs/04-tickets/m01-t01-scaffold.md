@@ -2,7 +2,7 @@
 id: m01-t01
 milestone: m01
 kind: trunk
-status: todo
+status: done
 owns:
   - package.json
   - pnpm-lock.yaml

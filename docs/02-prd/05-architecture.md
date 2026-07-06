@@ -16,7 +16,7 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
 | State | **zustand**: global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
-| Linting | **ESLint** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no Prettier |
+| Linting | **ESLint 9** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no standalone Prettier (the shared config runs it as a lint rule) |
 | Testing | **Vitest**: `pnpm test` |
 | Fonts | `next/font/local`: Alliance No.2, Geist, Geist Mono |
 | Dates | `date-fns` / `date-fns-tz` |
