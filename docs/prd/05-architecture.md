@@ -35,6 +35,7 @@ v5 is a multi-page site under one persistent shell.
 | `/experience` | Experience | Experience |
 | `/about` | About | About |
 | `/contact` | Contact | Contact |
+| `/design` | Design system specimen (living styleguide, unlinked from nav) | — |
 | — (overlay, not route) | Loading / boot sequence | — |
 | — (overlay, not route) | Nav overlay | §Navigation below |
 

@@ -100,6 +100,10 @@ three kinds set what may run in parallel:
 | **Surface** | Delivers one surface on conventions already proven | Parallel with other surface milestones, as sibling branches with independent gates |
 | **Sweep** | One cross-cutting pass over everything: coherence, polish, audits, launch | Serial, after the surfaces it sweeps |
 
+- **System milestones gate on a specimen.** A system milestone has no surface
+  to review, so its gate reviews a specimen artifact instead: a design-system
+  page rendering every token, ramp, and primitive, compared against the design
+  system file. The specimen stays in the site as a living styleguide route.
 - **The readiness rule.** A milestone may open when everything it consumes is
   merged and its inputs are settled: design frames in the design file, content
   in the data source. An unready surface (undesigned, content missing) is a
