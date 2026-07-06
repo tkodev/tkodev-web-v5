@@ -2,7 +2,7 @@
 
 How work happens: the sources of truth, how they stay honest with each other,
 and how work is planned, parallelized, and reviewed. This doc is the methodology
-layer and stays project-agnostic; the PRD, the GitHub milestones, and the
+layer and stays project-agnostic; the PRD, the milestone docs, and the
 tickets derive their structure from it. How change is recorded is
 [git.md](git.md)'s concern.
 
@@ -48,22 +48,23 @@ from the ones before it:
 Three authorities, each owning a different kind of truth and each with the
 rules that keep it honest:
 
-- **The repo holds law**: the PRD, the standards, the ticket template;
-  versioned, canonical for intent and contract. Docs and code change together
-  **in the same change**; a discovery the docs missed (a token value, a
-  variant, a breakpoint) is written back to the owning doc, never left in a
-  commit message or comment. Docs carry intent and contract; function-level
-  detail belongs in the code. Each fact lives in exactly one owning doc:
-  everywhere else points or summarizes, never restates, and when two docs
-  disagree the owner wins.
+- **The repo holds law and state**: the PRD, the standards, the milestone
+  graph (`docs/03-milestones/`), and the tickets (`docs/04-tickets/`);
+  versioned, canonical for intent, contract, and work status. Docs and code
+  change together **in the same change**; a discovery the docs missed (a
+  token value, a variant, a breakpoint) is written back to the owning doc,
+  never left in a commit message or comment. Docs carry intent and contract;
+  function-level detail belongs in the code. Each fact lives in exactly one
+  owning doc: everywhere else points or summarizes, never restates, and when
+  two docs disagree the owner wins. Tickets are work state, not contract; a
+  fact that matters beyond its ticket moves to the owning doc.
 - **Figma holds pixels**: design questions resolve against the Figma nodes,
   not guesswork. Use structured design context (metadata/variables/code), not
   screenshots, when reading Figma. A component isn't done until it's been
   compared against its Figma node at desktop and mobile widths.
-- **GitHub holds state**: issues (tickets), milestones (gates), the project
-  board, PRs; the live work state. Agents pull it with `gh`; it is never
-  mirrored into the repo. Tickets are work state, not contract; a fact that
-  matters beyond its ticket moves to the owning doc.
+- **GitHub holds review**: PRs, machine checks, preview deploys. Nothing
+  lives only on GitHub; a ticket's status flips in its file, in the same PR
+  as the work.
 
 When all three still leave a question genuinely ambiguous, ask; don't
 improvise the product.
@@ -90,7 +91,7 @@ points (the plan and the gate); agents and machines carry the middle.
 ## Milestones: the human gates
 
 A milestone is a reviewable increment behind a human gate, instantiated as a
-**GitHub Milestone** whose description binds it to concrete scope and a
+**milestone doc** (`docs/03-milestones/`) binding it to concrete scope and a
 definition of done. Milestones form a dependency graph, not a fixed sequence;
 three kinds set what may run in parallel:
 
@@ -121,10 +122,10 @@ three kinds set what may run in parallel:
 
 ## Tickets: the agent work units
 
-A ticket is a **GitHub Issue** created from the ticket template
-(`.github/ISSUE_TEMPLATE/ticket.yml`): one unit of work an agent can complete
-unattended, carrying goal, owned files, dependencies, acceptance criteria,
-verification commands, and the Figma node when visual.
+A ticket is a **file in `docs/04-tickets/`** (format owned by that folder's
+README): one unit of work an agent can complete unattended, carrying goal,
+kind, owned files, dependencies, acceptance criteria, verification commands,
+and the Figma node when visual.
 
 - **Scope by file ownership.** A ticket lists the file globs it owns; two
   tickets may run in parallel only if their owned sets don't overlap. The same
@@ -137,15 +138,17 @@ verification commands, and the Figma node when visual.
   shared need (a primitive two surfaces want), it lands on `main` as its own
   small system ticket and sibling branches merge `main` forward; never two
   parallel copies of the same convention.
-- **Pull state at task start.** An agent picking up a ticket fetches it and
-  its milestone's open tickets (`gh issue list --milestone <name>`) before
-  writing code.
+- **Pull state at task start.** An agent picking up a ticket reads its file
+  and its milestone's open tickets (status frontmatter) before writing code.
+- **Status flips with the work.** A ticket's `status` moves
+  (todo → in-progress → in-review → done) in the same PR as the change it
+  describes; blocked is a status, not a comment.
 
 ## Branches and PRs
 
 - One branch per milestone (`feat/m02-works`), cut from `main`.
 - One branch per ticket (`feat/m02-t04-works-ledger`), PR'd into the milestone
-  branch with `closes #<ticket>` in the body.
+  branch; the PR flips its ticket's status in the same diff.
 - The milestone branch PRs into `main` at the gate; merge `main` forward into
   any milestone branch that runs long.
 
@@ -163,7 +166,6 @@ Three tiers, split by kind, not by priority:
 
 ## The board
 
-The GitHub Project board is a **projection for humans**, kept current by
-built-in automations (issue added → todo, PR linked → in progress,
-merged/closed → done). Agents interact through `gh issue` / `gh pr` only and
-never write to the Projects API.
+The board is a query, not a service: ticket status lives in frontmatter, so
+the tickets folder is always the live board and git history is the audit
+trail. Nothing is mirrored to an external tracker.

@@ -30,7 +30,7 @@ pnpm test         # vitest
 
 ## Docs
 
-Docs drive the implementation, read in numbered order: the rules ([docs/01-standards/](docs/01-standards/)) split by topic, then the PRD ([docs/02-prd/](docs/02-prd/)) as a numbered pipeline, then the staging milestone plan ([docs/03-milestones/](docs/03-milestones/)) until it migrates to GitHub:
+Docs drive the implementation, read in numbered order: the rules ([docs/01-standards/](docs/01-standards/)) split by topic, the PRD ([docs/02-prd/](docs/02-prd/)) as a numbered pipeline, then the work state ([docs/03-milestones/](docs/03-milestones/), [docs/04-tickets/](docs/04-tickets/)):
 
 | Doc | What it owns |
 | --- | --- |
@@ -40,7 +40,8 @@ Docs drive the implementation, read in numbered order: the rules ([docs/01-stand
 | [docs/02-prd/03-solution.md](docs/02-prd/03-solution.md) | The settled design: concept, surfaces, cinematic system |
 | [docs/02-prd/04-design.md](docs/02-prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
 | [docs/02-prd/05-architecture.md](docs/02-prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
-| [docs/03-milestones/](docs/03-milestones/) | The staging milestone graph and ticket cuts, pre-GitHub |
+| [docs/03-milestones/](docs/03-milestones/) | The milestone graph: scope, dependencies, gates |
+| [docs/04-tickets/](docs/04-tickets/) | The tickets: agent work units with live status |
 
 ## Other
 
