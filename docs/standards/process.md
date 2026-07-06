@@ -10,13 +10,14 @@ tickets derive their structure from it. How change is recorded is
 
 Front-loaded on distillation and direction before any build:
 
-> Gather inspiration → distill the essence → set direction → design → thin slice → feedback → iterate → harden → polish.
+> Gather inspiration → distill the essence → set direction → design → plan implementation → deliver.
 
 The brief and observations stages of the PRD (§The PRD) are the path toward the
 design: gathering, distillation, and direction-setting. The **design file is the
 designed solution** that path produces, transcribed into the design contract.
-Once direction settles, delivery runs as milestones (§Milestones), each through
-the same cycle (§The delivery cycle).
+Planning the implementation lays out the milestone graph (§Milestones) from the
+PRD and the design; delivery runs each milestone through the same cycle
+(§The delivery cycle).
 
 ## The PRD
 
@@ -102,9 +103,10 @@ three kinds set what may run in parallel:
   in the data source. An unready surface (undesigned, content missing) is a
   waiting node, never a blocker for its siblings.
 - **The canonical arc.** Foundations (system) → the thin slice (system; the
-  riskiest slice named by the observations stage, one surface end-to-end) →
-  the remaining surfaces in parallel → polish and launch sweeps. Parallelism
-  is earned: it begins only once the thin slice proves the conventions.
+  riskiest slice named by the observations stage, one surface built through
+  every layer end to end to prove the conventions cheaply) → the remaining
+  surfaces in parallel → polish and launch sweeps. Parallelism is earned: it
+  begins only once the thin slice proves the conventions.
 - **Launch is a sweep** with a checklist gate: metadata and SEO verified,
   analytics live, performance budgets met, domain cut over.
 
