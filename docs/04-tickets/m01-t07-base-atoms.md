@@ -2,7 +2,7 @@
 id: m01-t07
 milestone: m01
 kind: leaf
-status: todo
+status: done
 owns:
   - src/components/atoms/
 depends: [m01-t02, m01-t04]
