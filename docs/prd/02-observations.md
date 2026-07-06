@@ -1,20 +1,10 @@
 # Observations
 
 Research findings and risks paired with the direction taken, structured by the
-**priority frame** — the order problems get worked in:
-
-1. **The Problem** — one or two sentences.
-2. **The Hardest Failure Mode** — what breaks worst; design around it first.
-3. **Key Design Decisions** — the load-bearing choices everything else hangs off.
-4. **What to Prototype First** — the riskiest slice to validate early.
-
-Settled design lives in [03-solution.md](03-solution.md); the visual system in
-[04-design.md](04-design.md); how work is planned and delivered in
-[../standards/process.md](../standards/process.md).
-
-Directions here are research, not contract: where a direction conflicts with the
-token contract in [04-design.md](04-design.md), **04-design wins** — a direction
-lands only when the Figma (and its transcription there) adopts it.
+**priority frame** and subject to the directions-are-research rule — both defined
+in [../standards/process.md](../standards/process.md) §The PRD. Where a direction
+conflicts with the token contract, [04-design.md](04-design.md) wins. Settled
+design lives in [03-solution.md](03-solution.md).
 
 ## 1. The Problem
 
@@ -223,7 +213,7 @@ system.
 
 ## Low Priority Features
 
-_Deliberately deferred — noted, not built._
+*Deliberately deferred — noted, not built.*
 
 - **Sound design** — v4 had ambient audio; the boot sequence could carry a
   reduced-motion-respecting audio layer later. Not in the first build.

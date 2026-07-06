@@ -1,8 +1,10 @@
 # Process
 
 How work happens — the sources of truth, how they stay honest with each other,
-and how work is planned, parallelized, and reviewed. How change is recorded is
-[git.md](git.md)'s concern.
+and how work is planned, parallelized, and reviewed. This doc is the methodology
+layer and stays project-agnostic: the PRD, the GitHub milestones, and the tickets
+derive their structure from it. How change is recorded is [git.md](git.md)'s
+concern.
 
 ## The working loop
 
@@ -10,15 +12,35 @@ Front-loaded on distillation and direction before any build:
 
 > Gather inspiration → distill the essence → set direction → design → thin slice → feedback → iterate → harden → polish.
 
-The brief and observations ([01-brief.md](../prd/01-brief.md),
-[02-observations.md](../prd/02-observations.md)) are the path toward the design —
-gathering, distillation, and direction-setting, worked through the priority frame
-the observations doc opens with. The **Figma file is the designed solution** that
-path produces, transcribed into [04-design.md](../prd/04-design.md). Once
-direction settles, delivery: **plan → thin slice → harden → make it shine**. The
-thin slice is one page built end-to-end through the riskiest layer (the cinematic
-system over real data); hardening extends the proven system across pages; polish
-is the signature pass.
+The brief and observations stages of the PRD (§The PRD) are the path toward the
+design — gathering, distillation, and direction-setting. The **design file is the
+designed solution** that path produces, transcribed into the design contract.
+Once direction settles, delivery runs the milestone arc (§Milestones): **plan →
+thin slice → harden → make it shine**.
+
+## The PRD
+
+`docs/prd/` is the numbered product pipeline, read in order; each stage derives
+from the ones before it:
+
+| Stage | Owns |
+| --- | --- |
+| `01-brief.md` | The distilled intent: what it is, who it's for, the aesthetic, references |
+| `02-observations.md` | Research and risks, each paired with the direction taken |
+| `03-solution.md` | The settled design at concept level: concept, surfaces, systems |
+| `04-design.md` | The design-token contract, transcribed from the design file |
+| `05-architecture.md` | Stack, information architecture, repo structure, data layer |
+
+- **Observations follow the priority frame** — the order problems get worked in:
+  1. **The Problem** — one or two sentences.
+  2. **The Hardest Failure Mode** — what breaks worst; design around it first.
+  3. **Key Design Decisions** — the load-bearing choices everything else hangs
+     off.
+  4. **What to Prototype First** — the riskiest slice to validate early. This
+     call names the thin slice the milestone arc builds first.
+- **Directions are research, not contract.** An observation's direction lands
+  only when the design file (and its transcription in the design contract)
+  adopts it; where they conflict, the design contract wins.
 
 ## Division of truth
 
@@ -55,15 +77,22 @@ Three authorities, each owning a different kind of truth:
 
 ## Milestones — the human gates
 
-A milestone is a **GitHub Milestone**: a reviewable increment with its definition
-of done in the milestone description. The arc follows the working loop:
-foundations → thin slice → harden → polish.
+A milestone is a reviewable increment behind a human gate. This doc defines only
+the **archetypes**; each is instantiated as a **GitHub Milestone** whose
+description binds it to concrete scope and a definition of done.
+
+| Archetype | The work | The gate proves |
+| --- | --- | --- |
+| **Foundations** | Scaffold, tokens, shared shell — the trunk everything depends on | The system boots: tooling green, tokens render, the shell navigates |
+| **Thin slice** | The riskiest slice named by the observations stage, one surface end-to-end | The riskiest system works over real data; the conventions are proven |
+| **Harden** | The proven system extended across all remaining surfaces | Every surface complete against its design frames |
+| **Polish** | The signature pass: motion, texture, taste | The experience holds up reviewed as a whole |
 
 - **Parallelism is earned.** While conventions are still being set (foundations,
   thin slice), work runs mostly serial; once the thin slice proves the system,
   hardening fans out wide; polish returns to serial, taste-driven work.
 - **Gate review is outcomes, not diffs**: the milestone branch's deployed preview
-  compared against the Figma frames at desktop and mobile widths, plus the
+  compared against the design frames at desktop and mobile widths, plus the
   milestone's closed ticket list. Code between gates is agent-reviewed (§Review).
 
 ## Tickets — the agent work units
