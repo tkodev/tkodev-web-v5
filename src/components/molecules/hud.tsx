@@ -3,14 +3,18 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['size-full', 'relative']),
-  accent: cva(['text-e4 font-expressive uppercase', 'absolute'], {
+  accent: cva(['text-e5 font-expressive text-muted-foreground uppercase', 'absolute'], {
     variants: {
       variant: {
-        title: ['top-0 left-1/2 -translate-x-1/2', 'sm:left-4 sm:translate-none'],
-        subtitle: 'top-0 right-4',
-        status: 'bottom-0 left-4',
-        substatus: 'right-4 bottom-0',
-        cta: 'text-bold bottom-0 left-1/2 -translate-x-1/2'
+        index: ['top-8 left-4', 'opacity-0 transition-opacity duration-1000 sm:opacity-100'],
+        build: ['top-8 right-4', 'opacity-0 transition-opacity duration-1000 sm:opacity-100'],
+        accent1: ['bottom-8 left-4', 'opacity-0 transition-opacity duration-1000 sm:opacity-100'],
+        accent2: ['right-4 bottom-8', 'opacity-0 transition-opacity duration-1000 sm:opacity-100'],
+        smIndex: [
+          'top-8 left-1/2 -translate-x-1/2',
+          'opacity-100 transition-opacity duration-1000 sm:opacity-0'
+        ],
+        smCta: ['bottom-8 left-1/2 -translate-x-1/2', 'text-bold text-foreground']
       }
     }
   })
@@ -19,16 +23,16 @@ const styles = {
 type HudRef = HTMLDivElement
 type HudProps = HTMLAttributes<HudRef> &
   VariantProps<typeof styles.root> & {
-    title: string
-    subtitle: string
-    status: string
-    substatus: string
+    index: string
+    build: string
+    accent1: string
+    accent2: string
     cta: string
   }
 
 const Hud = forwardRef<HudRef, HudProps>((props, ref) => {
   // props
-  const { title, subtitle, status, substatus, cta, className, ...rest } = props
+  const { index, build, accent1, accent2, cta, className, ...rest } = props
 
   // hooks
 
@@ -37,11 +41,12 @@ const Hud = forwardRef<HudRef, HudProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.accent({ variant: 'title' }))}>{title}</div>
-      <div className={cn(styles.accent({ variant: 'subtitle' }))}>{subtitle}</div>
-      <div className={cn(styles.accent({ variant: 'status' }))}>{status}</div>
-      <div className={cn(styles.accent({ variant: 'substatus' }))}>{substatus}</div>
-      <div className={cn(styles.accent({ variant: 'cta' }))}>{cta}</div>
+      <div className={cn(styles.accent({ variant: 'index' }))}>{index}</div>
+      <div className={cn(styles.accent({ variant: 'build' }))}>{build}</div>
+      <div className={cn(styles.accent({ variant: 'accent1' }))}>{accent1}</div>
+      <div className={cn(styles.accent({ variant: 'accent2' }))}>{accent2}</div>
+      <div className={cn(styles.accent({ variant: 'smIndex' }))}>{index}</div>
+      <div className={cn(styles.accent({ variant: 'smCta' }))}>{cta}</div>
     </div>
   )
 })

@@ -8,12 +8,18 @@ const HomePage = () => {
     <Main>
       <Section>
         <BlockIntro
-          cta="Explore"
-          index="1.0"
-          status="[ Spec Validated ]"
-          substatus="[ Deploy Sequenced ]"
-          subtitle="// Design System / V5"
-          title="/ Intro //"
+          hudProps={{
+            accent1: '[ Spec Validated ]',
+            accent2: '[ Deploy Sequenced ]',
+            build: '// Design System / V5',
+            cta: 'Explore',
+            index: '1.0 / Intro //'
+          }}
+          introProps={{
+            title: 'Staff Software Engineer',
+            subtitle: 'Tony Ko',
+            desc: 'Bridging the gap between ux and execution. \nEngineer by craft. Designer by instinct.'
+          }}
         />
       </Section>
     </Main>

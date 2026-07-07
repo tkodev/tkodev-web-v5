@@ -34,7 +34,7 @@ Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main
 | `h2` | Alliance No.2 Bold | 48px | normal | 0 |
 | `h3` | Alliance No.2 Bold | 40px | normal | 0 |
 | `h4` *(main)* | Alliance No.2 Bold | 32px | 32px | 0 |
-| `h5` | Geist Bold | 24px | 24px | 0 |
+| `h5` | Alliance No.2 Bold | 24px | 24px | 0 |
 
 The family break at `h5` is deliberate: `h5` is the bridge from display headings into UI/body typography.
 
@@ -87,7 +87,7 @@ Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + 
 
 | Token | Dark | Light | Usage |
 | --- | --- | --- | --- |
-| `background` | `#09090b` | `#ffffff` | Page background |
+| `background` | `#000000` | `#ffffff` | Page background |
 | `foreground` | `#fafafa` | `#09090b` | Primary text |
 | `card` | `#09090b` | `#ffffff` | Card surfaces |
 | `card-foreground` | `#fafafa` | `#09090b` | Text on card |
