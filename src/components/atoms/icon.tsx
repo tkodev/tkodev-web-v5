@@ -6,7 +6,7 @@ const styles = {
   root: cva('', {
     variants: {
       size: {
-        xs: 'size-5',
+        xs: 'size-4',
         sm: 'size-6',
         md: 'size-8',
         lg: 'size-10',

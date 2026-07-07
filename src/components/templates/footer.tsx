@@ -5,21 +5,22 @@ import { formatInTimeZone } from 'date-fns-tz'
 import { appTimeZone } from '@/constants/date'
 import { footerItems } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
-import { Button } from '../atoms/button'
 import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva(['z-10 h-auto w-full', 'fixed bottom-0 left-0']),
+  root: cva(['z-10 h-18 w-full', 'fixed bottom-0 left-0']),
+
   fade: cva([
-    'pointer-events-none fixed -bottom-0.5 left-0 h-24 w-full',
+    'pointer-events-none fixed -bottom-0.5 left-0 h-18 w-full',
     'bg-background gradient-mask-t-10'
   ]),
-  blur: cva(['pointer-events-none h-24 w-full', 'fixed -bottom-0.5 left-0']),
+  blur: cva(['pointer-events-none h-18 w-full', 'fixed -bottom-0.5 left-0']),
+
   container: cva([
-    'fixed bottom-4 left-1/2 mx-auto -translate-x-1/2 px-4',
-    'z-10 h-auto w-full max-w-7xl'
+    'z-10 h-16 w-full max-w-7xl',
+    'fixed bottom-1 left-1/2 mx-auto -translate-x-1/2 px-4'
   ]),
-  bar: cva('animate-slide-up flex h-16 items-center justify-between px-2', {
+  bar: cva('animate-slide-up flex h-full items-center justify-between px-2', {
     variants: {
       variant: {
         bar: [
@@ -34,7 +35,7 @@ const styles = {
     }
   }),
 
-  left: cva('flex h-full items-center gap-2 px-2'),
+  left: cva(['flex h-full items-center gap-2 px-2', 'text-e4 font-expressive uppercase']),
   right: cva('no-scrollbar flex h-full items-center gap-2 overflow-x-auto px-2')
 }
 
@@ -62,9 +63,7 @@ const Footer: FC<FooterProps> = (props) => {
       <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
-          <div className={cn(styles.left())}>
-            <Button variant="link">{year}</Button>
-          </div>
+          <div className={cn(styles.left())}>© Tony Ko {year}</div>
           <div className={cn(styles.right())}>
             <Nav items={footerItems} />
           </div>

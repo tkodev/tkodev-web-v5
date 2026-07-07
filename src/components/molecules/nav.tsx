@@ -46,7 +46,6 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
           return (
             <Button key={`nav-item-${index}`} variant={variant}>
               {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="xs" />}
-              Dark Mode
             </Button>
           )
         }
@@ -57,11 +56,11 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
                 {!!icon && <Icon icon={PlayIcon} size="xs" />}
                 {name}
               </Button>
-              <Button variant={variant} asChild>
+              {/* <Button variant={variant} asChild>
                 <Link href={linkHref} target="_blank">
                   {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="xs" />}
                 </Link>
-              </Button>
+              </Button> */}
             </ButtonGroup>
           )
         }

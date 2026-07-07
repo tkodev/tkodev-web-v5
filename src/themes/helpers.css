@@ -22,6 +22,11 @@
   }
 }
 
+/* Set svg element origin to self */
+@utility svg-origin {
+  transform-box: fill-box;
+}
+
 /* Grain — generated film grain; parameters live in the brand layer.
    Animated imperceptibly slowly; static under reduced motion. */
 @utility grain {

@@ -5,8 +5,7 @@ const styles = {
   root: cva('relative flex h-auto w-full overflow-hidden', {
     variants: {
       height: {
-        full: 'min-h-full',
-        'auto-full': 'min-h-5 lg:min-h-full',
+        full: 'min-h-[max(1.25rem,100vh)]',
         auto: 'min-h-5'
       }
     },
@@ -15,16 +14,16 @@ const styles = {
     }
   }),
   underlay: cva('absolute top-0 left-0 h-full w-full'),
-  content: cva('relative mx-auto w-full max-w-full grow px-8 py-24', {
+  content: cva('relative mx-auto w-full max-w-full grow px-4 py-24', {
     variants: {
       width: {
-        lg: 'max-w-6xl',
-        md: 'max-w-4xl',
-        sm: 'max-w-2xl'
+        lg: 'max-w-7xl',
+        md: 'max-w-5xl',
+        sm: 'max-w-3xl'
       }
     },
     defaultVariants: {
-      width: 'md'
+      width: 'lg'
     }
   })
 }

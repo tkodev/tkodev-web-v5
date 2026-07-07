@@ -37,7 +37,6 @@ const footerItems: NavItem[] = [
     intent: 'music',
     href: 'https://uppbeat.io/track/justin-marshall-elias/an-empty-bus',
     icon: UserStarIcon,
-    name: 'Music',
     variant: 'link',
     isVisible: true
   },

@@ -9,14 +9,19 @@ import { headerItems } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['z-10 h-auto w-full', 'fixed top-0 left-0']),
+  root: cva(['z-10 h-18 w-full', 'fixed top-0 left-0']),
+
   fade: cva([
-    'pointer-events-none fixed -top-0.5 left-0 h-24 w-full',
+    'pointer-events-none fixed -top-0.5 left-0 h-18 w-full',
     'bg-background gradient-mask-b-10'
   ]),
-  blur: cva(['pointer-events-none h-24 w-full', 'fixed -top-0.5 left-0']),
-  container: cva(['h-auto w-full max-w-7xl', 'fixed top-4 left-1/2 mx-auto -translate-x-1/2 px-4']),
-  bar: cva('animate-slide-down flex h-16 w-full items-center justify-between px-2', {
+  blur: cva(['pointer-events-none h-18 w-full', 'fixed -top-0.5 left-0']),
+
+  container: cva([
+    'z-10 h-16 w-full max-w-7xl',
+    'fixed top-1 left-1/2 mx-auto -translate-x-1/2 px-4'
+  ]),
+  bar: cva('animate-slide-down flex h-full w-full items-center justify-between gap-2 px-4', {
     variants: {
       variant: {
         bar: [
@@ -31,11 +36,11 @@ const styles = {
     }
   }),
 
-  left: cva('flex h-full items-center gap-2 px-2'),
-  right: cva('no-scrollbar flex h-full items-center gap-2 overflow-x-auto px-2'),
+  left: cva('flex h-full items-center gap-2'),
+  right: cva('no-scrollbar flex h-full items-center gap-2 overflow-x-auto'),
 
   thumb: cva('hidden sm:block'),
-  logo: cva('mx-2 h-6 w-18 sm:mx-4 md:mx-8'),
+  logo: cva('h-6 w-18 sm:mx-6'),
   intro: cva('hidden sm:block')
 }
 
