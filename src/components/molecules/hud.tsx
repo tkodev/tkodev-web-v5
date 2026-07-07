@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['size-full', 'relative']),
+  root: cva(['pointer-events-none size-full', 'relative']),
   accent: cva(['text-e5 font-expressive text-muted-foreground uppercase', 'absolute'], {
     variants: {
       variant: {
