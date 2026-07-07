@@ -20,7 +20,7 @@ const styles = {
     'z-10 h-16 w-full max-w-7xl',
     'fixed bottom-1 left-1/2 mx-auto -translate-x-1/2 px-4'
   ]),
-  bar: cva('animate-slide-up flex h-full items-center justify-between px-2', {
+  bar: cva('animate-slide-up flex h-full items-center justify-between gap-8 px-2', {
     variants: {
       variant: {
         bar: [

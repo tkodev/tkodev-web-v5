@@ -40,15 +40,15 @@ The family break at `h5` is deliberate: `h5` is the bridge from display headings
 
 ### Expressive: Alliance No.2 Regular, 25% tracking
 
-All-caps eyebrow/label register (specimen: "Engineering, Design, Technology"). Line height 100%, letter spacing **25%** (tracking renders as a fraction of size: 3px at `e4`, 2.5px at `e5`).
+All-caps eyebrow/label register (specimen: "Engineering, Design, Technology"). Line height 100%, letter spacing **25%**.
 
 | Token | Size |
 | --- | --- |
-| `e1` | 18px |
-| `e2` | 16px |
-| `e3` | 14px |
-| `e4` *(main)* | 12px |
-| `e5` | 10px |
+| `e1` | 16px |
+| `e2` | 14px |
+| `e3` | 12px |
+| `e4` *(main)* | 10px |
+| `e5` | 8px |
 
 Two wider-tracked companions appear across the page designs:
 

@@ -8,7 +8,7 @@ import { NavItem } from '@/types/layout'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex items-center gap-2'),
+  root: cva('flex items-center gap-4'),
   icon: cva('xs:block')
 }
 

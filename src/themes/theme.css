@@ -158,19 +158,19 @@
   --text-h5--font-weight: 700;
 
   /* expressive: Alliance No.2 Regular, 25% tracking, all-caps register */
-  --text-e1: 1.125rem;
+  --text-e1: 1rem;
   --text-e1--line-height: 1;
   --text-e1--letter-spacing: 0.25em;
-  --text-e2: 1rem;
+  --text-e2: 0.875rem;
   --text-e2--line-height: 1;
   --text-e2--letter-spacing: 0.25em;
-  --text-e3: 0.875rem;
+  --text-e3: 0.75rem;
   --text-e3--line-height: 1;
   --text-e3--letter-spacing: 0.25em;
-  --text-e4: 0.75rem;
+  --text-e4: 0.625rem;
   --text-e4--line-height: 1;
   --text-e4--letter-spacing: 0.25em;
-  --text-e5: 0.625rem;
+  --text-e5: 0.5rem;
   --text-e5--line-height: 1;
   --text-e5--letter-spacing: 0.25em;
 

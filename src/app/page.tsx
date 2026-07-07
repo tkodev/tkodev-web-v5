@@ -7,7 +7,14 @@ const HomePage = () => {
   return (
     <Main>
       <Section>
-        <BlockIntro />
+        <BlockIntro
+          cta="Explore"
+          index="1.0"
+          status="[ Spec Validated ]"
+          substatus="[ Deploy Sequenced ]"
+          subtitle="// Design System / V5"
+          title="/ Intro //"
+        />
       </Section>
     </Main>
   )
