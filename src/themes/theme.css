@@ -1,13 +1,32 @@
-/* Single CSS entry (docs/02-prd/05-architecture.md §Theming architecture).
-   Values transcribed from docs/02-prd/04-design.md. Dark is the active
-   theme; light values are transcribed from Figma when an inverse section
-   first uses them. */
-
 @import 'tailwindcss';
-
+@import "tw-animate-css";
 @import './helpers.css';
 
-/* light/dark mode semantic tokens */
+@plugin 'tailwind-gradient-mask-image';
+
+/* global overrides */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  strong {
+    @apply font-bold;
+  }
+}
+
+/* custom cursor - ensure native cursor is visible on initial load */
+@media (pointer: fine) {
+  html[data-cursor="active"] *,
+  html[data-cursor="active"] *::before,
+  html[data-cursor="active"] *::after {
+    cursor: none !important;
+  }
+}
+
+/* light/dark mode brand tokens */
 :root {
   color-scheme: dark;
 
@@ -40,9 +59,35 @@
 
 .light {
   color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #000000e5;
+  --input: #e4e4e7;
+  --ring: #18181b;
+
+  --chart-1: #2a9d90;
+  --chart-2: #e76e50;
+  --chart-3: #274754;
+  --chart-4: #e8c468;
+  --chart-5: #f4a462;
 }
 
-/* shadcn semantic tokens */
+/* semantic color tokens */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -70,7 +115,8 @@
   --color-chart-5: var(--chart-5);
 }
 
-@theme {
+/* semantic system tokens */
+@theme inline {
   /* radius */
   --radius-xs: 0.25rem;
   --radius-sm: 0.5rem;
@@ -84,10 +130,14 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
+}
 
+/* semantic text tokens */
+@theme inline {
   /* fonts */
-  --font-alliance: var(--font-alliance-no2);
-  --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-alliance-no2);
+  --font-expressive: var(--font-alliance-no2);
+  --font-body: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
   /* headings: Alliance No.2 Bold (h5 Geist Bold) */
@@ -135,7 +185,10 @@
   --text-sm--line-height: 1;
   --text-xs: 0.75rem;
   --text-xs--line-height: 1;
+}
 
+/* semantic motion tokens */
+@theme inline {
   /* grain parameters */
   --brand-grain-opacity: 0.05;
   --brand-grain-period: 8s;
@@ -152,33 +205,9 @@
   --animate-fade-in: fade-in 1.5s var(--brand-ease-out);
   --animate-fade-out: fade-out 1.5s var(--brand-ease-out);
   --animate-cursor-wave: cursor-wave 0.6s var(--brand-ease-out) forwards;
-
-
-/* Globals */
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  strong {
-    @apply font-bold;
-  }
 }
 
-/* Custom cursor — the native cursor is hidden only once the JS replacement
-   has mounted (html[data-cursor="active"]), so users never lose the cursor
-   before hydration or when JS fails */
-@media (pointer: fine) {
-  html[data-cursor="active"] *,
-  html[data-cursor="active"] *::before,
-  html[data-cursor="active"] *::after {
-    cursor: none !important;
-  }
-}
-
-/* Animations */
+/* animations */
 @keyframes accordion-down {
 	from {
 		height: 0;

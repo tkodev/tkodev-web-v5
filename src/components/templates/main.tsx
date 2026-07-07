@@ -1,22 +1,20 @@
-import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
-import { cn, cva } from '@/utils/theme'
+import { FC, HTMLAttributes } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex-1')
+  root: cva('bg-background h-full min-h-full w-full')
 }
 
-type MainRef = HTMLElement
-type MainProps = HTMLAttributes<MainRef>
+type MainProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.root>
 
-const Main = forwardRef<MainRef, MainProps>((props, ref) => {
-  // props
-  const { className, ...rest } = props
+const Main: FC<MainProps> = (props) => {
+  const { className, children, ...rest } = props
 
-  // jsx
-  return <main ref={ref} className={cn(styles.root({ className }))} {...rest} />
-})
-Main.displayName = 'Main'
+  return (
+    <main className={cn(styles.root({ className }))} {...rest}>
+      {children}
+    </main>
+  )
+}
 
 export { Main }
-export type { MainProps, MainRef }

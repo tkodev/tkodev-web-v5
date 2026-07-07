@@ -1,34 +1,48 @@
-import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
-import type { VariantProps } from '@/utils/theme'
-import { cn, cva } from '@/utils/theme'
+import { forwardRef, HTMLAttributes, ReactNode } from 'react'
+import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  /* container widths pending their token contract; tailwind steps hold the slot */
-  container: cva('px-md mx-auto w-full', {
-    defaultVariants: { size: 'lg' },
+  root: cva('relative flex h-auto w-full overflow-hidden', {
     variants: {
-      size: {
+      height: {
+        full: 'min-h-full',
+        'auto-full': 'min-h-5 lg:min-h-full',
+        auto: 'min-h-5'
+      }
+    },
+    defaultVariants: {
+      height: 'full'
+    }
+  }),
+  underlay: cva('absolute top-0 left-0 h-full w-full'),
+  content: cva('relative mx-auto w-full max-w-full grow px-8 py-24', {
+    variants: {
+      width: {
         lg: 'max-w-6xl',
         md: 'max-w-4xl',
         sm: 'max-w-2xl'
       }
+    },
+    defaultVariants: {
+      width: 'md'
     }
-  }),
-  root: cva('w-full')
+  })
 }
 
-type SectionRef = HTMLElement
-type SectionProps = HTMLAttributes<SectionRef> & VariantProps<typeof styles.container>
+type SectionRef = HTMLDivElement
+type SectionProps = HTMLAttributes<SectionRef> &
+  VariantProps<typeof styles.root> &
+  VariantProps<typeof styles.content> & {
+    bg?: ReactNode
+  }
 
 const Section = forwardRef<SectionRef, SectionProps>((props, ref) => {
-  // props
-  const { children, className, size, ...rest } = props
+  const { bg, height, width, className, children, ...rest } = props
 
-  // jsx
   return (
-    <section ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.container({ size }))}>{children}</div>
+    <section ref={ref} className={cn(styles.root({ height }))} {...rest}>
+      <div className={cn(styles.underlay())}>{bg}</div>
+      <div className={cn(styles.content({ width, className }))}>{children}</div>
     </section>
   )
 })

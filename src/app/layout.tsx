@@ -1,50 +1,57 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import type { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Footer } from '@/components/templates/footer'
 import { Header } from '@/components/templates/header'
-import { Layout } from '@/components/templates/layout'
-import { Main } from '@/components/templates/main'
-import { Overlays } from '@/components/templates/overlays'
-import { Underlays } from '@/components/templates/underlays'
-import { appName, navEntries } from '@/constants/site'
-import { fontAllianceNo2, fontGeistMono, fontGeistSans } from '@/fonts'
+import { Overlay } from '@/components/templates/overlay'
+import { Underlay } from '@/components/templates/underlay'
+import { appData, metaData } from '@/constants/system'
+import { allianceNo2Font } from '@/fonts/alliance-no2'
+import { geistMonoFont, geistSansFont } from '@/fonts/geist'
+import { cn, cva } from '@/utils/theme'
 import '@/themes/theme.css'
 
-const metadata: Metadata = {
-  title: 'tko.dev'
+const styles = {
+  html: cva([
+    'font-body bg-background text-foreground h-full w-full',
+    'text-md antialiased motion-safe:scroll-smooth'
+  ]),
+  body: cva(['font-body bg-background text-foreground h-full w-full', 'text-sm'])
 }
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
-  // render vars
-  const fontVariables = `${fontAllianceNo2.variable} ${fontGeistSans.variable} ${fontGeistMono.variable}`
+type LayoutPageProps = {
+  children: ReactNode
+}
 
-  // jsx
+const LayoutPage: FC<LayoutPageProps> = (props) => {
+  const { children } = props
   return (
-    <html lang="en">
-      <body className={`${fontVariables} bg-background text-foreground font-sans`}>
-        <Layout>
-          <Underlays />
-          <Header>
-            <Link href="/">{appName}</Link>
-            <nav className="gap-md flex" aria-label="Primary">
-              {navEntries.map((entry) => (
-                <Link key={entry.href} href={entry.href}>
-                  {entry.label}
-                </Link>
-              ))}
-            </nav>
-          </Header>
-          <Main>{children}</Main>
-          <Footer>
-            <span>{appName}</span>
-          </Footer>
-          <Overlays />
-        </Layout>
+    <html
+      className={cn(styles.html())}
+      data-scroll-behavior="smooth"
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body
+        className={cn(
+          styles.body(),
+          allianceNo2Font.variable,
+          geistSansFont.variable,
+          geistMonoFont.variable
+        )}
+        suppressHydrationWarning
+      >
+        <Underlay />
+        <Header />
+        {children}
+        <Footer />
+        <Overlay />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
 }
 
-export default RootLayout
-export { metadata }
+export { metaData as metadata, appData as pagedata }
+export default LayoutPage

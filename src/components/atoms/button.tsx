@@ -1,55 +1,76 @@
-import { forwardRef } from 'react'
-import type { ButtonHTMLAttributes } from 'react'
+import { ComponentProps, forwardRef } from 'react'
 import { Slot } from 'radix-ui'
-import type { VariantProps } from '@/utils/theme'
-import { cn, cva } from '@/utils/theme'
+import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
-    "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    [
+      'focus-visible:border-ring focus-visible:ring-ring/50 rounded-md border border-transparent bg-clip-padding focus-visible:ring-3',
+      'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 dark:aria-invalid:border-destructive/50 active:not-aria-[haspopup]:translate-y-px aria-invalid:ring-3',
+      'outline-none select-none [&_svg]:pointer-events-none',
+      "group/button inline-flex shrink-0 items-center justify-center [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+      'text-e4 font-expressive font-medium whitespace-nowrap uppercase',
+      'transition-all duration-1000',
+      'disabled:pointer-events-none disabled:opacity-50'
+    ],
     {
-      defaultVariants: {
-        size: 'default',
-        variant: 'default'
-      },
       variants: {
-        size: {
-          default: 'h-9 px-4 py-2 has-[>svg]:px-3',
-          icon: 'size-9',
-          lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
-          sm: 'h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5'
-        },
         variant: {
-          default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+          default: 'bg-primary text-primary-foreground [a]:hover:bg-primary/80',
+          outline:
+            'border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50',
+          secondary:
+            'bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground',
+          ghost:
+            'hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50',
           destructive:
-            'bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/20',
-          ghost: 'hover:bg-accent hover:text-accent-foreground',
-          link: 'text-primary underline-offset-4 hover:underline',
-          outline: 'bg-background hover:bg-accent hover:text-accent-foreground border',
-          secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+            'bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
+          link: 'text-primary underline-offset-4 hover:underline'
+        },
+        size: {
+          xs: "text-e5 h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
+          sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
+          md: 'h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+          lg: 'h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+          'icon-xs':
+            "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
+          'icon-sm':
+            'size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg',
+          'icon-md': 'size-8',
+          'icon-lg': 'size-9',
+          'icon-xl': 'size-10'
         }
+      },
+      defaultVariants: {
+        variant: 'default',
+        size: 'sm'
       }
     }
   )
 }
 
 type ButtonRef = HTMLButtonElement
-type ButtonProps = ButtonHTMLAttributes<ButtonRef> &
+type ButtonProps = ComponentProps<'button'> &
   VariantProps<typeof styles.root> & {
     asChild?: boolean
   }
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
-  // props
-  const { asChild = false, className, size, variant, ...rest } = props
-
-  // render vars
+  const { className, variant, size, asChild = false, ...rest } = props
   const Comp = asChild ? Slot.Root : 'button'
 
-  // jsx
-  return <Comp ref={ref} className={cn(styles.root({ className, size, variant }))} {...rest} />
+  return (
+    <Comp
+      ref={ref}
+      className={cn(styles.root({ variant, size, className }))}
+      data-size={size}
+      data-slot="button"
+      data-variant={variant}
+      {...rest}
+    />
+  )
 })
 Button.displayName = 'Button'
 
-export { Button }
+export { Button, styles as buttonStyles }
 export type { ButtonProps, ButtonRef }

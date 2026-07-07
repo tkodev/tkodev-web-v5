@@ -1,12 +1,11 @@
-import { Section } from '@/components/templates/section'
-import { appName } from '@/constants/site'
+import { Main } from '@/components/templates/main'
 
 const HomePage = () => {
   // jsx
   return (
-    <Section size="lg">
-      <h1>{appName}</h1>
-    </Section>
+    <Main>
+      <h1>test</h1>
+    </Main>
   )
 }
 
