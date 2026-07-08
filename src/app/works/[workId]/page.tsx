@@ -25,7 +25,7 @@ import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
 import { appData } from '@/constants/system'
 import { type PageProps } from '@/types/system'
-import { getProjectAsset } from '@/utils/project'
+import { getProjectAsset } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
 
 const generateStaticParams = () => {

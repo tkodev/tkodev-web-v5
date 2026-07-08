@@ -9,7 +9,7 @@ import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
 import { shuffle } from '@/utils/array'
-import { getProjectAsset } from '@/utils/project'
+import { getProjectAsset } from '@/utils/career'
 
 const metadata: Metadata = {
   title: 'Tony Ko / Works',
