@@ -3,20 +3,17 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('w-full overflow-hidden'),
-  track: cva(
-    ['animate-marquee flex w-max', 'hover:paused', 'motion-reduce:[animation-play-state:paused]'],
-    {
-      variants: {
-        direction: {
-          left: '',
-          right: '[animation-direction:reverse]'
-        }
-      },
-      defaultVariants: {
-        direction: 'left'
+  track: cva(['animate-marquee flex w-max', 'hover:paused', 'motion-reduce:paused'], {
+    variants: {
+      direction: {
+        left: '',
+        right: 'direction-reverse'
       }
+    },
+    defaultVariants: {
+      direction: 'left'
     }
-  ),
+  }),
   group: cva('flex shrink-0 items-stretch gap-8 pr-8')
 }
 
