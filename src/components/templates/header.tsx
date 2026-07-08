@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { FC, HTMLAttributes } from 'react'
+import { FC, type HTMLAttributes } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
 import { Nav } from '@/components/molecules/nav'
-import { headerItems } from '@/constants/layout'
+import { headerEntries } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -21,7 +21,7 @@ const styles = {
     'z-10 h-16 w-full max-w-7xl',
     'fixed top-1 left-1/2 mx-auto -translate-x-1/2 px-4'
   ]),
-  bar: cva('animate-slide-down flex h-full w-full items-center justify-between gap-8 px-4', {
+  bar: cva('animate-slide-down flex size-full items-center justify-between gap-8 px-4', {
     variants: {
       variant: {
         bar: [
@@ -69,7 +69,7 @@ const Header: FC<HeaderProps> = (props) => {
           <div className={cn(styles.left())}>
             <Link className={cn(styles.thumb())} href="/">
               <Avatar>
-                <AvatarImage alt="Tony Ko" src="/media/tkodev/dp-thumb.jpg" />
+                <AvatarImage alt="Tony Ko" src="/persons/tony/dp-thumb.jpg" />
                 <AvatarFallback>tko</AvatarFallback>
               </Avatar>
             </Link>
@@ -78,7 +78,7 @@ const Header: FC<HeaderProps> = (props) => {
             </Link>
           </div>
           <div className={cn(styles.right())}>
-            <Nav items={headerItems} />
+            <Nav entries={headerEntries} />
           </div>
         </div>
       </div>

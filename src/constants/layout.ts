@@ -1,7 +1,7 @@
 import { SunMoonIcon, UserStarIcon } from 'lucide-react'
-import { NavItem } from '@/types/layout'
+import { NavEntry } from '@/types/layout'
 
-const headerItems: NavItem[] = [
+const headerEntries: NavEntry[] = [
   {
     intent: 'url',
     href: '/experience',
@@ -32,7 +32,7 @@ const headerItems: NavItem[] = [
   }
 ]
 
-const footerItems: NavItem[] = [
+const footerEntries: NavEntry[] = [
   {
     intent: 'music',
     href: 'https://uppbeat.io/track/justin-marshall-elias/an-empty-bus',
@@ -48,4 +48,4 @@ const footerItems: NavItem[] = [
   }
 ]
 
-export { footerItems, headerItems }
+export { footerEntries, headerEntries }

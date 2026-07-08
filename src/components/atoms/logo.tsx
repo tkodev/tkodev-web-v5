@@ -1,12 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { forwardRef, HTMLAttributes } from 'react'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { forwardRef, type HTMLAttributes } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative h-auto w-full'),
-  img: cva('absolute top-0 left-0 h-full w-full', {
+  img: cva('absolute top-0 left-0 size-full', {
     variants: {
       variant: {
         light: 'block dark:hidden',
@@ -35,21 +35,21 @@ const Logo = forwardRef<LogoRef, LogoProps>((props, ref) => {
         className={cn(styles.img({ variant: 'light' }))}
         loading="eager"
         alt={altString}
-        src="/media/logo/logo-light.svg"
+        src="/images/site/logo-light.svg"
         {...imageProps}
       />
       <Image
         className={cn(styles.img({ variant: 'dark' }))}
         loading="eager"
         alt={altString}
-        src="/media/logo/logo-dark.svg"
+        src="/images/site/logo-dark.svg"
         {...imageProps}
       />
       <Image
         className={cn(styles.baseImg())}
         loading="eager"
         alt={altString}
-        src="/media/logo/logo-dark.svg"
+        src="/images/site/logo-dark.svg"
         {...imageProps}
       />
     </div>

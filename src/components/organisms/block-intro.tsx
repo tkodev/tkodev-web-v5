@@ -1,11 +1,11 @@
-import { forwardRef, HTMLAttributes } from 'react'
+import { forwardRef, type HTMLAttributes } from 'react'
 import { Reticle } from '@/components/atoms/reticle'
 import { Hud, type HudProps } from '@/components/molecules/hud'
 import { Intro, type IntroProps } from '@/components/molecules/intro'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['h-full w-full', 'relative overflow-visible']),
+  root: cva(['size-full', 'relative overflow-visible']),
   reticle: cva(['h-full object-fill', 'absolute top-1/2 left-1/2 -translate-1/2']),
   intro: cva(['absolute top-1/2 left-1/2 -translate-1/2'])
 }

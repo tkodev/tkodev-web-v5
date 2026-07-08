@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { type ComponentProps } from 'react'
 import { Avatar as AvatarPrimitive } from 'radix-ui'
 import { cn } from '@/utils/theme'
 
@@ -8,7 +8,7 @@ const Avatar = ({
   className,
   size = 'default',
   ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root> & {
+}: ComponentProps<typeof AvatarPrimitive.Root> & {
   size?: 'default' | 'sm' | 'lg'
 }) => {
   return (
@@ -24,10 +24,7 @@ const Avatar = ({
   )
 }
 
-const AvatarImage = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Image>) => {
+const AvatarImage = ({ className, ...props }: ComponentProps<typeof AvatarPrimitive.Image>) => {
   return (
     <AvatarPrimitive.Image
       className={cn('aspect-square size-full rounded-full object-cover', className)}
@@ -40,11 +37,11 @@ const AvatarImage = ({
 const AvatarFallback = ({
   className,
   ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) => {
+}: ComponentProps<typeof AvatarPrimitive.Fallback>) => {
   return (
     <AvatarPrimitive.Fallback
       className={cn(
-        'bg-muted text-muted-foreground flex size-full items-center justify-center rounded-full text-sm group-data-[size=sm]/avatar:text-xs',
+        'bg-muted text-muted-foreground font-expressive flex size-full items-center justify-center rounded-full text-sm uppercase',
         className
       )}
       data-slot="avatar-fallback"
@@ -53,7 +50,7 @@ const AvatarFallback = ({
   )
 }
 
-const AvatarBadge = ({ className, ...props }: React.ComponentProps<'span'>) => {
+const AvatarBadge = ({ className, ...props }: ComponentProps<'span'>) => {
   return (
     <span
       className={cn(
@@ -69,7 +66,7 @@ const AvatarBadge = ({ className, ...props }: React.ComponentProps<'span'>) => {
   )
 }
 
-const AvatarGroup = ({ className, ...props }: React.ComponentProps<'div'>) => {
+const AvatarGroup = ({ className, ...props }: ComponentProps<'div'>) => {
   return (
     <div
       className={cn(
@@ -82,7 +79,7 @@ const AvatarGroup = ({ className, ...props }: React.ComponentProps<'div'>) => {
   )
 }
 
-const AvatarGroupCount = ({ className, ...props }: React.ComponentProps<'div'>) => {
+const AvatarGroupCount = ({ className, ...props }: ComponentProps<'div'>) => {
   return (
     <div
       className={cn(

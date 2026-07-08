@@ -1,5 +1,5 @@
-import { forwardRef, SVGAttributes } from 'react'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { forwardRef, type SVGAttributes } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('text-muted-foreground aspect-1168/896'),
@@ -47,8 +47,6 @@ type ReticleProps = SVGAttributes<ReticleRef> &
 const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
   // props
   const { isFilled, className, ...rest } = props
-
-  // hooks
 
   // render vars
   const opacity = 0.2

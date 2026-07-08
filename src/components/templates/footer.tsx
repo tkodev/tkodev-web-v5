@@ -1,9 +1,9 @@
 'use client'
 
-import { FC, HTMLAttributes } from 'react'
+import { FC, type HTMLAttributes } from 'react'
 import { formatInTimeZone } from 'date-fns-tz'
 import { appTimeZone } from '@/constants/date'
-import { footerItems } from '@/constants/layout'
+import { footerEntries } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Nav } from '../molecules/nav'
 
@@ -65,7 +65,7 @@ const Footer: FC<FooterProps> = (props) => {
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>© Tony Ko {year}</div>
           <div className={cn(styles.right())}>
-            <Nav items={footerItems} />
+            <Nav entries={footerEntries} />
           </div>
         </div>
       </div>

@@ -1,48 +1,81 @@
-import { ComponentProps, forwardRef } from 'react'
+import { forwardRef } from 'react'
+import type { ComponentProps } from 'react'
 import { Slot } from 'radix-ui'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
     [
-      'focus-visible:border-ring focus-visible:ring-ring/50 rounded-md border border-transparent bg-clip-padding focus-visible:ring-3',
-      'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 dark:aria-invalid:border-destructive/50 active:not-aria-[haspopup]:translate-y-px aria-invalid:ring-3',
-      'outline-none select-none [&_svg]:pointer-events-none',
-      "group/button inline-flex shrink-0 items-center justify-center [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+      'group/button inline-flex shrink-0 items-center justify-center',
       'text-e4 font-expressive font-medium whitespace-nowrap uppercase',
-      'transition-all duration-1000',
-      'disabled:pointer-events-none disabled:opacity-50'
+      'rounded-sm border border-transparent bg-clip-padding',
+      'transition-all outline-none select-none',
+      'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3',
+      'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 aria-invalid:ring-3',
+      'active:not-aria-[haspopup]:translate-y-px',
+      'disabled:pointer-events-none disabled:opacity-50',
+      "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
     ],
     {
       variants: {
         size: {
-          xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-          sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-          md: 'h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
-          lg: 'h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
-          'icon-xs':
-            "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
-          'icon-sm':
-            'size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg',
-          'icon-md': 'size-8',
-          'icon-lg': 'size-9',
-          'icon-xl': 'size-10'
+          xs: [
+            'h-6 gap-2 px-2',
+            'has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+            "[&_svg:not([class*='size-'])]:size-3"
+          ],
+          sm: [
+            'h-8 gap-2 px-4',
+            'has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+            "[&_svg:not([class*='size-'])]:size-3.5"
+          ],
+          md: [
+            'h-10 gap-2 px-4',
+            'has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2'
+          ],
+          lg: [
+            'h-12 gap-2 px-4',
+            'has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2'
+          ],
+          xl: [
+            'h-14 gap-2 px-4',
+            'has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2'
+          ],
+          'icon-xs': ['size-6', "[&_svg:not([class*='size-'])]:size-3"],
+          'icon-sm': ['size-7'],
+          'icon-md': ['size-8'],
+          'icon-lg': ['size-9'],
+          'icon-xl': ['size-10']
         },
         variant: {
-          default: 'bg-primary text-primary-foreground [a]:hover:bg-primary/80',
-          outline:
-            'border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50',
-          secondary:
-            'bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground',
-          ghost:
-            'hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50',
-          destructive:
-            'bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
-          link: 'text-primary px-0 underline-offset-4 hover:underline'
+          primary: ['bg-primary text-primary-foreground', 'hover:bg-primary/80'],
+          outline: [
+            'border-border bg-background',
+            'hover:bg-muted hover:text-foreground',
+            'aria-expanded:bg-muted aria-expanded:text-foreground',
+            'dark:border-input dark:bg-input/30 dark:hover:bg-input/50'
+          ],
+          secondary: [
+            'bg-secondary text-secondary-foreground',
+            'hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]',
+            'aria-expanded:bg-secondary aria-expanded:text-secondary-foreground'
+          ],
+          ghost: [
+            'hover:bg-muted hover:text-foreground',
+            'aria-expanded:bg-muted aria-expanded:text-foreground',
+            'dark:hover:bg-muted/50'
+          ],
+          destructive: [
+            'bg-destructive/10 text-destructive',
+            'hover:bg-destructive/20',
+            'focus-visible:border-destructive/40 focus-visible:ring-destructive/20',
+            'dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40'
+          ],
+          link: ['text-primary px-0', 'underline-offset-4 hover:underline']
         }
       },
       defaultVariants: {
-        variant: 'default',
+        variant: 'primary',
         size: 'sm'
       }
     }
@@ -56,13 +89,17 @@ type ButtonProps = ComponentProps<'button'> &
   }
 
 const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
-  const { className, variant, size, asChild = false, ...rest } = props
+  // props
+  const { asChild = false, className, size, variant, ...rest } = props
+
+  // render vars
   const Comp = asChild ? Slot.Root : 'button'
 
+  // jsx
   return (
     <Comp
       ref={ref}
-      className={cn(styles.root({ variant, size, className }))}
+      className={cn(styles.root({ className, size, variant }))}
       data-size={size}
       data-slot="button"
       data-variant={variant}
@@ -72,5 +109,5 @@ const Button = forwardRef<ButtonRef, ButtonProps>((props, ref) => {
 })
 Button.displayName = 'Button'
 
-export { Button, styles as buttonStyles }
+export { Button }
 export type { ButtonProps, ButtonRef }

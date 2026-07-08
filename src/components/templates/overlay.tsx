@@ -1,6 +1,6 @@
-import { forwardRef, HTMLAttributes } from 'react'
+import { forwardRef, type HTMLAttributes } from 'react'
 import { Cursor } from '@/components/atoms/cursor'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('')

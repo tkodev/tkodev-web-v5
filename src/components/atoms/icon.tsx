@@ -1,16 +1,16 @@
-import { FC, HTMLAttributes } from 'react'
-import { SvgComponent } from '@/types/system'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { FC, type HTMLAttributes } from 'react'
+import { type SvgComponent } from '@/types/system'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('', {
     variants: {
       size: {
-        xs: 'size-4',
-        sm: 'size-6',
-        md: 'size-8',
-        lg: 'size-10',
-        xl: 'size-16'
+        xs: 'size-2',
+        sm: 'size-4',
+        md: 'size-6',
+        lg: 'size-8',
+        xl: 'size-10'
       }
     },
     defaultVariants: {

@@ -1,7 +1,14 @@
 'use client'
 
-import { FC, useLayoutEffect, useRef } from 'react'
-import { BanIcon, HandIcon, LucideProps, PlusIcon, PointerIcon, TextCursorIcon } from 'lucide-react'
+import { useLayoutEffect, useRef, type FC } from 'react'
+import {
+  BanIcon,
+  HandIcon,
+  PlusIcon,
+  PointerIcon,
+  TextCursorIcon,
+  type LucideProps
+} from 'lucide-react'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
@@ -160,7 +167,7 @@ const Cursor: FC = () => {
       <div ref={waveRef} className={cn(styles.wave())} />
       <div ref={pointerRef} className={cn(styles.pointer())}>
         {(Object.entries(Pointers) as [CursorState, IconConfig][]).map(
-          ([state, { icon: Icon, offset }]) => (
+          ([state, { icon: CurIcon, offset }]) => (
             <div
               key={state}
               ref={(el) => {
@@ -168,7 +175,7 @@ const Cursor: FC = () => {
               }}
               className={cn(styles.icon({ offset }))}
             >
-              <Icon size={16} strokeWidth={2} />
+              <CurIcon size={16} strokeWidth={2} />
             </div>
           )
         )}

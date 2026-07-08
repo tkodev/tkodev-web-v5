@@ -1,5 +1,5 @@
-import { forwardRef, HTMLAttributes, ReactNode } from 'react'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative flex h-auto w-full overflow-hidden', {
@@ -13,7 +13,7 @@ const styles = {
       height: 'full'
     }
   }),
-  underlay: cva('absolute top-0 left-0 h-full w-full'),
+  underlay: cva('absolute top-0 left-0 size-full'),
   content: cva('relative mx-auto w-full max-w-full grow px-4 py-24', {
     variants: {
       width: {

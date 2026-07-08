@@ -1,5 +1,5 @@
-import { forwardRef, HTMLAttributes } from 'react'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { forwardRef, type HTMLAttributes } from 'react'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative flex max-w-86 flex-col items-center justify-center gap-4 text-center'),

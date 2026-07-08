@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import { forwardRef, HTMLAttributes } from 'react'
+import { forwardRef, type HTMLAttributes } from 'react'
 import { PlayIcon } from 'lucide-react'
 import { Button } from '@/components/atoms/button'
-import { ButtonGroup } from '@/components/atoms/button-group'
 import { Icon } from '@/components/atoms/icon'
-import { NavItem } from '@/types/layout'
-import { cn, cva, VariantProps } from '@/utils/theme'
+import { NavEntry } from '@/types/layout'
+import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('flex items-center gap-4'),
@@ -15,28 +14,31 @@ const styles = {
 type NavRef = HTMLDivElement
 type NavProps = HTMLAttributes<NavRef> &
   VariantProps<typeof styles.root> & {
-    items: NavItem[]
+    entries: NavEntry[]
   }
 
 const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
-  const { items, children, className, ...rest } = props
+  // props
+  const { entries, children, className, ...rest } = props
 
+  // jsx
   return (
     <nav ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      {items.map((props, index) => {
+      {entries.map((props, index) => {
         const { intent, href, name, icon, isVisible, variant, ...rest } = props
         const linkHref = href || '#'
         const linkTarget =
           !linkHref.startsWith('/') || linkHref.endsWith('.pdf') ? '_blank' : undefined
+        const key = `nav-item-${index}`
 
         if (!isVisible) {
           return null
         }
         if (intent === 'url') {
           return (
-            <Button key={`nav-item-${index}`} variant={variant} {...rest} asChild>
+            <Button key={key} variant={variant} {...rest} asChild>
               <Link href={linkHref} target={linkTarget}>
-                {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="xs" />}
+                {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="sm" />}
                 {name}
               </Link>
             </Button>
@@ -44,28 +46,21 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
         }
         if (intent === 'theme') {
           return (
-            <Button key={`nav-item-${index}`} variant={variant}>
-              {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="xs" />}
+            <Button key={key} variant={variant}>
+              {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="sm" />}
             </Button>
           )
         }
         if (intent === 'music') {
           return (
-            <ButtonGroup key={`nav-item-${index}`}>
-              <Button variant={variant}>
-                {!!icon && <Icon icon={PlayIcon} size="xs" />}
-                {name}
-              </Button>
-              {/* <Button variant={variant} asChild>
-                <Link href={linkHref} target="_blank">
-                  {!!icon && <Icon className={cn(styles.icon())} icon={icon} size="xs" />}
-                </Link>
-              </Button> */}
-            </ButtonGroup>
+            <Button key={key} variant={variant}>
+              {!!icon && <Icon icon={PlayIcon} size="sm" />}
+              {name}
+            </Button>
           )
         }
         if (intent === 'spacer') {
-          return <Icon key={`nav-item-${index}`} icon={icon} size="xs" />
+          return <Icon key={key} icon={icon} size="sm" />
         }
         return null
       })}

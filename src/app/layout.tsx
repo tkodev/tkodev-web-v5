@@ -13,10 +13,10 @@ import '@/themes/theme.css'
 
 const styles = {
   html: cva([
-    'font-body bg-background text-foreground h-full w-full',
-    'text-md antialiased motion-safe:scroll-smooth'
+    'font-body bg-background text-foreground size-full',
+    'text-[1rem] antialiased motion-safe:scroll-smooth' // we use 1rem here to set base zoom of 16px
   ]),
-  body: cva(['font-body bg-background text-foreground h-full w-full', 'text-sm'])
+  body: cva(['font-body bg-background text-foreground size-full', 'text-sm'])
 }
 
 type LayoutPageProps = {

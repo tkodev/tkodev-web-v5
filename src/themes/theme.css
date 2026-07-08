@@ -175,15 +175,15 @@
   --text-e5--letter-spacing: 0.25em;
 
   /* body: Geist Regular, line height 100% at token level */
-  --text-xl: 1.25rem;
-  --text-xl--line-height: 1;
   --text-lg: 1.125rem;
   --text-lg--line-height: 1;
-  --text-md: 1rem;
+  --text-lg: 1.000rem;
+  --text-lg--line-height: 1;
+  --text-md: 0.875rem;
   --text-md--line-height: 1;
-  --text-sm: 0.875rem;
+  --text-sm: 0.75rem;
   --text-sm--line-height: 1;
-  --text-xs: 0.75rem;
+  --text-xs: 0.625rem;
   --text-xs--line-height: 1;
 }
 

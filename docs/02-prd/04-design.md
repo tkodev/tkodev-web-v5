@@ -16,8 +16,8 @@ Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed thr
 
 | Font | Role | Weights used |
 | --- | --- | --- |
-| **Alliance No.2** | Display headings (`h1`–`h4`) and expressive/eyebrow text (`e1`–`e5`) | 400, 700 |
-| **Geist** | Body text, `h5`, UI labels (the default) | variable |
+| **Alliance No.2** | Display headings (`h1`–`h5`) and expressive/eyebrow text (`e1`–`e5`) | 400, 700 |
+| **Geist** | Body text, UI labels (the default) | variable |
 | **Geist Mono** | Inline and block code | 600 |
 
 Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed: the licensed-assets rule in the data standard applies.
@@ -26,7 +26,7 @@ Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-note
 
 Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main`, `sm-main`) marks the **default step** of each ramp: the size a component gets when no explicit step is chosen.
 
-### Headings: Alliance No.2 Bold (h5: Geist Bold)
+### Headings: Alliance No.2 Bold
 
 | Token | Family | Size | Line height | Tracking |
 | --- | --- | --- | --- | --- |
@@ -35,8 +35,6 @@ Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main
 | `h3` | Alliance No.2 Bold | 40px | normal | 0 |
 | `h4` *(main)* | Alliance No.2 Bold | 32px | 32px | 0 |
 | `h5` | Alliance No.2 Bold | 24px | 24px | 0 |
-
-The family break at `h5` is deliberate: `h5` is the bridge from display headings into UI/body typography.
 
 ### Expressive: Alliance No.2 Regular, 25% tracking
 
@@ -63,11 +61,11 @@ Line height 100% at token level; prose blocks in components may carry relaxed le
 
 | Token | Size |
 | --- | --- |
-| `xl` | 20px |
-| `lg` | 18px |
-| `md` | 16px |
-| `sm` *(main)* | 14px |
-| `xs` | 12px |
+| `xl` | 18px |
+| `lg` | 16px |
+| `md` | 14px |
+| `sm` *(main)* | 12px |
+| `xs` | 10px |
 
 ### Inline styles
 
