@@ -56,7 +56,10 @@ const HomePage = () => {
         />
       </Section>
       <Section id="statement" height="auto" width="sm">
-        <BlockStatement statement="Good engineering is invisible. Good design is why you stay." />
+        <BlockStatement
+          label="// Statement //"
+          statement={'Good engineering is invisible. \nGood design is why you stay.'}
+        />
       </Section>
       <Section id="overview" height="auto" width="md">
         <BlockOverview
