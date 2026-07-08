@@ -16,22 +16,22 @@ const personEntries: PersonEntry[] = [
       resume: '/career/persons/tony/tony-ko-resume-2026.pdf',
       competencies: [
         {
-          id: 'designSystems',
+          id: 'design-systems',
           title: 'Design Systems Architecture',
           desc: 'Design system adoption across products, semantic tokens and variables, AI adherence to the design system, and staged system rollouts.'
         },
         {
-          id: 'technicalDirection',
+          id: 'technical-direction',
           title: 'Architecture & Technical Direction',
           desc: 'Technical strategy, architecture, and mentorship from Staff Engineer roles at TELUS Digital and Quantum Mob.'
         },
         {
-          id: 'realTimeUi',
+          id: 'real-time-ui',
           title: 'Real-Time & High-Fidelity UI',
           desc: 'Real-time dashboard interfaces for managed pressure drilling and live industrial telemetry.'
         },
         {
-          id: 'eventDriven',
+          id: 'event-driven',
           title: 'Event-Driven Systems Architecture',
           desc: 'WebSocket-driven data flows and event-driven architectures for subsecond telemetry platforms.'
         },
@@ -41,7 +41,7 @@ const personEntries: PersonEntry[] = [
           desc: 'Telemetry and observability solutions delivered across multiple applications for external clients.'
         },
         {
-          id: 'crossPlatform',
+          id: 'cross-platform',
           title: 'Cross-Platform Engineering',
           desc: 'Systems spanning web, mobile, browser extensions, and embedded platforms.'
         },

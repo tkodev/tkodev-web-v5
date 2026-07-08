@@ -206,6 +206,7 @@
   --animate-fade-out: fade-out 1.5s var(--brand-ease-out);
   --animate-cursor-wave: cursor-wave 0.6s var(--brand-ease-out) forwards;
   --animate-marquee: marquee 80s linear infinite;
+  --animate-ticker: ticker var(--ticker-duration, 8s) linear infinite alternate;
 }
 
 /* animations */
@@ -233,6 +234,17 @@
 	}
 	to {
 		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@keyframes ticker {
+	0%,
+	15% {
+		transform: translate3d(0, 0, 0);
+	}
+	85%,
+	100% {
+		transform: translate3d(var(--ticker-overflow, 0px), 0, 0);
 	}
 }
 

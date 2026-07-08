@@ -4,7 +4,7 @@ import { appTimeZone } from './date'
 
 const techtalkEntries: TechtalkEntry[] = [
   {
-    id: 'crossBrowserExtensions',
+    id: 'cross-browser-extensions',
     basic: {
       title: 'Cross-Browser Extensions',
       subtitle: 'TechTank at Cohere',
@@ -17,12 +17,12 @@ const techtalkEntries: TechtalkEntry[] = [
       album: 'https://lnkd.in/gk3AyMt9'
     },
     parents: {
-      hostId: 'techtankTo',
+      hostId: 'techtank-to',
       speakerId: 'tony'
     }
   },
   {
-    id: 'reduxToReactQueryAndMonorepos',
+    id: 'redux-to-react-query-and-monorepos',
     basic: {
       title: 'Redux to React Query & Monorepos with Turborepo',
       subtitle: 'React + Native Toronto',
@@ -30,7 +30,7 @@ const techtalkEntries: TechtalkEntry[] = [
       date: fromZonedTime('2022-10-26', appTimeZone)
     },
     parents: {
-      hostId: 'quantumMob',
+      hostId: 'quantum-mob',
       speakerId: 'tony'
     }
   }

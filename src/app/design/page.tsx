@@ -10,16 +10,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Badge } from '@/components/atoms/badge'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
+import { Intro } from '@/components/atoms/intro'
 import { Logo } from '@/components/atoms/logo'
 import { Marquee } from '@/components/atoms/marquee'
 import { Reticle } from '@/components/atoms/reticle'
 import { Signature } from '@/components/atoms/signature'
-import { Board } from '@/components/molecules/board'
+import { BlockBoard } from '@/components/molecules/block-board'
 import { CardBio } from '@/components/molecules/card-bio'
 import { CardCompetencies } from '@/components/molecules/card-competencies'
 import { CardProject } from '@/components/molecules/card-project'
 import { CardTestimonial } from '@/components/molecules/card-testimonial'
-import { Intro } from '@/components/molecules/intro'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -111,7 +111,7 @@ const DesignPage = () => {
         />
       </Section>
       <Section id="design-typography" height="auto" width="md">
-        <Board subtitle="D.1 / Typography //" title="Type Ramps">
+        <BlockBoard subtitle="D.1 / Typography //" title="Type Ramps">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               {headingRamp.map(({ token, className }) => (
@@ -149,10 +149,10 @@ const DesignPage = () => {
               ))}
             </div>
           </div>
-        </Board>
+        </BlockBoard>
       </Section>
       <Section id="design-color" height="auto" width="md">
-        <Board subtitle="D.2 / Color //" title="Semantic Tokens">
+        <BlockBoard subtitle="D.2 / Color //" title="Semantic Tokens">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
             {colorSwatches.map(({ token, className }) => (
               <div key={token} className="flex flex-col gap-2">
@@ -163,10 +163,10 @@ const DesignPage = () => {
               </div>
             ))}
           </div>
-        </Board>
+        </BlockBoard>
       </Section>
       <Section id="design-visual" height="auto" width="md">
-        <Board subtitle="D.3 / Visual //" title="Radius & Gap">
+        <BlockBoard subtitle="D.3 / Visual //" title="Radius & Gap">
           <div className="flex flex-col gap-8">
             <div className="flex flex-wrap items-end gap-4">
               {radiusSteps.map(({ token, className }) => (
@@ -189,10 +189,10 @@ const DesignPage = () => {
               ))}
             </div>
           </div>
-        </Board>
+        </BlockBoard>
       </Section>
       <Section id="design-atoms" height="auto" width="md">
-        <Board subtitle="D.4 / Atoms //" title="Primitives">
+        <BlockBoard subtitle="D.4 / Atoms //" title="Primitives">
           <div className="flex flex-col gap-8">
             <div className="flex flex-wrap items-center gap-4">
               {buttonVariants.map((variant) => (
@@ -251,10 +251,10 @@ const DesignPage = () => {
               <Reticle className="mx-auto w-full max-w-xl" />
             </div>
           </div>
-        </Board>
+        </BlockBoard>
       </Section>
       <Section id="design-molecules" height="auto" width="md">
-        <Board subtitle="D.5 / Molecules //" title="Cards">
+        <BlockBoard subtitle="D.5 / Molecules //" title="Cards">
           <div className="flex flex-col gap-8">
             <CardProject project={specimenProject} />
             <div className="grid items-stretch gap-8 md:grid-cols-2">
@@ -275,7 +275,7 @@ const DesignPage = () => {
               </div>
             )}
           </div>
-        </Board>
+        </BlockBoard>
       </Section>
     </Main>
   )

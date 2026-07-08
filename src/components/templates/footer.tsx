@@ -5,7 +5,7 @@ import { formatInTimeZone } from 'date-fns-tz'
 import { appTimeZone } from '@/constants/date'
 import { footerEntries } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
-import { Nav } from '../molecules/nav'
+import { BlockNav } from '../molecules/block-nav'
 
 const styles = {
   root: cva(['z-10 h-18 w-full', 'fixed bottom-0 left-0']),
@@ -65,7 +65,7 @@ const Footer: FC<FooterProps> = (props) => {
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>© Tony Ko {year}</div>
           <div className={cn(styles.right())}>
-            <Nav entries={footerEntries} />
+            <BlockNav entries={footerEntries} />
           </div>
         </div>
       </div>

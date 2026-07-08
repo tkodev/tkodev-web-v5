@@ -105,6 +105,11 @@ type EducationEntry = {
   }
 }
 
+type StatEntry = {
+  title: string
+  value: string
+}
+
 type ProjectEntry = {
   id: string
   basic: {
@@ -122,8 +127,7 @@ type ProjectEntry = {
     impact?: string
     skills?: string[]
     tools?: string[]
-    badges?: string[]
-    stats?: string[]
+    stats?: StatEntry[]
   }
   media?: {
     assets?: AssetEntry[]
@@ -143,6 +147,7 @@ export type {
   JobEntry,
   PersonEntry,
   ProjectEntry,
+  StatEntry,
   TechtalkEntry,
   TestimonialEntry
 }

@@ -7,12 +7,12 @@ import {
   MailIcon,
   Palette
 } from 'lucide-react'
-import { BlockContact } from '@/components/organisms/block-contact'
-import { BlockIntro } from '@/components/organisms/block-intro'
-import { BlockOverview } from '@/components/organisms/block-overview'
-import { BlockProjectsIntro } from '@/components/organisms/block-projects-intro'
-import { BlockStatement } from '@/components/organisms/block-statement'
-import { BlockTestimonials } from '@/components/organisms/block-testimonials'
+import { SectionContact } from '@/components/organisms/section-contact'
+import { SectionHomeHero } from '@/components/organisms/section-home-hero'
+import { SectionOverview } from '@/components/organisms/section-overview'
+import { SectionProjectsPreview } from '@/components/organisms/section-projects-preview'
+import { SectionStatement } from '@/components/organisms/section-statement'
+import { SectionTestimonials } from '@/components/organisms/section-testimonials'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -30,7 +30,7 @@ const HomePage = () => {
   return (
     <Main>
       <Section id="intro">
-        <BlockIntro
+        <SectionHomeHero
           hudProps={{
             title: '1.0 / Intro //',
             subtitle: '// Design System / V5',
@@ -46,7 +46,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="selected-works" height="auto" width="lg">
-        <BlockProjectsIntro
+        <SectionProjectsPreview
           ctaProps={{ href: '/works', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
@@ -56,13 +56,13 @@ const HomePage = () => {
         />
       </Section>
       <Section id="statement" height="auto" width="sm">
-        <BlockStatement
+        <SectionStatement
           label="// Statement //"
           statement={'Good engineering is invisible. \nGood design is why you stay.'}
         />
       </Section>
       <Section id="overview" height="auto" width="md">
-        <BlockOverview
+        <SectionOverview
           bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
           boardProps={{ subtitle: '1.2 / Overview //' }}
           bioProps={{
@@ -77,7 +77,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="testimonials" height="auto" width="lg">
-        <BlockTestimonials
+        <SectionTestimonials
           testimonialEntries={tonyTestimonialEntries}
           boardProps={{
             subtitle: '1.3 / Testimonials //',
@@ -91,7 +91,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
-        <BlockContact
+        <SectionContact
           boardProps={{ subtitle: '1.4 / Contact //' }}
           title="Get in Touch"
           channelEntries={[

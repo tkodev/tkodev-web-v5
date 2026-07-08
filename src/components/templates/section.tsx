@@ -14,7 +14,7 @@ const styles = {
     }
   }),
   underlay: cva('absolute top-0 left-0 size-full'),
-  content: cva('relative mx-auto w-full max-w-full grow px-4 py-24', {
+  frame: cva('relative mx-auto w-full max-w-full grow px-4 py-24', {
     variants: {
       width: {
         lg: 'max-w-7xl',
@@ -25,13 +25,14 @@ const styles = {
     defaultVariants: {
       width: 'lg'
     }
-  })
+  }),
+  content: cva('relative size-full')
 }
 
 type SectionRef = HTMLDivElement
 type SectionProps = HTMLAttributes<SectionRef> &
   VariantProps<typeof styles.root> &
-  VariantProps<typeof styles.content> & {
+  VariantProps<typeof styles.frame> & {
     bg?: ReactNode
   }
 
@@ -41,7 +42,9 @@ const Section = forwardRef<SectionRef, SectionProps>((props, ref) => {
   return (
     <section ref={ref} className={cn(styles.root({ height }))} {...rest}>
       <div className={cn(styles.underlay())}>{bg}</div>
-      <div className={cn(styles.content({ width, className }))}>{children}</div>
+      <div className={cn(styles.frame({ width }))}>
+        <div className={cn(styles.content({ className }))}>{children}</div>
+      </div>
     </section>
   )
 })

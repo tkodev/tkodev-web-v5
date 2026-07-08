@@ -4,7 +4,7 @@ import { appTimeZone } from './date'
 
 const educationEntries: EducationEntry[] = [
   {
-    id: 'freeCodeCampFullStackDevelopment',
+    id: 'free-code-camp-full-stack-development',
     basic: {
       title: 'Full Stack Development',
       subtitle: 'Computer Software Engineering',
@@ -12,12 +12,12 @@ const educationEntries: EducationEntry[] = [
       endDate: fromZonedTime('2019-01-01', appTimeZone)
     },
     parents: {
-      schoolId: 'freeCodeCamp',
+      schoolId: 'free-code-camp',
       studentId: 'tony'
     }
   },
   {
-    id: 'ocadBachelorOfDesign',
+    id: 'ocad-bachelor-of-design',
     basic: {
       title: 'Bachelor of Design',
       subtitle: 'Environmental Design',
@@ -25,7 +25,7 @@ const educationEntries: EducationEntry[] = [
       endDate: fromZonedTime('2016-01-01', appTimeZone)
     },
     parents: {
-      schoolId: 'ocadUniversity',
+      schoolId: 'ocad-university',
       studentId: 'tony'
     }
   }

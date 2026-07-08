@@ -3,7 +3,7 @@ import { type ClientEntry } from '@/types/career'
 
 const clientEntries: ClientEntry[] = [
   {
-    id: 'airCanada',
+    id: 'air-canada',
     basic: {
       name: 'Air Canada',
       href: 'https://www.aircanada.com/'
@@ -33,7 +33,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'airMiles',
+    id: 'air-miles',
     basic: {
       name: 'Air Miles',
       href: 'https://www.airmiles.ca/'
@@ -63,7 +63,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'babyJogger',
+    id: 'baby-jogger',
     basic: {
       name: 'Baby Jogger',
       href: 'https://babyjogger.ca/'
@@ -93,7 +93,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'telusDigital',
+    id: 'telus-digital',
     basic: {
       name: 'TELUS Digital',
       href: 'https://www.telusdigital.com/technology-partners/google'
@@ -123,7 +123,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'loblawsDigital',
+    id: 'loblaws-digital',
     basic: {
       name: 'Loblaw Digital',
       href: 'https://loblawdigital.ca/'
@@ -213,7 +213,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'canadaDry',
+    id: 'canada-dry',
     basic: {
       name: 'Canada Dry',
       href: 'https://www.canadadry.com/'
@@ -243,7 +243,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'geAppliances',
+    id: 'ge-appliances',
     basic: {
       name: 'GE Appliances',
       href: 'https://geappliances.ca/'
@@ -303,7 +303,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'peoplesGroup',
+    id: 'peoples-group',
     basic: {
       name: 'Peoples Group',
       href: 'https://www.peoplestrust.com/'
@@ -333,7 +333,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'quantumMob',
+    id: 'quantum-mob',
     basic: {
       name: 'Quantum Mob',
       href: 'https://www.linkedin.com/company/quantumMob/'
@@ -483,7 +483,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'kosInteriorDesign',
+    id: 'kos-interior-design',
     basic: {
       name: "Ko's Interior Design",
       href: 'https://www.kosinteriordesign.com/'
@@ -497,14 +497,14 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'ocadUniversity',
+    id: 'ocad-university',
     basic: {
       name: 'OCAD University',
       href: 'https://www.ocadu.ca/'
     }
   },
   {
-    id: 'techtankTo',
+    id: 'techtank-to',
     basic: {
       name: 'TechTank Toronto',
       href: 'https://www.techtankto.com/'
@@ -534,34 +534,34 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'freeCodeCamp',
+    id: 'free-code-camp',
     basic: {
-      name: 'freeCodeCamp',
+      name: 'free-code-camp',
       href: 'https://www.freecodecamp.org/'
     }
   },
   {
-    id: 'rocMar',
+    id: 'roc-mar',
     basic: {
       name: 'RocMar Engineering',
       href: 'https://rocmar.ca/'
     }
   },
   {
-    id: 'modaMatch',
+    id: 'moda-match',
     basic: {
       name: 'Moda Match'
     }
   },
   {
-    id: 'petsAbove',
+    id: 'pets-above',
     basic: {
       name: 'Pets Above',
       href: 'https://www.petsabove.com/'
     }
   },
   {
-    id: 'cardinalMeats',
+    id: 'cardinal-meats',
     basic: {
       name: 'Cardinal Meats',
       href: 'https://www.cardinalmeats.com/'
@@ -575,7 +575,7 @@ const clientEntries: ClientEntry[] = [
     }
   },
   {
-    id: 'parentsCanada',
+    id: 'parents-canada',
     basic: {
       name: 'Parents Canada',
       href: 'https://parentscanada.com/'
