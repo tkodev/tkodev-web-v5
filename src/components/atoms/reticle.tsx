@@ -29,9 +29,7 @@ const styles = {
 }
 
 type ReticleRef = SVGSVGElement
-type ReticleProps = SVGAttributes<ReticleRef> &
-  VariantProps<typeof styles.root> &
-  VariantProps<typeof styles.circle>
+type ReticleProps = SVGAttributes<ReticleRef> & VariantProps<typeof styles.root>
 
 const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
   // props
