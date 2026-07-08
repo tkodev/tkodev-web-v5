@@ -9,6 +9,7 @@ import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
 import { shuffle } from '@/utils/array'
+import { getProjectAsset } from '@/utils/project'
 
 const metadata: Metadata = {
   title: 'Tony Ko / Works',
@@ -23,7 +24,7 @@ const WorksPage = () => {
     (projectEntry) => projectEntry.basic.category !== 'featured'
   )
   const tileAssets = shuffle(
-    projectEntries.map((projectEntry) => projectEntry.media?.assets?.[0]).filter((asset) => !!asset)
+    projectEntries.map((projectEntry) => getProjectAsset(projectEntry)).filter((asset) => !!asset)
   ).slice(0, 20)
 
   // jsx

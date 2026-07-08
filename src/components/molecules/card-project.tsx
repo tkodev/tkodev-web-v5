@@ -7,6 +7,7 @@ import { Ticker } from '@/components/atoms/ticker'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { ProjectEntry } from '@/types/career'
+import { getProjectAsset } from '@/utils/project'
 import { formatAttribution } from '@/utils/string'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Badge } from '../atoms/badge'
@@ -53,10 +54,10 @@ type CardProjectProps = HTMLAttributes<HTMLElement> &
 const CardProject = forwardRef<CardProjectRef, CardProjectProps>((props, ref) => {
   // props
   const { project, href, className, ...rest } = props
-  const { basic, extended, media, parents } = project
+  const { basic, extended, parents } = project
 
   // render vars
-  const asset = media?.assets?.[0]
+  const asset = getProjectAsset(project)
   const client = clientById[parents.clientId] ?? undefined
   const agency = parents?.agencyId ? clientById[parents?.agencyId] : undefined
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')

@@ -24,6 +24,7 @@ import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
 import { appData } from '@/constants/system'
 import { type PageProps } from '@/types/system'
+import { getProjectAsset } from '@/utils/project'
 import { formatAttribution } from '@/utils/string'
 
 const generateStaticParams = () => {
@@ -35,7 +36,7 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const project = workId ? projectEntryById[workId] : undefined
   if (!project) return {}
 
-  const ogAsset = project.media?.assets?.[0]
+  const ogAsset = getProjectAsset(project)
   return {
     title: `Tony Ko / ${project.basic.title}`,
     description: project.basic.desc,
@@ -65,7 +66,7 @@ const WorkDetailPage = async (props: PageProps) => {
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
   const teamSize = parents.staffIds?.length
 
-  const heroAsset = client.media?.light ?? client.media?.base ?? media?.assets?.[0]
+  const heroAsset = client.media?.light ?? client.media?.base ?? getProjectAsset(project)
   const metaEntries = [
     { label: 'Client', value: attribution },
     { label: 'Year', value: projectYear },
