@@ -1,13 +1,12 @@
 import { SunMoonIcon, UserStarIcon } from 'lucide-react'
 import { AssetEntry, NavEntry } from '@/types/layout'
 
-// Fallback image for entries without their own media. Temporary stand-in until a
-// dedicated full-bleed placeholder graphic lands.
+// Fallback image for entries without their own media.
 const placeholderAsset: AssetEntry = {
   type: 'image',
-  src: '/images/favicons/preview.png',
-  width: 2400,
-  height: 1260,
+  src: '/images/placeholder/placeholder.png',
+  width: 640,
+  height: 360,
   alt: 'Tko.dev'
 }
 
