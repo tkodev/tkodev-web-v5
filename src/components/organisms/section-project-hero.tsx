@@ -24,7 +24,7 @@ type SectionProjectHeroProps = HTMLAttributes<SectionProjectHeroRef> &
       icon: SvgComponent
     }
     titleProps: BlockTitleProps
-    asset?: AssetEntry
+    asset: AssetEntry
   }
 
 const SectionProjectHero = forwardRef<SectionProjectHeroRef, SectionProjectHeroProps>(
@@ -44,11 +44,9 @@ const SectionProjectHero = forwardRef<SectionProjectHeroRef, SectionProjectHeroP
             </Link>
           </Button>
         </div>
-        {!!asset && (
-          <div className={cn(styles.stage())}>
-            <Asset className={cn(styles.asset())} asset={asset} />
-          </div>
-        )}
+        <div className={cn(styles.stage())}>
+          <Asset className={cn(styles.asset())} asset={asset} />
+        </div>
         <BlockTitle {...titleProps} />
       </div>
     )

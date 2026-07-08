@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { forwardRef, type ComponentProps, type HTMLAttributes } from 'react'
 import { formatInTimeZone } from 'date-fns-tz'
 import { Asset } from '@/components/atoms/asset'
-import { Logo } from '@/components/atoms/logo'
 import { Ticker } from '@/components/atoms/ticker'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
+import { placeholderAsset } from '@/constants/layout'
 import { ProjectEntry } from '@/types/career'
 import { getProjectAsset } from '@/utils/project'
 import { formatAttribution } from '@/utils/string'
@@ -26,8 +26,6 @@ const styles = {
   assetCell: cva('flex size-full items-center p-4'),
   assetFrame: cva('bg-card relative aspect-video w-full overflow-hidden rounded-xs'),
   img: cva('absolute inset-0 size-full object-cover'),
-  placeholder: cva('absolute inset-0 flex items-center justify-center'),
-  placeholderLogo: cva('w-24 opacity-20'),
   introCell: cva('flex shrink-0 flex-col gap-2 overflow-hidden border-t p-4 @3xl:border-t-0'),
   clientCell: cva([
     'flex items-center border-t p-4',
@@ -57,7 +55,7 @@ const CardProject = forwardRef<CardProjectRef, CardProjectProps>((props, ref) =>
   const { basic, extended, parents } = project
 
   // render vars
-  const asset = getProjectAsset(project)
+  const asset = getProjectAsset(project) ?? placeholderAsset
   const client = clientById[parents.clientId] ?? undefined
   const agency = parents?.agencyId ? clientById[parents?.agencyId] : undefined
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
@@ -67,13 +65,7 @@ const CardProject = forwardRef<CardProjectRef, CardProjectProps>((props, ref) =>
       <div className={cn(styles.assetCol())}>
         <div className={cn(styles.assetCell())}>
           <div className={cn(styles.assetFrame())}>
-            {asset ? (
-              <Asset className={cn(styles.img())} asset={asset} />
-            ) : (
-              <div className={cn(styles.placeholder())} aria-hidden>
-                <Logo className={cn(styles.placeholderLogo())} />
-              </div>
-            )}
+            <Asset className={cn(styles.img())} asset={asset} />
           </div>
         </div>
       </div>

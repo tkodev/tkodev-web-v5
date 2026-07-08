@@ -1,5 +1,15 @@
 import { SunMoonIcon, UserStarIcon } from 'lucide-react'
-import { NavEntry } from '@/types/layout'
+import { AssetEntry, NavEntry } from '@/types/layout'
+
+// Fallback image for entries without their own media. Temporary stand-in until a
+// dedicated full-bleed placeholder graphic lands.
+const placeholderAsset: AssetEntry = {
+  type: 'image',
+  src: '/images/favicons/preview.png',
+  width: 2400,
+  height: 1260,
+  alt: 'Tko.dev'
+}
 
 const headerEntries: NavEntry[] = [
   {
@@ -41,4 +51,4 @@ const footerEntries: NavEntry[] = [
   }
 ]
 
-export { footerEntries, headerEntries }
+export { footerEntries, headerEntries, placeholderAsset }

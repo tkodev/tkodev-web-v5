@@ -20,6 +20,7 @@ import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
+import { placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
 import { appData } from '@/constants/system'
@@ -66,7 +67,8 @@ const WorkDetailPage = async (props: PageProps) => {
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
   const teamSize = parents.staffIds?.length
 
-  const heroAsset = client.media?.light ?? client.media?.base ?? getProjectAsset(project)
+  const heroAsset =
+    client.media?.light ?? client.media?.base ?? getProjectAsset(project) ?? placeholderAsset
   const metaEntries = [
     { label: 'Client', value: attribution },
     { label: 'Year', value: projectYear },
