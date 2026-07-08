@@ -13,12 +13,12 @@ const metaData: Metadata = {
   description: appData.description,
   icons: {
     icon: [
-      { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicons/favicon.ico' }
+      { url: '/images/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicons/favicon.ico' }
     ],
-    apple: [{ url: '/favicons/apple-touch-icon.png', sizes: '180x180' }],
-    other: [{ rel: 'mask-icon', url: '/favicons/safari-pinned-tab.svg' }]
+    apple: [{ url: '/images/favicons/apple-touch-icon.png', sizes: '180x180' }],
+    other: [{ rel: 'mask-icon', url: '/images/favicons/safari-pinned-tab.svg' }]
   },
   openGraph: {
     title: appData.title,
@@ -27,7 +27,7 @@ const metaData: Metadata = {
     siteName: appData.siteName,
     images: [
       {
-        url: 'https://tko.dev/favicons/preview.png',
+        url: 'https://tko.dev/images/favicons/preview.png',
         width: 1200,
         height: 630
       }
@@ -41,7 +41,7 @@ const metaData: Metadata = {
     description: appData.description,
     images: [
       {
-        url: 'https://tko.dev/favicons/preview.png',
+        url: 'https://tko.dev/images/favicons/preview.png',
         width: 1200,
         height: 630,
         alt: appData.title

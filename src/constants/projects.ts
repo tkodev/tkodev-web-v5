@@ -44,7 +44,7 @@ const projectEntries: ProjectEntry[] = [
       assets: [
         {
           type: 'image',
-          src: '/career/projects/tkodev-portfolio/www.tko.dev_(1080p).png',
+          src: '/career/projects/tkodev/www.tko.dev_(1080p).png',
           width: 1920,
           height: 1080,
           alt: 'tko.dev — Personal Portfolio'

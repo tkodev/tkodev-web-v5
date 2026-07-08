@@ -83,7 +83,7 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="masthead" width="lg">
         <SectionProjectHero
           asset={heroAsset}
-          ctaProps={{ href: '/works', icon: ChevronLeftIcon, label: 'Back to Work' }}
+          ctaProps={{ href: '/works', icon: ChevronLeftIcon, label: 'Back to Works' }}
           titleProps={{
             tagline: basic.role,
             title: basic.title,

@@ -34,7 +34,6 @@ v5 is a multi-page site under one persistent shell.
 | `/works/[workId]` | Work detail (one flagship gets the elevated treatment) | — |
 | `/experience` | Experience | Experience |
 | `/about` | About | About |
-| `/contact` | Contact | Contact |
 | `/design` | Design system specimen (living styleguide, unlinked from nav) | — |
 | — (overlay, not route) | Loading / boot sequence | — |
 | — (overlay, not route) | Nav overlay | §Navigation below |
@@ -43,7 +42,7 @@ Experiments are a works-index category (`experiment` medium), not a route. Figma
 
 ### Navigation
 
-- **Header nav**: **Works · Experience · About · Contact**; the current page's item is marked active.
+- **Header nav**: **Works · Experience · About**; the current page's item is marked active. Contact is not a route: it lives as the recurring transmission section at the foot of every page ([03-solution.md](03-solution.md) §The transmission section).
 - **Nav overlay**: full-screen menu of the nav routes; the primary nav on mobile, available on all viewports; behaviour owned by [03-solution.md](03-solution.md) §Nav overlay.
 - **Boot / loading screen**: entry overlay preceding the requested page; behaviour owned by [03-solution.md](03-solution.md) §Boot sequence.
 

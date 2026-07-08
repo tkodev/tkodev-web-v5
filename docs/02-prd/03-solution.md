@@ -35,7 +35,7 @@ The layers, top to bottom:
 | Works index | [`67:1947`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=67-1947) |
 | Work detail | [`68:12288`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=68-12288) |
 | About | [`136:2405`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=136-2405) |
-| Experience, Contact | not designed yet |
+| Experience | not designed yet |
 
 ## Surfaces
 
@@ -103,11 +103,13 @@ download action.
 - **The details**: the origin prose and signature asset (the human layer), with a
   pointer to `/experience` for the full record.
 
-### Contact: the transmission *(not designed yet)*
+### The transmission section
 
-A terse instrument block: channels (email, LinkedIn, GitHub, resume) as labeled
-rows in the annotation grammar under one display-scale headline. No form, no
-marketing prose.
+Contact is not a page: it is the recurring closing section at the foot of every
+surface (home, works, about, work detail), so the ask-to-reach-out is always one
+scroll away. A terse instrument block: channels (email, LinkedIn, GitHub, resume)
+as labeled rows in the annotation grammar under one display-scale headline. No
+form, no marketing prose.
 
 ### Nav overlay
 

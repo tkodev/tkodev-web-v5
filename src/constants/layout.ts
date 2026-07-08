@@ -22,13 +22,6 @@ const headerEntries: NavEntry[] = [
     name: 'About',
     variant: 'link',
     isVisible: true
-  },
-  {
-    intent: 'url',
-    href: '/contact',
-    name: 'Contact',
-    variant: 'link',
-    isVisible: true
   }
 ]
 
