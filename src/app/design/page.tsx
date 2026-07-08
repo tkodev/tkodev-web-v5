@@ -18,7 +18,7 @@ import { Board } from '@/components/molecules/board'
 import { CardBio } from '@/components/molecules/card-bio'
 import { CardCompetencies } from '@/components/molecules/card-competencies'
 import { CardProject } from '@/components/molecules/card-project'
-import { CardQuote } from '@/components/molecules/card-quote'
+import { CardTestimonial } from '@/components/molecules/card-testimonial'
 import { Intro } from '@/components/molecules/intro'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
@@ -271,7 +271,7 @@ const DesignPage = () => {
             </div>
             {!!specimenTestimonial && (
               <div className="max-w-100">
-                <CardQuote testimonial={specimenTestimonial} />
+                <CardTestimonial testimonial={specimenTestimonial} />
               </div>
             )}
           </div>

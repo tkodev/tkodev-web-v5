@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Marquee } from '@/components/atoms/marquee'
-import { CardQuote } from '@/components/molecules/card-quote'
+import { CardTestimonial } from '@/components/molecules/card-testimonial'
 import { type TestimonialEntry } from '@/types/career'
 import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -62,7 +62,7 @@ const BlockTestimonials = forwardRef<BlockTestimonialsRef, BlockTestimonialsProp
               {row.map((testimonialEntry) => {
                 const cardKey = `testimonial-${testimonialEntry.id}-card`
                 return (
-                  <CardQuote
+                  <CardTestimonial
                     key={cardKey}
                     className={cn(styles.card())}
                     testimonial={testimonialEntry}

@@ -4,11 +4,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva('w-full overflow-hidden'),
   track: cva(
-    [
-      'animate-marquee flex w-max',
-      'hover:[animation-play-state:paused]',
-      'motion-reduce:[animation-play-state:paused]'
-    ],
+    ['animate-marquee flex w-max', 'hover:paused', 'motion-reduce:[animation-play-state:paused]'],
     {
       variants: {
         direction: {

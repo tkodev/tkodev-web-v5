@@ -13,8 +13,8 @@ const styles = {
   board: cva('grid auto-cols-[minmax(22rem,1fr)] grid-flow-col gap-16 overflow-x-auto')
 }
 
-type BlockSelectedWorksRef = HTMLDivElement
-type BlockSelectedWorksProps = HTMLAttributes<BlockSelectedWorksRef> &
+type BlockProjectsIntroRef = HTMLDivElement
+type BlockProjectsIntroProps = HTMLAttributes<BlockProjectsIntroRef> &
   VariantProps<typeof styles.root> & {
     boardProps: Omit<BoardProps, 'cta'>
     ctaProps: {
@@ -25,7 +25,7 @@ type BlockSelectedWorksProps = HTMLAttributes<BlockSelectedWorksRef> &
     projectEntries: ProjectEntry[]
   }
 
-const BlockSelectedWorks = forwardRef<BlockSelectedWorksRef, BlockSelectedWorksProps>(
+const BlockProjectsIntro = forwardRef<BlockProjectsIntroRef, BlockProjectsIntroProps>(
   (props, ref) => {
     // props
     const { boardProps, ctaProps, projectEntries, className, ...rest } = props
@@ -55,7 +55,7 @@ const BlockSelectedWorks = forwardRef<BlockSelectedWorksRef, BlockSelectedWorksP
     )
   }
 )
-BlockSelectedWorks.displayName = 'BlockSelectedWorks'
+BlockProjectsIntro.displayName = 'BlockProjectsIntro'
 
-export { BlockSelectedWorks }
-export type { BlockSelectedWorksProps, BlockSelectedWorksRef }
+export { BlockProjectsIntro }
+export type { BlockProjectsIntroProps, BlockProjectsIntroRef }

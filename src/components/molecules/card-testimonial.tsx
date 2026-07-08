@@ -21,13 +21,13 @@ const styles = {
   name: cva('text-h5 font-heading uppercase')
 }
 
-type CardQuoteRef = HTMLDivElement
-type CardQuoteProps = HTMLAttributes<CardQuoteRef> &
+type CardTestimonialRef = HTMLDivElement
+type CardTestimonialProps = HTMLAttributes<CardTestimonialRef> &
   VariantProps<typeof styles.root> & {
     testimonial: TestimonialEntry
   }
 
-const CardQuote = forwardRef<CardQuoteRef, CardQuoteProps>((props, ref) => {
+const CardTestimonial = forwardRef<CardTestimonialRef, CardTestimonialProps>((props, ref) => {
   // props
   const { testimonial, className, ...rest } = props
   const { basic, parents } = testimonial
@@ -69,7 +69,7 @@ const CardQuote = forwardRef<CardQuoteRef, CardQuoteProps>((props, ref) => {
     </div>
   )
 })
-CardQuote.displayName = 'CardQuote'
+CardTestimonial.displayName = 'CardTestimonial'
 
-export { CardQuote }
-export type { CardQuoteProps, CardQuoteRef }
+export { CardTestimonial }
+export type { CardTestimonialProps, CardTestimonialRef }

@@ -10,7 +10,7 @@ import {
 import { BlockContact } from '@/components/organisms/block-contact'
 import { BlockIntro } from '@/components/organisms/block-intro'
 import { BlockOverview } from '@/components/organisms/block-overview'
-import { BlockSelectedWorks } from '@/components/organisms/block-selected-works'
+import { BlockProjectsIntro } from '@/components/organisms/block-projects-intro'
 import { BlockStatement } from '@/components/organisms/block-statement'
 import { BlockTestimonials } from '@/components/organisms/block-testimonials'
 import { Main } from '@/components/templates/main'
@@ -46,7 +46,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="selected-works" height="auto" width="lg">
-        <BlockSelectedWorks
+        <BlockProjectsIntro
           ctaProps={{ href: '/works', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
