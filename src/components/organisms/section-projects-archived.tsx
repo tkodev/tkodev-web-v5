@@ -1,12 +1,7 @@
-'use client'
-
-import { forwardRef, useState, type HTMLAttributes } from 'react'
-import { ChevronsDownIcon } from 'lucide-react'
+import { forwardRef, type HTMLAttributes } from 'react'
 import { CardProject } from '@/components/molecules/card-project'
 import { ProjectEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
-import { Button } from '../atoms/button'
-import { Icon } from '../atoms/icon'
 import { BlockBoard, type BlockBoardProps } from '../molecules/block-board'
 
 const styles = {
@@ -18,11 +13,7 @@ type SectionProjectsArchivedRef = HTMLDivElement
 type SectionProjectsArchivedProps = HTMLAttributes<SectionProjectsArchivedRef> &
   VariantProps<typeof styles.root> & {
     boardProps: Omit<BlockBoardProps, 'cta'>
-    ctaProps: {
-      label: string
-    }
     projectEntries: ProjectEntry[]
-    pageSize?: number
   }
 
 const SectionProjectsArchived = forwardRef<
@@ -30,32 +21,13 @@ const SectionProjectsArchived = forwardRef<
   SectionProjectsArchivedProps
 >((props, ref) => {
   // props
-  const { boardProps, ctaProps, projectEntries, pageSize = 6, className, ...rest } = props
-  const { label } = ctaProps
-
-  // hooks
-  const [visibleCount, setVisibleCount] = useState(pageSize)
-
-  // render vars
-  const visibleEntries = projectEntries.slice(0, visibleCount)
-  const hasMore = visibleCount < projectEntries.length
+  const { boardProps, projectEntries, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <BlockBoard
-        {...boardProps}
-        className={cn(styles.board())}
-        cta={
-          hasMore ? (
-            <Button variant="outline" onClick={() => setVisibleCount((count) => count + pageSize)}>
-              <Icon icon={ChevronsDownIcon} size="sm" />
-              {label}
-            </Button>
-          ) : null
-        }
-      >
-        {visibleEntries.map((projectEntry) => {
+      <BlockBoard {...boardProps} className={cn(styles.board())}>
+        {projectEntries.map((projectEntry) => {
           const key = `archive-${projectEntry.id}-card`
           return <CardProject key={key} project={projectEntry} href={`/works/${projectEntry.id}`} />
         })}

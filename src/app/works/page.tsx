@@ -59,7 +59,6 @@ const WorksPage = () => {
       </Section>
       <Section id="archive" height="auto" width="lg">
         <SectionProjectsArchived
-          ctaProps={{ label: 'Load More' }}
           projectEntries={archiveEntries}
           boardProps={{
             subtitle: '2.2 / Archive //',

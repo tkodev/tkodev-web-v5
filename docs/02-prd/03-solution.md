@@ -73,9 +73,9 @@ line of positioning, corner annotations. Below it, indexed evidence sections:
 - **Hero**: the work tile-wall at low opacity under the command headline
   ("SIGNAL ACQUIRED / ASSETS DEPLOYED"): the range visible before a single click.
 - **Featured**: the flagship case studies as full-width horizontal cards.
-- **Archive**: the complete record as a dense grid, progressively disclosed;
-  every era belongs here; the range is the point. Mediums (software / industrial /
-  spatial / web-era / experiment) categorize the archive.
+- **Archive**: the complete record as a dense grid, every entry present at once
+  (no load-more gate); every era belongs here; the range is the point. Mediums
+  (software / industrial / spatial / web-era / experiment) categorize the archive.
 
 ### Work detail: the dossier
 
