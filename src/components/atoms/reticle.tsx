@@ -25,18 +25,7 @@ const styles = {
       }
     }
   ),
-  lines: cva('mix-blend-exclusion'),
-  circle: cva('mix-blend-exclusion', {
-    variants: {
-      isFilled: {
-        true: 'light fill-background',
-        false: ''
-      }
-    },
-    defaultVariants: {
-      isFilled: false
-    }
-  })
+  lines: cva('mix-blend-exclusion')
 }
 
 type ReticleRef = SVGSVGElement
@@ -46,7 +35,7 @@ type ReticleProps = SVGAttributes<ReticleRef> &
 
 const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
   // props
-  const { isFilled, className, ...rest } = props
+  const { className, ...rest } = props
 
   // render vars
   const opacity = 0.2
@@ -64,6 +53,18 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
       width="1168"
       {...rest}
     >
+      <g className={cn(styles.lines())}>
+        <g opacity={opacity}>
+          <line stroke="currentColor" x1="289.354" x2="879.354" y1="152.646" y2="742.646" />
+          <line stroke="currentColor" x1="782.354" x2="386.354" y1="250.354" y2="646.354" />
+          <circle cx="584" cy="448" r="447.5" stroke="currentColor" />
+          <circle cx="584" cy="448" r="347.5" stroke="currentColor" strokeWidth="25" />
+          <rect rx="239.5" stroke="currentColor" x="344.5" y="208.5" height="479" width="479" />
+          <rect rx="149.5" stroke="currentColor" x="434.5" y="298.5" height="299" width="299" />
+          <line stroke="currentColor" x2="200" y1="447.5" y2="447.5" />
+          <line stroke="currentColor" x1="968" x2="1168" y1="447.5" y2="447.5" />
+        </g>
+      </g>
       <g className={cn(styles.logo({ position: 1 }))}>
         <g opacity={opacity}>
           <path
@@ -165,21 +166,6 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
             strokeWidth="1"
           />
         </g>
-      </g>
-      <g className={cn(styles.lines())}>
-        <g opacity={opacity}>
-          <line stroke="currentColor" x1="289.354" x2="879.354" y1="152.646" y2="742.646" />
-          <line stroke="currentColor" x1="782.354" x2="386.354" y1="250.354" y2="646.354" />
-          <circle cx="584" cy="448" r="447.5" stroke="currentColor" />
-          <circle cx="584" cy="448" r="347.5" stroke="currentColor" strokeWidth="25" />
-          <rect rx="239.5" stroke="currentColor" x="344.5" y="208.5" height="479" width="479" />
-          <rect rx="149.5" stroke="currentColor" x="434.5" y="298.5" height="299" width="299" />
-          <line stroke="currentColor" x2="200" y1="447.5" y2="447.5" />
-          <line stroke="currentColor" x1="968" x2="1168" y1="447.5" y2="447.5" />
-        </g>
-      </g>
-      <g className={cn(styles.circle({ isFilled }))}>
-        <rect rx="149.5" x="434.5" y="298.5" height="299" width="299" />
       </g>
     </svg>
   )

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { forwardRef, type HTMLAttributes } from 'react'
-import { Logo } from '@/components/atoms/logo'
+import { Signature } from '@/components/atoms/signature'
 import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
@@ -17,11 +17,11 @@ const styles = {
   channels: cva('grid w-full gap-x-6 gap-y-2 sm:grid-cols-2'),
   channel: cva('justify-start'),
 
-  logoPanel: cva([
+  signaturePanel: cva([
     'min-h-56 min-w-72 flex-1 self-stretch',
     'flex items-center justify-center rounded-sm border p-6'
   ]),
-  logo: cva('w-64')
+  signature: cva('w-48')
 }
 
 type ChannelEntry = {
@@ -66,8 +66,8 @@ const BlockContact = forwardRef<BlockContactRef, BlockContactProps>((props, ref)
             })}
           </div>
         </div>
-        <div className={cn(styles.logoPanel())}>
-          <Logo className={cn(styles.logo())} />
+        <div className={cn(styles.signaturePanel())}>
+          <Signature className={cn(styles.signature())} />
         </div>
       </Board>
     </div>
