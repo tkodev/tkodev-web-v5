@@ -10,7 +10,6 @@ const styles = {
   header: cva('flex'),
   trigger: cva([
     'flex flex-1 items-center justify-between gap-4 py-4',
-    'text-e4 font-expressive text-left leading-normal uppercase',
     'rounded-sm transition-all outline-none',
     'hover:underline',
     'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3',
@@ -25,7 +24,7 @@ const styles = {
     'overflow-hidden',
     'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'
   ]),
-  contentInner: cva('pb-4 text-sm leading-normal')
+  contentInner: cva('pb-4 text-sm')
 }
 
 const Accordion = (props: ComponentProps<typeof AccordionPrimitive.Root>) => {

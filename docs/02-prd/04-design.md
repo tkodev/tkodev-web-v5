@@ -32,9 +32,9 @@ Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main
 | --- | --- | --- | --- | --- |
 | `h1` | Alliance No.2 Bold | 60px | 60px | 0 |
 | `h2` | Alliance No.2 Bold | 48px | normal | 0 |
-| `h3` | Alliance No.2 Bold | 40px | normal | 0 |
-| `h4` *(main)* | Alliance No.2 Bold | 32px | 32px | 0 |
-| `h5` | Alliance No.2 Bold | 24px | 24px | 0 |
+| `h3` | Alliance No.2 Bold | 36px | normal | 0 |
+| `h4` *(main)* | Alliance No.2 Bold | 28px | 28px | 0 |
+| `h5` | Alliance No.2 Bold | 20px | 20px | 0 |
 
 ### Expressive: Alliance No.2 Regular, 25% tracking
 
@@ -57,7 +57,7 @@ Two wider-tracked companions appear across the page designs:
 
 ### Body: Geist Regular
 
-Line height 100% at token level; prose blocks in components may carry relaxed leading; the component's Figma node is authoritative for multi-line paragraph leading.
+Line height 150% at token level (every body consumer wanted normal leading, so the token carries it); components override only when a design calls for tighter or looser leading.
 
 | Token | Size |
 | --- | --- |

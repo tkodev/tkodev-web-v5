@@ -13,7 +13,7 @@ import { Board, type BoardProps } from '../molecules/board'
 
 const styles = {
   root: cva(['size-full', 'flex items-center justify-center']),
-  board: cva('grid items-stretch gap-4 md:grid-cols-[2fr_3fr]'),
+  board: cva('grid items-stretch gap-8 md:grid-cols-[2fr_3fr]'),
   bio: cva('aspect-square md:aspect-auto')
 }
 

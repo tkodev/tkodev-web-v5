@@ -11,7 +11,7 @@ const styles = {
   scrim: cva('from-card/0 to-card absolute inset-0 bg-linear-to-b'),
   title: cva(['relative', 'text-h4 font-heading uppercase']),
   content: cva('relative flex flex-col items-start gap-4'),
-  desc: cva('text-sm leading-normal')
+  desc: cva('')
 }
 
 type CardBioRef = HTMLDivElement

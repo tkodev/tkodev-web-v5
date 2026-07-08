@@ -12,8 +12,8 @@ const styles = {
   board: cva('flex flex-wrap items-center gap-8'),
 
   info: cva('flex min-w-72 flex-1 flex-col items-start gap-6'),
-  title: cva('text-h1 font-heading uppercase'),
-  desc: cva('text-sm leading-normal whitespace-pre-line'),
+  title: cva('text-h2 font-heading uppercase'),
+  desc: cva('text-sm whitespace-pre-line'),
   channels: cva('grid w-full gap-x-6 gap-y-2 sm:grid-cols-2'),
   channel: cva('justify-start'),
 

@@ -18,7 +18,7 @@ const personEntries: PersonEntry[] = [
         {
           id: 'designSystems',
           title: 'Design Systems Architecture',
-          desc: 'Semantic token architecture, CVA variant systems, and shadcn-based component libraries.'
+          desc: 'Design system adoption across products, semantic tokens and variables, AI adherence to the design system, and staged system rollouts.'
         },
         {
           id: 'technicalDirection',

@@ -63,7 +63,7 @@ const HomePage = () => {
       </Section>
       <Section id="overview" height="auto" width="md">
         <BlockOverview
-          bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Career' }}
+          bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
           boardProps={{ subtitle: '1.2 / Overview //' }}
           bioProps={{
             title: 'Bio',

@@ -8,9 +8,7 @@ const styles = {
   root: cva('flex flex-col rounded-sm border'),
 
   quoteCell: cva('grow border-b p-6'),
-  quote: cva(
-    'text-muted-foreground line-clamp-9 text-sm leading-normal whitespace-pre-line italic'
-  ),
+  quote: cva('text-muted-foreground line-clamp-9 text-sm whitespace-pre-line italic'),
 
   footerCell: cva('flex items-center gap-4 px-6 py-4'),
   photo: cva('size-12 rounded-sm object-cover'),
@@ -20,7 +18,7 @@ const styles = {
   ]),
   meta: cva('flex min-w-0 flex-col gap-2'),
   role: cva('text-e4 font-expressive text-muted-foreground uppercase'),
-  name: cva('text-h5 font-heading truncate uppercase')
+  name: cva('text-h5 font-heading uppercase')
 }
 
 type CardQuoteRef = HTMLDivElement

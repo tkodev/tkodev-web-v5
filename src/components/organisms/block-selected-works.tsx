@@ -10,7 +10,7 @@ import { Board, type BoardProps } from '../molecules/board'
 
 const styles = {
   root: cva(['size-full', 'flex items-center justify-center']),
-  board: cva('grid auto-cols-[minmax(20rem,1fr)] grid-flow-col gap-4 overflow-x-auto')
+  board: cva('grid auto-cols-[minmax(22rem,1fr)] grid-flow-col gap-16 overflow-x-auto')
 }
 
 type BlockSelectedWorksRef = HTMLDivElement
