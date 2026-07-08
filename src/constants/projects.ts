@@ -62,7 +62,7 @@ const projectEntries: ProjectEntry[] = [
       title: 'Gridflow',
       subtitle:
         'Social media scheduler owned PRD to production — Next.js, Supabase, TanStack Query, Zod.',
-      desc: 'Social media scheduling app with full-cycle product ownership from PRD to deployed code. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Cursor. Source on GitHub.',
+      desc: 'Social media scheduling app with full-cycle product ownership from PRD to deployed code. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Claude Code. Source is private.',
       role: 'Full-Stack Engineer',
       category: 'active',
       startDate: fromZonedTime('2026-03-01', appTimeZone)
@@ -86,7 +86,7 @@ const projectEntries: ProjectEntry[] = [
         'React Hook Form',
         'shadcn/ui',
         'Framer Motion',
-        'Cursor'
+        'Claude Code'
       ]
     },
     media: {

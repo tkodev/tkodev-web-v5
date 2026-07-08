@@ -4,15 +4,15 @@ import { NavEntry } from '@/types/layout'
 const headerEntries: NavEntry[] = [
   {
     intent: 'url',
-    href: '/experience',
-    name: 'Experience',
+    href: '/works',
+    name: 'Works',
     variant: 'link',
     isVisible: true
   },
   {
     intent: 'url',
-    href: '/works',
-    name: 'Works',
+    href: '/experience',
+    name: 'Experience',
     variant: 'link',
     isVisible: true
   },
