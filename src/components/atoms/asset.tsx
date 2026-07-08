@@ -4,7 +4,20 @@ import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('')
+  // position pairs with object-cover/contain at the call site: anchor the crop to
+  // the top by default so overflow is trimmed from the bottom, not the edges.
+  root: cva('', {
+    variants: {
+      position: {
+        top: 'object-top',
+        center: 'object-center',
+        bottom: 'object-bottom'
+      }
+    },
+    defaultVariants: {
+      position: 'top'
+    }
+  })
 }
 
 type AssetProps = HTMLAttributes<HTMLElement> &
@@ -15,14 +28,14 @@ type AssetProps = HTMLAttributes<HTMLElement> &
 
 const Asset: FC<AssetProps> = (props) => {
   // props
-  const { asset, priority, className, ...rest } = props
+  const { asset, position, priority, className, ...rest } = props
   const { type, src, width, height, alt } = asset
 
   // jsx
   if (type === 'video') {
     return (
       <video
-        className={cn(styles.root({ className }))}
+        className={cn(styles.root({ position, className }))}
         aria-label={alt}
         preload="metadata"
         height={height}
