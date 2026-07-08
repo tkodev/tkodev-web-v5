@@ -1,0 +1,51 @@
+import { forwardRef, type HTMLAttributes } from 'react'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/atoms/accordion'
+import { type CompetencyEntry } from '@/types/career'
+import { cn, cva, type VariantProps } from '@/utils/theme'
+
+const styles = {
+  root: cva('flex flex-col gap-4 rounded-sm border p-6'),
+  title: cva('text-h4 font-heading uppercase'),
+  accordion: cva('w-full')
+}
+
+type CardCompetenciesRef = HTMLDivElement
+type CardCompetenciesProps = HTMLAttributes<CardCompetenciesRef> &
+  VariantProps<typeof styles.root> & {
+    title: string
+    competencyEntries: CompetencyEntry[]
+  }
+
+const CardCompetencies = forwardRef<CardCompetenciesRef, CardCompetenciesProps>((props, ref) => {
+  // props
+  const { title, competencyEntries, className, ...rest } = props
+
+  // jsx
+  return (
+    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+      <h3 className={cn(styles.title())}>{title}</h3>
+      <Accordion type="single" className={cn(styles.accordion())} collapsible>
+        {competencyEntries.map((competencyEntry) => {
+          const key = `competency-${competencyEntry.id}`
+          return (
+            <AccordionItem key={key} value={competencyEntry.id}>
+              <AccordionTrigger>{competencyEntry.title}</AccordionTrigger>
+              {!!competencyEntry.desc && (
+                <AccordionContent>{competencyEntry.desc}</AccordionContent>
+              )}
+            </AccordionItem>
+          )
+        })}
+      </Accordion>
+    </div>
+  )
+})
+CardCompetencies.displayName = 'CardCompetencies'
+
+export { CardCompetencies }
+export type { CardCompetenciesProps, CardCompetenciesRef }

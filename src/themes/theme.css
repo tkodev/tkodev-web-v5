@@ -175,9 +175,9 @@
   --text-e5--letter-spacing: 0.25em;
 
   /* body: Geist Regular, line height 100% at token level */
-  --text-lg: 1.125rem;
-  --text-lg--line-height: 1;
-  --text-lg: 1.000rem;
+  --text-xl: 1.125rem;
+  --text-xl--line-height: 1;
+  --text-lg: 1rem;
   --text-lg--line-height: 1;
   --text-md: 0.875rem;
   --text-md--line-height: 1;
@@ -205,6 +205,7 @@
   --animate-fade-in: fade-in 1.5s var(--brand-ease-out);
   --animate-fade-out: fade-out 1.5s var(--brand-ease-out);
   --animate-cursor-wave: cursor-wave 0.6s var(--brand-ease-out) forwards;
+  --animate-marquee: marquee 80s linear infinite;
 }
 
 /* animations */
@@ -223,6 +224,15 @@
 	}
 	to {
 		height: 0;
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		transform: translate3d(-50%, 0, 0);
 	}
 }
 

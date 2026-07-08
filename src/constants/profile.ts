@@ -1,3 +1,4 @@
+import keyBy from 'lodash/keyBy'
 import { type PersonEntry } from '@/types/career'
 
 const personEntries: PersonEntry[] = [
@@ -11,7 +12,50 @@ const personEntries: PersonEntry[] = [
       linkedin: 'https://www.linkedin.com/in/tkodev',
       github: 'https://www.github.com/tkodev',
       email: 'tony@tko.dev',
-      phone: '+1 (647) 300-9787'
+      phone: '+1 (647) 300-9787',
+      resume: '/career/persons/tony/tony-ko-resume-2026.pdf',
+      competencies: [
+        {
+          id: 'designSystems',
+          title: 'Design Systems Architecture',
+          desc: 'Semantic token architecture, CVA variant systems, and shadcn-based component libraries.'
+        },
+        {
+          id: 'technicalDirection',
+          title: 'Architecture & Technical Direction',
+          desc: 'Technical strategy, architecture, and mentorship from Staff Engineer roles at TELUS Digital and Quantum Mob.'
+        },
+        {
+          id: 'realTimeUi',
+          title: 'Real-Time & High-Fidelity UI',
+          desc: 'Real-time dashboard interfaces for managed pressure drilling and live industrial telemetry.'
+        },
+        {
+          id: 'eventDriven',
+          title: 'Event-Driven Systems Architecture',
+          desc: 'WebSocket-driven data flows and event-driven architectures for subsecond telemetry platforms.'
+        },
+        {
+          id: 'observability',
+          title: 'Observability & Telemetry',
+          desc: 'Telemetry and observability solutions delivered across multiple applications for external clients.'
+        },
+        {
+          id: 'crossPlatform',
+          title: 'Cross-Platform Engineering',
+          desc: 'Systems spanning web, mobile, browser extensions, and embedded platforms.'
+        },
+        {
+          id: 'accessibility',
+          title: 'WCAG & Accessibility Engineering',
+          desc: 'High-performing, secure, and accessible software for top North American brands.'
+        },
+        {
+          id: 'dx',
+          title: 'Developer Experience (DX)',
+          desc: 'Engineering standards, shared tooling, monorepos, and AI-native workflows that accelerate delivery.'
+        }
+      ]
     },
     media: {
       photo: {
@@ -213,4 +257,6 @@ const personEntries: PersonEntry[] = [
   }
 ]
 
-export { personEntries }
+const personEntryById = keyBy(personEntries, (personEntry) => personEntry.id)
+
+export { personEntries, personEntryById }

@@ -1,5 +1,11 @@
 import { type AssetEntry, type StoryEntry } from '@/types/layout'
 
+type CompetencyEntry = {
+  id: string
+  title: string
+  desc?: string
+}
+
 type PersonEntry = {
   id: string
   basic: {
@@ -11,6 +17,8 @@ type PersonEntry = {
     github?: string
     email?: string
     phone?: string
+    resume?: string
+    competencies?: CompetencyEntry[]
   }
   media?: {
     photo?: AssetEntry
@@ -130,6 +138,7 @@ type ProjectEntry = {
 
 export type {
   ClientEntry,
+  CompetencyEntry,
   EducationEntry,
   JobEntry,
   PersonEntry,

@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
 import { Nav } from '@/components/molecules/nav'
 import { headerEntries } from '@/constants/layout'
+import { personEntryById } from '@/constants/profile'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -41,13 +42,16 @@ const styles = {
 
   thumb: cva('hidden sm:block'),
   logo: cva('h-6 w-18 sm:mx-6'),
-  intro: cva('hidden sm:block')
+  intro: cva('hidden flex-col gap-1 md:flex')
 }
 
 type HeaderProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.bar>
 
 const Header: FC<HeaderProps> = (props) => {
   const { variant, className, ...rest } = props
+
+  const tony = personEntryById['tony']
+  const thumb = tony.media?.thumb
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
@@ -69,13 +73,19 @@ const Header: FC<HeaderProps> = (props) => {
           <div className={cn(styles.left())}>
             <Link className={cn(styles.thumb())} href="/">
               <Avatar>
-                <AvatarImage alt="Tony Ko" src="/persons/tony/dp-thumb.jpg" />
+                <AvatarImage alt={thumb?.alt ?? tony.basic.name} src={thumb?.src} />
                 <AvatarFallback>tko</AvatarFallback>
               </Avatar>
             </Link>
             <Link className={cn(styles.logo())} href="/">
               <Logo />
             </Link>
+            <div className={cn(styles.intro())}>
+              <p>
+                <strong>Tony Ko</strong>
+              </p>
+              <p>Staff Software Engineer</p>
+            </div>
           </div>
           <div className={cn(styles.right())}>
             <Nav entries={headerEntries} />

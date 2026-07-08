@@ -68,6 +68,8 @@ How the v5 pieces land in the standard folders: `app/` mirrors the route map abo
 
 **Source of truth:** the structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` (`types.ts`, `client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`). This repo **vendors a copy** into `types/` + `constants/` (the package is in a git-ignored notes area and can't be a workspace dependency of a deployable repo). Sync is one-way, notes → site; content edits happen in career-notes first, then get copied over. Never fork the schema silently; schema changes go back upstream.
 
+**Read order:** implementation reads `src/constants/` first; career-notes is consulted only when the vendored copy lacks the fact, in its own order: `profiles/structured/`, then `profiles/linkedin/` and `profiles/website/`. What gets used is vendored back into `constants/` in the same change.
+
 Site copy is sourced from the career-notes repo (`profiles/website/`, `about/`) and its structured data package, never invented.
 
 The data model:

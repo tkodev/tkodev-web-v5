@@ -1,11 +1,31 @@
-import { Palette } from 'lucide-react'
+import {
+  BriefcaseIcon,
+  ContactIcon,
+  ExternalLinkIcon,
+  GitBranchIcon,
+  IdCardIcon,
+  MailIcon,
+  Palette
+} from 'lucide-react'
+import { BlockContact } from '@/components/organisms/block-contact'
 import { BlockIntro } from '@/components/organisms/block-intro'
+import { BlockOverview } from '@/components/organisms/block-overview'
 import { BlockSelectedWorks } from '@/components/organisms/block-selected-works'
+import { BlockStatement } from '@/components/organisms/block-statement'
+import { BlockTestimonials } from '@/components/organisms/block-testimonials'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
+import { personEntryById } from '@/constants/profile'
 import { projectEntriesByCategory } from '@/constants/projects'
+import { testimonialEntries } from '@/constants/testimonials'
 
 const HomePage = () => {
+  // render vars
+  const tony = personEntryById['tony']
+  const tonyTestimonialEntries = testimonialEntries.filter(
+    (testimonialEntry) => testimonialEntry.parents.recipientId === 'tony'
+  )
+
   // jsx
   return (
     <Main>
@@ -33,6 +53,53 @@ const HomePage = () => {
             subtitle: '1.1 / Works //',
             title: 'Selected Works'
           }}
+        />
+      </Section>
+      <Section id="statement" height="auto" width="sm">
+        <BlockStatement statement="Good engineering is invisible. Good design is why you stay." />
+      </Section>
+      <Section id="overview" height="auto" width="md">
+        <BlockOverview
+          bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Career' }}
+          boardProps={{ subtitle: '1.2 / Overview //' }}
+          bioProps={{
+            title: 'Bio',
+            desc: 'Staff Software Engineer with 9+ years shipping cross-platform systems for Telus Digital, Aeroplan, Air Miles, Toyota, and Loblaw Digital. Unique product-design-engineering career experience.',
+            photo: tony.media?.photo
+          }}
+          competenciesProps={{
+            title: 'Core Competencies',
+            competencyEntries: tony.extended?.competencies ?? []
+          }}
+        />
+      </Section>
+      <Section id="testimonials" height="auto" width="lg">
+        <BlockTestimonials
+          testimonialEntries={tonyTestimonialEntries}
+          boardProps={{
+            subtitle: '1.3 / Testimonials //',
+            title: 'What People Say'
+          }}
+          ctaProps={{
+            href: 'https://www.linkedin.com/in/tkodev/details/recommendations/',
+            icon: ExternalLinkIcon,
+            label: 'View All Testimonials'
+          }}
+        />
+      </Section>
+      <Section id="contact" height="auto" width="lg">
+        <BlockContact
+          boardProps={{ subtitle: '1.4 / Contact //' }}
+          title="Get in Touch"
+          channelEntries={[
+            { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
+            { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
+            { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume 2026' },
+            { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }
+          ]}
+          desc={
+            "I'm based in Toronto, Canada. \nOpen to roles where engineering and product need to work closely together."
+          }
         />
       </Section>
     </Main>
