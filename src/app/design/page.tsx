@@ -14,12 +14,12 @@ import { Logo } from '@/components/atoms/logo'
 import { Marquee } from '@/components/atoms/marquee'
 import { Reticle } from '@/components/atoms/reticle'
 import { Signature } from '@/components/atoms/signature'
-import { BlockBoard } from '@/components/molecules/block-board'
-import { BlockIntro } from '@/components/molecules/block-intro'
-import { CardBio } from '@/components/molecules/card-bio'
-import { CardCompetencies } from '@/components/molecules/card-competencies'
-import { CardProject } from '@/components/molecules/card-project'
-import { CardTestimonial } from '@/components/molecules/card-testimonial'
+import { Bio } from '@/components/molecules/bio'
+import { Board } from '@/components/molecules/board'
+import { Competencies } from '@/components/molecules/competencies'
+import { Intro } from '@/components/molecules/intro'
+import { Project } from '@/components/molecules/project'
+import { Testimonial } from '@/components/molecules/testimonial'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -104,14 +104,14 @@ const DesignPage = () => {
   return (
     <Main>
       <Section id="design-intro" height="auto" width="md">
-        <BlockIntro
+        <Intro
           desc="Every token, ramp, and primitive in the v5 system, rendered live."
           subtitle="Living Styleguide"
           title="Design System"
         />
       </Section>
       <Section id="design-typography" height="auto" width="md">
-        <BlockBoard subtitle="D.1 / Typography //" title="Type Ramps">
+        <Board subtitle="D.1 / Typography //" title="Type Ramps">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               {headingRamp.map(({ token, className }) => (
@@ -149,10 +149,10 @@ const DesignPage = () => {
               ))}
             </div>
           </div>
-        </BlockBoard>
+        </Board>
       </Section>
       <Section id="design-color" height="auto" width="md">
-        <BlockBoard subtitle="D.2 / Color //" title="Semantic Tokens">
+        <Board subtitle="D.2 / Color //" title="Semantic Tokens">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
             {colorSwatches.map(({ token, className }) => (
               <div key={token} className="flex flex-col gap-2">
@@ -163,10 +163,10 @@ const DesignPage = () => {
               </div>
             ))}
           </div>
-        </BlockBoard>
+        </Board>
       </Section>
       <Section id="design-visual" height="auto" width="md">
-        <BlockBoard subtitle="D.3 / Visual //" title="Radius & Gap">
+        <Board subtitle="D.3 / Visual //" title="Radius & Gap">
           <div className="flex flex-col gap-8">
             <div className="flex flex-wrap items-end gap-4">
               {radiusSteps.map(({ token, className }) => (
@@ -189,10 +189,10 @@ const DesignPage = () => {
               ))}
             </div>
           </div>
-        </BlockBoard>
+        </Board>
       </Section>
       <Section id="design-atoms" height="auto" width="md">
-        <BlockBoard subtitle="D.4 / Atoms //" title="Primitives">
+        <Board subtitle="D.4 / Atoms //" title="Primitives">
           <div className="flex flex-col gap-8">
             <div className="flex flex-wrap items-center gap-4">
               {buttonVariants.map((variant) => (
@@ -251,31 +251,31 @@ const DesignPage = () => {
               <Reticle className="mx-auto w-full max-w-xl" />
             </div>
           </div>
-        </BlockBoard>
+        </Board>
       </Section>
       <Section id="design-molecules" height="auto" width="md">
-        <BlockBoard subtitle="D.5 / Molecules //" title="Cards">
+        <Board subtitle="D.5 / Molecules //" title="Cards">
           <div className="flex flex-col gap-8">
-            <CardProject project={specimenProject} />
+            <Project project={specimenProject} />
             <div className="grid items-stretch gap-8 md:grid-cols-2">
-              <CardBio
+              <Bio
                 cta={<Button variant="outline">Card CTA</Button>}
                 desc="Card-bio specimen: portrait underlay, scrim, and CTA slot."
                 photo={tony.media?.photo}
                 title="Bio"
               />
-              <CardCompetencies
+              <Competencies
                 competencyEntries={(tony.extended?.competencies ?? []).slice(0, 4)}
                 title="Core Competencies"
               />
             </div>
             {!!specimenTestimonial && (
               <div className="max-w-100">
-                <CardTestimonial testimonial={specimenTestimonial} />
+                <Testimonial testimonial={specimenTestimonial} />
               </div>
             )}
           </div>
-        </BlockBoard>
+        </Board>
       </Section>
     </Main>
   )

@@ -1,9 +1,9 @@
 import { type Metadata } from 'next'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, Palette } from 'lucide-react'
-import { SectionContact } from '@/components/organisms/section-contact'
-import { SectionProjectsArchived } from '@/components/organisms/section-projects-archived'
-import { SectionProjectsFeatured } from '@/components/organisms/section-projects-featured'
-import { SectionProjectsHero } from '@/components/organisms/section-projects-hero'
+import { GlobalContact } from '@/components/organisms/global-contact'
+import { ProjectsArchived } from '@/components/organisms/projects-archived'
+import { ProjectsFeatured } from '@/components/organisms/projects-featured'
+import { ProjectsHero } from '@/components/organisms/projects-hero'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -31,7 +31,7 @@ const WorksPage = () => {
   return (
     <Main>
       <Section id="works-intro">
-        <SectionProjectsHero
+        <ProjectsHero
           tileAssets={tileAssets}
           hudProps={{
             title: '2.0 / Works //',
@@ -48,7 +48,7 @@ const WorksPage = () => {
         />
       </Section>
       <Section id="featured" height="auto" width="lg">
-        <SectionProjectsFeatured
+        <ProjectsFeatured
           ctaProps={{ href: '/works#archive', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
@@ -58,7 +58,7 @@ const WorksPage = () => {
         />
       </Section>
       <Section id="archive" height="auto" width="lg">
-        <SectionProjectsArchived
+        <ProjectsArchived
           projectEntries={archiveEntries}
           boardProps={{
             subtitle: '2.2 / Archive //',
@@ -67,7 +67,7 @@ const WorksPage = () => {
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
-        <SectionContact
+        <GlobalContact
           boardProps={{ subtitle: '2.3 / Contact //' }}
           title="Get in Touch"
           channelEntries={[

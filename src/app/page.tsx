@@ -7,12 +7,12 @@ import {
   MailIcon,
   Palette
 } from 'lucide-react'
-import { SectionContact } from '@/components/organisms/section-contact'
-import { SectionHomeHero } from '@/components/organisms/section-home-hero'
-import { SectionHomeOverview } from '@/components/organisms/section-home-overview'
-import { SectionProjectsPreview } from '@/components/organisms/section-projects-preview'
-import { SectionStatement } from '@/components/organisms/section-statement'
-import { SectionTestimonials } from '@/components/organisms/section-testimonials'
+import { GlobalContact } from '@/components/organisms/global-contact'
+import { HomeHero } from '@/components/organisms/home-hero'
+import { HomeOverview } from '@/components/organisms/home-overview'
+import { HomeStatement } from '@/components/organisms/home-statement'
+import { HomeTestimonials } from '@/components/organisms/home-testimonials'
+import { ProjectsPreview } from '@/components/organisms/projects-preview'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -30,7 +30,7 @@ const HomePage = () => {
   return (
     <Main>
       <Section id="intro">
-        <SectionHomeHero
+        <HomeHero
           hudProps={{
             title: '1.0 / Intro //',
             subtitle: '// Design System / V5',
@@ -46,7 +46,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="selected-works" height="auto" width="lg">
-        <SectionProjectsPreview
+        <ProjectsPreview
           ctaProps={{ href: '/works', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
@@ -56,13 +56,15 @@ const HomePage = () => {
         />
       </Section>
       <Section id="statement" height="auto" width="sm">
-        <SectionStatement
-          label="// Statement //"
-          statement={'Good engineering is invisible. \nGood design is why you stay.'}
+        <HomeStatement
+          statementProps={{
+            subtitle: '// Statement //',
+            title: 'Good engineering is invisible. \nGood design is why you stay.'
+          }}
         />
       </Section>
       <Section id="overview" height="auto" width="md">
-        <SectionHomeOverview
+        <HomeOverview
           bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
           boardProps={{ subtitle: '1.2 / Overview //' }}
           bioProps={{
@@ -77,7 +79,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="testimonials" height="auto" width="lg">
-        <SectionTestimonials
+        <HomeTestimonials
           testimonialEntries={tonyTestimonialEntries}
           boardProps={{
             subtitle: '1.3 / Testimonials //',
@@ -91,7 +93,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
-        <SectionContact
+        <GlobalContact
           boardProps={{ subtitle: '1.4 / Contact //' }}
           title="Get in Touch"
           channelEntries={[

@@ -9,11 +9,11 @@ import {
   MailIcon,
   PencilRulerIcon
 } from 'lucide-react'
-import { SectionAboutDetails } from '@/components/organisms/section-about-details'
-import { SectionAboutHero } from '@/components/organisms/section-about-hero'
-import { SectionAboutMethod } from '@/components/organisms/section-about-method'
-import { SectionAboutProcess } from '@/components/organisms/section-about-process'
-import { SectionContact } from '@/components/organisms/section-contact'
+import { AboutDetails } from '@/components/organisms/about-details'
+import { AboutHero } from '@/components/organisms/about-hero'
+import { AboutMethod } from '@/components/organisms/about-method'
+import { AboutProcess } from '@/components/organisms/about-process'
+import { GlobalContact } from '@/components/organisms/global-contact'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
@@ -32,7 +32,7 @@ const AboutPage = () => {
   return (
     <Main>
       <Section id="about-hero">
-        <SectionAboutHero
+        <AboutHero
           hudProps={{
             title: '3.0 / About //',
             subtitle: '// Identity File',
@@ -47,8 +47,9 @@ const AboutPage = () => {
         />
       </Section>
       <Section id="method" height="auto" width="md">
-        <SectionAboutMethod
+        <AboutMethod
           statementProps={{
+            subtitle: '// Method //',
             title: 'How I Work',
             children:
               "I get uncomfortable when design and engineering aren't talking. \n\nNot because disagreement is bad. But when the person writing the spec has never opened a pull request, and the person opening pull requests has never sat next to a user, something important gets lost between the idea and the thing that ships. \n\nI've spent most of my career in that gap. Sitting across from designers in Figma and across from engineers in a terminal. Building the component library and the component. Writing the accessibility brief and implementing the focus trap."
@@ -56,7 +57,7 @@ const AboutPage = () => {
         />
       </Section>
       <Section id="process" height="auto" width="lg">
-        <SectionAboutProcess
+        <AboutProcess
           processEntries={[
             {
               id: 'discovery',
@@ -87,16 +88,12 @@ const AboutPage = () => {
               icon: ApertureIcon
             }
           ]}
-          statementProps={{
-            label: '// Process //',
-            title: 'My Process',
-            children: 'Four moves, in order, on every project. \nThe order is the part people skip.'
-          }}
         />
       </Section>
       <Section id="details" height="auto" width="md">
-        <SectionAboutDetails
+        <AboutDetails
           statementProps={{
+            subtitle: '// Origin //',
             title: 'The Details',
             children:
               "I started in interior design. Forty-something client projects across residential and commercial. You learn quickly that people rarely know what they want until they're standing in the wrong version. \n\nI believe taste is a technical skill. You can develop it. It improves your judgment about what to build, how to build it, and when to stop."
@@ -104,7 +101,7 @@ const AboutPage = () => {
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
-        <SectionContact
+        <GlobalContact
           boardProps={{ subtitle: '3.3 / Contact //' }}
           title="Get in Touch"
           channelEntries={[

@@ -2,13 +2,13 @@ import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, PresentationIcon } from 'lucide-react'
-import { SectionContact } from '@/components/organisms/section-contact'
-import { SectionProjectFigure } from '@/components/organisms/section-project-figure'
-import { SectionProjectHero } from '@/components/organisms/section-project-hero'
-import { SectionProjectNext } from '@/components/organisms/section-project-next'
-import { SectionProjectPlate } from '@/components/organisms/section-project-plate'
-import { SectionProjectStats } from '@/components/organisms/section-project-stats'
-import { SectionProjectSummary } from '@/components/organisms/section-project-summary'
+import { GlobalContact } from '@/components/organisms/global-contact'
+import { ProjectFigure } from '@/components/organisms/project-figure'
+import { ProjectHero } from '@/components/organisms/project-hero'
+import { ProjectNext } from '@/components/organisms/project-next'
+import { ProjectPlate } from '@/components/organisms/project-plate'
+import { ProjectStats } from '@/components/organisms/project-stats'
+import { ProjectWins } from '@/components/organisms/project-wins'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { clientById } from '@/constants/client'
@@ -78,7 +78,7 @@ const WorkDetailPage = async (props: PageProps) => {
   return (
     <Main>
       <Section id="masthead" width="lg">
-        <SectionProjectHero
+        <ProjectHero
           asset={heroAsset}
           hudProps={{
             title: '2.1.0 / Dossier //',
@@ -95,21 +95,25 @@ const WorkDetailPage = async (props: PageProps) => {
           }}
         />
       </Section>
-      <Section id="summary" height="auto" width="md">
-        <SectionProjectSummary
-          statementProps={{ title: extended?.win ?? basic.subtitle, children: basic.desc }}
+      <Section id="wins" height="auto" width="md">
+        <ProjectWins
+          statementProps={{
+            subtitle: '// Wins //',
+            title: extended?.win ?? basic.subtitle,
+            children: basic.desc
+          }}
         />
       </Section>
       {statEntries.length > 0 && (
         <Section id="stats" height="auto" width="md">
-          <SectionProjectStats statEntries={statEntries} />
+          <ProjectStats statEntries={statEntries} />
         </Section>
       )}
       {stories.map((story, index) => {
         const key = `figure-${story.id}`
         return (
           <Section key={key} id={`figure-${story.id}`} height="auto" width="lg">
-            <SectionProjectFigure
+            <ProjectFigure
               figuresProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
                 index: `2.1.${index + 1}`,
@@ -123,14 +127,12 @@ const WorkDetailPage = async (props: PageProps) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <SectionProjectPlate
-              mediaProps={{ asset, index: `2.1.${stories.length + index + 1}` }}
-            />
+            <ProjectPlate mediaProps={{ asset, index: `2.1.${stories.length + index + 1}` }} />
           </Section>
         )
       })}
       <Section id="next" height="auto" width="lg">
-        <SectionProjectNext
+        <ProjectNext
           asset={getProjectAsset(nextProject) ?? placeholderAsset}
           nextProps={{
             label: 'Next Project',
@@ -144,7 +146,7 @@ const WorkDetailPage = async (props: PageProps) => {
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
-        <SectionContact
+        <GlobalContact
           boardProps={{ subtitle: `2.1.${stories.length + assets.length + 1} / Contact //` }}
           title="Get in Touch"
           channelEntries={[

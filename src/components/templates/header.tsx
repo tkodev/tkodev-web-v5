@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FC, type HTMLAttributes } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Logo } from '@/components/atoms/logo'
-import { BlockNav } from '@/components/molecules/block-nav'
+import { Nav } from '@/components/molecules/nav'
 import { headerEntries } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -88,7 +88,7 @@ const Header: FC<HeaderProps> = (props) => {
             </div>
           </div>
           <div className={cn(styles.right())}>
-            <BlockNav entries={headerEntries} />
+            <Nav entries={headerEntries} />
           </div>
         </div>
       </div>
