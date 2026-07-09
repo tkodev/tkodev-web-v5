@@ -20,3 +20,4 @@ Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 
 @docs/02-prd/03-solution.md
 @docs/02-prd/04-design.md
 @docs/02-prd/05-architecture.md
+@docs/02-prd/06-plan.md

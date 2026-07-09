@@ -31,6 +31,7 @@ from the ones before it:
 | `03-solution.md` | The settled design at concept level: concept, surfaces, systems |
 | `04-design.md` | The design-token contract, transcribed from the design file |
 | `05-architecture.md` | Stack, information architecture, repo structure, data layer |
+| `06-plan.md` | The plan: the milestone graph (kinds, dependencies), cut from the stages above |
 
 - **Observations follow the priority frame**, the order problems get worked in:
   1. **The Problem**: one or two sentences.
@@ -48,10 +49,10 @@ from the ones before it:
 Three authorities, each owning a different kind of truth and each with the
 rules that keep it honest:
 
-- **The repo holds law and state**: the PRD, the standards, and the
-  milestone docs (`docs/03-milestones/`: the graph plus each milestone's
-  scope, task cut, and live status); versioned, canonical for intent,
-  contract, and work status. Docs and code
+- **The repo holds law and state**: the PRD (the plan's milestone graph
+  included, `docs/02-prd/06-plan.md`), the standards, and the milestone docs
+  (`docs/03-milestones/`: each milestone's scope, task cut, and live status);
+  versioned, canonical for intent, contract, and work status. Docs and code
   change together **in the same change**; a discovery the docs missed (a
   token value, a variant, a breakpoint) is written back to the owning doc,
   never left in a commit message or comment. Docs carry intent and contract;
@@ -95,8 +96,9 @@ points (the plan and the gate); agents and machines carry the middle.
 A milestone is a reviewable increment behind a human gate, instantiated as a
 **milestone doc** (`docs/03-milestones/`) binding it to concrete scope, a
 definition of done, and, from its plan step onward, the task cut with live
-per-task status. Milestones form a dependency graph, not a fixed sequence;
-three kinds set what may run in parallel:
+per-task status. Milestones form a dependency graph, not a fixed sequence, laid
+out in the plan (§The PRD, `06-plan.md`); three kinds set what may run in
+parallel:
 
 | Kind | The work | Parallelism |
 | --- | --- | --- |
