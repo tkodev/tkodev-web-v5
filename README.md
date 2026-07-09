@@ -30,7 +30,7 @@ pnpm test         # vitest
 
 ## Docs
 
-Docs drive the implementation, read in numbered order: the rules ([docs/01-standards/](docs/01-standards/)) split by topic, the PRD ([docs/02-prd/](docs/02-prd/)) as a numbered pipeline ending in the plan, then the work state ([docs/03-milestones/](docs/03-milestones/)):
+Docs drive the implementation, read in numbered order: the rules ([docs/01-standards/](docs/01-standards/)) split by topic, then the PRD ([docs/02-prd/](docs/02-prd/)) as a numbered pipeline ending in the plan (the live milestone list):
 
 | Doc | What it owns |
 | --- | --- |
@@ -40,8 +40,7 @@ Docs drive the implementation, read in numbered order: the rules ([docs/01-stand
 | [docs/02-prd/03-solution.md](docs/02-prd/03-solution.md) | The settled design: concept, surfaces, cinematic system |
 | [docs/02-prd/04-design.md](docs/02-prd/04-design.md) | Design tokens (typography, color, radius, gap, fonts) |
 | [docs/02-prd/05-architecture.md](docs/02-prd/05-architecture.md) | Stack, information architecture, repo structure, data layer, theming |
-| [docs/02-prd/06-plan.md](docs/02-prd/06-plan.md) | The plan: the milestone graph (kinds, dependencies, status) |
-| [docs/03-milestones/](docs/03-milestones/) | Per-milestone docs: scope, gates, task cuts with live status |
+| [docs/02-prd/06-plan.md](docs/02-prd/06-plan.md) | The plan: the live milestone list (dependencies, status, scope) |
 
 ## Other
 

@@ -2,7 +2,7 @@
 
 How work happens: the sources of truth, how they stay honest with each other,
 and how work is planned, parallelized, and reviewed. This doc is the methodology
-layer and stays project-agnostic; the PRD and the milestone docs derive
+layer and stays project-agnostic; the PRD and the plan derive
 their structure from it. How change is recorded is
 [git.md](git.md)'s concern.
 
@@ -49,24 +49,23 @@ from the ones before it:
 Three authorities, each owning a different kind of truth and each with the
 rules that keep it honest:
 
-- **The repo holds law and state**: the PRD (the plan's milestone graph
-  included, `docs/02-prd/06-plan.md`), the standards, and the milestone docs
-  (`docs/03-milestones/`: each milestone's scope, task cut, and live status);
-  versioned, canonical for intent, contract, and work status. Docs and code
+- **The repo holds law and state**: the PRD (ending in the plan,
+  `docs/02-prd/06-plan.md`, the milestone list with live status), the standards,
+  and the code; versioned, canonical for intent, contract, and work status. Docs and code
   change together **in the same change**; a discovery the docs missed (a
   token value, a variant, a breakpoint) is written back to the owning doc,
   never left in a commit message or comment. Docs carry intent and contract;
   function-level detail belongs in the code. Each fact lives in exactly one
   owning doc: everywhere else points or summarizes, never restates, and when
-  two docs disagree the owner wins. Milestone docs are work state, not
-  contract; a fact that matters beyond a milestone moves to the owning doc.
+  two docs disagree the owner wins. The plan's milestone status is work state,
+  not contract; a fact that matters beyond a milestone moves to the owning doc.
 - **Figma holds pixels**: design questions resolve against the Figma nodes,
   not guesswork. Use structured design context (metadata/variables/code), not
   screenshots, when reading Figma. A component isn't done until it's been
   compared against its Figma node at desktop and mobile widths.
 - **GitHub holds review**: PRs, machine checks, preview deploys. Nothing
-  lives only on GitHub; a task's status flips in its milestone doc, in the
-  same PR as the work.
+  lives only on GitHub; a milestone's status flips in the plan, in the
+  same PR as the work that completes it.
 
 When all three still leave a question genuinely ambiguous, ask; don't
 improvise the product.
@@ -78,7 +77,7 @@ points (the plan and the gate); agents and machines carry the middle.
 
 1. **Plan.** Scope comes from the PRD and the design frames: cut the
    milestone into tasks by file ownership, map dependencies, mark trunk vs
-   leaf, all recorded in the milestone doc. An unknown that blocks the cut
+   leaf, tracked as task branches and PRs. An unknown that blocks the cut
    gets a **spike** first: a throwaway experiment answering one question;
    spike code is never merged, its answer is written back to the owning doc.
    The human approves the cut before execution; steering a plan costs
@@ -88,15 +87,15 @@ points (the plan and the gate); agents and machines carry the middle.
    agent review before merge (§Review).
 3. **Gate.** The human reviews outcomes on the milestone branch's deployed
    preview against the design frames at desktop and mobile widths, plus the
-   milestone doc's completed task list. Outcomes, not diffs; a human reads
+   milestone's merged task PRs. Outcomes, not diffs; a human reads
    code only on escalation.
 
 ## Milestones: the human gates
 
-A milestone is a reviewable increment behind a human gate, instantiated as a
-**milestone doc** (`docs/03-milestones/`) binding it to concrete scope, a
-definition of done, and, from its plan step onward, the task cut with live
-per-task status. Milestones form a dependency graph, not a fixed sequence, laid
+A milestone is a reviewable increment behind a human gate, instantiated as an
+**entry in the plan** (`docs/02-prd/06-plan.md`) binding it to concrete scope, a
+definition of done, and a status; its tasks are cut at its plan step and tracked
+as branches and PRs. Milestones form a dependency graph, not a fixed sequence, laid
 out in the plan (§The PRD, `06-plan.md`); three kinds set what may run in
 parallel:
 
@@ -127,9 +126,10 @@ parallel:
 
 ## Tasks: the agent work units
 
-A task is an entry in its milestone's doc: one unit of work an agent can
-complete unattended, carrying goal, kind, owned files, dependencies,
-acceptance criteria, verification commands, and the Figma node when visual.
+A task is one unit of work an agent can complete unattended, carrying goal,
+kind, owned files, dependencies, acceptance criteria, verification commands, and
+the Figma node when visual; it lives as a branch and PR, not a persisted doc
+entry.
 
 - **Scope by file ownership.** A task lists the file globs it owns; two
   tasks may run in parallel only if their owned sets don't overlap. The same
@@ -142,11 +142,11 @@ acceptance criteria, verification commands, and the Figma node when visual.
   shared need (a primitive two surfaces want), it lands on `main` as its own
   small system task and sibling branches merge `main` forward; never two
   parallel copies of the same convention.
-- **Read the milestone doc at task start**, whole: the sibling tasks and
-  their owned sets bound what may run in parallel.
-- **Status flips with the work.** A task's status moves
-  (todo → in-progress → in-review → done) in the same PR as the change it
-  describes; blocked is a status, not a comment.
+- **Check the plan and open branches at task start**: the milestone's scope
+  and the sibling tasks in flight bound what may run in parallel.
+- **Status flips with the work.** A task moves through its branch and PR
+  (open → in-review → merged) in the same PR as the change it describes;
+  blocked is a state carried on the PR, not a comment.
 
 ## Branches and PRs
 
@@ -170,6 +170,7 @@ Three tiers, split by kind, not by priority:
 
 ## The board
 
-The board is a query, not a service: task status lives in the milestone
-docs, so `docs/03-milestones/` is always the live board and git history is
-the audit trail. Nothing is mirrored to an external tracker.
+The board is a query, not a service: milestone status lives in the plan and
+task status is the state of its open branches and PRs, so `docs/02-prd/06-plan.md`
+plus the live PRs are always the board and git history is the audit trail.
+Nothing is mirrored to an external tracker.
