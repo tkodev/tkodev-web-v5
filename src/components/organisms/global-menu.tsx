@@ -70,8 +70,8 @@ const GlobalMenu = (props: GlobalMenuProps) => {
           <Menu entries={entries} />
         </div>
         <div className={cn(styles.footer())}>
-          <p>0.0 / Menu //</p>
-          <p>[ Signal Clear ]</p>
+          <p>{'// Menu //'}</p>
+          <p>[ Awaiting Input ]</p>
         </div>
       </DrawerContent>
     </Drawer>
