@@ -13,7 +13,7 @@ const projectEntries: ProjectEntry[] = [
         'Cinematic portfolio built from scratch — token architecture, five-state lifecycle, full Framer Motion system.',
       desc: 'A cinematic personal portfolio built entirely from scratch — no template, no component-library skin. A semantic design-token architecture underpins the visual system, a five-state Zustand lifecycle choreographs the loading sequence, page transitions, and ambient audio, and a Framer Motion layer drives every reveal. Full light and dark theming throughout, with Claude Code and Cursor used to accelerate delivery without ever ceding design ownership.',
       role: 'Design Engineer',
-      category: 'active',
+      category: 'featured',
       startDate: fromZonedTime('2025-03-01', appTimeZone)
     },
     extended: {
@@ -64,7 +64,7 @@ const projectEntries: ProjectEntry[] = [
         'Social media scheduler owned PRD to production — Next.js, Supabase, TanStack Query, Zod.',
       desc: 'Social media scheduling app with full-cycle product ownership from PRD to deployed code. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Claude Code.',
       role: 'Full-Stack Engineer',
-      category: 'active',
+      category: 'featured',
       startDate: fromZonedTime('2026-03-01', appTimeZone)
     },
     extended: {
