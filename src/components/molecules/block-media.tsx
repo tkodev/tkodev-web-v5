@@ -21,7 +21,7 @@ type BlockMediaRef = HTMLDivElement
 type BlockMediaProps = HTMLAttributes<BlockMediaRef> &
   VariantProps<typeof styles.root> & {
     asset: AssetEntry
-    index: number
+    index: string
   }
 
 const BlockMedia = forwardRef<BlockMediaRef, BlockMediaProps>((props, ref) => {
@@ -37,7 +37,7 @@ const BlockMedia = forwardRef<BlockMediaRef, BlockMediaProps>((props, ref) => {
         </div>
       </div>
       <div className={cn(styles.caption())}>
-        <p className={cn(styles.captionIndex())}>Figure {index}.0</p>
+        <p className={cn(styles.captionIndex())}>{index} / Figure //</p>
         <p className={cn(styles.captionLabel())}>{asset.alt}</p>
       </div>
     </div>

@@ -22,10 +22,9 @@ branches and PRs, not listed here.
 - [~] **m06 — Work detail**
   - Depends on: m02
   - Scope: The dossier template over project entries
-    - All featured works should have a story - find content in /Users/xuser/ops/repos/tkodev or /Users/xuser/ops/notes/tkodev/career-notes
-    - Techtank TO's figure 02 is incorrect, should use figure 03, removing figure 03 from media assets
-    - Project-hero should use the same layering structure as projects-hero, where we create a component (like projects-hero uses Tile), but it only displays the project's main story/asset
-    - Manual work: For images that are portrait, we should use a landscape image that places the portrait image in the center
+    - All featured projects should have stories
+    - All projects should make use of the project details provided in career-notes' linkedin/projects and linkedin/experience if possible, alternatively, the website/* entries
+    - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m07 — About**
   - Depends on: m02
   - Scope: Statement, method, the details
@@ -34,7 +33,7 @@ branches and PRs, not listed here.
   - Scope: The service record, not yet designed
 - [ ] **m03 — Nav overlay**
   - Depends on: m01
-  - Scope: Full-screen menu rebuilt in the annotation language
+  - Scope: Full-screen menu rebuilt in the annotation language, not yet designed
 - [ ] **m02 — Boot sequence**
   - Depends on: m01
   - Scope: Boot sequence

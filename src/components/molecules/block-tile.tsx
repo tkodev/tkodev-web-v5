@@ -6,7 +6,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center']),
   tile: cva([
-    'relative aspect-video h-full w-auto',
+    'relative aspect-video h-8/10 w-auto',
     'opacity-30 hover:scale-102 hover:opacity-60',
     'transition-all duration-1000'
   ]),

@@ -68,8 +68,10 @@ const WorkDetailPage = async (props: PageProps) => {
   ]
   const statEntries = extended?.stats ?? []
   const stories = media?.stories ?? []
-  const plateAssets = media?.assets ?? []
-  const projectIndex = projectEntries.findIndex((projectEntry) => projectEntry.id === project.id)
+  const assets = media?.assets ?? []
+  const projectIndex = projectEntries
+    .filter((projectEntry) => projectEntry.basic.category === 'featured')
+    .findIndex((projectEntry) => projectEntry.id === project.id)
   const nextProject = projectEntries[(projectIndex + 1) % projectEntries.length]
 
   // jsx
@@ -82,8 +84,7 @@ const WorkDetailPage = async (props: PageProps) => {
             title: '2.1.0 / Dossier //',
             subtitle: '// Case File',
             accent1: '[ File Open ]',
-            accent2: '[ Evidence Logged ]',
-            cta: 'Read'
+            accent2: '[ Evidence Logged ]'
           }}
           titleProps={{
             tagline: basic.role,
@@ -111,18 +112,20 @@ const WorkDetailPage = async (props: PageProps) => {
             <SectionProjectFigure
               figuresProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
-                index: index + 1,
+                index: `2.1.${index + 1}`,
                 story
               }}
             />
           </Section>
         )
       })}
-      {plateAssets.map((asset, index) => {
+      {assets.map((asset, index) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <SectionProjectPlate mediaProps={{ asset, index: stories.length + index + 1 }} />
+            <SectionProjectPlate
+              mediaProps={{ asset, index: `2.1.${stories.length + index + 1}` }}
+            />
           </Section>
         )
       })}
@@ -141,7 +144,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <SectionContact
-          boardProps={{ subtitle: '5.0 / Contact //' }}
+          boardProps={{ subtitle: `2.1.${stories.length + assets.length + 1} / Contact //` }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

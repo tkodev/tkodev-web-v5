@@ -39,7 +39,7 @@ type BlockFiguresRef = HTMLDivElement
 type BlockFiguresProps = HTMLAttributes<BlockFiguresRef> &
   VariantProps<typeof styles.root> & {
     story: StoryEntry
-    index: number
+    index: string
   }
 
 const BlockFigures = forwardRef<BlockFiguresRef, BlockFiguresProps>((props, ref) => {
@@ -56,7 +56,7 @@ const BlockFigures = forwardRef<BlockFiguresRef, BlockFiguresProps>((props, ref)
         </div>
       </div>
       <div className={cn(styles.col({ direction }))}>
-        <p className={cn(styles.figure())}>Figure {index}.0</p>
+        <p className={cn(styles.figure())}>{index} / Figure //</p>
         <h2 className={cn(styles.title())}>{title}</h2>
         <p className={cn(styles.body())}>{body}</p>
       </div>

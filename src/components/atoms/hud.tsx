@@ -14,7 +14,7 @@ const styles = {
           'top-8 left-1/2 -translate-x-1/2',
           'opacity-100 transition-opacity duration-1000 sm:opacity-0'
         ],
-        smCta: ['bottom-8 left-1/2 -translate-x-1/2', 'text-bold text-foreground']
+        smCta: ['bottom-8 left-1/2 -translate-x-1/2']
       }
     }
   })
