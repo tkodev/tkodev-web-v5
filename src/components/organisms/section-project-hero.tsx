@@ -6,9 +6,10 @@ import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['size-full', 'relative', 'flex flex-col']),
+  root: cva(['size-full', 'flex flex-col']),
+  stage: cva(['relative grow', 'min-h-0']),
   hud: cva('absolute inset-0'),
-  tile: cva('min-h-0 grow p-4')
+  tile: cva('size-full')
 }
 
 type SectionProjectHeroRef = HTMLDivElement
@@ -27,8 +28,10 @@ const SectionProjectHero = forwardRef<SectionProjectHeroRef, SectionProjectHeroP
     // jsx
     return (
       <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-        <Hud className={cn(styles.hud())} {...hudProps} />
-        <BlockTile className={cn(styles.tile())} asset={asset} />
+        <div className={cn(styles.stage())}>
+          <Hud className={cn(styles.hud())} {...hudProps} />
+          <BlockTile className={cn(styles.tile())} asset={asset} />
+        </div>
         <BlockTitle {...titleProps} />
       </div>
     )
