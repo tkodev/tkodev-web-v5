@@ -26,6 +26,7 @@ as branches and PRs, not listed here.
     - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m05 — About**
   - Statement, method, process, the details
+    - Process has a new statement, we don't need it. Instead use BlockText in "How I work" section, with appropriate subtitle
 - [ ] **m06 — Experience**
   - The service record, not yet designed
 - [ ] **m07 — Boot sequence**
