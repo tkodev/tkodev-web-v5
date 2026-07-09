@@ -1,14 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { formatInTimeZone } from 'date-fns-tz'
-import {
-  ChevronLeftIcon,
-  ContactIcon,
-  GitBranchIcon,
-  IdCardIcon,
-  MailIcon,
-  PresentationIcon
-} from 'lucide-react'
+import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, PresentationIcon } from 'lucide-react'
 import { SectionContact } from '@/components/organisms/section-contact'
 import { SectionProjectFigure } from '@/components/organisms/section-project-figure'
 import { SectionProjectHero } from '@/components/organisms/section-project-hero'
@@ -85,7 +78,13 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="masthead" width="lg">
         <SectionProjectHero
           asset={heroAsset}
-          ctaProps={{ href: '/works', icon: ChevronLeftIcon, label: 'Back to Works' }}
+          hudProps={{
+            title: '2.1.0 / Dossier //',
+            subtitle: '// Case File',
+            accent1: '[ File Open ]',
+            accent2: '[ Evidence Logged ]',
+            cta: 'Read'
+          }}
           titleProps={{
             tagline: basic.role,
             title: basic.title,

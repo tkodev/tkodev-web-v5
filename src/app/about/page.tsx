@@ -24,6 +24,13 @@ const AboutPage = () => {
     <Main>
       <Section id="about-hero">
         <SectionAboutHero
+          hudProps={{
+            title: '3.0 / About //',
+            subtitle: '// Identity File',
+            accent1: '[ Profile Loaded ]',
+            accent2: '[ Signal Clear ]',
+            cta: 'Read'
+          }}
           introProps={{
             subtitle: 'About',
             title: 'Visual thinker \nat heart'

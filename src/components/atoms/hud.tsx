@@ -23,11 +23,11 @@ const styles = {
 type HudRef = HTMLDivElement
 type HudProps = HTMLAttributes<HudRef> &
   VariantProps<typeof styles.root> & {
-    title: string
-    subtitle: string
-    accent1: string
-    accent2: string
-    cta: string
+    title?: string
+    subtitle?: string
+    accent1?: string
+    accent2?: string
+    cta?: string
   }
 
 const Hud = forwardRef<HudRef, HudProps>((props, ref) => {
@@ -37,12 +37,12 @@ const Hud = forwardRef<HudRef, HudProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.accent({ variant: 'title' }))}>{title}</div>
-      <div className={cn(styles.accent({ variant: 'subtitle' }))}>{subtitle}</div>
-      <div className={cn(styles.accent({ variant: 'accent1' }))}>{accent1}</div>
-      <div className={cn(styles.accent({ variant: 'accent2' }))}>{accent2}</div>
-      <div className={cn(styles.accent({ variant: 'smTitle' }))}>{title}</div>
-      <div className={cn(styles.accent({ variant: 'smCta' }))}>{cta}</div>
+      {!!title && <div className={cn(styles.accent({ variant: 'title' }))}>{title}</div>}
+      {!!subtitle && <div className={cn(styles.accent({ variant: 'subtitle' }))}>{subtitle}</div>}
+      {!!accent1 && <div className={cn(styles.accent({ variant: 'accent1' }))}>{accent1}</div>}
+      {!!accent2 && <div className={cn(styles.accent({ variant: 'accent2' }))}>{accent2}</div>}
+      {!!title && <div className={cn(styles.accent({ variant: 'smTitle' }))}>{title}</div>}
+      {!!cta && <div className={cn(styles.accent({ variant: 'smCta' }))}>{cta}</div>}
     </div>
   )
 })

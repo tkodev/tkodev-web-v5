@@ -4,8 +4,6 @@ import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  // position pairs with object-cover/contain at the call site: anchor the crop to
-  // the top by default so overflow is trimmed from the bottom, not the edges.
   root: cva('', {
     variants: {
       position: {

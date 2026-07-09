@@ -3,7 +3,7 @@ import { Badge } from '@/components/atoms/badge'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('w-full'),
+  root: cva('w-full py-4'),
   header: cva('flex flex-col gap-2 px-4'),
   tagline: cva('text-e4 font-expressive text-muted-foreground uppercase'),
   title: cva('text-h3 font-heading uppercase'),

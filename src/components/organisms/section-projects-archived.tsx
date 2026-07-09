@@ -29,7 +29,7 @@ const SectionProjectsArchived = forwardRef<
       <BlockBoard {...boardProps} className={cn(styles.board())}>
         {projectEntries.map((projectEntry) => {
           const key = `archive-${projectEntry.id}-card`
-          return <CardProject key={key} project={projectEntry} href={`/works/${projectEntry.id}`} />
+          return <CardProject key={key} project={projectEntry} />
         })}
       </BlockBoard>
     </div>

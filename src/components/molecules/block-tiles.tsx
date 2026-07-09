@@ -8,7 +8,7 @@ const styles = {
   grid: cva('grid w-full shrink-0 grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-5'),
   tile: cva([
     'bg-muted relative aspect-video overflow-hidden rounded-sm',
-    'opacity-30 hover:scale-105 hover:opacity-100',
+    'opacity-30 hover:scale-105 hover:opacity-60',
     'transition-all duration-1000'
   ]),
   img: cva('absolute inset-0 size-full object-cover')

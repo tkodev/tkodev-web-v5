@@ -6,11 +6,11 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center']),
   tile: cva([
-    'bg-muted relative aspect-video h-full w-auto',
-    'opacity-30 hover:scale-105 hover:opacity-100',
+    'relative aspect-video h-full w-auto',
+    'opacity-30 hover:scale-102 hover:opacity-60',
     'transition-all duration-1000'
   ]),
-  img: cva('absolute inset-0 size-full overflow-hidden rounded-sm object-cover')
+  img: cva('absolute inset-0 size-full rounded-sm object-cover')
 }
 
 type BlockTileRef = HTMLDivElement
