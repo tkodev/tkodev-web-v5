@@ -8,7 +8,8 @@ Runtime, language, and what "done" requires.
 
 1. **pnpm only.** Never npm or yarn. Node ≥ 24.
 2. **TypeScript strict.** No `any` escape hatches; domain types live in `types/`.
-3. **Tests are [testing.md](testing.md)'s concern.**
+3. **A server started for verification is killed when the check ends**: a `pnpm dev` or `pnpm start` run to confirm a change holds the port and outlives the task otherwise, so the next run collides or, worse, verifies against stale output. Long-running servers the human started are theirs to stop.
+4. **Tests are [testing.md](testing.md)'s concern.**
 
 ## Concepts
 
