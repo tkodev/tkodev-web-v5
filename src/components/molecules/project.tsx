@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { forwardRef, type ComponentProps, type HTMLAttributes } from 'react'
 import { formatInTimeZone } from 'date-fns-tz'
 import { Asset } from '@/components/atoms/asset'
+import { Card } from '@/components/atoms/card'
 import { Ticker } from '@/components/atoms/ticker'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
@@ -14,7 +15,7 @@ import { Badge } from '../atoms/badge'
 
 const styles = {
   root: cva([
-    'group/ticker bg-background/30 @container block min-w-60 rounded-sm border backdrop-blur-sm',
+    'group/ticker @container block min-w-60',
     'transition-colors outline-none',
     'focus-visible:ring-ring/50 focus-visible:ring-3'
   ]),
@@ -24,7 +25,7 @@ const styles = {
   contentCol: cva('flex grow flex-col @3xl:w-2/3 @3xl:border-l'),
 
   assetCell: cva('flex size-full items-center p-4'),
-  assetFrame: cva('bg-card relative aspect-video w-full overflow-hidden rounded-xs'),
+  assetFrame: cva('aspect-video w-full'),
   img: cva('absolute inset-0 size-full object-cover'),
   introCell: cva('flex shrink-0 flex-col gap-2 overflow-hidden border-t p-4 @3xl:border-t-0'),
   clientCell: cva([
@@ -64,9 +65,9 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
     <div className={cn(styles.cols())}>
       <div className={cn(styles.assetCol())}>
         <div className={cn(styles.assetCell())}>
-          <div className={cn(styles.assetFrame())}>
+          <Card className={cn(styles.assetFrame())} variant="plate">
             <Asset className={cn(styles.img())} asset={asset} />
-          </div>
+          </Card>
         </div>
       </div>
       <div className={cn(styles.contentCol())}>
@@ -100,20 +101,17 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
   // jsx
   if (href) {
     return (
-      <Link
-        ref={ref as ComponentProps<typeof Link>['ref']}
-        className={cn(styles.root({ className }))}
-        href={href}
-        {...rest}
-      >
-        {content}
-      </Link>
+      <Card className={cn(styles.root({ className }))} {...rest} asChild>
+        <Link ref={ref as ComponentProps<typeof Link>['ref']} href={href}>
+          {content}
+        </Link>
+      </Card>
     )
   }
   return (
-    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <Card ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {content}
-    </div>
+    </Card>
   )
 })
 Project.displayName = 'Project'

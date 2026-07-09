@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Card } from '@/components/atoms/card'
 import { personEntryById } from '@/constants/profile'
 import { type TestimonialEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('bg-background/30 flex flex-col rounded-sm border backdrop-blur-sm'),
+  root: cva('flex flex-col'),
 
   quoteCell: cva('grow border-b p-4'),
   quote: cva('text-muted-foreground line-clamp-9 text-sm whitespace-pre-line italic'),
@@ -43,7 +44,7 @@ const Testimonial = forwardRef<TestimonialRef, TestimonialProps>((props, ref) =>
 
   // jsx
   return (
-    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <Card ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.quoteCell())}>
         <blockquote className={cn(styles.quote())}>&ldquo;{basic.desc}&rdquo;</blockquote>
       </div>
@@ -66,7 +67,7 @@ const Testimonial = forwardRef<TestimonialRef, TestimonialProps>((props, ref) =>
           <p className={cn(styles.name())}>{author?.basic.name}</p>
         </div>
       </div>
-    </div>
+    </Card>
   )
 })
 Testimonial.displayName = 'Testimonial'

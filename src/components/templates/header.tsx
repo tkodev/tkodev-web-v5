@@ -1,10 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import { FC, type HTMLAttributes } from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
-import { Logo } from '@/components/atoms/logo'
+import { MenuIcon } from 'lucide-react'
+import { Button } from '@/components/atoms/button'
+import { Icon } from '@/components/atoms/icon'
+import { Identity, type IdentityProps } from '@/components/molecules/identity'
 import { Nav } from '@/components/molecules/nav'
+import { GlobalMenu } from '@/components/organisms/global-menu'
 import { headerEntries } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -40,9 +42,8 @@ const styles = {
   left: cva('flex h-full items-center gap-2'),
   right: cva('no-scrollbar flex h-full items-center gap-2 overflow-x-auto'),
 
-  thumb: cva('hidden sm:block'),
-  logo: cva('h-6 w-18 sm:mx-6'),
-  intro: cva('hidden flex-col md:flex')
+  nav: cva('hidden sm:flex'),
+  trigger: cva('sm:hidden')
 }
 
 type HeaderProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.bar>
@@ -51,7 +52,12 @@ const Header: FC<HeaderProps> = (props) => {
   const { variant, className, ...rest } = props
 
   const tony = personEntryById['tony']
-  const thumb = tony.media?.thumb
+  const identityProps: IdentityProps = {
+    name: tony.basic.name,
+    role: tony.basic.role,
+    thumb: tony.media?.thumb,
+    fallback: 'tko'
+  }
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
@@ -71,24 +77,16 @@ const Header: FC<HeaderProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>
-            <Link className={cn(styles.thumb())} href="/">
-              <Avatar>
-                <AvatarImage alt={thumb?.alt ?? tony.basic.name} src={thumb?.src} />
-                <AvatarFallback>tko</AvatarFallback>
-              </Avatar>
-            </Link>
-            <Link className={cn(styles.logo())} href="/">
-              <Logo />
-            </Link>
-            <div className={cn(styles.intro())}>
-              <p>
-                <strong>Tony Ko</strong>
-              </p>
-              <p>Staff Software Engineer</p>
-            </div>
+            <Identity {...identityProps} />
           </div>
           <div className={cn(styles.right())}>
-            <Nav entries={headerEntries} />
+            <Nav className={cn(styles.nav())} entries={headerEntries} />
+            <GlobalMenu entries={headerEntries} identityProps={identityProps}>
+              <Button className={cn(styles.trigger())} variant="link">
+                <Icon icon={MenuIcon} size="sm" />
+                Menu
+              </Button>
+            </GlobalMenu>
           </div>
         </div>
       </div>

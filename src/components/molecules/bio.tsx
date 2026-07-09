@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
+import { Card } from '@/components/atoms/card'
 import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva([
-    'bg-background/30 relative flex flex-col justify-between gap-24 overflow-hidden rounded-sm border p-4 backdrop-blur-sm'
-  ]),
+  root: cva(['relative flex flex-col justify-between gap-24 overflow-hidden p-4']),
   photo: cva('absolute inset-0 size-full object-cover'),
   scrim: cva('from-card/0 to-card absolute inset-0 bg-linear-to-b'),
   title: cva(['relative', 'text-h4 font-heading uppercase']),
@@ -29,7 +28,7 @@ const Bio = forwardRef<BioRef, BioProps>((props, ref) => {
 
   // jsx
   return (
-    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <Card ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {!!photo && (
         <Image
           className={cn(styles.photo())}
@@ -45,7 +44,7 @@ const Bio = forwardRef<BioRef, BioProps>((props, ref) => {
         <p className={cn(styles.desc())}>{desc}</p>
         {cta}
       </div>
-    </div>
+    </Card>
   )
 })
 Bio.displayName = 'Bio'

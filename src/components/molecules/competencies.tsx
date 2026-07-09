@@ -5,11 +5,12 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/atoms/accordion'
+import { Card } from '@/components/atoms/card'
 import { type CompetencyEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('bg-background/30 flex flex-col gap-4 rounded-sm border p-4 backdrop-blur-sm'),
+  root: cva('flex flex-col gap-4 p-4'),
   title: cva('text-h4 font-heading uppercase'),
   accordion: cva('w-full')
 }
@@ -27,7 +28,7 @@ const Competencies = forwardRef<CompetenciesRef, CompetenciesProps>((props, ref)
 
   // jsx
   return (
-    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <Card ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <h3 className={cn(styles.title())}>{title}</h3>
       <Accordion type="single" className={cn(styles.accordion())} collapsible>
         {competencyEntries.map((competencyEntry) => {
@@ -42,7 +43,7 @@ const Competencies = forwardRef<CompetenciesRef, CompetenciesProps>((props, ref)
           )
         })}
       </Accordion>
-    </div>
+    </Card>
   )
 })
 Competencies.displayName = 'Competencies'

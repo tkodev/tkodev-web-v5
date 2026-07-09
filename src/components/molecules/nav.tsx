@@ -7,7 +7,17 @@ import { NavEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex items-center gap-4'),
+  root: cva('flex gap-4', {
+    variants: {
+      orientation: {
+        horizontal: 'items-center',
+        vertical: 'flex-col items-start'
+      }
+    },
+    defaultVariants: {
+      orientation: 'horizontal'
+    }
+  }),
   icon: cva('xs:block')
 }
 
@@ -19,11 +29,11 @@ type NavProps = HTMLAttributes<NavRef> &
 
 const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
   // props
-  const { entries, children, className, ...rest } = props
+  const { entries, orientation, children, className, ...rest } = props
 
   // jsx
   return (
-    <nav ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <nav ref={ref} className={cn(styles.root({ orientation, className }))} {...rest}>
       {entries.map((props, index) => {
         const { intent, href, name, icon, isVisible, variant, ...rest } = props
         const linkHref = href || '#'
