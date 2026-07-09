@@ -131,6 +131,7 @@ const WorkDetailPage = async (props: PageProps) => {
       })}
       <Section id="next" height="auto" width="lg">
         <SectionProjectNext
+          asset={getProjectAsset(nextProject) ?? placeholderAsset}
           nextProps={{
             label: 'Next Project',
             title: nextProject.basic.title,
