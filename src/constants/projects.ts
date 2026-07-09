@@ -120,7 +120,7 @@ const projectEntries: ProjectEntry[] = [
         'Ground-up rebuild of the community site — role-based onboarding funnels and a live event archive.',
       desc: 'A complete rewrite of the TechTank Toronto community site, owned from PRD through production. Conversion-optimized onboarding funnels route speakers, hosts, sponsors, and volunteers down distinct role paths; a shadcn/ui component library keeps the interface consistent; and a structured event archive with Vercel analytics makes the program measurable. Scaffolded with v0 and built with Claude Code.',
       role: 'Digital Lead',
-      category: 'active',
+      category: 'featured',
       startDate: fromZonedTime('2026-04-01', appTimeZone)
     },
     extended: {
@@ -532,7 +532,7 @@ const projectEntries: ProjectEntry[] = [
         "Aeroplan's first cross-browser extension — one consistent experience across Chrome, Firefox, Safari, and Edge.",
       desc: "Architected Aeroplan's first cross-browser shopping extension, with consistent behavior across Chrome, Firefox, Safari, and Edge. An SWR-based CORS bypass, multi-domain session tracking for purchase attribution, and a multi-level caching layer kept high-traffic retailer data fast and accurate across hundreds of retail sites — turning a first-of-its-kind concept into a shippable product.",
       role: 'Team Lead',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2021-07-01', appTimeZone),
       endDate: fromZonedTime('2022-01-01', appTimeZone)
     },
@@ -767,7 +767,7 @@ const projectEntries: ProjectEntry[] = [
         'Design-to-code productivity dashboard — Figma system, four-API OAuth, SVG over millions of data points.',
       desc: 'Full design-to-code ownership of an employee productivity dashboard for an architectural engineering firm. Designed the interface and a reusable design system in Figma, then implemented OAuth/OIDC authentication via Passport.js across four API integrations. SVG visualizations and optimized SQL surfaced millions of historical data points as actionable productivity insights in one cohesive view.',
       role: 'Team Lead',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2020-11-01', appTimeZone),
       endDate: fromZonedTime('2021-03-01', appTimeZone)
     },
@@ -1505,7 +1505,7 @@ const projectEntries: ProjectEntry[] = [
         'Self-directed FreeCodeCamp curriculum that turned a design background into full-stack JavaScript engineering.',
       desc: 'A self-directed FreeCodeCamp curriculum that carried a career from interior design into software engineering — full-stack JavaScript, OAuth, algorithms, and data structures learned from the ground up. An OCAD design background shaped a series of polished, mobile-first builds shipped from scratch: Simon Says, Tic Tac Toe, a Pomodoro timer, a calculator, and a weather widget.',
       role: 'Student',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2016-09-01', appTimeZone),
       endDate: fromZonedTime('2019-05-01', appTimeZone)
     },
@@ -1638,7 +1638,7 @@ const projectEntries: ProjectEntry[] = [
         'Pixel-perfect web design and illustration, hand-coded for the dial-up era before modern tooling existed.',
       desc: 'Pixel-perfect web design from the Web 1.0 era, self-taught from an early age. Photoshop-sliced templates, table-based HTML and CSS, and custom themes for Sony Ericsson phones, Winamp, and early social platforms like Xanga, AsianAvenue, and Zuup — every asset optimized for dial-up and shipped to live sites across Netscape and IE6, long before modern frameworks existed.',
       role: 'Web Designer',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2000-01-01', appTimeZone),
       endDate: fromZonedTime('2010-01-01', appTimeZone)
     },
@@ -1771,7 +1771,7 @@ const projectEntries: ProjectEntry[] = [
         'Interior and architectural design at OCAD — physical models, technical drawings, and 3D spatial visualizations.',
       desc: 'Interior design and architecture study at OCAD University, producing a body of work across residential, gallery, and community programs — physical models, technical drawings, and 3D visualizations built in Revit, Fusion 360, and Blender. The spatial reasoning and design-systems thinking developed here still carries directly into how software gets designed today.',
       role: 'Student',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2010-09-01', appTimeZone),
       endDate: fromZonedTime('2016-09-01', appTimeZone)
     },
@@ -1946,7 +1946,7 @@ const projectEntries: ProjectEntry[] = [
         'Hobby-driven 3D modeling and printing, from a full server rack to custom PC hardware and everyday objects.',
       desc: 'Hobby-driven 3D modeling in Fusion 360 and Blender — custom prints for PC hardware, water cooling, and everyday objects. Projects range from a full IKEA Bekant server rack integrating NAS, SFF servers, and a UPS in a furniture-native form factor to custom PC cases, water blocks, keyfobs, and trophies. The same principle as software throughout: model the object around how it is actually used.',
       role: 'Industrial Designer',
-      category: 'active',
+      category: 'featured',
       startDate: fromZonedTime('2021-01-01', appTimeZone)
     },
     extended: {
