@@ -88,7 +88,7 @@ const WorkDetailPage = async (props: PageProps) => {
             metaEntries
           }}
           hudProps={{
-            title: '2.1.0 / Dossier //',
+            title: '1A.0 / Dossier //',
             subtitle: '// Case File',
             accent1: '[ File Open ]',
             accent2: '[ Evidence Logged ]'
@@ -116,7 +116,7 @@ const WorkDetailPage = async (props: PageProps) => {
             <ProjectStory
               storyProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
-                index: `2.1.${index + 1}`,
+                index: `1A.${index + 1}`,
                 story
               }}
             />
@@ -127,7 +127,7 @@ const WorkDetailPage = async (props: PageProps) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <ProjectVisuals visualsProps={{ asset, index: `2.1.${stories.length + index + 1}` }} />
+            <ProjectVisuals visualsProps={{ asset, index: `1A.${stories.length + index + 1}` }} />
           </Section>
         )
       })}
@@ -147,7 +147,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: `2.1.${stories.length + visuals.length + 1} / Contact //` }}
+          boardProps={{ subtitle: `1A.${stories.length + visuals.length + 1} / Contact //` }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

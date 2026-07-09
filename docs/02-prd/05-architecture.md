@@ -27,18 +27,20 @@ v5 is a multi-page site under one persistent shell.
 
 ### Route map
 
-| Route | Page | Nav label |
-| --- | --- | --- |
-| `/` | Home | — (wordmark/avatar) |
-| `/works` | Works index | Works |
-| `/works/[workId]` | Work detail (one flagship gets the elevated treatment) | — |
-| `/experience` | Experience | Experience |
-| `/about` | About | About |
-| `/design` | Design system specimen (living styleguide, unlinked from nav) | — |
-| — (overlay, not route) | Loading / boot sequence | — |
-| — (overlay, not route) | Nav overlay | §Navigation below |
+| Route | Page | Nav label | Index |
+| --- | --- | --- | --- |
+| `/` | Home | — (wordmark/avatar) | `0` |
+| `/works` | Works index | Works | `1` |
+| `/works/[workId]` | Work detail (one flagship gets the elevated treatment) | — | `1A` |
+| `/experience` | Experience | Experience | `2` |
+| `/about` | About | About | `3` |
+| `/design` | Design system specimen (living styleguide, unlinked from nav) | — | — |
+| — (overlay, not route) | Loading / boot sequence | — | — |
+| — (overlay, not route) | Nav overlay | §Navigation below | — |
 
 Experiments are a works-index category (`experiment` medium), not a route. Figma frame links per page live in [03-solution.md](03-solution.md) §Figma frames.
+
+**Section indices count from the surface's index**, in the annotation grammar's `N.M / LABEL //` form: the hero takes `.0` and each section below it increments, so home runs `0.0 / Intro //` then `0.1 / Works //`. A surface holds its number whether or not it is built, so `/experience` owns `2` in advance and nothing renumbers when it lands. A sub-document of a surface takes a letter suffix rather than a third level: work detail is `1A`, its stories and visuals running `1A.N` down the dossier, so no index collides with a section of the `/works` index above it.
 
 ### Navigation
 

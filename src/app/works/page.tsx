@@ -34,7 +34,7 @@ const WorksPage = () => {
         <ProjectsHero
           tileAssets={tileAssets}
           hudProps={{
-            title: '2.0 / Works //',
+            title: '1.0 / Works //',
             subtitle: '// Asset Index',
             accent1: '[ Build Manifest ]',
             accent2: '[ Systems Nominal ]',
@@ -52,7 +52,7 @@ const WorksPage = () => {
           ctaProps={{ href: '/works#archive', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
-            subtitle: '2.1 / Featured //',
+            subtitle: '1.1 / Featured //',
             title: 'Selected Works'
           }}
         />
@@ -61,14 +61,14 @@ const WorksPage = () => {
         <ProjectsArchived
           projectEntries={archiveEntries}
           boardProps={{
-            subtitle: '2.2 / Archive //',
+            subtitle: '1.2 / Archive //',
             title: 'More Works'
           }}
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: '2.3 / Contact //' }}
+          boardProps={{ subtitle: '1.3 / Contact //' }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

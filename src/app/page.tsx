@@ -32,7 +32,7 @@ const HomePage = () => {
       <Section id="intro">
         <HomeHero
           hudProps={{
-            title: '1.0 / Intro //',
+            title: '0.0 / Intro //',
             subtitle: '// Design System V5',
             accent1: '[ Spec Validated ]',
             accent2: '[ Deploy Sequenced ]',
@@ -50,7 +50,7 @@ const HomePage = () => {
           ctaProps={{ href: '/works', icon: Palette, label: 'View All Works' }}
           projectEntries={projectEntriesByCategory['featured']}
           boardProps={{
-            subtitle: '1.1 / Works //',
+            subtitle: '0.1 / Works //',
             title: 'Selected Works'
           }}
         />
@@ -66,7 +66,7 @@ const HomePage = () => {
       <Section id="overview" height="auto" width="md">
         <HomeOverview
           bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
-          boardProps={{ subtitle: '1.2 / Overview //' }}
+          boardProps={{ subtitle: '0.2 / Overview //' }}
           bioProps={{
             title: 'Bio',
             desc: 'Staff Software Engineer with 9+ years shipping cross-platform systems for Telus Digital, Aeroplan, Air Miles, Toyota, and Loblaw Digital. Unique product-design-engineering career experience.',
@@ -82,7 +82,7 @@ const HomePage = () => {
         <HomeTestimonials
           testimonialEntries={tonyTestimonialEntries}
           boardProps={{
-            subtitle: '1.3 / Testimonials //',
+            subtitle: '0.3 / Testimonials //',
             title: 'What People Say'
           }}
           ctaProps={{
@@ -94,7 +94,7 @@ const HomePage = () => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: '1.4 / Contact //' }}
+          boardProps={{ subtitle: '0.4 / Contact //' }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
