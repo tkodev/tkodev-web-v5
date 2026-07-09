@@ -53,6 +53,18 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Semantic Token Architecture and Cinematic Lifecycle',
           body: 'Built the visual system on a two-layer token architecture: a brand layer holds every raw value, and a semantic, shadcn-shaped layer is the only thing components consume, with full light and dark theming from one considered design. A Zustand lifecycle store drives the site from loading to ready, choreographing a boot sequence and staggered reveals through a Framer Motion layer. Every token, ramp, and primitive is original work rather than a component-library skin.'
+        },
+        {
+          id: 'design-ownership',
+          asset: {
+            type: 'image',
+            src: '/career/projects/tkodev/lifecycle-boot-sequence.png',
+            width: 1920,
+            height: 1080,
+            alt: 'tko.dev — Boot Sequence and Lifecycle States'
+          },
+          title: 'Ambient Audio by Consent, and AI Without Ceding Ownership',
+          body: 'The lifecycle store carries five distinct states, and the boot sequence, page transitions, and an ambient background music system all read from it — the audio never plays without explicit user consent. Claude Code and Cursor accelerated feature development and held code standards, but no design decision was delegated: every token, transition, interaction pattern, and system state was designed by hand.'
         }
       ]
     },
@@ -74,6 +86,7 @@ const projectEntries: ProjectEntry[] = [
     },
     extended: {
       duties: ['product thinking', 'software engineering'],
+      win: 'Owned a social scheduler from PRD to deployed code.',
       skills: [
         'Product Ownership',
         'Full-Stack Development',
