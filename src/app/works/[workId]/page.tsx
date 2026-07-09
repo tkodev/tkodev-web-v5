@@ -67,8 +67,7 @@ const WorkDetailPage = async (props: PageProps) => {
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
   const teamSize = parents.staffIds?.length
 
-  const heroAsset =
-    client.media?.light ?? client.media?.base ?? getProjectAsset(project) ?? placeholderAsset
+  const heroAsset = getProjectAsset(project) ?? placeholderAsset
   const metaEntries = [
     { label: 'Client', value: attribution },
     { label: 'Year', value: projectYear },

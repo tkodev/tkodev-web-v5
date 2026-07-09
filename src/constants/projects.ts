@@ -41,13 +41,18 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      stories: [
         {
-          type: 'image',
-          src: '/career/projects/tkodev/www.tko.dev_(1080p).png',
-          width: 1920,
-          height: 1080,
-          alt: 'tko.dev — Personal Portfolio'
+          id: 'token-architecture',
+          asset: {
+            type: 'image',
+            src: '/career/projects/tkodev/www.tko.dev_(1080p).png',
+            width: 1920,
+            height: 1080,
+            alt: 'tko.dev — Personal Portfolio'
+          },
+          title: 'Semantic Token Architecture and Cinematic Lifecycle',
+          body: 'Built the visual system on a two-layer token architecture: a brand layer holds every raw value, and a semantic, shadcn-shaped layer is the only thing components consume, with full light and dark theming from one considered design. A Zustand lifecycle store drives the site from loading to ready, choreographing a boot sequence and staggered reveals through a Framer Motion layer. Every token, ramp, and primitive is original work rather than a component-library skin.'
         }
       ]
     },
@@ -90,20 +95,30 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      stories: [
         {
-          type: 'video',
-          src: '/career/projects/gridflow/cursorful-video-1782448184978.mp4',
-          width: 944,
-          height: 1920,
-          alt: 'Gridflow — Social Media Scheduling App'
+          id: 'grid-planning',
+          asset: {
+            type: 'video',
+            src: '/career/projects/gridflow/cursorful-video-1782448184978.mp4',
+            width: 944,
+            height: 1920,
+            alt: 'Gridflow — True-to-Life Grid Planning'
+          },
+          title: 'True-to-Life Grid Planning and Drag-to-Arrange',
+          body: 'Gridflow previews an Instagram feed as a true-to-life three-column grid, so a profile looks exactly as intended before anything is posted. Posts and their media reorder through dnd-kit sortable interactions, backed by optimistic UI so the grid responds instantly. Every post carries a lifecycle status — draft, scheduled, or published — surfaced directly on the grid.'
         },
         {
-          type: 'image',
-          src: '/career/projects/gridflow/5ABDD3A0-68A2-4F71-851D-68ECC4BF6E06_1_105_c.jpeg',
-          width: 621,
-          height: 1264,
-          alt: 'Gridflow — Social Media Scheduling App'
+          id: 'fullstack-supabase',
+          asset: {
+            type: 'image',
+            src: '/career/projects/gridflow/5ABDD3A0-68A2-4F71-851D-68ECC4BF6E06_1_105_c.jpeg',
+            width: 621,
+            height: 1264,
+            alt: 'Gridflow — Social Media Scheduling App'
+          },
+          title: 'Full-Cycle Ownership on a Supabase Backend',
+          body: 'Owned the product from PRD through deployed code on a Next.js App Router and Supabase stack — Auth, Postgres, and Storage behind posts, post media, and profile buckets. TanStack Query isolates all async server state in a dedicated query layer, while React Hook Form governs auth, settings, and caption inputs. The app is structured for Vercel serverless deployment.'
         }
       ]
     },
@@ -151,13 +166,6 @@ const projectEntries: ProjectEntry[] = [
       assets: [
         {
           type: 'image',
-          src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(1).png',
-          width: 2732,
-          height: 2048,
-          alt: 'TechTank Toronto — Website Redesign (Tablet)'
-        },
-        {
-          type: 'image',
           src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(2).png',
           width: 2732,
           height: 2048,
@@ -195,10 +203,10 @@ const projectEntries: ProjectEntry[] = [
           id: 'brand-content',
           asset: {
             type: 'image',
-            src: '/career/projects/techtank-to-website/1d7bbc4a-c4e2-4643-b3f3-1174ff1076b3.jpg',
-            width: 2048,
-            height: 1536,
-            alt: 'TechTank Toronto — Community Event'
+            src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(1).png',
+            width: 2732,
+            height: 2048,
+            alt: 'TechTank Toronto — Website Redesign (Tablet)'
           },
           title: 'Brand, Content, and Community Growth',
           body: 'Designed graphics and established a cohesive social media brand identity, wrote copy to grow audience reach, and captured event photography for campaign content. Presented technical talks at community events on topics from browser extensions to engineering best practices.'
@@ -1969,13 +1977,6 @@ const projectEntries: ProjectEntry[] = [
       assets: [
         {
           type: 'image',
-          src: '/career/projects/industrial-design/Bekant_Cabinet_2026-May-10_02-26-22PM-000_CustomizedView10916433213.png',
-          width: 1200,
-          height: 1200,
-          alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
-        },
-        {
-          type: 'image',
           src: '/career/projects/industrial-design/cf6d4327-aaba-47f1-83bc-4ad2aa772854.PNG',
           width: 1200,
           height: 1200,
@@ -2008,13 +2009,6 @@ const projectEntries: ProjectEntry[] = [
           width: 1200,
           height: 1200,
           alt: '3D Modeling — Mjolnir 3D Printed PC Case'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/eos_block_2024-dec-15_11-50-39pm-000_customizedview34151560115.png',
-          width: 1200,
-          height: 1200,
-          alt: '3D Modeling — EOS CPU Water Block with Pump'
         },
         {
           type: 'image',
@@ -2120,6 +2114,32 @@ const projectEntries: ProjectEntry[] = [
           width: 1200,
           height: 1200,
           alt: '3D Modeling — Burger Press'
+        }
+      ],
+      stories: [
+        {
+          id: 'bekant-server-rack',
+          asset: {
+            type: 'image',
+            src: '/career/projects/industrial-design/Bekant_Cabinet_2026-May-10_02-26-22PM-000_CustomizedView10916433213.png',
+            width: 1200,
+            height: 1200,
+            alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
+          },
+          title: 'IKEA Bekant Home Server Rack',
+          body: 'Modeled a complete home server rack inside an IKEA Bekant cabinet, custom-fitting a NAS, small-form-factor servers, a UPS, and all cabling into a furniture-native form factor. The result is a working home lab that serves LLMs and Docker apps while reading as furniture, not equipment. The same principle as software throughout: model the object around how it is actually used.'
+        },
+        {
+          id: 'pc-water-cooling',
+          asset: {
+            type: 'image',
+            src: '/career/projects/industrial-design/eos_block_2024-dec-15_11-50-39pm-000_customizedview34151560115.png',
+            width: 1200,
+            height: 1200,
+            alt: '3D Modeling — EOS CPU Water Block with Pump'
+          },
+          title: 'Custom PC Cases and Water-Cooling Parts',
+          body: 'Designed and 3D-printed a family of PC hardware in Fusion 360 and Blender: the Mjolnir printed case, the EOS acrylic laser-cut case and its CPU water block, and mounts adapting a Nouvolo block and Koolance fittings to a compact chassis. Each part solves a real fitment problem rather than a purely aesthetic one, prototyped and refined for function first.'
         }
       ]
     },
