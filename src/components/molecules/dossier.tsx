@@ -20,8 +20,8 @@ type MetaEntry = {
   value: string
 }
 
-type TitleRef = HTMLDivElement
-type TitleProps = HTMLAttributes<TitleRef> &
+type DossierRef = HTMLDivElement
+type DossierProps = HTMLAttributes<DossierRef> &
   VariantProps<typeof styles.root> & {
     tagline: string
     title: string
@@ -30,7 +30,7 @@ type TitleProps = HTMLAttributes<TitleRef> &
     metaEntries: MetaEntry[]
   }
 
-const Title = forwardRef<TitleRef, TitleProps>((props, ref) => {
+const Dossier = forwardRef<DossierRef, DossierProps>((props, ref) => {
   // props
   const { tagline, title, desc, badges, metaEntries, className, ...rest } = props
 
@@ -45,14 +45,14 @@ const Title = forwardRef<TitleRef, TitleProps>((props, ref) => {
       {!!badges?.length && (
         <div className={cn(styles.badges())}>
           {badges.map((badge, index) => {
-            const key = `title-badge-${index}`
+            const key = `dossier-badge-${index}`
             return <Badge key={key}>{badge}</Badge>
           })}
         </div>
       )}
       <div className={cn(styles.meta())}>
         {metaEntries.map((metaEntry) => {
-          const key = `title-meta-${metaEntry.label}`
+          const key = `dossier-meta-${metaEntry.label}`
           return (
             <p key={key}>
               {metaEntry.label}: {metaEntry.value}
@@ -63,7 +63,7 @@ const Title = forwardRef<TitleRef, TitleProps>((props, ref) => {
     </div>
   )
 })
-Title.displayName = 'Title'
+Dossier.displayName = 'Dossier'
 
-export { Title }
-export type { MetaEntry, TitleProps, TitleRef }
+export { Dossier }
+export type { DossierProps, DossierRef, MetaEntry }

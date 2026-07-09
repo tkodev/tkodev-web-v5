@@ -130,7 +130,7 @@ type ProjectEntry = {
     stats?: StatEntry[]
   }
   media?: {
-    assets?: AssetEntry[]
+    visuals?: AssetEntry[]
     stories?: StoryEntry[]
   }
   parents: {

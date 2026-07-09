@@ -176,7 +176,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(2).png',
@@ -273,7 +273,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/loblaws-perfect-experience/grafana.png',
@@ -361,7 +361,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/beyond-mpd-olympus/3-basic.png',
@@ -484,7 +484,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower-dashboard.png',
@@ -587,7 +587,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/aeroplan-shopping-button/aeroplan-ext-04-activated-a-crop.png',
@@ -691,7 +691,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/aeroplan-e-store/aeroplan-retailers.png',
@@ -824,7 +824,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/roc-mar-engineering-employee-dashboard/rocmar-home.png',
@@ -950,7 +950,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['React', 'Monorepo', 'Lerna', 'BEM SASS', 'Jest', 'AODA/WCAG 2.0 AA']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/air-miles-landing-portal-development/airmiles.png',
@@ -1020,7 +1020,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['React', 'Next.js', 'MongoDB', 'DOM Injection', 'Shopify', 'WooCommerce']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/moda-match-virtual-fitting-room/modamatch.png',
@@ -1077,7 +1077,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Express.js', 'Node.js', 'CMS']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/cardinal-meats-food-service-website-and-cms/cardinal.png',
@@ -1134,7 +1134,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Express.js', 'Vue.js', 'SSR', 'Node.js', 'Localization']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/weiser-canadian-catalog-website/weiser.png',
@@ -1174,7 +1174,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Microsoft Dynamics 365', 'CRM Integration', 'Node.js']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/canada-chiropractic-protective-association-website-and-cms/ccpa.png',
@@ -1214,7 +1214,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['PHP', 'Ractive.js', 'MySQL']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/canada-dry-enter-pin-contest/canadadry.png',
@@ -1254,7 +1254,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['PHP', 'Parallax', 'CSS Animation', 'AODA']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/canada-dry-website/canadadry.png',
@@ -1295,7 +1295,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Koa.js', 'Ractive.js', 'SSR', 'Localization']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/monogram-canadian-catalog-website/monogram.png',
@@ -1329,7 +1329,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['WordPress', 'PHP', 'Theme Development']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/parents-canada-magazine-website/parents.png',
@@ -1362,7 +1362,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Express.js', 'Ractive.js', 'SVG Animation']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'video',
           src: '/career/projects/toffifee-spin-to-win-contest/toff7026-short.mp4',
@@ -1416,7 +1416,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Express.js', 'Ractive.js', 'Parallax Animation', 'CSS']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'video',
           src: '/career/projects/toyota-bring-your-toyota-home-contest/byth7040-short.mp4',
@@ -1462,7 +1462,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Express.js', 'Ractive.js', 'Interactive Design']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/toyota-make-a-date-contest/toyota.webp',
@@ -1502,7 +1502,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Koa.js', 'Ractive.js', 'Responsive Design', 'Localization']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/baby-jogger-canadian-catalog-website/babyjogger.png',
@@ -1547,7 +1547,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['React.js', 'Node.js', 'Koa.js', 'Express.js', 'jQuery', 'OAuth', 'MySQL']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/early-software-engineering/mockup-mobile-game-m.jpg',
@@ -1680,7 +1680,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Photoshop', 'Illustrator', 'Flash', 'Dreamweaver', 'HTML', 'CSS 1 & 2', 'JavaScript']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/web-10-era/1.jpg',
@@ -1820,7 +1820,7 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/interiors-architecture/Overview-Cutaway-2.jpg',
@@ -1987,7 +1987,7 @@ const projectEntries: ProjectEntry[] = [
       tools: ['Fusion 360', 'Blender', '3D Printing', 'Industrial Design']
     },
     media: {
-      assets: [
+      visuals: [
         {
           type: 'image',
           src: '/career/projects/industrial-design/cf6d4327-aaba-47f1-83bc-4ad2aa772854.PNG',

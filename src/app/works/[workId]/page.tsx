@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, PresentationIcon } from 'lucide-react'
 import { GlobalContact } from '@/components/organisms/global-contact'
-import { ProjectFigure } from '@/components/organisms/project-figure'
 import { ProjectHero } from '@/components/organisms/project-hero'
 import { ProjectNext } from '@/components/organisms/project-next'
-import { ProjectPlate } from '@/components/organisms/project-plate'
 import { ProjectStats } from '@/components/organisms/project-stats'
+import { ProjectStory } from '@/components/organisms/project-story'
+import { ProjectVisuals } from '@/components/organisms/project-visuals'
 import { ProjectWins } from '@/components/organisms/project-wins'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
@@ -68,7 +68,7 @@ const WorkDetailPage = async (props: PageProps) => {
   ]
   const statEntries = extended?.stats ?? []
   const stories = media?.stories ?? []
-  const assets = media?.assets ?? []
+  const visuals = media?.visuals ?? []
   const projectIndex = projectEntries
     .filter((projectEntry) => projectEntry.basic.category === 'featured')
     .findIndex((projectEntry) => projectEntry.id === project.id)
@@ -80,18 +80,18 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="masthead" width="lg">
         <ProjectHero
           asset={heroAsset}
-          hudProps={{
-            title: '2.1.0 / Dossier //',
-            subtitle: '// Case File',
-            accent1: '[ File Open ]',
-            accent2: '[ Evidence Logged ]'
-          }}
-          titleProps={{
+          dossierProps={{
             tagline: basic.role,
             title: basic.title,
             desc: basic.subtitle,
             badges: extended?.duties,
             metaEntries
+          }}
+          hudProps={{
+            title: '2.1.0 / Dossier //',
+            subtitle: '// Case File',
+            accent1: '[ File Open ]',
+            accent2: '[ Evidence Logged ]'
           }}
         />
       </Section>
@@ -113,8 +113,8 @@ const WorkDetailPage = async (props: PageProps) => {
         const key = `figure-${story.id}`
         return (
           <Section key={key} id={`figure-${story.id}`} height="auto" width="lg">
-            <ProjectFigure
-              figuresProps={{
+            <ProjectStory
+              storyProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
                 index: `2.1.${index + 1}`,
                 story
@@ -123,11 +123,11 @@ const WorkDetailPage = async (props: PageProps) => {
           </Section>
         )
       })}
-      {assets.map((asset, index) => {
+      {visuals.map((asset, index) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <ProjectPlate mediaProps={{ asset, index: `2.1.${stories.length + index + 1}` }} />
+            <ProjectVisuals visualsProps={{ asset, index: `2.1.${stories.length + index + 1}` }} />
           </Section>
         )
       })}
@@ -147,7 +147,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: `2.1.${stories.length + assets.length + 1} / Contact //` }}
+          boardProps={{ subtitle: `2.1.${stories.length + visuals.length + 1} / Contact //` }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

@@ -1,5 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Asset } from '@/components/atoms/asset'
+import { Card } from '@/components/atoms/card'
 import { type StoryEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
@@ -16,7 +17,7 @@ const styles = {
     }
   }),
   frame: cva(['flex h-75 shrink-0 items-center justify-center', 'rounded-sm border p-4 md:w-1/2']),
-  plate: cva('bg-card relative size-full overflow-hidden rounded-xs'),
+  plate: cva('size-full'),
   img: cva('absolute inset-0 size-full object-cover'),
 
   col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
@@ -35,14 +36,14 @@ const styles = {
   body: cva('text-sm')
 }
 
-type FiguresRef = HTMLDivElement
-type FiguresProps = HTMLAttributes<FiguresRef> &
+type StoryRef = HTMLDivElement
+type StoryProps = HTMLAttributes<StoryRef> &
   VariantProps<typeof styles.root> & {
     story: StoryEntry
     index: string
   }
 
-const Figures = forwardRef<FiguresRef, FiguresProps>((props, ref) => {
+const Story = forwardRef<StoryRef, StoryProps>((props, ref) => {
   // props
   const { story, index, direction, className, ...rest } = props
   const { asset, title, body } = story
@@ -51,9 +52,9 @@ const Figures = forwardRef<FiguresRef, FiguresProps>((props, ref) => {
   return (
     <div ref={ref} className={cn(styles.root({ direction, className }))} {...rest}>
       <div className={cn(styles.frame())}>
-        <div className={cn(styles.plate())}>
+        <Card className={cn(styles.plate())} variant="plate">
           <Asset className={cn(styles.img())} asset={asset} />
-        </div>
+        </Card>
       </div>
       <div className={cn(styles.col({ direction }))}>
         <p className={cn(styles.figure())}>{index} / Figure //</p>
@@ -63,7 +64,7 @@ const Figures = forwardRef<FiguresRef, FiguresProps>((props, ref) => {
     </div>
   )
 })
-Figures.displayName = 'Figures'
+Story.displayName = 'Story'
 
-export { Figures }
-export type { FiguresProps, FiguresRef }
+export { Story }
+export type { StoryProps, StoryRef }

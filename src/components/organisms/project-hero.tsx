@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
+import { Dossier, type DossierProps } from '@/components/molecules/dossier'
 import { Tile } from '@/components/molecules/tile'
-import { Title, type TitleProps } from '@/components/molecules/title'
 import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
@@ -16,13 +16,13 @@ type ProjectHeroRef = HTMLDivElement
 type ProjectHeroProps = HTMLAttributes<ProjectHeroRef> &
   VariantProps<typeof styles.root> & {
     hudProps: HudProps
-    titleProps: TitleProps
+    dossierProps: DossierProps
     asset: AssetEntry
   }
 
 const ProjectHero = forwardRef<ProjectHeroRef, ProjectHeroProps>((props, ref) => {
   // props
-  const { hudProps, titleProps, asset, className, ...rest } = props
+  const { hudProps, dossierProps, asset, className, ...rest } = props
 
   // jsx
   return (
@@ -31,7 +31,7 @@ const ProjectHero = forwardRef<ProjectHeroRef, ProjectHeroProps>((props, ref) =>
         <Hud className={cn(styles.hud())} {...hudProps} />
         <Tile className={cn(styles.tile())} asset={asset} />
       </div>
-      <Title {...titleProps} />
+      <Dossier {...dossierProps} />
     </div>
   )
 })
