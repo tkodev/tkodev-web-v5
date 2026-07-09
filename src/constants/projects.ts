@@ -341,7 +341,7 @@ const projectEntries: ProjectEntry[] = [
     },
     extended: {
       duties: ['product thinking', 'software engineering', 'design engineering'],
-      win: 'Unified fragmented oil rig controls into one safe platform.',
+      win: 'Co-developed a safety-critical event-driven control architecture.',
       impact: 'Precision control infrastructure for active drill sites.',
       skills: [
         'Event-Driven Architecture',
