@@ -38,7 +38,7 @@ const AboutPage = () => {
             subtitle: '// Identity File',
             accent1: '[ Profile Loaded ]',
             accent2: '[ Signal Clear ]',
-            cta: 'Read'
+            cta: 'Open Record'
           }}
           introProps={{
             subtitle: 'About',
