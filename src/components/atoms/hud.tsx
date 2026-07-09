@@ -14,7 +14,7 @@ const styles = {
           'top-8 left-1/2 -translate-x-1/2',
           'opacity-100 transition-opacity duration-1000 sm:opacity-0'
         ],
-        smCta: ['bottom-8 left-1/2 -translate-x-1/2']
+        smCta: ['bottom-8 left-1/2 -translate-x-1/2', 'text-foreground']
       }
     }
   })
@@ -42,7 +42,11 @@ const Hud = forwardRef<HudRef, HudProps>((props, ref) => {
       {!!accent1 && <div className={cn(styles.accent({ variant: 'accent1' }))}>{accent1}</div>}
       {!!accent2 && <div className={cn(styles.accent({ variant: 'accent2' }))}>{accent2}</div>}
       {!!title && <div className={cn(styles.accent({ variant: 'smTitle' }))}>{title}</div>}
-      {!!cta && <div className={cn(styles.accent({ variant: 'smCta' }))}>{cta}</div>}
+      {!!cta && (
+        <div className={cn(styles.accent({ variant: 'smCta' }))}>
+          <strong>{cta}</strong>
+        </div>
+      )}
     </div>
   )
 })

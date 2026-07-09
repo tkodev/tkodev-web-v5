@@ -6,9 +6,8 @@ import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex h-full items-center gap-2'),
-  thumb: cva('hidden sm:block'),
-  logo: cva('h-6 w-18 sm:mx-6'),
+  root: cva('flex h-full items-center gap-8'),
+  logo: cva('h-6 w-18'),
   intro: cva('text-e4 font-expressive hidden flex-col gap-1 uppercase md:flex')
 }
 
@@ -28,7 +27,7 @@ const Identity = forwardRef<IdentityRef, IdentityProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Link className={cn(styles.thumb())} href="/">
+      <Link href="/">
         <Avatar>
           <AvatarImage alt={thumb?.alt ?? name} src={thumb?.src} />
           <AvatarFallback>{fallback}</AvatarFallback>
