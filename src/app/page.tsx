@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 import { SectionContact } from '@/components/organisms/section-contact'
 import { SectionHomeHero } from '@/components/organisms/section-home-hero'
-import { SectionOverview } from '@/components/organisms/section-overview'
+import { SectionHomeOverview } from '@/components/organisms/section-home-overview'
 import { SectionProjectsPreview } from '@/components/organisms/section-projects-preview'
 import { SectionStatement } from '@/components/organisms/section-statement'
 import { SectionTestimonials } from '@/components/organisms/section-testimonials'
@@ -62,7 +62,7 @@ const HomePage = () => {
         />
       </Section>
       <Section id="overview" height="auto" width="md">
-        <SectionOverview
+        <SectionHomeOverview
           bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
           boardProps={{ subtitle: '1.2 / Overview //' }}
           bioProps={{

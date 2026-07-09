@@ -1,5 +1,4 @@
 import { forwardRef, type HTMLAttributes } from 'react'
-import { Dots } from '@/components/atoms/dots'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Reticle } from '@/components/atoms/reticle'
 import { BlockIntro, type BlockIntroProps } from '@/components/molecules/block-intro'
@@ -30,7 +29,6 @@ const SectionAboutHero = forwardRef<SectionAboutHeroRef, SectionAboutHeroProps>(
       <Hud {...hudProps} />
       <div className={cn(styles.overlay())}>
         <BlockIntro className={cn(styles.intro())} {...introProps} />
-        <Dots activeIndex={1} count={4} />
       </div>
     </div>
   )

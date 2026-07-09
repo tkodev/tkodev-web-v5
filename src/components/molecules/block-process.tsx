@@ -1,13 +1,32 @@
 import { forwardRef, type HTMLAttributes } from 'react'
-import { Dots } from '@/components/atoms/dots'
 import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['w-full', 'flex flex-col gap-24']),
-  step: cva('flex w-full flex-col gap-8 md:flex-row md:items-center'),
+  step: cva(['flex w-full flex-col gap-8 md:items-center'], {
+    variants: {
+      direction: {
+        left: 'md:flex-row',
+        right: 'md:flex-row-reverse'
+      }
+    },
+    defaultVariants: {
+      direction: 'left'
+    }
+  }),
 
-  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4'),
+  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
+    variants: {
+      direction: {
+        left: '',
+        right: 'md:text-right'
+      }
+    },
+    defaultVariants: {
+      direction: 'left'
+    }
+  }),
   title: cva('text-h5 font-heading'),
   desc: cva('text-sm'),
 
@@ -24,9 +43,7 @@ const styles = {
     'text-e3 font-expressive text-muted-foreground uppercase',
     'whitespace-nowrap'
   ]),
-  icon: cva('text-foreground size-44 shrink-0'),
-
-  dots: cva('px-4')
+  icon: cva('text-foreground size-44 shrink-0')
 }
 
 type ProcessEntry = {
@@ -54,12 +71,9 @@ const BlockProcess = forwardRef<BlockProcessRef, BlockProcessProps>((props, ref)
         const { id, title, desc, label, icon: IconComp } = processEntry
         const key = `process-${id}`
         const numeral = String(index + 1).padStart(2, '0')
+        const direction = index % 2 === 0 ? 'left' : 'right'
         return (
-          <div key={key} className={cn(styles.step())}>
-            <div className={cn(styles.col())}>
-              <h2 className={cn(styles.title())}>{title}</h2>
-              <p className={cn(styles.desc())}>{desc}</p>
-            </div>
+          <div key={key} className={cn(styles.step({ direction }))}>
             <div className={cn(styles.visual())} aria-hidden>
               <div className={cn(styles.numeralFrame())}>
                 <p className={cn(styles.numeral())}>{numeral}</p>
@@ -69,10 +83,13 @@ const BlockProcess = forwardRef<BlockProcessRef, BlockProcessProps>((props, ref)
               </div>
               <IconComp className={cn(styles.icon())} strokeWidth={0.25} />
             </div>
+            <div className={cn(styles.col({ direction }))}>
+              <h2 className={cn(styles.title())}>{title}</h2>
+              <p className={cn(styles.desc())}>{desc}</p>
+            </div>
           </div>
         )
       })}
-      <Dots className={cn(styles.dots())} count={processEntries.length} />
     </div>
   )
 })

@@ -97,7 +97,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="summary" height="auto" width="md">
         <SectionProjectSummary
-          textProps={{ title: extended?.win ?? basic.subtitle, desc: basic.desc }}
+          statementProps={{ title: extended?.win ?? basic.subtitle, children: basic.desc }}
         />
       </Section>
       {statEntries.length > 0 && (

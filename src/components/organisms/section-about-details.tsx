@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Signature } from '@/components/atoms/signature'
-import { BlockText, type BlockTextProps } from '@/components/molecules/block-text'
+import { BlockStatement, type BlockStatementProps } from '@/components/molecules/block-statement'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -11,20 +11,22 @@ const styles = {
 type SectionAboutDetailsRef = HTMLDivElement
 type SectionAboutDetailsProps = HTMLAttributes<SectionAboutDetailsRef> &
   VariantProps<typeof styles.root> & {
-    textProps: BlockTextProps
+    statementProps: BlockStatementProps
   }
 
 const SectionAboutDetails = forwardRef<SectionAboutDetailsRef, SectionAboutDetailsProps>(
   (props, ref) => {
     // props
-    const { textProps, className, ...rest } = props
+    const { statementProps, className, ...rest } = props
+    const { children, ...restStatement } = statementProps
 
     // jsx
     return (
       <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-        <BlockText {...textProps}>
+        <BlockStatement {...restStatement}>
+          {children}
           <Signature className={cn(styles.signature())} />
-        </BlockText>
+        </BlockStatement>
       </div>
     )
   }
