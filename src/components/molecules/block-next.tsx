@@ -6,7 +6,7 @@ import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['w-full', 'flex flex-col items-center justify-center gap-8 px-6 text-center']),
+  root: cva(['w-full', 'flex flex-col items-center justify-center gap-8 px-4 text-center']),
   label: cva('text-e4 font-expressive text-muted-foreground uppercase'),
   title: cva('text-h5 font-heading uppercase')
 }

@@ -10,7 +10,7 @@ const styles = {
   quoteCell: cva('grow border-b p-6'),
   quote: cva('text-muted-foreground line-clamp-9 text-sm whitespace-pre-line italic'),
 
-  footerCell: cva('flex items-center gap-4 px-6 py-4'),
+  footerCell: cva('flex items-center gap-4 px-4 py-4'),
   photo: cva('size-12 rounded-sm object-cover'),
   fallback: cva([
     'flex size-12 shrink-0 items-center justify-center rounded-sm',

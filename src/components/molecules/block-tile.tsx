@@ -4,9 +4,13 @@ import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['relative size-full p-4', 'flex items-center justify-center overflow-hidden']),
-  tile: cva('bg-muted relative aspect-video w-full max-w-3xl overflow-hidden rounded-sm'),
-  img: cva('absolute inset-0 size-full object-cover')
+  root: cva(['relative size-full p-4', 'flex items-center justify-center']),
+  tile: cva([
+    'bg-muted relative aspect-video h-full w-auto',
+    'opacity-30 hover:scale-105 hover:opacity-100',
+    'transition-all duration-1000'
+  ]),
+  img: cva('absolute inset-0 size-full overflow-hidden rounded-sm object-cover')
 }
 
 type BlockTileRef = HTMLDivElement

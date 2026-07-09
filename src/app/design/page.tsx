@@ -10,12 +10,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar'
 import { Badge } from '@/components/atoms/badge'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
-import { Intro } from '@/components/atoms/intro'
 import { Logo } from '@/components/atoms/logo'
 import { Marquee } from '@/components/atoms/marquee'
 import { Reticle } from '@/components/atoms/reticle'
 import { Signature } from '@/components/atoms/signature'
 import { BlockBoard } from '@/components/molecules/block-board'
+import { BlockIntro } from '@/components/molecules/block-intro'
 import { CardBio } from '@/components/molecules/card-bio'
 import { CardCompetencies } from '@/components/molecules/card-competencies'
 import { CardProject } from '@/components/molecules/card-project'
@@ -104,7 +104,7 @@ const DesignPage = () => {
   return (
     <Main>
       <Section id="design-intro" height="auto" width="md">
-        <Intro
+        <BlockIntro
           desc="Every token, ramp, and primitive in the v5 system, rendered live."
           subtitle="Living Styleguide"
           title="Design System"

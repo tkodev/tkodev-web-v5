@@ -6,7 +6,7 @@ import { appTimeZone } from './date'
 
 const projectEntries: ProjectEntry[] = [
   {
-    id: 'tkodev',
+    id: 'tkodev-web',
     basic: {
       title: 'tko.dev',
       subtitle:
@@ -62,7 +62,7 @@ const projectEntries: ProjectEntry[] = [
     }
   },
   {
-    id: 'gridflow',
+    id: 'gridflow-app',
     basic: {
       title: 'Gridflow',
       subtitle:

@@ -2,7 +2,7 @@ import { forwardRef, type HTMLAttributes } from 'react'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['w-full', 'flex flex-col items-center gap-8', 'border-y px-6 py-24 text-center']),
+  root: cva(['w-full', 'flex flex-col items-center gap-8', 'border-y px-4 py-24 text-center']),
   title: cva('text-h5 font-heading uppercase'),
   desc: cva('max-w-3xl text-sm whitespace-pre-line')
 }

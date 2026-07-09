@@ -8,15 +8,15 @@ const styles = {
   desc: cva('text-muted-foreground text-sm whitespace-pre-line')
 }
 
-type IntroRef = HTMLDivElement
-type IntroProps = HTMLAttributes<IntroRef> &
+type BlockIntroRef = HTMLDivElement
+type BlockIntroProps = HTMLAttributes<BlockIntroRef> &
   VariantProps<typeof styles.root> & {
     title: string
     subtitle: string
     desc?: string
   }
 
-const Intro = forwardRef<IntroRef, IntroProps>((props, ref) => {
+const BlockIntro = forwardRef<BlockIntroRef, BlockIntroProps>((props, ref) => {
   // props
   const { title, subtitle, desc, className, ...rest } = props
 
@@ -29,7 +29,7 @@ const Intro = forwardRef<IntroRef, IntroProps>((props, ref) => {
     </div>
   )
 })
-Intro.displayName = 'Intro'
+BlockIntro.displayName = 'BlockIntro'
 
-export { Intro }
-export type { IntroProps, IntroRef }
+export { BlockIntro }
+export type { BlockIntroProps, BlockIntroRef }

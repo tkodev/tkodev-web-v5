@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Dots } from '@/components/atoms/dots'
-import { Intro, type IntroProps } from '@/components/atoms/intro'
 import { Reticle } from '@/components/atoms/reticle'
+import { BlockIntro, type BlockIntroProps } from '@/components/molecules/block-intro'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -14,7 +14,7 @@ const styles = {
 type SectionAboutHeroRef = HTMLDivElement
 type SectionAboutHeroProps = HTMLAttributes<SectionAboutHeroRef> &
   VariantProps<typeof styles.root> & {
-    introProps: IntroProps
+    introProps: BlockIntroProps
   }
 
 const SectionAboutHero = forwardRef<SectionAboutHeroRef, SectionAboutHeroProps>((props, ref) => {
@@ -26,7 +26,7 @@ const SectionAboutHero = forwardRef<SectionAboutHeroRef, SectionAboutHeroProps>(
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <Reticle className={cn(styles.reticle())} />
       <div className={cn(styles.overlay())}>
-        <Intro className={cn(styles.intro())} {...introProps} />
+        <BlockIntro className={cn(styles.intro())} {...introProps} />
         <Dots activeIndex={1} count={4} />
       </div>
     </div>

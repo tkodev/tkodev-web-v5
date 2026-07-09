@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
-import { Intro, type IntroProps } from '@/components/atoms/intro'
 import { Reticle } from '@/components/atoms/reticle'
+import { BlockIntro, type BlockIntroProps } from '@/components/molecules/block-intro'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -14,7 +14,7 @@ type SectionHomeHeroRef = HTMLDivElement
 type SectionHomeHeroProps = HTMLAttributes<SectionHomeHeroRef> &
   VariantProps<typeof styles.root> & {
     hudProps: HudProps
-    introProps: IntroProps
+    introProps: BlockIntroProps
   }
 
 const SectionHomeHero = forwardRef<SectionHomeHeroRef, SectionHomeHeroProps>((props, ref) => {
@@ -26,7 +26,7 @@ const SectionHomeHero = forwardRef<SectionHomeHeroRef, SectionHomeHeroProps>((pr
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <Reticle className={cn(styles.reticle())} />
       <Hud {...hudProps} />
-      <Intro className={cn(styles.intro())} {...introProps} />
+      <BlockIntro className={cn(styles.intro())} {...introProps} />
     </div>
   )
 })

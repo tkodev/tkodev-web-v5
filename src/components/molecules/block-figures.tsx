@@ -19,7 +19,7 @@ const styles = {
   plate: cva('bg-card relative size-full overflow-hidden rounded-xs'),
   img: cva('absolute inset-0 size-full object-cover'),
 
-  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-6', {
+  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
     variants: {
       direction: {
         left: '',

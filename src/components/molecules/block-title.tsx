@@ -4,13 +4,13 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('w-full'),
-  header: cva('flex flex-col gap-2 px-6'),
+  header: cva('flex flex-col gap-2 px-4'),
   tagline: cva('text-e4 font-expressive text-muted-foreground uppercase'),
   title: cva('text-h3 font-heading uppercase'),
   desc: cva('text-sm'),
-  badges: cva('flex flex-wrap gap-2 border-b px-6 py-6'),
+  badges: cva('flex flex-wrap gap-2 border-b px-4 py-6'),
   meta: cva([
-    'flex flex-wrap gap-x-8 gap-y-2 px-6 py-4',
+    'flex flex-wrap gap-x-8 gap-y-2 px-4 py-4',
     'text-e4 font-expressive text-muted-foreground uppercase'
   ])
 }

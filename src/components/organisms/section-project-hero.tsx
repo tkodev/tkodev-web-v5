@@ -9,10 +9,9 @@ import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['size-full', 'relative overflow-visible']),
-  tile: cva(['size-full', 'absolute top-1/2 left-1/2 -translate-1/2', 'opacity-15']),
-  content: cva(['relative size-full', 'flex flex-col justify-between gap-8']),
-  nav: cva('px-6 py-4')
+  root: cva(['size-full', 'flex flex-col']),
+  nav: cva('shrink-0 px-4 py-4'),
+  tile: cva('min-h-0 grow')
 }
 
 type SectionProjectHeroRef = HTMLDivElement
@@ -36,18 +35,16 @@ const SectionProjectHero = forwardRef<SectionProjectHeroRef, SectionProjectHeroP
     // jsx
     return (
       <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-        <BlockTile className={cn(styles.tile())} asset={asset} />
-        <div className={cn(styles.content())}>
-          <div className={cn(styles.nav())}>
-            <Button variant="outline" asChild>
-              <Link href={href}>
-                <Icon icon={icon} size="sm" />
-                {label}
-              </Link>
-            </Button>
-          </div>
-          <BlockTitle {...titleProps} />
+        <div className={cn(styles.nav())}>
+          <Button variant="outline" asChild>
+            <Link href={href}>
+              <Icon icon={icon} size="sm" />
+              {label}
+            </Link>
+          </Button>
         </div>
+        <BlockTile className={cn(styles.tile())} asset={asset} />
+        <BlockTitle {...titleProps} />
       </div>
     )
   }

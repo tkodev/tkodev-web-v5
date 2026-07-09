@@ -7,11 +7,11 @@ const styles = {
   root: cva(['w-full', 'flex flex-col gap-24']),
   step: cva('flex w-full flex-col gap-8 md:flex-row md:items-center'),
 
-  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-6'),
+  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4'),
   title: cva('text-h5 font-heading'),
   desc: cva('text-sm'),
 
-  visual: cva('flex min-w-0 flex-1 items-center justify-center gap-4 px-6'),
+  visual: cva('flex min-w-0 flex-1 items-center justify-center gap-4 px-4'),
   numeralFrame: cva('flex size-50 items-center justify-center'),
   numeral: cva([
     '-rotate-90',
@@ -26,7 +26,7 @@ const styles = {
   ]),
   icon: cva('text-foreground size-44 shrink-0'),
 
-  dots: cva('px-6')
+  dots: cva('px-4')
 }
 
 type ProcessEntry = {
