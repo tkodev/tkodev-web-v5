@@ -9,7 +9,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['w-full', 'flex flex-wrap items-center gap-8']),
 
-  info: cva('flex min-w-72 flex-1 flex-col items-start gap-6'),
+  info: cva('flex min-w-72 flex-1 flex-col items-start gap-4'),
   title: cva('text-h2 font-heading uppercase'),
   desc: cva('text-sm whitespace-pre-line'),
   channels: cva('grid w-full gap-x-6 gap-y-2 sm:grid-cols-2'),
@@ -17,7 +17,7 @@ const styles = {
 
   logoPanel: cva([
     'min-h-56 min-w-72 flex-1 self-stretch',
-    'flex items-center justify-center rounded-sm border p-6'
+    'flex items-center justify-center rounded-sm border p-4'
   ]),
   logo: cva('w-48')
 }

@@ -8,7 +8,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['size-full', 'relative overflow-visible']),
   reticle: cva(['h-full object-fill', 'absolute top-1/2 left-1/2 -translate-1/2']),
-  overlay: cva(['absolute top-1/2 left-1/2 -translate-1/2', 'flex flex-col items-center gap-6']),
+  overlay: cva(['absolute top-1/2 left-1/2 -translate-1/2', 'flex flex-col items-center gap-4']),
   intro: cva('max-w-2xl')
 }
 

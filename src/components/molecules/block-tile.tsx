@@ -7,7 +7,7 @@ const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center']),
   tile: cva([
     'relative aspect-video h-8/10 w-auto',
-    'opacity-30 hover:scale-102 hover:opacity-60',
+    'opacity-15 hover:scale-102 hover:opacity-30',
     'transition-all duration-1000'
   ]),
   img: cva('absolute inset-0 size-full rounded-sm object-cover')

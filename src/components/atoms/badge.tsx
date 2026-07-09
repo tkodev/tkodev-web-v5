@@ -14,7 +14,8 @@ const styles = {
       'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
       'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40',
       'has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5',
-      '[&>svg]:pointer-events-none [&>svg]:size-3!'
+      '[&>svg]:pointer-events-none [&>svg]:size-3!',
+      'backdrop-blur-sm'
     ],
     {
       variants: {

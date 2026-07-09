@@ -7,8 +7,8 @@ const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center overflow-hidden']),
   grid: cva('grid w-full shrink-0 grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5'),
   tile: cva([
-    'bg-muted relative aspect-video overflow-hidden rounded-sm',
-    'opacity-30 hover:scale-105 hover:opacity-60',
+    'bg-muted relative aspect-video overflow-hidden rounded-sm sm:last:hidden',
+    'opacity-10 hover:scale-105 hover:opacity-30',
     'transition-all duration-1000'
   ]),
   img: cva('absolute inset-0 size-full object-cover')

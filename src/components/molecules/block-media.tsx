@@ -5,7 +5,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['w-full', 'flex flex-col gap-8 px-4']),
-  frame: cva(['flex h-100 items-center justify-center md:h-148', 'rounded-sm border p-6']),
+  frame: cva(['flex h-100 items-center justify-center md:h-148', 'rounded-sm border p-4']),
   plate: cva('bg-card relative size-full overflow-hidden rounded-xs'),
   img: cva('absolute inset-0 size-full object-cover'),
 

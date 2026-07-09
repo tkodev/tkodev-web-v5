@@ -5,7 +5,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva([
-    'relative flex flex-col justify-between gap-24 overflow-hidden rounded-sm border p-6'
+    'bg-background/30 relative flex flex-col justify-between gap-24 overflow-hidden rounded-sm border p-4 backdrop-blur-sm'
   ]),
   photo: cva('absolute inset-0 size-full object-cover'),
   scrim: cva('from-card/0 to-card absolute inset-0 bg-linear-to-b'),

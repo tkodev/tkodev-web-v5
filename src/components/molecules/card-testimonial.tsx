@@ -5,9 +5,9 @@ import { type TestimonialEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex flex-col rounded-sm border'),
+  root: cva('bg-background/30 flex flex-col rounded-sm border backdrop-blur-sm'),
 
-  quoteCell: cva('grow border-b p-6'),
+  quoteCell: cva('grow border-b p-4'),
   quote: cva('text-muted-foreground line-clamp-9 text-sm whitespace-pre-line italic'),
 
   footerCell: cva('flex items-center gap-4 px-4 py-4'),

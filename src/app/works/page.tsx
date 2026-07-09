@@ -25,7 +25,7 @@ const WorksPage = () => {
   )
   const tileAssets = shuffle(
     projectEntries.map((projectEntry) => getProjectAsset(projectEntry)).filter((asset) => !!asset)
-  ).slice(0, 20)
+  ).slice(0, 21)
 
   // jsx
   return (

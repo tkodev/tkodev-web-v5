@@ -9,7 +9,7 @@ import { type CompetencyEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('flex flex-col gap-4 rounded-sm border p-6'),
+  root: cva('bg-background/30 flex flex-col gap-4 rounded-sm border p-4 backdrop-blur-sm'),
   title: cva('text-h4 font-heading uppercase'),
   accordion: cva('w-full')
 }

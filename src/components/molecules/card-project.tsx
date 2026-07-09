@@ -14,7 +14,7 @@ import { Badge } from '../atoms/badge'
 
 const styles = {
   root: cva([
-    'group/ticker @container block min-w-60 rounded-sm border',
+    'group/ticker bg-background/30 @container block min-w-60 rounded-sm border backdrop-blur-sm',
     'transition-colors outline-none',
     'focus-visible:ring-ring/50 focus-visible:ring-3'
   ]),
