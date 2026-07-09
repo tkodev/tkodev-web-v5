@@ -102,7 +102,7 @@ const AboutPage = () => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: '3.3 / Contact //' }}
+          boardProps={{ subtitle: '3.1 / Contact //' }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

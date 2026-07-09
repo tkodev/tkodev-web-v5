@@ -33,7 +33,7 @@ const HomePage = () => {
         <HomeHero
           hudProps={{
             title: '1.0 / Intro //',
-            subtitle: '// Design System / V5',
+            subtitle: '// Design System V5',
             accent1: '[ Spec Validated ]',
             accent2: '[ Deploy Sequenced ]',
             cta: 'Explore'

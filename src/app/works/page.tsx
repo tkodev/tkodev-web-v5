@@ -35,7 +35,7 @@ const WorksPage = () => {
           tileAssets={tileAssets}
           hudProps={{
             title: '2.0 / Works //',
-            subtitle: '// Design System / V5',
+            subtitle: '// Asset Index',
             accent1: '[ Build Manifest ]',
             accent2: '[ Systems Nominal ]',
             cta: 'Review Assets'
