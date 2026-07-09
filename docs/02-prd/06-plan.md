@@ -21,23 +21,22 @@ as branches and PRs, not listed here.
     - tkodev needs more images: the `design-ownership` story points at `/career/projects/tkodev/lifecycle-boot-sequence.png`, which does not exist yet
     - gridflow needs more images
     - beyond-mpd's images don't match their stories, either rewrite stories or map images to correct stories
-    - client logos should be displayed in the middle of the tile
+    - client logos should be displayed in the center of the product hero tile area
       - Manual work: the ones we have are very low fidelity, but use them for now, I will replace (possibly with svg files)
     - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m05 — About**
   - Statement, method, process, the details
-    - Process has a new statement, we don't need it. Instead use BlockText in "How I work" section, with appropriate subtitle
 - [ ] **m06 — Experience**
   - The service record, not yet designed
 - [ ] **m07 — Boot sequence**
   - Boot sequence (loading screen)
-- [ ] **m08 — Nav overlay**
+- [x] **m08 — Nav overlay**
   - Full-screen menu rebuilt in the annotation language, not yet designed
 - [ ] **m09 — Grain / Background Canvas**
   - Background Canvas with militech / topology map animation, grainy overlay effect, not yet designed
 - [ ] **m10 — Flagship choreography**
   - Scroll choreography on the all routes
 - [ ] **m11 — Polish**
-  - Coherence pass: cuts, decode reveals, scan wipes, grain unification
+  - Coherence pass: cuts, decode reveals, scan wipes, grain unification, easter eggs
 - [ ] **m12 — Launch**
   - SEO verified, analytics live, performance budgets met, domain cutover
