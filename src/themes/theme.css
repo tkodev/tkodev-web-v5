@@ -4,6 +4,11 @@
 
 @plugin 'tailwind-gradient-mask-image';
 
+/* The root is dark and `.light` scopes invert it, so `dark:` tracks that, not the OS.
+   Left at its tailwind default the variant compiles to `prefers-color-scheme`, a switch
+   this site never sets: every `dark:` utility would key off the visitor's system setting. */
+@custom-variant dark (&:not(.light):not(.light *));
+
 /* global overrides */
 @layer base {
   * {

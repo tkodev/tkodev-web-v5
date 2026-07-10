@@ -88,6 +88,8 @@ The data model:
 
 `themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `helpers.css`, defines the two theme blocks inline (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
 
+The `dark:` variant is redeclared in the same file, as `@custom-variant dark (&:not(.light):not(.light *))`. Tailwind v4 compiles `dark:` to a `prefers-color-scheme` media query by default: a second theme switch this site never sets, so any `dark:` utility left on that default keys off the visitor's OS rather than the theme, and fails to invert inside a `.light` scope. Redeclaring binds the variant to the same `.light` boundary the token blocks use. A theme provider would not fix this, since the variant, not a class on the root, is what selects the branch.
+
 ## State and motion
 
 - The cinematic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above.
