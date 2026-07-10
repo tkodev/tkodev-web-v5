@@ -28,6 +28,7 @@ type PersonEntry = {
 
 type ClientEntry = {
   id: string
+  category?: 'client' | 'education' | 'self'
   basic: {
     name: string
     href?: string

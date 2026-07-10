@@ -24,7 +24,15 @@ const styles = {
   contentCol: cva('flex grow flex-col @3xl:w-2/3 @3xl:border-l'),
 
   assetCell: cva('flex size-full items-center p-4'),
-  img: cva('bg-card aspect-video w-full rounded-xs object-cover'),
+  assetFrame: cva('relative w-full overflow-hidden rounded-xs'),
+  img: cva([
+    'bg-card aspect-video w-full object-cover',
+    'opacity-30 transition-opacity duration-500 group-hover/ticker:opacity-100'
+  ]),
+  logo: cva([
+    'absolute inset-0 m-auto h-auto w-1/2 object-contain',
+    'transition-opacity duration-500 group-hover/ticker:opacity-0'
+  ]),
   introCell: cva('flex shrink-0 flex-col gap-2 overflow-hidden border-t p-4 @3xl:border-t-0'),
   clientCell: cva([
     'flex items-center border-t p-4',
@@ -56,6 +64,7 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
   // render vars
   const asset = getProjectAsset(project) ?? placeholderAsset
   const client = clientById[parents.clientId] ?? undefined
+  const clientLogo = client?.media?.dark
   const agency = parents?.agencyId ? clientById[parents?.agencyId] : undefined
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
   const attribution = formatAttribution(client.basic.name, agency?.basic.name)
@@ -63,7 +72,10 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
     <div className={cn(styles.cols())}>
       <div className={cn(styles.assetCol())}>
         <div className={cn(styles.assetCell())}>
-          <Asset className={cn(styles.img())} asset={asset} />
+          <div className={cn(styles.assetFrame())}>
+            <Asset className={cn(styles.img())} asset={asset} />
+            {!!clientLogo && <Asset className={cn(styles.logo())} asset={clientLogo} />}
+          </div>
         </div>
       </div>
       <div className={cn(styles.contentCol())}>

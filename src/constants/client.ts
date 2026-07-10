@@ -487,20 +487,49 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: "Ko's Interior Design",
       href: 'https://www.kosinteriordesign.com/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/kos-interior-design/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: "Ko's Interior Design logo"
+      }
     }
   },
   {
     id: 'tkodev',
+    category: 'self',
     basic: {
       name: 'Tkodev Inc.',
       href: 'https://www.tko.dev/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/tkodev/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'tko.dev logo'
+      }
     }
   },
   {
     id: 'ocad-university',
+    category: 'education',
     basic: {
       name: 'OCAD University',
       href: 'https://www.ocadu.ca/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/ocad-university/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'OCAD University logo'
+      }
     }
   },
   {
@@ -535,9 +564,19 @@ const clientEntries: ClientEntry[] = [
   },
   {
     id: 'free-code-camp',
+    category: 'education',
     basic: {
       name: 'freeCodeCamp',
       href: 'https://www.freecodecamp.org/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/freecodecamp/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'freeCodeCamp logo'
+      }
     }
   },
   {
@@ -545,12 +584,30 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: 'RocMar Engineering',
       href: 'https://rocmar.ca/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/roc-mar/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'RocMar Engineering logo'
+      }
     }
   },
   {
     id: 'moda-match',
     basic: {
       name: 'Moda Match'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/moda-match/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Moda Match logo'
+      }
     }
   },
   {
@@ -558,6 +615,15 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: 'Pets Above',
       href: 'https://www.petsabove.com/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/pets-above/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Pets Above logo'
+      }
     }
   },
   {
@@ -565,6 +631,15 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: 'Cardinal Meats',
       href: 'https://www.cardinalmeats.com/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/cardinal-meats/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Cardinal Meats logo'
+      }
     }
   },
   {
@@ -572,6 +647,15 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: 'Canadian Chiropractic Protective Association',
       href: 'https://www.ccpaonline.ca/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/ccpa/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Canadian Chiropractic Protective Association logo'
+      }
     }
   },
   {
@@ -579,6 +663,15 @@ const clientEntries: ClientEntry[] = [
     basic: {
       name: 'Parents Canada',
       href: 'https://parentscanada.com/'
+    },
+    media: {
+      dark: {
+        type: 'image',
+        src: '/career/clients/parents-canada/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Parents Canada logo'
+      }
     }
   }
 ]
