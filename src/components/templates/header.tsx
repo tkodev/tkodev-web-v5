@@ -24,7 +24,7 @@ const styles = {
     'z-10 h-16 w-full max-w-7xl',
     'fixed top-1 left-1/2 mx-auto -translate-x-1/2 px-4'
   ]),
-  bar: cva('animate-slide-down flex size-full items-center justify-between gap-8 px-4', {
+  bar: cva('animate-boot-down flex size-full items-center justify-between gap-8 px-4', {
     variants: {
       variant: {
         bar: [

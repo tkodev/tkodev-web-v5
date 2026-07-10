@@ -35,11 +35,12 @@ type MenuRef = HTMLElement
 type MenuProps = HTMLAttributes<MenuRef> &
   VariantProps<typeof styles.root> & {
     entries: NavEntry[]
+    onNavigate?: () => void
   }
 
 const Menu = forwardRef<MenuRef, MenuProps>((props, ref) => {
   // props
-  const { entries, className, ...rest } = props
+  const { entries, onNavigate, className, ...rest } = props
 
   // hooks
   const pathname = usePathname()
@@ -56,7 +57,12 @@ const Menu = forwardRef<MenuRef, MenuProps>((props, ref) => {
         const key = `menu-item-${index}`
 
         return (
-          <Link key={key} className={cn(styles.item({ isCurrent }))} href={href}>
+          <Link
+            key={key}
+            className={cn(styles.item({ isCurrent }))}
+            href={href}
+            onClick={onNavigate}
+          >
             <span className={cn(styles.index())}>{`${String(index + 1).padStart(2, '0')} //`}</span>
             <span className={cn(styles.name())}>{entry.name}</span>
           </Link>

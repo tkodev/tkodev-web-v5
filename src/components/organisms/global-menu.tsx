@@ -49,6 +49,7 @@ const GlobalMenu = (props: GlobalMenuProps) => {
   // the menu is open only for the route it was opened on, so navigating closes it
   const isOpen = openPath === pathname
   const handleOpenChange = (open: boolean) => setOpenPath(open ? pathname : null)
+  const handleNavigate = () => setOpenPath(null)
 
   // jsx
   return (
@@ -67,7 +68,7 @@ const GlobalMenu = (props: GlobalMenuProps) => {
           </DrawerClose>
         </DrawerHeader>
         <div className={cn(styles.body())}>
-          <Menu entries={entries} />
+          <Menu entries={entries} onNavigate={handleNavigate} />
         </div>
         <div className={cn(styles.footer())}>
           <p>{'// Menu //'}</p>

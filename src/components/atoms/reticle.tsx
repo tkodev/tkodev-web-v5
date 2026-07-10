@@ -18,14 +18,25 @@ const styles = {
     {
       variants: {
         position: {
-          1: 'animate-slide-down',
+          1: 'animate-boot-down',
           2: 'animate-fade-in',
-          3: 'animate-slide-up'
+          3: 'animate-boot-up'
         }
       }
     }
   ),
-  lines: cva('mix-blend-exclusion')
+  lines: cva([
+    'mix-blend-exclusion',
+    '[&>g>*]:origin-center [&>g>*]:[transform-box:fill-box]',
+    '[&>g>*]:animate-boot-in [&>g>*]:fill-mode-both motion-reduce:[&>g>*]:animate-none',
+    '[&>g>*:nth-child(2)]:[animation-delay:500ms]',
+    '[&>g>*:nth-child(3)]:[animation-delay:1000ms]',
+    '[&>g>*:nth-child(4)]:[animation-delay:1500ms]',
+    '[&>g>*:nth-child(5)]:[animation-delay:2000ms]',
+    '[&>g>*:nth-child(6)]:[animation-delay:2500ms]',
+    '[&>g>*:nth-child(7)]:[animation-delay:3000ms]',
+    '[&>g>*:nth-child(8)]:[animation-delay:3500ms]'
+  ])
 }
 
 type ReticleRef = SVGSVGElement
@@ -53,10 +64,10 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
     >
       <g className={cn(styles.lines())}>
         <g opacity={opacity}>
+          <circle cx="584" cy="448" r="347.5" stroke="currentColor" strokeWidth="25" />
+          <circle cx="584" cy="448" r="447.5" stroke="currentColor" />
           <line stroke="currentColor" x1="289.354" x2="879.354" y1="152.646" y2="742.646" />
           <line stroke="currentColor" x1="782.354" x2="386.354" y1="250.354" y2="646.354" />
-          <circle cx="584" cy="448" r="447.5" stroke="currentColor" />
-          <circle cx="584" cy="448" r="347.5" stroke="currentColor" strokeWidth="25" />
           <rect rx="239.5" stroke="currentColor" x="344.5" y="208.5" height="479" width="479" />
           <rect rx="149.5" stroke="currentColor" x="434.5" y="298.5" height="299" width="299" />
           <line stroke="currentColor" x2="200" y1="447.5" y2="447.5" />
