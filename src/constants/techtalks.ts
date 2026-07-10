@@ -12,9 +12,10 @@ const techtalkEntries: TechtalkEntry[] = [
       date: fromZonedTime('2025-01-01', appTimeZone)
     },
     extended: {
-      recording: 'https://lnkd.in/gjjd6muW',
-      slides: 'https://lnkd.in/gTHpYCbC',
-      album: 'https://lnkd.in/gk3AyMt9'
+      recording: 'https://www.youtube.com/watch?v=f8ONw6O_rco',
+      slides:
+        'https://www.figma.com/deck/Pp9WuKLFwDnXimapCLwnb2/TechTalk---Cross-Browser-Extensions?node-id=1-25&t=h0Rn8vbGsHPTRxUa-1',
+      album: 'https://photos.app.goo.gl/JdCB2QUhzxXPwUTg9'
     },
     parents: {
       hostId: 'techtank-to',

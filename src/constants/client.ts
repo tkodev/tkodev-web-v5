@@ -536,7 +536,7 @@ const clientEntries: ClientEntry[] = [
   {
     id: 'free-code-camp',
     basic: {
-      name: 'free-code-camp',
+      name: 'freeCodeCamp',
       href: 'https://www.freecodecamp.org/'
     }
   },
