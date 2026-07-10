@@ -1991,140 +1991,140 @@ const projectEntries: ProjectEntry[] = [
         {
           type: 'image',
           src: '/career/projects/industrial-design/cf6d4327-aaba-47f1-83bc-4ad2aa772854.PNG',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Bekant Server Rack (Installed)'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-28pm-000_customizedview2748624882.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Small Form Factor PC Build'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-52pm-000_customizedview25809979503.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Small Form Factor PC Build (Detail)'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/eos_1_a_2024-dec-15_11-32-28pm-000_customizedview18216312656.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — EOS Acrylic Laser Cut PC Case'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/mjolnir_3_2024-dec-15_11-48-20pm-000_customizedview1631237819.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Mjolnir 3D Printed PC Case'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/eos_block_2024-nov-27_04-57-07am-000_customizedview5928134866.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — EOS CPU Water Block'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/zx-1_mount_2024-dec-15_11-15-23pm-000_customizedview13614885543.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Nouvolo CPU Block to Iquinix ZX-1 Case Mount'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/case_-_evolv_shift_2_2024-dec-15_11-12-54pm-000_customizedview31469564511.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Evolv Shift 2 Case Cover'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-14pm-000_customizedview18606186293.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Magic the Gathering Redux Card Case'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-06pm-000_customizedview18606186293.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Magic the Gathering Redux Card Case with Insert'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/desk-organizer-redux_2024-dec-15_11-36-28pm-000_customizedview7294577484.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Desk Organizer Redux'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/macbook_stand_2024-dec-15_11-09-37pm-000_customizedview6170979262.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — MacBook Stand'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/hue-mount_2024-dec-15_11-13-59pm-000_customizedview18169488883.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Philips Hue Lightbar Mount for Vivo Desk Pole'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/light_pole_mount_-_screw_based_2024-dec-15_11-39-06pm-000_customizedview10171845343.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Generic Mount for Vivo Desk Monitor Pole'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/koolance_-_fitting_-_90_degree_-_low_profile_2024-dec-15_11-35-21pm-000_customizedview10262692848.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Koolance Fitting 90 Degree Low Profile'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/vandal_switch_2024-dec-15_11-11-49pm-000_customizedview19737110002.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Anti-Vandal Switch'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/qm-ornament_2024-dec-15_11-41-51pm-000_customizedview39273023891.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Quantum Mob Logo Ornament'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/keyfob_2024-dec-15_11-41-34pm-000_customizedview3517011434.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Quantum Mob Logo Keyfob'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/trophy_-_tech_tank_2024-dec-15_11-07-40pm-000_customizedview13777747030.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — TechTank Sashimis Sports Trophy'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/burger_press_2024-dec-15_11-36-02pm-000_customizedview3640923189.png',
-          width: 1200,
+          width: 2400,
           height: 1200,
           alt: '3D Modeling — Burger Press'
         }
@@ -2135,7 +2135,7 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/industrial-design/Bekant_Cabinet_2026-May-10_02-26-22PM-000_CustomizedView10916433213.png',
-            width: 1200,
+            width: 2400,
             height: 1200,
             alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
           },
@@ -2147,7 +2147,7 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/industrial-design/eos_block_2024-dec-15_11-50-39pm-000_customizedview34151560115.png',
-            width: 1200,
+            width: 2400,
             height: 1200,
             alt: '3D Modeling — EOS CPU Water Block with Pump'
           },
