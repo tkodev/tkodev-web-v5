@@ -10,7 +10,7 @@ as branches and PRs, not listed here.
 
 ## The milestones
 
-- [~] **m01 — Foundations**
+- [x] **m01 — Foundations**
   - Scaffold, tooling, tokens, fonts, data, shell, `/design` specimen
 - [x] **m02 — Home**
   - Hero, selected works, statement, overview, testimonials, contact block
@@ -26,7 +26,7 @@ as branches and PRs, not listed here.
     - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m05 — About**
   - Statement, method, process, the details
-- [~] **m06 — Experience**
+- [x] **m06 — Experience**
   - The service record: hero readouts, the employment ledger (employers grouped, roles as
     accordion rows), the speaking log, the education log, contact block
   - No Figma frame exists, so the surface is composed from the proven annotation grammar
