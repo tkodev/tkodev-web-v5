@@ -6,9 +6,8 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['w-full', 'flex flex-col gap-8 px-4']),
-  frame: cva(['flex h-100 items-center justify-center md:h-148', 'rounded-sm border p-4']),
-  plate: cva('size-full'),
-  img: cva('absolute inset-0 size-full object-cover'),
+  frame: cva(['flex h-100 items-center justify-center md:h-148', 'p-4']),
+  img: cva('bg-card size-full rounded-xs object-cover'),
 
   caption: cva([
     'flex flex-wrap items-center justify-between gap-4',
@@ -32,11 +31,9 @@ const Visuals = forwardRef<VisualsRef, VisualsProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.frame())}>
-        <Card className={cn(styles.plate())} variant="plate">
-          <Asset className={cn(styles.img())} asset={asset} />
-        </Card>
-      </div>
+      <Card className={cn(styles.frame())}>
+        <Asset className={cn(styles.img())} asset={asset} />
+      </Card>
       <div className={cn(styles.caption())}>
         <p className={cn(styles.captionIndex())}>{index} / Figure //</p>
         <p className={cn(styles.captionLabel())}>{asset.alt}</p>

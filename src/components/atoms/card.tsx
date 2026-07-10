@@ -3,15 +3,15 @@ import { Slot } from 'radix-ui'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('', {
+  root: cva(['bg-background/30 rounded-sm border backdrop-blur-sm'], {
     variants: {
-      variant: {
-        card: 'bg-background/30 rounded-sm border backdrop-blur-sm',
-        plate: 'bg-card relative overflow-hidden rounded-xs'
+      isHover: {
+        true: 'hover:bg-muted transition-colors duration-500',
+        false: ''
       }
     },
     defaultVariants: {
-      variant: 'card'
+      isHover: false
     }
   })
 }
@@ -24,7 +24,7 @@ type CardProps = HTMLAttributes<CardRef> &
 
 const Card = forwardRef<CardRef, CardProps>((props, ref) => {
   // props
-  const { asChild = false, variant, className, ...rest } = props
+  const { asChild = false, isHover, className, ...rest } = props
 
   // render vars
   const Comp = asChild ? Slot.Root : 'div'
@@ -33,7 +33,7 @@ const Card = forwardRef<CardRef, CardProps>((props, ref) => {
   return (
     <Comp
       ref={ref}
-      className={cn(styles.root({ variant, className }))}
+      className={cn(styles.root({ isHover, className }))}
       data-slot="card"
       {...rest}
     />

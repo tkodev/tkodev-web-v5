@@ -16,9 +16,8 @@ const styles = {
       direction: 'left'
     }
   }),
-  frame: cva(['flex h-75 shrink-0 items-center justify-center', 'rounded-sm border p-4 md:w-1/2']),
-  plate: cva('size-full'),
-  img: cva('absolute inset-0 size-full object-cover'),
+  frame: cva(['flex h-75 shrink-0 items-center justify-center', 'p-4 md:w-1/2']),
+  img: cva('bg-card size-full rounded-xs object-cover'),
 
   col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
     variants: {
@@ -51,11 +50,9 @@ const Story = forwardRef<StoryRef, StoryProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ direction, className }))} {...rest}>
-      <div className={cn(styles.frame())}>
-        <Card className={cn(styles.plate())} variant="plate">
-          <Asset className={cn(styles.img())} asset={asset} />
-        </Card>
-      </div>
+      <Card className={cn(styles.frame())}>
+        <Asset className={cn(styles.img())} asset={asset} />
+      </Card>
       <div className={cn(styles.col({ direction }))}>
         <p className={cn(styles.figure())}>{index} / Figure //</p>
         <h2 className={cn(styles.title())}>{title}</h2>

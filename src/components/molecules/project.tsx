@@ -16,7 +16,6 @@ import { Badge } from '../atoms/badge'
 const styles = {
   root: cva([
     'group/ticker @container block min-w-60',
-    'transition-colors outline-none',
     'focus-visible:ring-ring/50 focus-visible:ring-3'
   ]),
   cols: cva('flex size-full flex-col @3xl:flex-row'),
@@ -25,8 +24,7 @@ const styles = {
   contentCol: cva('flex grow flex-col @3xl:w-2/3 @3xl:border-l'),
 
   assetCell: cva('flex size-full items-center p-4'),
-  assetFrame: cva('aspect-video w-full'),
-  img: cva('absolute inset-0 size-full object-cover'),
+  img: cva('bg-card aspect-video w-full rounded-xs object-cover'),
   introCell: cva('flex shrink-0 flex-col gap-2 overflow-hidden border-t p-4 @3xl:border-t-0'),
   clientCell: cva([
     'flex items-center border-t p-4',
@@ -65,9 +63,7 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
     <div className={cn(styles.cols())}>
       <div className={cn(styles.assetCol())}>
         <div className={cn(styles.assetCell())}>
-          <Card className={cn(styles.assetFrame())} variant="plate">
-            <Asset className={cn(styles.img())} asset={asset} />
-          </Card>
+          <Asset className={cn(styles.img())} asset={asset} />
         </div>
       </div>
       <div className={cn(styles.contentCol())}>
@@ -101,7 +97,7 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
   // jsx
   if (href) {
     return (
-      <Card className={cn(styles.root({ className }))} {...rest} asChild>
+      <Card className={cn(styles.root({ className }))} {...rest} asChild isHover>
         <Link ref={ref as ComponentProps<typeof Link>['ref']} href={href}>
           {content}
         </Link>

@@ -11,7 +11,6 @@ const styles = {
   trigger: cva([
     'flex flex-1 items-center justify-between gap-4 py-4',
     'rounded-sm transition-all outline-none',
-    'hover:underline',
     'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3',
     'disabled:pointer-events-none disabled:opacity-50',
     '[&[data-state=open]>svg]:rotate-180'

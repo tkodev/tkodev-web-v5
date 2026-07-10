@@ -8,9 +8,9 @@ const styles = {
   tagline: cva('text-e4 font-expressive text-muted-foreground uppercase'),
   title: cva('text-h3 font-heading uppercase'),
   desc: cva('text-sm'),
-  badges: cva('flex flex-wrap gap-2 border-b px-4 py-6'),
+  badges: cva('flex flex-wrap gap-2 border-b p-4'),
   meta: cva([
-    'flex flex-wrap gap-x-8 gap-y-2 px-4 py-4',
+    'flex flex-wrap gap-x-8 gap-y-2 p-4',
     'text-e4 font-expressive text-muted-foreground uppercase'
   ])
 }
