@@ -10,16 +10,17 @@ type AboutProcessRef = HTMLDivElement
 type AboutProcessProps = HTMLAttributes<AboutProcessRef> &
   VariantProps<typeof styles.root> & {
     processEntries: ProcessEntry[]
+    subtitle?: string
   }
 
 const AboutProcess = forwardRef<AboutProcessRef, AboutProcessProps>((props, ref) => {
   // props
-  const { processEntries, className, ...rest } = props
+  const { processEntries, subtitle, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Process processEntries={processEntries} />
+      <Process processEntries={processEntries} subtitle={subtitle} />
     </div>
   )
 })

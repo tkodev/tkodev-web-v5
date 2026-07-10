@@ -4,6 +4,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['w-full', 'flex flex-col gap-24']),
+  subtitle: cva(['px-4 md:text-center', 'text-e4 font-expressive text-muted-foreground uppercase']),
   step: cva(['flex w-full flex-col gap-8 md:items-center'], {
     variants: {
       direction: {
@@ -16,7 +17,7 @@ const styles = {
     }
   }),
 
-  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
+  col: cva('flex min-w-0 flex-1 flex-col gap-4 px-4', {
     variants: {
       direction: {
         left: '',
@@ -58,15 +59,17 @@ type ProcessRef = HTMLDivElement
 type ProcessProps = HTMLAttributes<ProcessRef> &
   VariantProps<typeof styles.root> & {
     processEntries: ProcessEntry[]
+    subtitle?: string
   }
 
 const Process = forwardRef<ProcessRef, ProcessProps>((props, ref) => {
   // props
-  const { processEntries, className, ...rest } = props
+  const { processEntries, subtitle, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+      {!!subtitle && <div className={cn(styles.subtitle())}>{subtitle}</div>}
       {processEntries.map((processEntry, index) => {
         const { id, title, desc, label, icon: IconComp } = processEntry
         const key = `process-${id}`

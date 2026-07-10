@@ -80,6 +80,7 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="masthead" width="lg">
         <ProjectHero
           asset={heroAsset}
+          logo={client?.media?.dark}
           dossierProps={{
             tagline: basic.role,
             title: basic.title,
@@ -98,7 +99,7 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="wins" height="auto" width="md">
         <ProjectWins
           statementProps={{
-            subtitle: '// Wins //',
+            subtitle: '1A.1 / Wins //',
             title: extended?.win ?? basic.subtitle,
             children: basic.desc
           }}
@@ -116,7 +117,7 @@ const WorkDetailPage = async (props: PageProps) => {
             <ProjectStory
               storyProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
-                index: `1A.${index + 1}`,
+                index: `1A.${index + 2}`,
                 story
               }}
             />
@@ -127,7 +128,7 @@ const WorkDetailPage = async (props: PageProps) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <ProjectVisuals visualsProps={{ asset, index: `1A.${stories.length + index + 1}` }} />
+            <ProjectVisuals visualsProps={{ asset, index: `1A.${stories.length + index + 2}` }} />
           </Section>
         )
       })}
@@ -147,7 +148,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: `1A.${stories.length + visuals.length + 1} / Contact //` }}
+          boardProps={{ subtitle: `1A.${stories.length + visuals.length + 2} / Contact //` }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },

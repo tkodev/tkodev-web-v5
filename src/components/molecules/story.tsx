@@ -19,7 +19,7 @@ const styles = {
   frame: cva(['flex h-75 shrink-0 items-center justify-center', 'p-4 md:w-1/2']),
   img: cva('bg-card size-full rounded-xs object-cover'),
 
-  col: cva('flex min-w-0 flex-1 flex-col gap-8 px-4', {
+  col: cva('flex min-w-0 flex-1 flex-col gap-4 px-4', {
     variants: {
       direction: {
         left: '',

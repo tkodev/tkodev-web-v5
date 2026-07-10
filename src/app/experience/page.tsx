@@ -38,10 +38,12 @@ const ExperiencePage = () => {
   const careerYears = getCareerYears(jobEntries)
   // Self-directed work is not a client engagement, so tkodev is excluded from the count.
   const clientIds = getProjectClientIds(projectEntries).filter((clientId) => clientId !== 'tkodev')
-  // Only organizations that ship a dark-theme logo can appear on the wall.
+  // Only commercial clients that ship a dark-theme logo appear on the wall:
+  // education institutions and self-directed work are not clients and are excluded.
   const logoClients = getCareerClientIds(jobEntries, projectEntries)
     .map((clientId) => clientById[clientId])
     .filter((clientEntry) => !!clientEntry?.media?.dark)
+    .filter((clientEntry) => (clientEntry.category ?? 'client') === 'client')
 
   const talkEntries: LogEntry[] = techtalkEntries.map((techtalkEntry) => {
     const { basic, extended } = techtalkEntry
@@ -107,6 +109,7 @@ const ExperiencePage = () => {
       <Section id="summary" height="auto" width="lg">
         <ExperienceSummary
           clientEntries={logoClients}
+          subtitle="2.2 / Summary //"
           statEntries={[
             { title: 'Years Experience', value: String(careerYears) },
             { title: 'Employers', value: String(jobGroups.length) },
@@ -117,19 +120,19 @@ const ExperiencePage = () => {
       </Section>
       <Section id="talks" height="auto" width="lg">
         <ExperienceLogs
-          boardProps={{ subtitle: '2.2 / Signals //', title: 'Speaking' }}
+          boardProps={{ subtitle: '2.3 / Signals //', title: 'Speaking' }}
           logEntries={talkEntries}
         />
       </Section>
       <Section id="education" height="auto" width="lg">
         <ExperienceLogs
-          boardProps={{ subtitle: '2.3 / Training //', title: 'Education' }}
+          boardProps={{ subtitle: '2.4 / Training //', title: 'Education' }}
           logEntries={schoolEntries}
         />
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: '2.4 / Contact //' }}
+          boardProps={{ subtitle: '2.5 / Contact //' }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
