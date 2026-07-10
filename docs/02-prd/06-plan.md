@@ -47,6 +47,6 @@ as branches and PRs, not listed here.
 - [ ] **m10 — Flagship choreography**
   - Scroll choreography on the all routes
 - [ ] **m11 — Polish**
-  - Coherence pass: cuts, decode reveals, scan wipes, grain unification, easter eggs
+  - Coherence pass: cuts, decode reveals, scan wipes, grain unification, easter eggs, all pages have ograph and page/metadata
 - [ ] **m12 — Launch**
   - SEO verified, analytics live, performance budgets met, domain cutover
