@@ -88,11 +88,25 @@ Direction: one flagship (Beyond MPD, the earned centerpiece) gets scroll
 choreography on this same route (pinned scenes, telemetry-style data reveals),
 built last, on top of the proven dossier system.
 
-### Experience: the service record *(not designed yet)*
+### Experience: the service record *(no Figma frame)*
 
-Career history as its own surface, all real career data: company, title, location,
-dates, capabilities; dense and scannable, no prose per entry. Resume as the one
-download action.
+Career history as its own surface, all real career data; dense and scannable, no prose
+per entry. The signature interaction is the ledger itself, not a new cinematic moment.
+
+- **Hero**: the brand instrument, identity only.
+- **Record**: the employment ledger. Roles collapse into one indexed row per employer
+  carrying the role count, the elapsed span, and the engagement type; the employer is the
+  disclosure, opening to its roles with their spans, locations, duties, and capability
+  badges. Resume is the one download action, in the board's CTA slot.
+- **Summary**: an unindexed band closing the ledger with the evidence behind it, given the
+  same bare treatment the dossier gives a work's stats. The four readouts an evaluating
+  founder or CTO scans for (years experience, employers, projects shipped, clients and
+  brands), each counted from the career constants rather than typed, over the employer and
+  client logos drifting as counter-rotating marquee rows, dimmed until hovered. An
+  organization appears only if it ships a dark-theme mark.
+- **Signals**: the speaking log, each talk indexed with its host, date, and the artifacts
+  it left behind (recording, slides, album).
+- **Training**: the education log, same row grammar, year spans only.
 
 ### About: the identity file
 

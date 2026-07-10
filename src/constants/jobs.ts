@@ -2,6 +2,13 @@ import { fromZonedTime } from 'date-fns-tz'
 import { type JobEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+const jobTypeLabels: Record<JobEntry['basic']['type'], string> = {
+  contract: 'Contract',
+  'full-time': 'Full Time',
+  volunteer: 'Volunteer',
+  break: 'Independent'
+}
+
 const jobEntries: JobEntry[] = [
   {
     id: 'career-break',
@@ -360,4 +367,4 @@ const jobEntries: JobEntry[] = [
   }
 ]
 
-export { jobEntries }
+export { jobEntries, jobTypeLabels }

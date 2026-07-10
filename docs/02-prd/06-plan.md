@@ -26,8 +26,11 @@ as branches and PRs, not listed here.
     - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m05 — About**
   - Statement, method, process, the details
-- [ ] **m06 — Experience**
-  - The service record, not yet designed
+- [~] **m06 — Experience**
+  - The service record: hero readouts, the employment ledger (employers grouped, roles as
+    accordion rows), the speaking log, the education log, contact block
+  - No Figma frame exists, so the surface is composed from the proven annotation grammar
+    rather than transcribed; the gate decides whether it holds
 - [ ] **m07 — Boot sequence**
   - Boot sequence (loading screen)
 - [x] **m08 — Nav overlay**
