@@ -80,7 +80,7 @@ const projectEntries: ProjectEntry[] = [
       subtitle:
         'Social media scheduler owned PRD to production — Next.js, Supabase, TanStack Query, Zod.',
       desc: 'Social media scheduling app with full-cycle product ownership from PRD to deployed code. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Claude Code.',
-      role: 'Full-Stack Engineer',
+      role: 'Design Engineer',
       category: 'featured',
       startDate: fromZonedTime('2026-03-01', appTimeZone)
     },
@@ -334,7 +334,7 @@ const projectEntries: ProjectEntry[] = [
       subtitle:
         'Safety-critical oil rig platform with real-time SVG telemetry — 10,000+ data points at subsecond tolerance.',
       desc: 'Embedded from discovery through delivery on a safety-critical oil rig control platform. Co-developed an event-driven architecture over RabbitMQ and gRPC that replaced fragmented hardware control systems with a single unified platform, engineered real-time SVG visualizations tracking more than 10,000 data points at subsecond tolerance, and contributed to the Figma design system by building components and feeding engineering constraints back into the design.',
-      role: 'Staff Software Engineer',
+      role: 'Web Lead',
       category: 'featured',
       startDate: fromZonedTime('2023-05-01', appTimeZone),
       endDate: fromZonedTime('2024-11-01', appTimeZone)
