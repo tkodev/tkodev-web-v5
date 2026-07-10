@@ -107,7 +107,7 @@ const AboutPage = () => {
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
             { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
-            { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume 2026' },
+            { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume' },
             { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }
           ]}
           desc={

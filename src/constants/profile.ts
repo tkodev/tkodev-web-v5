@@ -13,7 +13,7 @@ const personEntries: PersonEntry[] = [
       github: 'https://www.github.com/tkodev',
       email: 'tony@tko.dev',
       phone: '+1 (647) 300-9787',
-      resume: '/career/persons/tony/tony-ko-resume-2026.pdf',
+      resume: '/career/persons/tony/tony-ko-resume-staff-software-engineer.pdf',
       competencies: [
         {
           id: 'design-systems',
