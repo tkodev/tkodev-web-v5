@@ -18,19 +18,12 @@ as branches and PRs, not listed here.
   - Tile-wall hero, featured cards, archive ledger/reel
 - [~] **m04 — Work detail**
   - The dossier template over project entries
-    - tkodev needs more images: the `design-ownership` story points at `/career/projects/tkodev/lifecycle-boot-sequence.png`, which does not exist yet
     - gridflow needs more images
-    - beyond-mpd's images don't match their stories, either rewrite stories or map images to correct stories
-    - client logos should be displayed in the center of the product hero tile area
-      - Manual work: the ones we have are very low fidelity, but use them for now, I will replace (possibly with svg files)
-    - Manual work: For images that are portrait or taller, we should use a correct aspect ratio image that places the portrait image in the center
 - [x] **m05 — About**
   - Statement, method, process, the details
 - [x] **m06 — Experience**
   - The service record: hero readouts, the employment ledger (employers grouped, roles as
     accordion rows), the speaking log, the education log, contact block
-  - No Figma frame exists, so the surface is composed from the proven annotation grammar
-    rather than transcribed; the gate decides whether it holds
 - [ ] **m07 — Boot sequence**
   - Boot sequence (loading screen)
 - [x] **m08 — Nav overlay**

@@ -41,30 +41,58 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      stories: [
+      visuals: [
         {
-          id: 'token-architecture',
-          asset: {
-            type: 'image',
-            src: '/career/projects/tkodev/www.tko.dev_(1080p).png',
-            width: 1920,
-            height: 1080,
-            alt: 'tko.dev — Personal Portfolio'
-          },
-          title: 'Semantic Token Architecture and Cinematic Lifecycle',
-          body: 'Built the visual system on a two-layer token architecture: a brand layer holds every raw value, and a semantic, shadcn-shaped layer is the only thing components consume, with full light and dark theming from one considered design. A Zustand lifecycle store drives the site from loading to ready, choreographing a boot sequence and staggered reveals through a Framer Motion layer. Every token, ramp, and primitive is original work rather than a component-library skin.'
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-works-archive.png',
+          width: 3840,
+          height: 2160,
+          alt: 'tko.dev — Works Archive'
         },
         {
-          id: 'design-ownership',
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-works-featured.png',
+          width: 3840,
+          height: 2160,
+          alt: 'tko.dev — Featured Works'
+        }
+      ],
+      stories: [
+        {
+          id: 'cinematic-portfolio-system',
           asset: {
             type: 'image',
-            src: '/career/projects/tkodev/lifecycle-boot-sequence.png',
-            width: 1920,
-            height: 1080,
-            alt: 'tko.dev — Boot Sequence and Lifecycle States'
+            src: '/career/projects/tkodev-web/tkodev-home.png',
+            width: 3840,
+            height: 2160,
+            alt: 'tko.dev — Cinematic Portfolio Homepage'
           },
-          title: 'Ambient Audio by Consent, and AI Without Ceding Ownership',
-          body: 'The lifecycle store carries five distinct states, and the boot sequence, page transitions, and an ambient background music system all read from it — the audio never plays without explicit user consent. Claude Code and Cursor accelerated feature development and held code standards, but no design decision was delegated: every token, transition, interaction pattern, and system state was designed by hand.'
+          title: 'Semantic Token Architecture and Cinematic Lifecycle',
+          body: 'Designed and shipped the portfolio as its own proof of work: a cinematic interface built from scratch, not a template or component-library skin. The homepage is the first signal, but the deeper system is semantic token architecture, a five-state Zustand lifecycle, Framer Motion choreography, and an interaction language that makes the site feel like a live engineering dossier.'
+        },
+        {
+          id: 'works-index',
+          asset: {
+            type: 'image',
+            src: '/career/projects/tkodev-web/tkodev-works.png',
+            width: 3840,
+            height: 2160,
+            alt: 'tko.dev — Works Index'
+          },
+          title: 'Work Index as Visual Evidence',
+          body: 'Built the works page around the portfolio intent: the work is the content, and the interface is the instrument around it. Project media, HUD framing, shuffled main-image tiles, featured cards, and archive groupings make the range legible quickly while still letting each project expand into a deeper case-study narrative.'
+        },
+        {
+          id: 'project-dossier',
+          asset: {
+            type: 'image',
+            src: '/career/projects/tkodev-web/tkodev-works-detail.png',
+            width: 3840,
+            height: 2160,
+            alt: 'tko.dev — Project Dossier'
+          },
+          title: 'Case Study System and Authored Data',
+          body: 'Modeled the portfolio around structured career constants rather than page-specific copy: each project carries metadata, stats, story assets, visuals, collaborators, and client relationships. The project dossier view proves that architecture by turning the same data into cinematic hero tiles, story sections, evidence plates, next-project navigation, metadata, and SEO.'
         }
       ]
     },
@@ -113,7 +141,7 @@ const projectEntries: ProjectEntry[] = [
           id: 'grid-planning',
           asset: {
             type: 'video',
-            src: '/career/projects/gridflow/cursorful-video-1782448184978.mp4',
+            src: '/career/projects/gridflow-app/cursorful-video-1782448184978.mp4',
             width: 944,
             height: 1920,
             alt: 'Gridflow — True-to-Life Grid Planning'
@@ -125,7 +153,7 @@ const projectEntries: ProjectEntry[] = [
           id: 'fullstack-supabase',
           asset: {
             type: 'image',
-            src: '/career/projects/gridflow/5ABDD3A0-68A2-4F71-851D-68ECC4BF6E06_1_105_c.jpeg',
+            src: '/career/projects/gridflow-app/5ABDD3A0-68A2-4F71-851D-68ECC4BF6E06_1_105_c.jpeg',
             width: 621,
             height: 1264,
             alt: 'Gridflow — Social Media Scheduling App'
@@ -179,50 +207,55 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(2).png',
-          width: 2732,
-          height: 2048,
-          alt: 'TechTank Toronto — Website Redesign (Tablet)'
+          src: '/career/projects/techtank-next/www.techtankto.com_(1080p).png',
+          width: 1920,
+          height: 1080,
+          alt: 'TechTank Toronto — Website Redesign (Desktop)'
         },
         {
           type: 'image',
-          src: '/career/projects/techtank-to-website/next.techtankto.com_(iPhone%2014%20Pro%20Max).png',
-          width: 1290,
-          height: 2796,
-          alt: 'TechTank Toronto — Website Redesign (Mobile)'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/techtank-to-website/next.techtankto.com_(iPhone%2014%20Pro%20Max)%20(1).png',
-          width: 1290,
-          height: 2796,
+          src: '/career/projects/techtank-next/techtankto-mobile-1.png',
+          width: 1920,
+          height: 1080,
           alt: 'TechTank Toronto — Website Redesign (Mobile)'
         }
       ],
       stories: [
         {
-          id: 'community-platform',
+          id: 'community-homepage',
           asset: {
             type: 'image',
-            src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro).png',
+            src: '/career/projects/techtank-next/next.techtankto.com_(iPad%20Pro).png',
             width: 2732,
             height: 2048,
-            alt: 'TechTank Toronto — Website Redesign'
+            alt: 'TechTank Toronto — Community Homepage'
           },
-          title: 'Community Platform and Onboarding Architecture',
-          body: 'Led the complete rewrite of the TechTank Toronto website — modernizing the stack, improving information architecture, and creating a conversion-oriented experience. Role-based onboarding funnels channel visitors into active community roles: speaker, host, sponsor, and volunteer. Built on Next.js with shared layouts, shadcn/ui components, and Vercel analytics.'
+          title: 'Community Homepage and Conversion Path',
+          body: 'Owned the TechTank rebuild from product framing through shipped code, turning a volunteer-run meetup presence into a clear community platform. The homepage establishes the promise, proof points, and primary paths into the organization; behind it are the information architecture, responsive component system, and analytics hooks needed to make the community measurable.'
         },
         {
-          id: 'brand-content',
+          id: 'event-archive',
           asset: {
             type: 'image',
-            src: '/career/projects/techtank-to-website/next.techtankto.com_(iPad%20Pro)%20(1).png',
+            src: '/career/projects/techtank-next/next.techtankto.com_(iPad%20Pro)%20(2).png',
             width: 2732,
             height: 2048,
-            alt: 'TechTank Toronto — Website Redesign (Tablet)'
+            alt: 'TechTank Toronto — Event Archive'
           },
-          title: 'Brand, Content, and Community Growth',
-          body: 'Designed graphics and established a cohesive social media brand identity, wrote copy to grow audience reach, and captured event photography for campaign content. Presented technical talks at community events on topics from browser extensions to engineering best practices.'
+          title: 'Structured Event Archive and Analytics',
+          body: 'Designed and built the event archive as the operational memory of the community: years of talks, socials, coffee chats, sports events, and experiments become searchable, filterable, and maintainable. The screenshot shows the public interface, but the value is the content model and admin-friendly structure that let organizers keep the program alive without rebuilding pages by hand.'
+        },
+        {
+          id: 'role-based-onboarding',
+          asset: {
+            type: 'image',
+            src: '/career/projects/techtank-next/next.techtankto.com_(iPad%20Pro)%20(1).png',
+            width: 2732,
+            height: 2048,
+            alt: 'TechTank Toronto — Get Involved Role Paths'
+          },
+          title: 'Role-Based Onboarding Funnels',
+          body: 'Mapped community growth into role-based funnels for speakers, hosts, sponsors, and volunteers. Each path translates a vague "I want to help" into expectations, benefits, and a next step, reflecting the product work behind the site: clarify the audience, reduce ambiguity, and convert goodwill into active participation.'
         }
       ]
     },
@@ -273,51 +306,42 @@ const projectEntries: ProjectEntry[] = [
       ]
     },
     media: {
-      visuals: [
-        {
-          type: 'image',
-          src: '/career/projects/loblaws-perfect-experience/grafana.png',
-          width: 1040,
-          height: 580,
-          alt: 'Loblaws Perfect Experience — Grafana Observability Dashboard'
-        }
-      ],
       stories: [
         {
-          id: 'sdk-architecture',
+          id: 'grafana-dashboard',
           asset: {
             type: 'image',
-            src: '/career/projects/loblaws-perfect-experience/grafana.png',
+            src: '/career/projects/loblaw-perfect-experience/grafana.png',
             width: 1040,
-            height: 580,
-            alt: 'Loblaws Perfect Experience — SDK Architecture and Grafana Dashboard'
+            height: 581,
+            alt: 'Loblaw Perfect Experience — Grafana Dashboard'
           },
-          title: 'SDK Architecture and Cross-Platform Abstraction',
-          body: 'Architected a cross-platform OpenTelemetry SDK that unified instrumentation across divergent Next.js versions, server and browser runtimes, and LOB-specific requirements — without fragmentation. Defined SDK architecture, data flows, and Grafana dashboard POC; presented to engineering leads and executives across LOBs to drive alignment on instrumentation strategy and platform adoption.'
+          title: 'Grafana Dashboard Proof of Concept',
+          body: 'Defined the SDK architecture, data flow, and Grafana proof of concept that made the observability program concrete for Loblaw Digital leaders. The dashboard turns raw OpenTelemetry output into operational signals such as memory pressure, request throughput, signups, and client-side load percentiles, giving multiple lines of business a shared language for performance.'
         },
         {
-          id: 'state-enrichment',
+          id: 'trace-diagnostics',
           asset: {
             type: 'image',
-            src: '/career/projects/loblaws-perfect-experience/desktop.png',
+            src: '/career/projects/loblaw-perfect-experience/traces.png',
+            width: 1227,
+            height: 690,
+            alt: 'Loblaw Perfect Experience — Distributed Traces'
+          },
+          title: 'Distributed Trace Diagnostics',
+          body: 'Built the trace-enrichment layer that carries useful state across server rendering, browser work, and BFF calls in divergent Next.js applications. The trace view is the evidence: nested operations, service boundaries, span timing, and error points become visible without forcing every line of business to reinvent instrumentation.'
+        },
+        {
+          id: 'storefront-instrumentation',
+          asset: {
+            type: 'image',
+            src: '/career/projects/loblaw-perfect-experience/desktop.png',
             width: 3840,
             height: 2160,
-            alt: 'Loblaws Perfect Experience — Desktop'
+            alt: 'Loblaw Perfect Experience — Shoppers Drug Mart Storefront'
           },
-          title: 'State Management and Trace Context Enrichment',
-          body: 'Built a Zustand-powered state store with historical state tracking to enrich distributed trace context across server and client boundaries — designed for extensibility across divergent LOB requirements and runtime environments.'
-        },
-        {
-          id: 'observability-pipeline',
-          asset: {
-            type: 'image',
-            src: '/career/projects/loblaws-perfect-experience/mobile.png',
-            width: 1290,
-            height: 2796,
-            alt: 'Loblaws Perfect Experience — Mobile'
-          },
-          title: 'Observability Pipeline and Organization-Wide Visibility',
-          body: 'Designed custom transformation pipelines feeding VictoriaMetrics, Tempo, and Grafana. Delivered organization-wide P95 latency diagnostics, frontend error rate monitoring, and SLO breach visibility — actionable performance signals across multiple lines of business.'
+          title: 'Storefront Instrumentation at Scale',
+          body: 'Shaped the SDK around real commerce surfaces instead of a clean-room demo: divergent Next.js versions, browser and server runtimes, and line-of-business requirements all had to fit one instrumentation model. The Shoppers storefront anchors the story because it proves the abstraction on a production-scale experience with frontend performance, traces, errors, and SLO signals flowing into VictoriaMetrics, Tempo, and Grafana.'
         }
       ]
     },
@@ -364,84 +388,69 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/beyond-mpd-olympus/3-basic.png',
-          width: 1350,
-          height: 756,
-          alt: 'Beyond MPD — Olympus Basic Tripping Interface'
+          src: '/career/projects/beyond-mpd-olympus/2.png',
+          width: 1177,
+          height: 657,
+          alt: 'Beyond MPD — Design System and Engineering Feedback Loop'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/beyond-mpd-olympus/4-rollover.png',
+          width: 906,
+          height: 509,
+          alt: 'Beyond MPD — Global Deployment Readiness'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/beyond-mpd-olympus/beyond.png',
+          width: 1920,
+          height: 1080,
+          alt: 'Beyond MPD — Discovery and Constraint Mapping'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/beyond-mpd-olympus/olympus.png',
+          width: 3600,
+          height: 1994,
+          alt: 'Beyond MPD — Event-Driven Architecture'
         }
       ],
       stories: [
         {
-          id: 'discovery',
-          asset: {
-            type: 'image',
-            src: '/career/projects/beyond-mpd-olympus/beyond.png',
-            width: 1920,
-            height: 1080,
-            alt: 'Beyond MPD — Discovery and Constraint Mapping'
-          },
-          title: 'Discovery and Constraint Mapping',
-          body: "Before any implementation began, I participated in client-facing discovery and refinement sessions with product owners and the client's engineering team. I interviewed client engineers to assess existing systems, hardware specifications, and integration requirements. These conversations surfaced constraints that shaped every architecture decision — from event broker topology to UI component interaction models."
-        },
-        {
-          id: 'event-driven-architecture',
-          asset: {
-            type: 'image',
-            src: '/career/projects/beyond-mpd-olympus/olympus.png',
-            width: 3660,
-            height: 1994,
-            alt: 'Beyond MPD — Event-Driven Architecture'
-          },
-          title: 'Event-Driven Architecture',
-          body: 'I co-developed an event-driven architecture using RabbitMQ as the core event broker, ensuring reliable command and status communications across safety-critical control systems. The architecture interfaced with oil rig panels, communications buses, and PLCs — systems where message delivery guarantees and fault tolerance are non-negotiable.'
-        },
-        {
-          id: 'fluid-pressure-control',
-          asset: {
-            type: 'image',
-            src: '/career/projects/beyond-mpd-olympus/3.png',
-            width: 1319,
-            height: 729,
-            alt: 'Beyond MPD — Fluid Pressure Control and Sensor Calibration'
-          },
-          title: 'Fluid Pressure Control and Sensor Calibration',
-          body: 'I contributed to back-end solutions supporting the calibration of chokes and sensors, and co-authored interpolation algorithms for precise fluid pressure control. Each algorithm was validated with rigorous unit tests to ensure correctness under real-world operating conditions where a miscalculation has field consequences.'
-        },
-        {
-          id: 'data-visualization',
+          id: 'ramp-control',
           asset: {
             type: 'image',
             src: '/career/projects/beyond-mpd-olympus/1.png',
             width: 1060,
             height: 590,
-            alt: 'Beyond MPD — Real-Time Data Visualization'
+            alt: 'Beyond MPD — Ramp Control Interface'
           },
-          title: 'Real-Time Data Visualization',
-          body: 'Leveraging SVG, I designed real-time and historical data visualization solutions capable of tracking over 10,000 data points with subsecond tolerance. The visualizations covered ramp interfaces, tripping operations, rollover tracking, and sensor state — each designed to surface critical operational state at a glance.'
+          title: 'Ramp Control and Real-Time Telemetry',
+          body: 'Led front-end discovery and implementation for control surfaces where the interface is part of the safety system, not a dashboard afterthought. The ramp view combines pressure targets, choke state, bit and hole depth, flow readings, and live curves; the deeper work is SVG telemetry, coordinate precision, and subsecond updates that match active rig constraints.'
         },
         {
-          id: 'design-system',
+          id: 'advanced-tripping',
           asset: {
             type: 'image',
-            src: '/career/projects/beyond-mpd-olympus/2.png',
-            width: 1170,
-            height: 657,
-            alt: 'Beyond MPD — Design System and Engineering Feedback Loop'
+            src: '/career/projects/beyond-mpd-olympus/3-advanced.png',
+            width: 1319,
+            height: 729,
+            alt: 'Beyond MPD — Advanced Tripping Configuration'
           },
-          title: 'Design System and Engineering Feedback Loop',
-          body: 'I contributed to the Figma design system for the Olympus platform — building components and providing engineering feedback on component feasibility, hardware interaction constraints, and implementation tradeoffs throughout the build.'
+          title: 'Advanced Tripping Configuration',
+          body: 'Co-developed the tripping workflow from client engineering requirements through usable controls, balancing dense field data with operator comprehension. The advanced table supports depth-based pressure and speed targets, validation, and edit states while live gauges keep pressure, hookload, trip speed, block height, and flow readings visible during configuration.'
         },
         {
-          id: 'global-deployment',
+          id: 'basic-tripping',
           asset: {
             type: 'image',
-            src: '/career/projects/beyond-mpd-olympus/4-rollover.png',
-            width: 906,
-            height: 509,
-            alt: 'Beyond MPD — Global Deployment Readiness'
+            src: '/career/projects/beyond-mpd-olympus/3-basic.png',
+            width: 1350,
+            height: 756,
+            alt: 'Beyond MPD — Basic Tripping Controls'
           },
-          title: 'Global Deployment Readiness',
-          body: 'To support deployment across geographically distributed rigs, I developed robust validation schemas, optimized CI/CD pipelines, and ensured global compatibility through precise unit conversion standards — accounting for measurement variations across operating regions.'
+          title: 'Basic Tripping Controls',
+          body: 'Translated the same safety-critical model into a basic mode for operators who need fast control over static pressure, dynamic pressure, and hookload thresholds. This is where product judgment and engineering constraints meet: preserve the rig visualization and live gauges, reduce the input surface, and keep the workflow dependable under field pressure.'
         }
       ]
     },
@@ -487,55 +496,55 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower-dashboard.png',
-          width: 375,
-          height: 812,
-          alt: 'PayPower Mastercard App — Dashboard'
+          src: '/career/projects/paypower-prepaid-mastercard/paypower-mobile-2.png',
+          width: 1920,
+          height: 1080,
+          alt: 'PayPower Mastercard App — Remote Identity Verification'
         },
         {
           type: 'image',
-          src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower-verify.png',
-          width: 375,
-          height: 812,
-          alt: 'PayPower Mastercard App — Verify Identity'
+          src: '/career/projects/paypower-prepaid-mastercard/paypower-mobile-3.png',
+          width: 1920,
+          height: 1080,
+          alt: 'PayPower Mastercard App — Card Activation and Multi-Card Management'
         }
       ],
       stories: [
         {
-          id: 'white-label-architecture',
+          id: 'white-label-platform',
           asset: {
             type: 'image',
-            src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower.png',
-            width: 1640,
-            height: 1024,
-            alt: 'PayPower Mastercard App — White-Label Architecture'
+            src: '/career/projects/paypower-prepaid-mastercard/paypower.png',
+            width: 1920,
+            height: 1080,
+            alt: 'PayPower Mastercard App — Product Overview'
           },
-          title: 'White-Label Architecture',
-          body: 'Implemented a monorepo architecture with feature flag-based whitelabeling, enabling tailored deployments for diverse client needs. Migrated a legacy Redux system to tRPC, enhancing data efficiency. Added multi-currency support with precise financial calculations using big integers to prevent rounding errors in financial transactions.'
+          title: 'White-Label Platform Strategy',
+          body: 'Led the React Native work and business case that turned PayPower from a single-client prepaid app into a reusable white-label platform for reloadable Mastercard programs. The product overview supports the story, but the win is strategic: configurable branding, shared account flows, and a mobile foundation strong enough to help secure three new client engagements.'
         },
         {
-          id: 'cicd-reliability',
+          id: 'mobile-redesign',
           asset: {
             type: 'image',
-            src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower-overview.png',
-            width: 1640,
-            height: 1024,
-            alt: 'PayPower Mastercard App — CI/CD and Production Reliability'
+            src: '/career/projects/paypower-prepaid-mastercard/paypower-overview.png',
+            width: 1920,
+            height: 1080,
+            alt: 'PayPower Mastercard App — Mobile Screens Overview'
           },
-          title: 'CI/CD Strategy and Production Reliability',
-          body: 'Owned a 12-pipeline CI/CD strategy across iOS, Android, and web with integrated Sentry monitoring and Mixpanel analytics. Directed incident response for critical security, deployment, and production issues, ensuring rapid resolution and minimal user impact.'
+          title: 'Mobile Redesign and Financial Workflows',
+          body: 'Led the UX-focused mobile redesign while pushing the platform forward under the hood. The screen set shows account, card, and payment flows, but the experience is backed by a Redux-to-tRPC migration, multi-currency support, and big-integer financial calculations that protect precision in prepaid-card transactions.'
         },
         {
-          id: 'client-engagement',
+          id: 'account-dashboard',
           asset: {
             type: 'image',
-            src: '/career/projects/paypower-reloadable-prepaid-mastercard-mobile-app/paypower-cards.png',
-            width: 375,
-            height: 812,
-            alt: 'PayPower Mastercard App — Cards'
+            src: '/career/projects/paypower-prepaid-mastercard/paypower-mobile-1.png',
+            width: 1920,
+            height: 1080,
+            alt: 'PayPower Mastercard App — Account Onboarding and Card Dashboard'
           },
-          title: 'Client Engagement and Business Development',
-          body: 'Secured three new client engagements by building the business case for the white-label monorepo, a Redux-to-React Query refactor, and a UX-focused mobile redesign. Worked directly with sales to shape scope and win engagements alongside the product owner.'
+          title: 'Account Onboarding and Card Dashboard',
+          body: 'Built the everyday account surfaces customers rely on after launch: onboarding, balance review, pending and posted transactions, bill payment, reloads, and card actions. These screens are user-facing proof of the platform work beneath them, where shared flows, configuration points, CI/CD, Sentry, and Mixpanel made releases reliable across iOS, Android, and web.'
         }
       ]
     },
@@ -614,7 +623,7 @@ const projectEntries: ProjectEntry[] = [
             alt: 'Aeroplan Shopping Button — Cross-Browser Architecture'
           },
           title: 'Cross-Browser Architecture',
-          body: 'Architected consistent behavior across Chrome, Firefox, Safari, and Edge — a single codebase handling browser-specific extension APIs, content script injection patterns, and background service worker lifecycle differences across four distinct runtimes.'
+          body: 'Led system design for Aeroplan’s first cross-browser shopping extension, turning a browser-specific problem into one consistent product across Chrome, Firefox, Safari, and Edge. The architecture normalized extension APIs, content script injection, permissions, and background lifecycle differences so the team could ship one reliable earning experience instead of four fragile implementations.'
         },
         {
           id: 'cors-session-tracking',
@@ -626,7 +635,7 @@ const projectEntries: ProjectEntry[] = [
             alt: 'Aeroplan Shopping Button — CORS and Session Tracking'
           },
           title: 'CORS Bypass and Multi-Domain Session Tracking',
-          body: 'Implemented an SWR-based query system to overcome CORS restrictions and handle real-time retailer data without direct cross-origin calls. Built a navigation tracking system for multi-domain purchase sessions — ensuring reward attribution remained intact across redirects, affiliate hops, and multi-tab checkout flows.'
+          body: 'Solved the hard loyalty-program problem beneath the UI: retailer data, browser security boundaries, affiliate redirects, and reward attribution all had to survive real shopping behavior. I implemented an SWR-backed data layer for retailer updates and a multi-domain session tracker that preserved purchase attribution across redirects, affiliate hops, and multi-tab checkout flows.'
         },
         {
           id: 'caching-performance',
@@ -638,7 +647,7 @@ const projectEntries: ProjectEntry[] = [
             alt: 'Aeroplan Shopping Button — Offer Activation'
           },
           title: 'Multi-Level Caching and Performance',
-          body: 'Designed a multi-level caching mechanism to manage high traffic and dynamic retailer data — reducing backend load while maintaining responsive performance across hundreds of retail sites. Owned PRDs, estimates, and client expectation management alongside the product owner.'
+          body: 'Owned the delivery shape alongside the product owner: PRDs, estimates, client expectations, and the caching strategy needed to support hundreds of retail sites. The multi-level cache reduced backend load while keeping activation and offer states responsive, turning a first-of-its-kind browser extension into a shippable product for a national loyalty platform.'
         }
       ]
     },
@@ -694,45 +703,31 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-retailers.png',
+          src: '/career/projects/aeroplan-estore/aeroplan-retailers.png',
           width: 1920,
           height: 1080,
           alt: 'Aeroplan eStore — Retailers Intro'
         },
         {
           type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-dyson.png',
+          src: '/career/projects/aeroplan-estore/aeroplan-dyson.png',
           width: 1920,
           height: 1080,
           alt: 'Aeroplan eStore — Dyson Retailer'
         },
         {
           type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-catalog.png',
-          width: 1920,
-          height: 1080,
-          alt: 'Aeroplan eStore — Dyson Retailer Catalog'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-mobile-deals.png',
+          src: '/career/projects/aeroplan-estore/aeroplan-mobile-deals.png',
           width: 430,
           height: 930,
           alt: 'Aeroplan eStore — Mobile Deals'
         },
         {
           type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-mobile-retailer.png',
-          width: 430,
-          height: 930,
-          alt: 'Aeroplan eStore — Mobile Retailer'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/aeroplan-e-store/aeroplan-mobile-item.png',
-          width: 430,
-          height: 930,
-          alt: 'Aeroplan eStore — Mobile Product'
+          src: '/career/projects/aeroplan-estore/aeroplan-mobile-1.png',
+          width: 1920,
+          height: 1080,
+          alt: 'Aeroplan eStore — Mobile Experience'
         }
       ],
       stories: [
@@ -740,37 +735,37 @@ const projectEntries: ProjectEntry[] = [
           id: 'initial-architecture',
           asset: {
             type: 'image',
-            src: '/career/projects/aeroplan-e-store/aeroplan-for-you.png',
+            src: '/career/projects/aeroplan-estore/aeroplan-for-you.png',
             width: 1920,
             height: 1080,
             alt: 'Aeroplan eStore — Initial Architecture and MVP'
           },
           title: 'Initial Architecture and MVP',
-          body: 'Lead developer for the Aeroplan eStore front end, state management, and server model design — the foundational architecture on which subsequent redesigns, accessibility work, and catalog extensions were built. Designed scalable React and Node.js solutions enabling future feature expansion and proposed three follow-on engagements covering architecture refinement, theming, and accessibility.'
+          body: 'Led the initial Aeroplan eStore build across front-end architecture, Redux state management, and the Node.js server model. This first engagement established the foundation that later redesigns, accessibility work, and catalog extensions could build on, and it created enough client trust to propose and win the next two Aeroplan engagements.'
         },
         {
           id: 'retailer-catalog',
           asset: {
             type: 'image',
-            src: '/career/projects/aeroplan-e-store/aeroplan-listing.png',
+            src: '/career/projects/aeroplan-estore/aeroplan-listing.png',
             width: 1920,
             height: 1080,
             alt: 'Aeroplan eStore — Retailers Listing'
           },
           title: 'Retailer and Catalog Redesign',
-          body: "Spearheaded the eStore's retailer catalog and filtering system redesign — componentized React architecture, Redux-based state management, and whitelabel theming for scalability. Implemented Air Canada API integrations, localization, and binary-masked item variant indexing for a high-traffic national loyalty program."
+          body: 'Spearheaded the retailer and catalog redesign for a high-traffic national loyalty platform, turning the eStore into a more scalable shopping surface. The work combined componentized React, Redux state architecture, whitelabel theming, localization, Air Canada API integrations, and binary-masked item variant indexing so retailer and product data could stay fast, accurate, and extensible.'
         },
         {
           id: 'accessibility',
           asset: {
             type: 'image',
-            src: '/career/projects/aeroplan-e-store/aeroplan-cart.png',
+            src: '/career/projects/aeroplan-estore/aeroplan-cart.png',
             width: 1920,
             height: 1080,
             alt: 'Aeroplan eStore — AODA Accessibility Compliance'
           },
           title: 'Accessibility Compliance — AODA AA / WCAG 2.0',
-          body: 'Led a team of five engineers through a full AODA/WCAG 2.0 AA accessibility overhaul — structural semantics, focus management, ARIA roles, keyboard navigation, and colour contrast across the entire React/Redux application. Achieved 80%+ test coverage across critical components using React Testing Library and Jest.'
+          body: 'Led five engineers through a full AODA/WCAG 2.0 AA accessibility overhaul across the React/Redux application. The engagement covered structural semantics, focus management, ARIA roles, keyboard navigation, colour contrast, and regression protection, with 80%+ test coverage across critical components using React Testing Library and Jest.'
         }
       ]
     },
@@ -827,43 +822,36 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/roc-mar-engineering-employee-dashboard/rocmar-home.png',
+          src: '/career/projects/rocmar-dashboard/rocmar-home.png',
           width: 1920,
           height: 1080,
           alt: 'RocMar Employee Dashboard — Home'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/roc-mar-engineering-employee-dashboard/rocmar-dashboard.png',
-          width: 1920,
-          height: 1080,
-          alt: 'RocMar Employee Dashboard — Dashboard'
         }
       ],
       stories: [
         {
-          id: 'design-system',
-          asset: {
-            type: 'image',
-            src: '/career/projects/roc-mar-engineering-employee-dashboard/rocmar.png',
-            width: 1920,
-            height: 1080,
-            alt: 'RocMar Employee Dashboard — Interface Design'
-          },
-          title: 'Interface Design and Design System',
-          body: 'Designed the full interface in Figma and developed a comprehensive design system, ensuring visual consistency and intuitive interactions across the dashboard. The design system established reusable components, typography, and color semantics that scaled across all views.'
-        },
-        {
           id: 'data-integrations',
           asset: {
             type: 'image',
-            src: '/career/projects/roc-mar-engineering-employee-dashboard/rocmar-overview.png',
+            src: '/career/projects/rocmar-dashboard/rocmar-overview.png',
             width: 1920,
             height: 1080,
             alt: 'RocMar Employee Dashboard — Data Integration Overview'
           },
           title: 'Data Integration, Auth, and SVG Visualization',
-          body: 'Implemented secure infrastructure with OAuth and OIDC for SSO authentication via Passport.js. Integrated four OAuth-based APIs, transforming user data and browsing habits into actionable productivity insights. Leveraged SVG and optimized SQL queries to combine millions of historical data points spanning years into meaningful, interactive visualizations.'
+          body: 'Owned the full-stack data layer for a productivity dashboard that pulled employee activity from four OAuth/OIDC-backed integrations. I designed the auth flow with Passport.js, normalized years of historical activity into Postgres, and used optimized SQL plus SVG visualization to turn millions of records into readable productivity signals.'
+        },
+        {
+          id: 'design-system',
+          asset: {
+            type: 'image',
+            src: '/career/projects/rocmar-dashboard/rocmar.png',
+            width: 1920,
+            height: 1080,
+            alt: 'RocMar Employee Dashboard — Interface Design'
+          },
+          title: 'Figma-to-Production Dashboard System',
+          body: 'Designed the full interface and design system in Figma, then carried it into production as the sole owner of the dashboard experience. The UI work was not surface polish: reusable components, typography, color semantics, and interaction patterns made a dense operational tool feel coherent for an architectural engineering firm.'
         }
       ]
     },
@@ -881,7 +869,7 @@ const projectEntries: ProjectEntry[] = [
         'Internal scaffolding tool that cut new client setup to one command, plus a white-label product catalog.',
       desc: "Built Quantum Mob's white-label product catalog and an internal project scaffolding tool that automated CI/CD pipeline generation — reducing new client project setup to a one-command process, adopted across client engagements.",
       role: 'Team Lead',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2020-09-01', appTimeZone),
       endDate: fromZonedTime('2020-10-01', appTimeZone)
     },
@@ -932,7 +920,7 @@ const projectEntries: ProjectEntry[] = [
         'Loyalty portal components in a large-team monorepo — Lerna-published, BEM SASS, AODA compliant.',
       desc: 'Implemented React components for the Air Miles landing portal within a large team monorepo — BEM SASS standards for cross-compatible styling, Lerna-published shared components, Jest and Nock test coverage, and AODA/WCAG 2.0 AA accessibility compliance.',
       role: 'Software Engineer',
-      category: 'inactive',
+      category: 'featured',
       startDate: fromZonedTime('2020-01-01', appTimeZone),
       endDate: fromZonedTime('2020-01-01', appTimeZone)
     },
@@ -953,38 +941,55 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/air-miles-landing-portal-development/airmiles.png',
-          width: 1920,
-          height: 1080,
-          alt: 'Air Miles Landing Portal'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/air-miles-landing-portal-development/airmiles-partners.png',
-          width: 1920,
-          height: 1080,
-          alt: 'Air Miles Landing Portal — Partner Finder'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/air-miles-landing-portal-development/airmiles-earn.png',
-          width: 1920,
-          height: 1080,
-          alt: 'Air Miles Landing Portal — How to Earn'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/air-miles-landing-portal-development/airmiles-offers.png',
+          src: '/career/projects/air-miles-rewards-portal/airmiles-offers.png',
           width: 1920,
           height: 1080,
           alt: 'Air Miles Landing Portal — Offers'
         },
         {
           type: 'image',
-          src: '/career/projects/air-miles-landing-portal-development/airmiles-ways.png',
+          src: '/career/projects/air-miles-rewards-portal/airmiles-ways.png',
           width: 1920,
           height: 1080,
           alt: 'Air Miles Landing Portal — 6 Ways to Earn'
+        }
+      ],
+      stories: [
+        {
+          id: 'landing-portal-components',
+          asset: {
+            type: 'image',
+            src: '/career/projects/air-miles-rewards-portal/airmiles.png',
+            width: 1920,
+            height: 1080,
+            alt: 'Air Miles Landing Portal'
+          },
+          title: 'Component Work Inside a National Loyalty Platform',
+          body: 'Built React components for the Air Miles landing portal inside a large-team monorepo, where consistency mattered as much as speed. The landing page supports the story because it shows the public surface, but the work underneath was shared-component discipline: BEM SASS, Lerna-published packages, accessibility requirements, and implementation that had to fit an existing enterprise design and release system.'
+        },
+        {
+          id: 'partner-finder',
+          asset: {
+            type: 'image',
+            src: '/career/projects/air-miles-rewards-portal/airmiles-partners.png',
+            width: 1920,
+            height: 1080,
+            alt: 'Air Miles Landing Portal — Partner Finder'
+          },
+          title: 'Partner Discovery and Loyalty Navigation',
+          body: 'Implemented portal surfaces that helped collectors understand where and how to earn rewards across a broad partner network. The partner finder screenshot is evidence of the product problem: make a dense loyalty ecosystem feel browsable, branded, and dependable while preserving reusable front-end patterns that other teams could extend without fracturing the experience.'
+        },
+        {
+          id: 'earn-education',
+          asset: {
+            type: 'image',
+            src: '/career/projects/air-miles-rewards-portal/airmiles-earn.png',
+            width: 1920,
+            height: 1080,
+            alt: 'Air Miles Landing Portal — How to Earn'
+          },
+          title: 'Accessible Education for Reward Mechanics',
+          body: 'Turned reward mechanics into clear, accessible interface sections that could explain earning paths without overwhelming the user. The How to Earn screen supports the story because it shows the balance the work required: brand expression, AODA/WCAG 2.0 AA compliance, responsive component behavior, and Jest/Nock-backed confidence in a shared codebase.'
         }
       ]
     },
@@ -1023,7 +1028,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/moda-match-virtual-fitting-room/modamatch.png',
+          src: '/career/projects/moda-match/modamatch.png',
           width: 1920,
           height: 1080,
           alt: 'Moda Match — Virtual Fitting Room'
@@ -1080,7 +1085,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/cardinal-meats-food-service-website-and-cms/cardinal.png',
+          src: '/career/projects/cardinal-meats/cardinal.png',
           width: 1920,
           height: 1080,
           alt: 'Cardinal Meats & Food Service — Website & CMS'
@@ -1137,7 +1142,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/weiser-canadian-catalog-website/weiser.png',
+          src: '/career/projects/weiser/weiser.png',
           width: 1920,
           height: 1080,
           alt: 'Weiser — Canadian Catalog Website'
@@ -1177,14 +1182,14 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/canada-chiropractic-protective-association-website-and-cms/ccpa.png',
+          src: '/career/projects/ccpa/ccpa.png',
           width: 1920,
           height: 1080,
           alt: 'Canada Chiropractic Protective Association — Website & CMS'
         },
         {
           type: 'video',
-          src: '/career/projects/canada-chiropractic-protective-association-website-and-cms/CCPAinfographic-short.mp4',
+          src: '/career/projects/ccpa/CCPAinfographic-short.mp4',
           width: 2788,
           height: 1748,
           alt: 'Canada Chiropractic Protective Association — Infographic'
@@ -1217,7 +1222,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/canada-dry-enter-pin-contest/canadadry.png',
+          src: '/career/projects/canada-dry-enter-pin/canadadry.png',
           width: 1920,
           height: 1080,
           alt: 'Canada Dry — Enter PIN Contest'
@@ -1257,7 +1262,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/canada-dry-website/canadadry.png',
+          src: '/career/projects/canada-dry/canadadry.png',
           width: 1920,
           height: 1080,
           alt: 'Canada Dry — Website'
@@ -1298,7 +1303,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/monogram-canadian-catalog-website/monogram.png',
+          src: '/career/projects/monogram/monogram.png',
           width: 1920,
           height: 1080,
           alt: 'Monogram — Canadian Catalog Website'
@@ -1332,7 +1337,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/parents-canada-magazine-website/parents.png',
+          src: '/career/projects/parents-canada/parents.png',
           width: 1920,
           height: 1080,
           alt: 'Parents Canada — Magazine Website'
@@ -1365,21 +1370,21 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'video',
-          src: '/career/projects/toffifee-spin-to-win-contest/toff7026-short.mp4',
+          src: '/career/projects/toffifee-spin-to-win/toff7026-short.mp4',
           width: 2400,
           height: 1748,
           alt: 'Toffifee — Spin to Win Contest'
         },
         {
           type: 'video',
-          src: '/career/projects/toffifee-spin-to-win-contest/toff7026.mp4',
+          src: '/career/projects/toffifee-spin-to-win/toff7026.mp4',
           width: 2400,
           height: 1748,
           alt: 'Toffifee — Spin to Win Contest (Full)'
         },
         {
           type: 'video',
-          src: '/career/projects/toffifee-spin-to-win-contest/toff7026-spin.mp4',
+          src: '/career/projects/toffifee-spin-to-win/toff7026-spin.mp4',
           width: 2784,
           height: 1652,
           alt: 'Toffifee — Spin Animation'
@@ -1419,14 +1424,14 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'video',
-          src: '/career/projects/toyota-bring-your-toyota-home-contest/byth7040-short.mp4',
+          src: '/career/projects/bring-your-toyota-home/byth7040-short.mp4',
           width: 1146,
           height: 850,
           alt: 'Toyota — Bring Your Toyota Home Contest'
         },
         {
           type: 'video',
-          src: '/career/projects/toyota-bring-your-toyota-home-contest/byth7040-long.mp4',
+          src: '/career/projects/bring-your-toyota-home/byth7040-long.mp4',
           width: 1276,
           height: 796,
           alt: 'Toyota — Bring Your Toyota Home Contest (Full)'
@@ -1465,7 +1470,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/toyota-make-a-date-contest/toyota.webp',
+          src: '/career/projects/toyota-make-a-date/toyota.webp',
           width: 900,
           height: 574,
           alt: 'Toyota — Make a Date Contest'
@@ -1505,7 +1510,7 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/baby-jogger-canadian-catalog-website/babyjogger.png',
+          src: '/career/projects/baby-jogger/babyjogger.png',
           width: 1920,
           height: 1080,
           alt: 'BabyJogger — Canadian Catalog Website'
@@ -1550,73 +1555,24 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/early-software-engineering/mockup-mobile-game-m.jpg',
-          width: 1980,
-          height: 1506,
-          alt: 'Early Software Engineering — Tic Tac Toe Mobile Mockup'
+          src: '/career/projects/early-software-engineering/early-mobile-1.png',
+          width: 1920,
+          height: 1080,
+          alt: 'Early Software Engineering — Mobile Project Mockups'
         },
         {
           type: 'image',
-          src: '/career/projects/early-software-engineering/mockup-mobile-m (3).jpg',
-          width: 2259,
-          height: 1506,
-          alt: 'Early Software Engineering — Pomodoro Mobile Mockup'
+          src: '/career/projects/early-software-engineering/early-mobile-2.png',
+          width: 1920,
+          height: 1080,
+          alt: 'Early Software Engineering — Mobile App Interfaces'
         },
         {
           type: 'image',
-          src: '/career/projects/early-software-engineering/mockup-mobile-m (2).jpg',
-          width: 1980,
-          height: 1506,
-          alt: 'Early Software Engineering — Calculator Mobile Mockup'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/mockup-mobile.jpg',
-          width: 960,
-          height: 640,
-          alt: 'Early Software Engineering — Weather Widget Mockup'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-6+ (1).jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Simon Says'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-6+.jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Tic Tac Toe'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-game-6+.jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Tic Tac Toe (Game)'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-6+ (4).jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Pomodoro Timer'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-6+ (3).jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Calculator'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/early-software-engineering/screenshot-6+ (2).jpg',
-          width: 414,
-          height: 736,
-          alt: 'Early Software Engineering — Weather Widget'
+          src: '/career/projects/early-software-engineering/early-mobile-3.png',
+          width: 1920,
+          height: 1080,
+          alt: 'Early Software Engineering — Mobile Game and Utility Apps'
         }
       ],
       stories: [
@@ -1625,24 +1581,36 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/early-software-engineering/mockup-mobile-m (1).jpg',
-            width: 2259,
+            width: 2677,
             height: 1506,
             alt: 'Early Software Engineering — Full-Stack Foundation'
           },
           title: 'Full-Stack JavaScript Foundation',
-          body: 'Immersed in full-stack JavaScript fundamentals — DOM manipulation, Node.js, OAuth authentication, algorithms, and data structures — through a self-directed FreeCodeCamp curriculum. Built real-world projects at my own pace, fostering both technical skill and self-discipline.'
+          body: 'Used the FreeCodeCamp curriculum as a self-directed bridge from design into engineering, turning JavaScript, DOM manipulation, Node.js, OAuth, algorithms, and data structures into shipped interface work. The mobile mockups support the story because this was never just tutorial completion: each exercise became a finished product surface, proving I could learn the system, shape the experience, and carry it through to working code.'
         },
         {
           id: 'design-meets-engineering',
           asset: {
             type: 'image',
-            src: '/career/projects/early-software-engineering/mockup-mobile-m.jpg',
-            width: 1980,
+            src: '/career/projects/early-software-engineering/mockup-mobile-m (3).jpg',
+            width: 2677,
             height: 1506,
             alt: 'Early Software Engineering — Design Meets Engineering'
           },
           title: 'Design Background Applied to Engineering',
-          body: 'Applied a background in functional design, color theory, and composition from OCAD to create interfaces that were minimalist yet polished and user-centric. Every project was designed from scratch before any code was written — establishing a design-led engineering approach that has defined the career since.'
+          body: 'Brought an OCAD design background into the code from the beginning, treating layout, hierarchy, interaction, and polish as engineering requirements rather than decoration. These early screens show the pattern that kept showing up later in client work: start with the user experience, understand the constraints underneath it, and make the implementation feel intentional instead of assembled.'
+        },
+        {
+          id: 'game-and-utility-apps',
+          asset: {
+            type: 'image',
+            src: '/career/projects/early-software-engineering/mockup-mobile-game-m.jpg',
+            width: 2628,
+            height: 1478,
+            alt: 'Early Software Engineering — Game and Utility Apps'
+          },
+          title: 'Game Logic, Timers, and Everyday Tools',
+          body: 'Built small games and utility apps to practice the product behavior that still matters in larger systems: state, timing, input handling, conditional logic, feedback loops, and error recovery. Tic Tac Toe, Simon Says, the Pomodoro timer, calculator, and weather widget became a compact proving ground for the same muscle used later on production teams: translate an expected experience into dependable interface logic.'
         }
       ]
     },
@@ -1683,73 +1651,66 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/web-10-era/1.jpg',
+          src: '/career/projects/web10-era/1.jpg',
           width: 1920,
           height: 1500,
           alt: 'Web 1.0 Era — Sony Ericsson Phone Theme'
         },
         {
           type: 'image',
-          src: '/career/projects/web-10-era/12.jpg',
+          src: '/career/projects/web10-era/12.jpg',
           width: 1920,
-          height: 1500,
+          height: 1080,
           alt: 'Web 1.0 Era — AsianAvenue Theme'
         },
         {
           type: 'image',
-          src: '/career/projects/web-10-era/11.jpg',
+          src: '/career/projects/web10-era/11.jpg',
           width: 1920,
           height: 1500,
           alt: 'Web 1.0 Era — Zuup Theme & Abstract Art'
         },
         {
           type: 'image',
-          src: '/career/projects/web-10-era/5.jpg',
+          src: '/career/projects/web10-era/8.jpg',
           width: 1920,
           height: 1500,
-          alt: 'Web 1.0 Era — Mousepad Photoshop Design'
+          alt: 'Web 1.0 Era — Zuup Theme'
         },
         {
           type: 'image',
-          src: '/career/projects/web-10-era/4.jpg',
-          width: 1920,
-          height: 1500,
-          alt: 'Web 1.0 Era — Train Illustration'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/web-10-era/3.jpg',
-          width: 1920,
-          height: 1500,
-          alt: 'Web 1.0 Era — Alienware Illustration'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/web-10-era/9.jpg',
+          src: '/career/projects/web10-era/9.jpg',
           width: 1920,
           height: 1500,
           alt: 'Web 1.0 Era — Naha Sushi Flash Website'
         },
         {
           type: 'image',
-          src: '/career/projects/web-10-era/10.jpg',
+          src: '/career/projects/web10-era/5.jpg',
+          width: 1920,
+          height: 1500,
+          alt: 'Web 1.0 Era — Mousepad Photoshop Design'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/web10-era/4.jpg',
+          width: 1920,
+          height: 1500,
+          alt: 'Web 1.0 Era — Train Illustration'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/web10-era/3.jpg',
+          width: 1920,
+          height: 1500,
+          alt: 'Web 1.0 Era — Alienware Illustration'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/web10-era/10.jpg',
           width: 1920,
           height: 1500,
           alt: 'Web 1.0 Era — ABC Cakes Business Cards'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/web-10-era/2.jpg',
-          width: 1920,
-          height: 1500,
-          alt: 'Web 1.0 Era — Xanga Theme (Variant)'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/web-10-era/8.jpg',
-          width: 1920,
-          height: 1500,
-          alt: 'Web 1.0 Era — Zuup Theme'
         }
       ],
       stories: [
@@ -1757,25 +1718,37 @@ const projectEntries: ProjectEntry[] = [
           id: 'pixel-perfect-design',
           asset: {
             type: 'image',
-            src: '/career/projects/web-10-era/6.jpg',
+            src: '/career/projects/web10-era/6.jpg',
             width: 1920,
             height: 1500,
             alt: 'Web 1.0 Era — PixelInfinity.ca Theme'
           },
-          title: 'Pixel-Perfect Web Design',
-          body: 'Designed and built pixel-perfect web layouts using Photoshop-sliced templates — exported to table-based HTML and hand-coded CSS before grid and flex existed. Every asset was optimized for dial-up speeds while maintaining visual precision across Netscape Navigator and Internet Explorer 6.'
+          title: 'Pixel-Perfect Layouts Before Modern CSS',
+          body: 'Taught myself web design by turning Photoshop compositions into live interfaces with sliced assets, table-based HTML, and hand-written CSS before grid, flexbox, component libraries, or responsive tooling existed. The PixelInfinity layout is the evidence, but the story is the foundation: I learned to think in systems early — visual hierarchy, asset weight, browser quirks, and production constraints all had to be solved by hand.'
         },
         {
           id: 'platform-themes',
           asset: {
             type: 'image',
-            src: '/career/projects/web-10-era/7.jpg',
+            src: '/career/projects/web10-era/7.jpg',
             width: 1920,
             height: 1500,
             alt: 'Web 1.0 Era — Xanga Theme'
           },
-          title: 'Custom Platform Themes and Illustration',
-          body: "Designed custom themes for social platforms (Xanga, AsianAvenue, Zuup) and hardware (Sony Ericsson phones, Winamp) — each requiring understanding of the host environment's rendering constraints. Also produced original abstract art and illustrations that ran alongside the design work."
+          title: 'Custom Platform Themes and Constraint Hacking',
+          body: 'Designed custom themes for Xanga, Zuup, Sony Ericsson phones, and Winamp by working inside whatever markup, image slots, browser behavior, and file-size limits each platform allowed. These themes show the early design instinct underneath the later portfolio: understand the host system, find the seams, and use visual craft to make a constrained environment feel personal and intentional.'
+        },
+        {
+          id: 'xanga-theme-variant',
+          asset: {
+            type: 'image',
+            src: '/career/projects/web10-era/2.jpg',
+            width: 1920,
+            height: 1500,
+            alt: 'Web 1.0 Era — Xanga Theme (Variant)'
+          },
+          title: 'Identity Systems for Social Platforms',
+          body: 'Built full visual identities for early social spaces like Xanga, where a profile was less a feed and more a self-authored website. The variant supports the story because it shows more than decoration: color, layout, typography, illustration, and mood all working together inside platform constraints. Long before formal design systems, I was already shaping reusable visual language around identity, audience, and atmosphere.'
         }
       ]
     },
@@ -1821,20 +1794,6 @@ const projectEntries: ProjectEntry[] = [
     },
     media: {
       visuals: [
-        {
-          type: 'image',
-          src: '/career/projects/interiors-architecture/Overview-Cutaway-2.jpg',
-          width: 1920,
-          height: 1080,
-          alt: "Interior & Architecture Design — 1800's Queen St. Modernization Cutaway"
-        },
-        {
-          type: 'image',
-          src: '/career/projects/interiors-architecture/Overview-Cutaway-1.jpg',
-          width: 1920,
-          height: 1080,
-          alt: "Interior & Architecture Design — 1800's Queen St. Modernization Cutaway"
-        },
         {
           type: 'image',
           src: '/career/projects/interiors-architecture/South-West-Overview.jpg',
@@ -1893,6 +1852,13 @@ const projectEntries: ProjectEntry[] = [
         },
         {
           type: 'image',
+          src: '/career/projects/interiors-architecture/floor-plan-&-cross-section.jpg',
+          width: 1920,
+          height: 1242,
+          alt: 'Interior & Architecture Design — Technical Drawing'
+        },
+        {
+          type: 'image',
           src: '/career/projects/interiors-architecture/Final-1.jpg',
           width: 1920,
           height: 1242,
@@ -1929,7 +1895,7 @@ const projectEntries: ProjectEntry[] = [
       ],
       stories: [
         {
-          id: 'architecture-models',
+          id: 'queen-street-modernization',
           asset: {
             type: 'image',
             src: '/career/projects/interiors-architecture/Overview.jpg',
@@ -1937,20 +1903,32 @@ const projectEntries: ProjectEntry[] = [
             height: 1080,
             alt: "Interior & Architecture Design — 1800's Queen St. Modernization"
           },
-          title: 'Architecture and Interior Design',
-          body: 'Projects spanned residential modernization, sculpture gallery design, and community revitalization — each combining precision engineering with creative expression. Physical models and 3D visualizations explored the relationship between form, function, and user experience across a range of scales and programs.'
+          title: 'Modernizing a Historic Queen Street Shell',
+          body: 'Developed a residential modernization concept for an 1800s Queen Street building, using the exterior shell as a constraint rather than a blank canvas. The overview image supports the story because it shows the design problem at full scale: preserve the character of the envelope, introduce a contemporary interior language, and make the old structure feel deliberate instead of merely inherited.'
         },
         {
-          id: 'technical-drawing',
+          id: 'spatial-planning-cutaway',
           asset: {
             type: 'image',
-            src: '/career/projects/interiors-architecture/floor-plan-&-cross-section.jpg',
+            src: '/career/projects/interiors-architecture/Overview-Cutaway-2.jpg',
             width: 1920,
-            height: 1242,
-            alt: 'Interior & Architecture Design — Technical Drawing'
+            height: 1080,
+            alt: "Interior & Architecture Design — 1800's Queen St. Modernization Cutaway"
           },
-          title: 'Technical Drawing and 3D Modeling',
-          body: 'Developed technical drawing skills and mastered Revit, Fusion 360, and Blender to produce axonometric models, floor plans, and cross-sections. Physical models reinforced the relationship between material, structure, and space — skills that directly translate to design system architecture and component hierarchy in software.'
+          title: 'Cutaway Thinking and Spatial Hierarchy',
+          body: 'Used cutaway views to reason through how people, light, circulation, and program would move through the renovated volume. This is where the project becomes more than a render: the section exposes decisions about openness, privacy, vertical relationships, and sightlines. It speaks to the design sense behind the portfolio — not software engineering, but the ability to organize complexity into a legible experience.'
+        },
+        {
+          id: 'material-and-volume-study',
+          asset: {
+            type: 'image',
+            src: '/career/projects/interiors-architecture/Overview-Cutaway-1.jpg',
+            width: 1920,
+            height: 1080,
+            alt: "Interior & Architecture Design — 1800's Queen St. Modernization Volume Study"
+          },
+          title: 'Material, Volume, and Atmosphere',
+          body: 'Refined the interior as a relationship between mass, void, texture, and daylight rather than a collection of decorated rooms. The second cutaway shows that design judgment at a quieter level: how surfaces meet, how volumes stack, and how a space can feel calm while still carrying architectural tension. It is portfolio evidence of taste — proportion, restraint, and spatial composition under real constraints.'
         }
       ]
     },
@@ -1965,7 +1943,7 @@ const projectEntries: ProjectEntry[] = [
       title: '3D Modeling and Industrial Design',
       subtitle:
         'Hobby-driven 3D modeling and printing, from a full server rack to custom PC hardware and everyday objects.',
-      desc: 'Hobby-driven 3D modeling in Fusion 360 and Blender — custom prints for PC hardware, water cooling, and everyday objects. Projects range from a full IKEA Bekant server rack integrating NAS, SFF servers, and a UPS in a furniture-native form factor to custom PC cases, water blocks, keyfobs, and trophies. The same principle as software throughout: model the object around how it is actually used.',
+      desc: 'Hobby-driven 3D modeling in Fusion 360 and Blender — custom prints for PC hardware, water cooling, furniture integration, and everyday objects. Projects range from a full IKEA Bekant server rack integrating NAS, SFF servers, and a UPS in a furniture-native form factor to custom PC cases, water blocks, keyfobs, and trophies. Less a software-engineering chapter than a record of design sense: proportion, fit, material awareness, constraint-solving, and the instinct to make functional objects feel considered.',
       role: 'Industrial Designer',
       category: 'featured',
       startDate: fromZonedTime('2021-01-01', appTimeZone)
@@ -1991,141 +1969,141 @@ const projectEntries: ProjectEntry[] = [
         {
           type: 'image',
           src: '/career/projects/industrial-design/cf6d4327-aaba-47f1-83bc-4ad2aa772854.PNG',
-          width: 2400,
-          height: 1200,
+          width: 1920,
+          height: 1080,
           alt: '3D Modeling — Bekant Server Rack (Installed)'
         },
         {
           type: 'image',
-          src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-28pm-000_customizedview2748624882.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Small Form Factor PC Build'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-52pm-000_customizedview25809979503.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Small Form Factor PC Build (Detail)'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/eos_1_a_2024-dec-15_11-32-28pm-000_customizedview18216312656.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — EOS Acrylic Laser Cut PC Case'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/mjolnir_3_2024-dec-15_11-48-20pm-000_customizedview1631237819.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Mjolnir 3D Printed PC Case'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/eos_block_2024-nov-27_04-57-07am-000_customizedview5928134866.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — EOS CPU Water Block'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/zx-1_mount_2024-dec-15_11-15-23pm-000_customizedview13614885543.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Nouvolo CPU Block to Iquinix ZX-1 Case Mount'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/case_-_evolv_shift_2_2024-dec-15_11-12-54pm-000_customizedview31469564511.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Evolv Shift 2 Case Cover'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-14pm-000_customizedview18606186293.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Magic the Gathering Redux Card Case'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-06pm-000_customizedview18606186293.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Magic the Gathering Redux Card Case with Insert'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/desk-organizer-redux_2024-dec-15_11-36-28pm-000_customizedview7294577484.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Desk Organizer Redux'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/macbook_stand_2024-dec-15_11-09-37pm-000_customizedview6170979262.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — MacBook Stand'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/hue-mount_2024-dec-15_11-13-59pm-000_customizedview18169488883.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Philips Hue Lightbar Mount for Vivo Desk Pole'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/light_pole_mount_-_screw_based_2024-dec-15_11-39-06pm-000_customizedview10171845343.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Generic Mount for Vivo Desk Monitor Pole'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/koolance_-_fitting_-_90_degree_-_low_profile_2024-dec-15_11-35-21pm-000_customizedview10262692848.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Koolance Fitting 90 Degree Low Profile'
-        },
-        {
-          type: 'image',
-          src: '/career/projects/industrial-design/vandal_switch_2024-dec-15_11-11-49pm-000_customizedview19737110002.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — Anti-Vandal Switch'
+          src: '/career/projects/industrial-design/trophy_-_tech_tank_2024-dec-15_11-07-40pm-000_customizedview13777747030.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — TechTank Sashimis Sports Trophy'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/qm-ornament_2024-dec-15_11-41-51pm-000_customizedview39273023891.png',
-          width: 2400,
-          height: 1200,
+          width: 1920,
+          height: 1080,
           alt: '3D Modeling — Quantum Mob Logo Ornament'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/keyfob_2024-dec-15_11-41-34pm-000_customizedview3517011434.png',
-          width: 2400,
-          height: 1200,
+          width: 1920,
+          height: 1080,
           alt: '3D Modeling — Quantum Mob Logo Keyfob'
         },
         {
           type: 'image',
-          src: '/career/projects/industrial-design/trophy_-_tech_tank_2024-dec-15_11-07-40pm-000_customizedview13777747030.png',
-          width: 2400,
-          height: 1200,
-          alt: '3D Modeling — TechTank Sashimis Sports Trophy'
+          src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-28pm-000_customizedview2748624882.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Small Form Factor PC Build'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/modern-build_2024-dec-15_11-10-52pm-000_customizedview25809979503.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Small Form Factor PC Build (Detail)'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/eos_1_a_2024-dec-15_11-32-28pm-000_customizedview18216312656.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — EOS Acrylic Laser Cut PC Case'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/mjolnir_3_2024-dec-15_11-48-20pm-000_customizedview1631237819.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Mjolnir 3D Printed PC Case'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/eos_block_2024-nov-27_04-57-07am-000_customizedview5928134866.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — EOS CPU Water Block'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/zx-1_mount_2024-dec-15_11-15-23pm-000_customizedview13614885543.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Nouvolo CPU Block to Iquinix ZX-1 Case Mount'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/case_-_evolv_shift_2_2024-dec-15_11-12-54pm-000_customizedview31469564511.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Evolv Shift 2 Case Cover'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-14pm-000_customizedview18606186293.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Magic the Gathering Redux Card Case'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/redux-assy_2024-dec-15_11-37-06pm-000_customizedview18606186293.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Magic the Gathering Redux Card Case with Insert'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/desk-organizer-redux_2024-dec-15_11-36-28pm-000_customizedview7294577484.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Desk Organizer Redux'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/macbook_stand_2024-dec-15_11-09-37pm-000_customizedview6170979262.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — MacBook Stand'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/hue-mount_2024-dec-15_11-13-59pm-000_customizedview18169488883.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Philips Hue Lightbar Mount for Vivo Desk Pole'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/light_pole_mount_-_screw_based_2024-dec-15_11-39-06pm-000_customizedview10171845343.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Generic Mount for Vivo Desk Monitor Pole'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/koolance_-_fitting_-_90_degree_-_low_profile_2024-dec-15_11-35-21pm-000_customizedview10262692848.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Koolance Fitting 90 Degree Low Profile'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/vandal_switch_2024-dec-15_11-11-49pm-000_customizedview19737110002.png',
+          width: 1920,
+          height: 1080,
+          alt: '3D Modeling — Anti-Vandal Switch'
         },
         {
           type: 'image',
           src: '/career/projects/industrial-design/burger_press_2024-dec-15_11-36-02pm-000_customizedview3640923189.png',
-          width: 2400,
-          height: 1200,
+          width: 1920,
+          height: 1080,
           alt: '3D Modeling — Burger Press'
         }
       ],
@@ -2135,24 +2113,24 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/industrial-design/Bekant_Cabinet_2026-May-10_02-26-22PM-000_CustomizedView10916433213.png',
-            width: 2400,
-            height: 1200,
+            width: 1920,
+            height: 1080,
             alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
           },
-          title: 'IKEA Bekant Home Server Rack',
-          body: 'Modeled a complete home server rack inside an IKEA Bekant cabinet, custom-fitting a NAS, small-form-factor servers, a UPS, and all cabling into a furniture-native form factor. The result is a working home lab that serves LLMs and Docker apps while reading as furniture, not equipment. The same principle as software throughout: model the object around how it is actually used.'
+          title: 'Furniture-Native Infrastructure Design',
+          body: 'Designed and modeled a complete home server rack around a real spatial constraint: make a NAS, small-form-factor servers, a UPS, airflow, cabling, and service access disappear inside an IKEA Bekant cabinet without compromising function. The render supports the story because the value is not the cabinet itself — it is the design judgment behind it: proportion, concealment, serviceability, and making technical equipment feel calm enough to live in a room.'
         },
         {
           id: 'pc-water-cooling',
           asset: {
             type: 'image',
             src: '/career/projects/industrial-design/eos_block_2024-dec-15_11-50-39pm-000_customizedview34151560115.png',
-            width: 2400,
-            height: 1200,
+            width: 1920,
+            height: 1080,
             alt: '3D Modeling — EOS CPU Water Block with Pump'
           },
-          title: 'Custom PC Cases and Water-Cooling Parts',
-          body: 'Designed and 3D-printed a family of PC hardware in Fusion 360 and Blender: the Mjolnir printed case, the EOS acrylic laser-cut case and its CPU water block, and mounts adapting a Nouvolo block and Koolance fittings to a compact chassis. Each part solves a real fitment problem rather than a purely aesthetic one, prototyped and refined for function first.'
+          title: 'Fitment, Fabrication, and Iteration',
+          body: 'Used Fusion 360, Blender, laser-cutting constraints, and 3D printing to turn hardware problems into manufacturable parts: compact PC cases, water-cooling blocks, adapter mounts, fittings, desk accessories, trophies, keyfobs, and everyday objects. The screenshots show the range, but the portfolio signal is taste under constraint: measure carefully, prototype honestly, refine the geometry, and keep every visual decision accountable to how the object is held, installed, seen, and used.'
         }
       ]
     },

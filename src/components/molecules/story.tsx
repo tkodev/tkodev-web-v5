@@ -16,7 +16,7 @@ const styles = {
       direction: 'left'
     }
   }),
-  frame: cva(['flex h-75 shrink-0 items-center justify-center', 'p-4 md:w-1/2']),
+  frame: cva(['aspect-video w-full shrink-0', 'p-4 md:w-1/2']),
   img: cva('bg-card size-full rounded-xs object-cover'),
 
   col: cva('flex min-w-0 flex-1 flex-col gap-4 px-4', {

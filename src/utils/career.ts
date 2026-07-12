@@ -1,12 +1,13 @@
 import { differenceInMonths } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 import { appTimeZone, simpleDateFormat } from '@/constants/date'
+import { placeholderAsset } from '@/constants/layout'
 import { type JobEntry, type ProjectEntry } from '@/types/career'
 import { type AssetEntry } from '@/types/layout'
 
-// A project's main image: the first story's asset, falling back to the first asset.
-const getProjectAsset = (project: ProjectEntry): AssetEntry | undefined => {
-  return project.media?.stories?.[0]?.asset ?? project.media?.visuals?.[0]
+// A project's main image: the first story asset, falling back to the site placeholder.
+const getProjectMainAsset = (project: ProjectEntry): AssetEntry => {
+  return project.media?.stories?.[0]?.asset ?? project.media?.visuals?.[0] ?? placeholderAsset
 }
 
 type JobGroup = {
@@ -95,7 +96,7 @@ export {
   getCareerClientIds,
   getCareerYears,
   getJobGroups,
-  getProjectAsset,
-  getProjectClientIds
+  getProjectClientIds,
+  getProjectMainAsset
 }
 export type { JobGroup }

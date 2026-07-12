@@ -13,12 +13,11 @@ import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
-import { placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
 import { appData } from '@/constants/system'
 import { type PageProps } from '@/types/system'
-import { getProjectAsset } from '@/utils/career'
+import { getProjectMainAsset } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
 
 const generateStaticParams = () => {
@@ -30,17 +29,15 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const project = workId ? projectEntryById[workId] : undefined
   if (!project) return {}
 
-  const ogAsset = getProjectAsset(project)
+  const ogAsset = getProjectMainAsset(project)
   return {
     title: `Tony Ko / ${project.basic.title}`,
     description: project.basic.desc,
-    openGraph: ogAsset
-      ? {
-          images: [
-            { url: `${appData.url}${ogAsset.src}`, width: ogAsset.width, height: ogAsset.height }
-          ]
-        }
-      : undefined
+    openGraph: {
+      images: [
+        { url: `${appData.url}${ogAsset.src}`, width: ogAsset.width, height: ogAsset.height }
+      ]
+    }
   }
 }
 
@@ -60,7 +57,7 @@ const WorkDetailPage = async (props: PageProps) => {
   const projectYear = formatInTimeZone(basic.startDate, appTimeZone, 'yyyy')
   const teamSize = parents.staffIds?.length
 
-  const heroAsset = getProjectAsset(project) ?? placeholderAsset
+  const heroAsset = getProjectMainAsset(project)
   const metaEntries = [
     { label: 'Client', value: attribution },
     { label: 'Year', value: projectYear },
@@ -69,10 +66,16 @@ const WorkDetailPage = async (props: PageProps) => {
   const statEntries = extended?.stats ?? []
   const stories = media?.stories ?? []
   const visuals = media?.visuals ?? []
-  const projectIndex = projectEntries
-    .filter((projectEntry) => projectEntry.basic.category === 'featured')
-    .findIndex((projectEntry) => projectEntry.id === project.id)
-  const nextProject = projectEntries[(projectIndex + 1) % projectEntries.length]
+  const featuredProjectEntries = projectEntries.filter(
+    (projectEntry) => projectEntry.basic.category === 'featured'
+  )
+  const projectIndex = featuredProjectEntries.findIndex(
+    (projectEntry) => projectEntry.id === project.id
+  )
+  const nextProject =
+    featuredProjectEntries[
+      projectIndex >= 0 ? (projectIndex + 1) % featuredProjectEntries.length : 0
+    ]
 
   // jsx
   return (
@@ -134,7 +137,7 @@ const WorkDetailPage = async (props: PageProps) => {
       })}
       <Section id="next" height="auto" width="lg">
         <ProjectNext
-          asset={getProjectAsset(nextProject) ?? placeholderAsset}
+          asset={getProjectMainAsset(nextProject)}
           nextProps={{
             label: 'Next Project',
             title: nextProject.basic.title,

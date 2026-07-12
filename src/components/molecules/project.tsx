@@ -6,9 +6,8 @@ import { Card } from '@/components/atoms/card'
 import { Ticker } from '@/components/atoms/ticker'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
-import { placeholderAsset } from '@/constants/layout'
 import { ProjectEntry } from '@/types/career'
-import { getProjectAsset } from '@/utils/career'
+import { getProjectMainAsset } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Badge } from '../atoms/badge'
@@ -24,9 +23,9 @@ const styles = {
   contentCol: cva('flex grow flex-col @3xl:w-2/3 @3xl:border-l'),
 
   assetCell: cva('flex size-full items-center p-4'),
-  assetFrame: cva('relative w-full overflow-hidden rounded-xs'),
+  assetFrame: cva('relative aspect-video w-full overflow-hidden rounded-xs'),
   img: cva([
-    'bg-card aspect-video w-full object-cover',
+    'bg-card absolute inset-0 size-full object-cover',
     'opacity-30 transition-opacity duration-500 group-hover/ticker:opacity-100'
   ]),
   logo: cva([
@@ -62,7 +61,7 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
   const { basic, extended, parents } = project
 
   // render vars
-  const asset = getProjectAsset(project) ?? placeholderAsset
+  const asset = getProjectMainAsset(project)
   const client = clientById[parents.clientId] ?? undefined
   const clientLogo = client?.media?.dark
   const agency = parents?.agencyId ? clientById[parents?.agencyId] : undefined

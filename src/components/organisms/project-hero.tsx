@@ -8,9 +8,9 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['size-full', 'flex flex-col']),
-  stage: cva(['relative grow', 'min-h-0']),
+  stage: cva(['relative grow', 'flex items-center justify-center', 'min-h-0']),
   hud: cva('absolute inset-0'),
-  tile: cva('size-full'),
+  tile: cva('aspect-video w-full'),
   logo: cva('absolute inset-0 m-auto h-auto w-1/6 object-contain')
 }
 
