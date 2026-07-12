@@ -1,21 +1,16 @@
 import { type Metadata } from 'next'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, Palette } from 'lucide-react'
-import { existsSync } from 'node:fs'
-import { join } from 'node:path'
 import { GlobalContact } from '@/components/organisms/global-contact'
 import { ProjectsArchived } from '@/components/organisms/projects-archived'
 import { ProjectsFeatured } from '@/components/organisms/projects-featured'
 import { ProjectsHero } from '@/components/organisms/projects-hero'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
+import { placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
 import { shuffle } from '@/utils/array'
 import { getProjectMainAsset } from '@/utils/career'
-
-const hasPublicProjectImage = (src: string) => {
-  return existsSync(join(process.cwd(), 'public', decodeURIComponent(src)))
-}
 
 const metadata: Metadata = {
   title: 'Tony Ko / Works',
@@ -32,7 +27,7 @@ const WorksPage = () => {
   const tileAssets = shuffle(
     projectEntries
       .map((projectEntry) => getProjectMainAsset(projectEntry))
-      .filter((asset) => asset.type === 'image' && hasPublicProjectImage(asset.src))
+      .filter((asset) => asset.src !== placeholderAsset.src)
   ).slice(0, 21)
 
   // jsx
