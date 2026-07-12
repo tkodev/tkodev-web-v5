@@ -67,11 +67,11 @@ How the v5 pieces land in the standard folders: `app/` mirrors the route map abo
 
 ## Data layer
 
-**Source of truth:** the structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` (`types.ts`, `client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`). This repo **vendors a copy** into `types/` + `constants/` (the package is in a git-ignored notes area and can't be a workspace dependency of a deployable repo). Sync is one-way, notes → site; content edits happen in career-notes first, then get copied over. Never fork the schema silently; schema changes go back upstream.
+**Source of truth:** `src/types/` + `src/constants/` (`client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`, and their types). This repo owns its career data directly: content is authored and edited here, with no vendoring and no one-way sync. The structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` seeded the initial types and constants; it is an origin, not an upstream to write back to.
 
-**Read order:** implementation reads `src/constants/` first; career-notes is consulted only when the vendored copy lacks the fact, in its own order: `profiles/structured/`, then `profiles/linkedin/` and `profiles/website/`. What gets used is vendored back into `constants/` in the same change.
+**Read order:** implementation reads `src/constants/` first; career-notes is consulted only when `constants/` lacks the fact, in its own order: `profiles/structured/`, then `profiles/linkedin/` and `profiles/website/`. The fact then lands in `constants/`, which owns it from that point on.
 
-Site copy is sourced from the career-notes repo (`profiles/website/`, `about/`) and its structured data package, never invented.
+Site copy is real career fact, authored in `constants/` and grounded in the career-notes record (`profiles/website/`, `about/`), never invented.
 
 The data model:
 
