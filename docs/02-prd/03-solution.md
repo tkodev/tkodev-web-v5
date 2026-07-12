@@ -84,6 +84,17 @@ meta footer (CLIENT / LOCATION / YEAR / TEAM), then the evidence: an intro
 statement, real stats, a testimonial where one exists, alternating annotated
 figures with incrementing `figure N.0` indices, and full-width media plates.
 
+The figures and the plates carry different weight. **Stories** are the annotated
+figures: each pairs one media asset with copy that explains the work behind the
+frame, not what the frame depicts. A story answers what Tony owned or shaped here,
+what problem, constraint, or decision the asset represents, and why it mattered to
+the product, the client, or the career arc; the pattern is "here is the work I
+owned, this asset proves it, here is why it mattered." Stories carry the dossier's
+argument for design-minded engineering, product judgment, systems thinking, and
+shipped work. **Visuals** are the supporting plates: extra media that broadens the
+record with range, detail, atmosphere, or proof of polish, never load-bearing for
+the narrative. Stories tell the story; visuals widen the file.
+
 Direction: one flagship (Beyond MPD, the earned centerpiece) gets scroll
 choreography on this same route (pinned scenes, telemetry-style data reveals),
 built last, on top of the proven dossier system.

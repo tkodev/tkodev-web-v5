@@ -16,9 +16,8 @@ as branches and PRs, not listed here.
   - Hero, selected works, statement, overview, testimonials, contact block
 - [x] **m03 — Works**
   - Tile-wall hero, featured cards, archive ledger/reel
-- [~] **m04 — Work detail**
+- [x] **m04 — Work detail**
   - The dossier template over project entries
-    - gridflow needs more images
 - [x] **m05 — About**
   - Statement, method, process, the details
 - [x] **m06 — Experience**

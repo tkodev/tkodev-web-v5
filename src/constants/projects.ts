@@ -106,15 +106,15 @@ const projectEntries: ProjectEntry[] = [
     basic: {
       title: 'Gridflow',
       subtitle:
-        'Social media scheduler owned PRD to production — Next.js, Supabase, TanStack Query, Zod.',
-      desc: 'Social media scheduling app with full-cycle product ownership from PRD to deployed code. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Claude Code.',
+        'Social media scheduler owned PRD through a working build — Next.js, Supabase, TanStack Query, Zod.',
+      desc: 'Social media scheduling app with full-cycle product ownership from PRD through a working full-stack build, in active development. Next.js App Router, Supabase (Auth, Database, Storage), TanStack Query, React Hook Form with Zod, shadcn/ui, Radix UI, and Framer Motion. Built with Claude Code.',
       role: 'Design Engineer',
       category: 'featured',
       startDate: fromZonedTime('2026-03-01', appTimeZone)
     },
     extended: {
       duties: ['product thinking', 'software engineering'],
-      win: 'Owned a social scheduler from PRD to deployed code.',
+      win: 'Turned feed planning into a working full-stack product.',
       skills: [
         'Product Ownership',
         'Full-Stack Development',
@@ -138,28 +138,49 @@ const projectEntries: ProjectEntry[] = [
     media: {
       stories: [
         {
-          id: 'grid-planning',
-          asset: {
-            type: 'video',
-            src: '/career/projects/gridflow-app/cursorful-video-1782448184978.mp4',
-            width: 944,
-            height: 1920,
-            alt: 'Gridflow — True-to-Life Grid Planning'
-          },
-          title: 'True-to-Life Grid Planning and Drag-to-Arrange',
-          body: 'Gridflow previews an Instagram feed as a true-to-life three-column grid, so a profile looks exactly as intended before anything is posted. Posts and their media reorder through dnd-kit sortable interactions, backed by optimistic UI so the grid responds instantly. Every post carries a lifecycle status — draft, scheduled, or published — surfaced directly on the grid.'
-        },
-        {
-          id: 'fullstack-supabase',
+          id: 'product-positioning',
           asset: {
             type: 'image',
-            src: '/career/projects/gridflow-app/5ABDD3A0-68A2-4F71-851D-68ECC4BF6E06_1_105_c.jpeg',
-            width: 621,
-            height: 1264,
-            alt: 'Gridflow — Social Media Scheduling App'
+            src: '/career/projects/gridflow-app/SCR-20260712-qfst.png',
+            width: 1988,
+            height: 1810,
+            alt: 'Gridflow marketing landing page — "Plan your grid as a whole"'
           },
-          title: 'Full-Cycle Ownership on a Supabase Backend',
-          body: 'Owned the product from PRD through deployed code on a Next.js App Router and Supabase stack — Auth, Postgres, and Storage behind posts, post media, and profile buckets. TanStack Query isolates all async server state in a dedicated query layer, while React Hook Form governs auth, settings, and caption inputs. The app is structured for Vercel serverless deployment.'
+          title: 'Product Thesis Before Product Surface',
+          body: 'Defined the product around a creator insight: the feed is judged as a whole composition, but most tools still treat posts as isolated units. The landing page is evidence of that framing — organize, plan, publish — and of the core question Gridflow answers: does this post belong here? I designed and built the marketing surface on the same Next.js system as the app, so positioning, interface language, and implementation all point at the same product idea.'
+        },
+        {
+          id: 'full-product-walkthrough',
+          asset: {
+            type: 'video',
+            src: '/career/projects/gridflow-app/gridflow-mobile.mp4',
+            width: 1920,
+            height: 1080,
+            alt: 'Gridflow walkthrough — plan, library, tag sets, settings, subscription tiers, and profile switching, responsive across desktop and mobile'
+          },
+          title: 'A Complete Product, Not a Demo Screen',
+          body: 'Built the app as a real product loop: plan a grid, manage a library of saved imagery, maintain tag sets, switch profiles, and configure subscription settings from one responsive interface. The walkthrough matters because it shows the breadth of ownership — product model, IA, full-stack data flows, responsive components, and mobile drag-to-reorder all working together instead of one polished mockup pretending to be a product.'
+        },
+        {
+          id: 'grid-validation',
+          asset: {
+            type: 'image',
+            src: '/career/projects/gridflow-app/SCR-20260712-qehb.png',
+            width: 2108,
+            height: 1370,
+            alt: 'Gridflow Plan workspace — live profile grid with Pattern and Clash validation badges'
+          },
+          title: 'Turning Taste Into Product Logic',
+          body: 'Built the Plan workspace around the thing creators actually evaluate: the relationship between posts. The grid flags repeated patterns and neighbouring clashes inline, translating a subjective visual judgment into product feedback the user can act on. The screenshot supports the systems story: dnd-kit reordering, optimistic UI, and validation rules read the whole composition so the interface can answer instantly when the feed starts to drift.'
+        }
+      ],
+      visuals: [
+        {
+          type: 'image',
+          src: '/career/projects/gridflow-app/SCR-20260712-qejc.jpeg',
+          width: 2110,
+          height: 1282,
+          alt: 'Gridflow Library — saved-imagery moodboard collections and tag sets'
         }
       ]
     },
