@@ -45,7 +45,7 @@ const styles = {
   ]),
   title: cva(['flex items-center justify-between gap-4', 'text-h5 font-heading uppercase']),
   titleText: cva('min-w-0 flex-1'),
-  desc: cva('')
+  desc: cva('line-clamp-2')
 }
 
 type ProjectRef = HTMLDivElement
