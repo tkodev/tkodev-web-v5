@@ -286,6 +286,47 @@ const projectEntries: ProjectEntry[] = [
     }
   },
   {
+    id: 'approved-by-acca',
+    basic: {
+      title: 'Approved by Acca',
+      subtitle:
+        'Conversion-focused marketing site for a Toronto mortgage agent — scaffolded in v0, shipped on Next.js and shadcn.',
+      desc: 'A dark, editorial marketing site for Acca Chan, a Toronto mortgage agent with a former-banker background. The build turns a personal brand into a clear conversion path: a positioning hero, service breakdown, a plain-language "how it works" flow, lender proof, reviews, and an FAQ, all pointed at booking a free loan assessment. Scaffolded in v0, then designed and built out on Next.js and shadcn/ui, and deployed on Vercel with Claude Code.',
+      role: 'Design Engineer',
+      category: 'active',
+      startDate: fromZonedTime('2026-07-01', appTimeZone)
+    },
+    extended: {
+      duties: ['design engineering', 'software engineering'],
+      win: "Shipped a mortgage agent's brand and marketing site end to end.",
+      skills: [
+        'Landing Page Design',
+        'Brand Design',
+        'Conversion Optimization',
+        'Next.js',
+        'TypeScript',
+        'shadcn/ui',
+        'Responsive Design'
+      ],
+      tools: ['Next.js', 'TypeScript', 'shadcn/ui', 'Tailwind CSS', 'v0', 'Vercel', 'Claude Code']
+    },
+    media: {
+      visuals: [
+        {
+          type: 'image',
+          src: '/career/projects/approved-by-acca/www.approvedbyacca.ca_(1080p).png',
+          width: 3840,
+          height: 2160,
+          alt: 'Approved by Acca — Mortgage Agent Landing Page'
+        }
+      ]
+    },
+    parents: {
+      clientId: 'acca-chan',
+      staffIds: ['tony']
+    }
+  },
+  {
     id: 'loblaw-perfect-experience',
     basic: {
       title: 'Loblaw Perfect Experience',

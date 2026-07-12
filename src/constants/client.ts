@@ -673,6 +673,29 @@ const clientEntries: ClientEntry[] = [
         alt: 'Parents Canada logo'
       }
     }
+  },
+  {
+    id: 'acca-chan',
+    basic: {
+      name: 'Acca Chan',
+      href: 'https://www.approvedbyacca.ca/'
+    },
+    media: {
+      light: {
+        type: 'image',
+        src: '/career/clients/acca-chan/light@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Acca Chan logo'
+      },
+      dark: {
+        type: 'image',
+        src: '/career/clients/acca-chan/dark@1x.png',
+        width: 200,
+        height: 50,
+        alt: 'Acca Chan logo'
+      }
+    }
   }
 ]
 
