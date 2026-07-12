@@ -35,7 +35,7 @@ The layers, top to bottom:
 | Works index | [`67:1947`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=67-1947) |
 | Work detail | [`68:12288`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=68-12288) |
 | About | [`136:2405`](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5?node-id=136-2405) |
-| Experience, Contact | not designed yet |
+| Experience | not designed yet |
 
 ## Surfaces
 
@@ -73,9 +73,9 @@ line of positioning, corner annotations. Below it, indexed evidence sections:
 - **Hero**: the work tile-wall at low opacity under the command headline
   ("SIGNAL ACQUIRED / ASSETS DEPLOYED"): the range visible before a single click.
 - **Featured**: the flagship case studies as full-width horizontal cards.
-- **Archive**: the complete record as a dense grid, progressively disclosed;
-  every era belongs here; the range is the point. Mediums (software / industrial /
-  spatial / web-era / experiment) categorize the archive.
+- **Archive**: the complete record as a dense grid, every entry present at once
+  (no load-more gate); every era belongs here; the range is the point. Mediums
+  (software / industrial / spatial / web-era / experiment) categorize the archive.
 
 ### Work detail: the dossier
 
@@ -84,15 +84,40 @@ meta footer (CLIENT / LOCATION / YEAR / TEAM), then the evidence: an intro
 statement, real stats, a testimonial where one exists, alternating annotated
 figures with incrementing `figure N.0` indices, and full-width media plates.
 
+The figures and the plates carry different weight. **Stories** are the annotated
+figures: each pairs one media asset with copy that explains the work behind the
+frame, not what the frame depicts. A story answers what Tony owned or shaped here,
+what problem, constraint, or decision the asset represents, and why it mattered to
+the product, the client, or the career arc; the pattern is "here is the work I
+owned, this asset proves it, here is why it mattered." Stories carry the dossier's
+argument for design-minded engineering, product judgment, systems thinking, and
+shipped work. **Visuals** are the supporting plates: extra media that broadens the
+record with range, detail, atmosphere, or proof of polish, never load-bearing for
+the narrative. Stories tell the story; visuals widen the file.
+
 Direction: one flagship (Beyond MPD, the earned centerpiece) gets scroll
 choreography on this same route (pinned scenes, telemetry-style data reveals),
 built last, on top of the proven dossier system.
 
-### Experience: the service record *(not designed yet)*
+### Experience: the service record *(no Figma frame)*
 
-Career history as its own surface, all real career data: company, title, location,
-dates, capabilities; dense and scannable, no prose per entry. Resume as the one
-download action.
+Career history as its own surface, all real career data; dense and scannable, no prose
+per entry. The signature interaction is the ledger itself, not a new cinematic moment.
+
+- **Hero**: the brand instrument, identity only.
+- **Record**: the employment ledger. Roles collapse into one indexed row per employer
+  carrying the role count, the elapsed span, and the engagement type; the employer is the
+  disclosure, opening to its roles with their spans, locations, duties, and capability
+  badges. Resume is the one download action, in the board's CTA slot.
+- **Summary**: an unindexed band closing the ledger with the evidence behind it, given the
+  same bare treatment the dossier gives a work's stats. The four readouts an evaluating
+  founder or CTO scans for (years experience, employers, projects shipped, clients and
+  brands), each counted from the career constants rather than typed, over the employer and
+  client logos drifting as counter-rotating marquee rows, dimmed until hovered. An
+  organization appears only if it ships a dark-theme mark.
+- **Signals**: the speaking log, each talk indexed with its host, date, and the artifacts
+  it left behind (recording, slides, album).
+- **Training**: the education log, same row grammar, year spans only.
 
 ### About: the identity file
 
@@ -103,11 +128,13 @@ download action.
 - **The details**: the origin prose and signature asset (the human layer), with a
   pointer to `/experience` for the full record.
 
-### Contact: the transmission *(not designed yet)*
+### The transmission section
 
-A terse instrument block: channels (email, LinkedIn, GitHub, resume) as labeled
-rows in the annotation grammar under one display-scale headline. No form, no
-marketing prose.
+Contact is not a page: it is the recurring closing section at the foot of every
+surface (home, works, about, work detail), so the ask-to-reach-out is always one
+scroll away. A terse instrument block: channels (email, LinkedIn, GitHub, resume)
+as labeled rows in the annotation grammar under one display-scale headline. No
+form, no marketing prose.
 
 ### Nav overlay
 

@@ -16,8 +16,8 @@ Base unit: **16px = 1rem**. Tokens land in CSS as custom properties consumed thr
 
 | Font | Role | Weights used |
 | --- | --- | --- |
-| **Alliance No.2** | Display headings (`h1`–`h4`) and expressive/eyebrow text (`e1`–`e5`) | 400, 700 |
-| **Geist** | Body text, `h5`, UI labels (the default) | variable |
+| **Alliance No.2** | Display headings (`h1`–`h5`) and expressive/eyebrow text (`e1`–`e5`) | 400, 700 |
+| **Geist** | Body text, UI labels (the default) | variable |
 | **Geist Mono** | Inline and block code | 600 |
 
 Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-notes/profiles/assets/fonts/`. CSS variables: `--font-alliance-no2`, `--font-geist-sans`, `--font-geist-mono`. Alliance No.2 is licensed: the licensed-assets rule in the data standard applies.
@@ -26,29 +26,27 @@ Loaded via `next/font/local`; font files come from `ops/notes/tkodev/career-note
 
 Three ramps plus inline styles. The `-main` suffix in Figma (`h4-main`, `e4-main`, `sm-main`) marks the **default step** of each ramp: the size a component gets when no explicit step is chosen.
 
-### Headings: Alliance No.2 Bold (h5: Geist Bold)
+### Headings: Alliance No.2 Bold
 
 | Token | Family | Size | Line height | Tracking |
 | --- | --- | --- | --- | --- |
 | `h1` | Alliance No.2 Bold | 60px | 60px | 0 |
 | `h2` | Alliance No.2 Bold | 48px | normal | 0 |
-| `h3` | Alliance No.2 Bold | 40px | normal | 0 |
-| `h4` *(main)* | Alliance No.2 Bold | 32px | 32px | 0 |
-| `h5` | Geist Bold | 24px | 24px | 0 |
-
-The family break at `h5` is deliberate: `h5` is the bridge from display headings into UI/body typography.
+| `h3` | Alliance No.2 Bold | 36px | normal | 0 |
+| `h4` *(main)* | Alliance No.2 Bold | 28px | 28px | 0 |
+| `h5` | Alliance No.2 Bold | 20px | 20px | 0 |
 
 ### Expressive: Alliance No.2 Regular, 25% tracking
 
-All-caps eyebrow/label register (specimen: "Engineering, Design, Technology"). Line height 100%, letter spacing **25%** (tracking renders as a fraction of size: 3px at `e4`, 2.5px at `e5`).
+All-caps eyebrow/label register (specimen: "Engineering, Design, Technology"). Line height 100%, letter spacing **25%**.
 
 | Token | Size |
 | --- | --- |
-| `e1` | 18px |
-| `e2` | 16px |
-| `e3` | 14px |
-| `e4` *(main)* | 12px |
-| `e5` | 10px |
+| `e1` | 16px |
+| `e2` | 14px |
+| `e3` | 12px |
+| `e4` *(main)* | 10px |
+| `e5` | 8px |
 
 Two wider-tracked companions appear across the page designs:
 
@@ -59,15 +57,15 @@ Two wider-tracked companions appear across the page designs:
 
 ### Body: Geist Regular
 
-Line height 100% at token level; prose blocks in components may carry relaxed leading; the component's Figma node is authoritative for multi-line paragraph leading.
+Line height 150% at token level (every body consumer wanted normal leading, so the token carries it); components override only when a design calls for tighter or looser leading.
 
 | Token | Size |
 | --- | --- |
-| `xl` | 20px |
-| `lg` | 18px |
-| `md` | 16px |
-| `sm` *(main)* | 14px |
-| `xs` | 12px |
+| `xl` | 18px |
+| `lg` | 16px |
+| `md` | 14px |
+| `sm` *(main)* | 12px |
+| `xs` | 10px |
 
 ### Inline styles
 
@@ -81,45 +79,45 @@ Line height 100% at token level; prose blocks in components may carry relaxed le
 
 ## Color
 
-Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + `light-vars`). **The active theme is hardcoded to dark**: no toggle, no system switching. The light theme exists for **inverse-color sections** (e.g. the loading core), applied as a scoped class. Dark values below; transcribe the light values from Figma when first used.
+Semantic shadcn-shaped token set, zinc-based, in two full themes (`dark-vars` + `light-vars`). **The active theme is hardcoded to dark**: no toggle, no system switching. The light theme exists for **inverse-color sections** (e.g. the loading core), applied as a scoped class.
 
 ### Core
 
-| Token | Value | Usage |
-| --- | --- | --- |
-| `background` | `#09090b` | Page background |
-| `foreground` | `#fafafa` | Primary text |
-| `card` | `#09090b` | Card surfaces |
-| `card-foreground` | `#fafafa` | Text on card |
-| `popover` | `#09090b` | Popover surfaces |
-| `popover-foreground` | `#fafafa` | Text on popover |
-| `primary` | `#fafafa` | Primary action background |
-| `primary-foreground` | `#18181b` | Text on primary |
-| `secondary` | `#27272a` | Secondary elements |
-| `secondary-foreground` | `#fafafa` | Text on secondary |
-| `muted` | `#27272a` | Subdued surfaces |
-| `muted-foreground` | `#a1a1aa` | Captions, meta text |
-| `accent` | `#27272a` | Hover/highlight surfaces |
-| `accent-foreground` | `#fafafa` | Text on accent |
-| `destructive` | `#7f1d1d` | Destructive actions |
-| `destructive-foreground` | `#fafafa` | Text on destructive |
-| `border` | `#ffffff29` (white @ 16%) | Hairlines, dividers |
-| `input` | `#27272a` | Form control borders |
-| `ring` | `#d4d4d8` | Focus rings |
-| `muted-gradient` | Figma style | Gradient variant of muted; pull from the Figma style when implementing |
+| Token | Dark | Light | Usage |
+| --- | --- | --- | --- |
+| `background` | `#000000` | `#ffffff` | Page background |
+| `foreground` | `#fafafa` | `#09090b` | Primary text |
+| `card` | `#09090b` | `#ffffff` | Card surfaces |
+| `card-foreground` | `#fafafa` | `#09090b` | Text on card |
+| `popover` | `#09090b` | `#ffffff` | Popover surfaces |
+| `popover-foreground` | `#fafafa` | `#09090b` | Text on popover |
+| `primary` | `#fafafa` | `#18181b` | Primary action background |
+| `primary-foreground` | `#18181b` | `#fafafa` | Text on primary |
+| `secondary` | `#27272a` | `#f4f4f5` | Secondary elements |
+| `secondary-foreground` | `#fafafa` | `#18181b` | Text on secondary |
+| `muted` | `#27272a` | `#f4f4f5` | Subdued surfaces |
+| `muted-foreground` | `#a1a1aa` | `#71717a` | Captions, meta text |
+| `accent` | `#27272a` | `#f4f4f5` | Hover/highlight surfaces |
+| `accent-foreground` | `#fafafa` | `#18181b` | Text on accent |
+| `destructive` | `#7f1d1d` | `#ef4444` | Destructive actions |
+| `destructive-foreground` | `#fafafa` | `#fafafa` | Text on destructive |
+| `border` | `#ffffff29` (white @ 16%) | `#000000e5` (black @ 90%) | Hairlines, dividers |
+| `input` | `#27272a` | `#e4e4e7` | Form control borders |
+| `ring` | `#d4d4d8` | `#18181b` | Focus rings |
+| `muted-gradient` | Figma style | — | Gradient variant of muted; pull from the Figma style when implementing |
 
-Note the customization vs stock shadcn zinc: `border` is **alpha white** (`#ffffff29`), not a solid gray; hairlines blend over imagery and gradients. Preserve the alpha approach.
+Note the customization vs stock shadcn zinc: `border` is **alpha** in both themes (white @ 16% dark, black @ 90% light), not a solid gray; hairlines blend over imagery and gradients. Preserve the alpha approach.
 
 ### Chart
 
-| Token | Value |
-| --- | --- |
-| `chart-1` | `#2662d9` |
-| `chart-2` | `#e23670` |
-| `chart-3` | `#e88c30` |
-| `chart-4` | `#af57db` |
-| `chart-5` | `#2eb88a` |
-| `chart-1-gradient`, `chart-2-gradient` | Figma styles; gradient fills derived from chart-1/chart-2 |
+| Token | Dark | Light |
+| --- | --- | --- |
+| `chart-1` | `#2662d9` | `#2a9d90` |
+| `chart-2` | `#e23670` | `#e76e50` |
+| `chart-3` | `#e88c30` | `#274754` |
+| `chart-4` | `#af57db` | `#e8c468` |
+| `chart-5` | `#2eb88a` | `#f4a462` |
+| `chart-1-gradient`, `chart-2-gradient` | Figma styles; gradient fills derived from chart-1/chart-2 | — |
 
 ## Radius
 

@@ -16,7 +16,7 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
 | State | **zustand**: global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
-| Linting | **ESLint** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no Prettier |
+| Linting | **ESLint 9** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no standalone Prettier (the shared config runs it as a lint rule) |
 | Testing | **Vitest**: `pnpm test` |
 | Fonts | `next/font/local`: Alliance No.2, Geist, Geist Mono |
 | Dates | `date-fns` / `date-fns-tz` |
@@ -27,23 +27,24 @@ v5 is a multi-page site under one persistent shell.
 
 ### Route map
 
-| Route | Page | Nav label |
-| --- | --- | --- |
-| `/` | Home | — (wordmark/avatar) |
-| `/works` | Works index | Works |
-| `/works/[workId]` | Work detail (one flagship gets the elevated treatment) | — |
-| `/experience` | Experience | Experience |
-| `/about` | About | About |
-| `/contact` | Contact | Contact |
-| `/design` | Design system specimen (living styleguide, unlinked from nav) | — |
-| — (overlay, not route) | Loading / boot sequence | — |
-| — (overlay, not route) | Nav overlay | §Navigation below |
+| Route | Page | Nav label | Index |
+| --- | --- | --- | --- |
+| `/` | Home | — (wordmark/avatar) | `0` |
+| `/works` | Works index | Works | `1` |
+| `/works/[workId]` | Work detail (one flagship gets the elevated treatment) | — | `1A` |
+| `/experience` | Experience | Experience | `2` |
+| `/about` | About | About | `3` |
+| `/design` | Design system specimen (living styleguide, unlinked from nav) | — | — |
+| — (overlay, not route) | Loading / boot sequence | — | — |
+| — (overlay, not route) | Nav overlay | §Navigation below | — |
 
 Experiments are a works-index category (`experiment` medium), not a route. Figma frame links per page live in [03-solution.md](03-solution.md) §Figma frames.
 
+**Section indices count from the surface's index**, in the annotation grammar's `N.M / LABEL //` form: the hero takes `.0` and each section below it increments, so home runs `0.0 / Intro //` then `0.1 / Works //`. A surface holds its number whether or not it is built, so `/experience` owns `2` in advance and nothing renumbers when it lands. A sub-document of a surface takes a letter suffix rather than a third level: work detail is `1A`, its stories and visuals running `1A.N` down the dossier, so no index collides with a section of the `/works` index above it.
+
 ### Navigation
 
-- **Header nav**: **Works · Experience · About · Contact**; the current page's item is marked active.
+- **Header nav**: **Works · Experience · About**; the current page's item is marked active. Contact is not a route: it lives as the recurring transmission section at the foot of every page ([03-solution.md](03-solution.md) §The transmission section).
 - **Nav overlay**: full-screen menu of the nav routes; the primary nav on mobile, available on all viewports; behaviour owned by [03-solution.md](03-solution.md) §Nav overlay.
 - **Boot / loading screen**: entry overlay preceding the requested page; behaviour owned by [03-solution.md](03-solution.md) §Boot sequence.
 
@@ -68,6 +69,8 @@ How the v5 pieces land in the standard folders: `app/` mirrors the route map abo
 
 **Source of truth:** the structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` (`types.ts`, `client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`). This repo **vendors a copy** into `types/` + `constants/` (the package is in a git-ignored notes area and can't be a workspace dependency of a deployable repo). Sync is one-way, notes → site; content edits happen in career-notes first, then get copied over. Never fork the schema silently; schema changes go back upstream.
 
+**Read order:** implementation reads `src/constants/` first; career-notes is consulted only when the vendored copy lacks the fact, in its own order: `profiles/structured/`, then `profiles/linkedin/` and `profiles/website/`. What gets used is vendored back into `constants/` in the same change.
+
 Site copy is sourced from the career-notes repo (`profiles/website/`, `about/`) and its structured data package, never invented.
 
 The data model:
@@ -83,7 +86,9 @@ The data model:
 
 ## Theming architecture
 
-`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `colors.css` + `helpers.css`, defines the two theme blocks (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
+`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `helpers.css`, defines the two theme blocks inline (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
+
+The `dark:` variant is redeclared in the same file, as `@custom-variant dark (&:not(.light):not(.light *))`. Tailwind v4 compiles `dark:` to a `prefers-color-scheme` media query by default: a second theme switch this site never sets, so any `dark:` utility left on that default keys off the visitor's OS rather than the theme, and fails to invert inside a `.light` scope. Redeclaring binds the variant to the same `.light` boundary the token blocks use. A theme provider would not fix this, since the variant, not a class on the root, is what selects the branch.
 
 ## State and motion
 

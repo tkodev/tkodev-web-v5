@@ -1,0 +1,391 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+@import './helpers.css';
+
+@plugin 'tailwind-gradient-mask-image';
+
+/* The root is dark and `.light` scopes invert it, so `dark:` tracks that, not the OS.
+   Left at its tailwind default the variant compiles to `prefers-color-scheme`, a switch
+   this site never sets: every `dark:` utility would key off the visitor's system setting. */
+@custom-variant dark (&:not(.light):not(.light *));
+
+/* global overrides */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  strong {
+    @apply font-bold;
+  }
+}
+
+/* custom cursor - ensure native cursor is visible on initial load */
+@media (pointer: fine) {
+  html[data-cursor="active"] *,
+  html[data-cursor="active"] *::before,
+  html[data-cursor="active"] *::after {
+    cursor: none !important;
+  }
+}
+
+/* light/dark mode brand tokens */
+:root {
+  color-scheme: dark;
+
+  --background: #000000;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafafa;
+  --border: #ffffff29;
+  --input: #27272a;
+  --ring: #d4d4d8;
+
+  --chart-1: #2662d9;
+  --chart-2: #e23670;
+  --chart-3: #e88c30;
+  --chart-4: #af57db;
+  --chart-5: #2eb88a;
+}
+
+.light {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #000000e5;
+  --input: #e4e4e7;
+  --ring: #18181b;
+
+  --chart-1: #2a9d90;
+  --chart-2: #e76e50;
+  --chart-3: #274754;
+  --chart-4: #e8c468;
+  --chart-5: #f4a462;
+}
+
+/* semantic color tokens */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/* semantic system tokens */
+@theme inline {
+  /* radius */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 2rem;
+
+  /* gap steps */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+/* semantic text tokens */
+@theme inline {
+  /* fonts */
+  --font-heading: var(--font-alliance-no2);
+  --font-expressive: var(--font-alliance-no2);
+  --font-body: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* headings: Alliance No.2 Bold */
+  --text-h1: 3.75rem;
+  --text-h1--line-height: 3.75rem;
+  --text-h1--font-weight: 700;
+  --text-h2: 3rem;
+  --text-h2--line-height: normal;
+  --text-h2--font-weight: 700;
+  --text-h3: 2.25rem;
+  --text-h3--line-height: normal;
+  --text-h3--font-weight: 700;
+  --text-h4: 1.75rem;
+  --text-h4--line-height: 1.75rem;
+  --text-h4--font-weight: 700;
+  --text-h5: 1.25rem;
+  --text-h5--line-height: 1.25rem;
+  --text-h5--font-weight: 700;
+
+  /* expressive: Alliance No.2 Regular, 25% tracking, all-caps register */
+  --text-e1: 1rem;
+  --text-e1--line-height: 1;
+  --text-e1--letter-spacing: 0.25em;
+  --text-e2: 0.875rem;
+  --text-e2--line-height: 1;
+  --text-e2--letter-spacing: 0.25em;
+  --text-e3: 0.75rem;
+  --text-e3--line-height: 1;
+  --text-e3--letter-spacing: 0.25em;
+  --text-e4: 0.625rem;
+  --text-e4--line-height: 1;
+  --text-e4--letter-spacing: 0.25em;
+  --text-e5: 0.5rem;
+  --text-e5--line-height: 1;
+  --text-e5--letter-spacing: 0.25em;
+
+  /* body: Geist Regular, line height 150% at token level */
+  --text-xl: 1.125rem;
+  --text-xl--line-height: 1.5;
+  --text-lg: 1rem;
+  --text-lg--line-height: 1.5;
+  --text-md: 0.875rem;
+  --text-md--line-height: 1.5;
+  --text-sm: 0.75rem;
+  --text-sm--line-height: 1.5;
+  --text-xs: 0.625rem;
+  --text-xs--line-height: 1.5;
+}
+
+/* semantic motion tokens */
+@theme inline {
+  /* grain parameters */
+  --brand-grain-opacity: 0.05;
+  --brand-grain-period: 8s;
+
+  /* easing curves */
+  --brand-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --brand-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* animations */
+  --animate-accordion-down: accordion-down 0.2s var(--brand-ease-out);
+  --animate-accordion-up: accordion-up 0.2s var(--brand-ease-out);
+  --animate-slide-down: slide-down 0.4s var(--brand-ease-out);
+  --animate-slide-up: slide-up 0.4s var(--brand-ease-out);
+  --animate-boot-down: boot-down 1.5s var(--brand-ease-out);
+  --animate-boot-up: boot-up 1.5s var(--brand-ease-out);
+  --animate-boot-in: boot-in 1.5s var(--brand-ease-out);
+  --animate-boot-out: boot-out 1.5s var(--brand-ease-out);
+  --animate-fade-in: fade-in 1.5s var(--brand-ease-out);
+  --animate-fade-out: fade-out 1.5s var(--brand-ease-out);
+  --animate-cursor-wave: cursor-wave 0.6s var(--brand-ease-out) forwards;
+  --animate-marquee: marquee 80s linear infinite;
+  --animate-ticker: ticker var(--ticker-duration, 8s) linear infinite alternate;
+}
+
+/* animations */
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@keyframes ticker {
+	0%,
+	15% {
+		transform: translate3d(0, 0, 0);
+	}
+	85%,
+	100% {
+		transform: translate3d(var(--ticker-overflow, 0px), 0, 0);
+	}
+}
+
+@keyframes fade-in {
+	0%,
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0%,
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-down {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes boot-down {
+	0%,
+	50% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes boot-up {
+	0%,
+	50% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes boot-in {
+	from {
+		transform: scale(0.96);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes boot-out {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0.96);
+		opacity: 0;
+	}
+}
+
+@keyframes cursor-wave {
+	from {
+		scale: 0;
+		opacity: 0.6;
+	}
+	to {
+		scale: 4;
+		opacity: 0;
+	}
+}
+
+@keyframes grain-shift {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+	10% {
+		transform: translate3d(-2%, -3%, 0);
+	}
+	20% {
+		transform: translate3d(3%, 1%, 0);
+	}
+	30% {
+		transform: translate3d(-1%, 3%, 0);
+	}
+	40% {
+		transform: translate3d(2%, -2%, 0);
+	}
+	50% {
+		transform: translate3d(-3%, 2%, 0);
+	}
+	60% {
+		transform: translate3d(1%, -1%, 0);
+	}
+	70% {
+		transform: translate3d(-2%, 2%, 0);
+	}
+	80% {
+		transform: translate3d(3%, -3%, 0);
+	}
+	90% {
+		transform: translate3d(-1%, 1%, 0);
+	}
+}

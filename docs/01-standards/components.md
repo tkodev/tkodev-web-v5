@@ -12,7 +12,7 @@ How components are added, shaped, styled, and organized. This file owns the auth
 1. **Every component follows this example skeleton:**
 
    ```tsx
-   import { forwardRef, HTMLAttributes } from 'react'
+   import { forwardRef, type HTMLAttributes } from 'react'
    import { cn, cva, VariantProps } from '@/utils/theme'
 
    const styles = {

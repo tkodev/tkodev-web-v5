@@ -8,7 +8,9 @@ Runtime, language, and what "done" requires.
 
 1. **pnpm only.** Never npm or yarn. Node ≥ 24.
 2. **TypeScript strict.** No `any` escape hatches; domain types live in `types/`.
-3. **Unit tests are colocated** with what they test, added where they earn their place, run via `pnpm test`.
+3. **A server started for verification is killed when the check ends**: a `pnpm dev` or `pnpm start` run to confirm a change holds the port and outlives the task otherwise, so the next run collides or, worse, verifies against stale output. Long-running servers the human started are theirs to stop.
+4. **A verification server runs on its own port and dies by its own pid.** Start it with an explicit `-p` well clear of `3000`, capture the pid (`pnpm start -p 3987 & echo $!`), and kill that pid. Never `pkill -f next-server` or any name match: it matches every Next process on the machine, including the human's dev server, and rule 3 leaves that one theirs to stop.
+5. **Tests are [testing.md](testing.md)'s concern.**
 
 ## Concepts
 
@@ -31,7 +33,7 @@ Runtime, language, and what "done" requires.
        ├── components/   # atomic design: atoms/ · molecules/ · organisms/ · templates/
        ├── constants/    # typed compile-time content + site config
        ├── types/        # domain types
-       ├── themes/       # CSS token files (theme.css entry, colors, helpers)
+       ├── themes/       # CSS token files (theme.css entry, helpers)
        ├── fonts/        # next/font/local loader modules
        ├── stores/       # zustand stores: global state only
        ├── providers/    # context providers wired in the root layout
