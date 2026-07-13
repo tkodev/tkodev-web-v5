@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import Link from 'next/link'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon } from 'lucide-react'
@@ -17,6 +16,7 @@ import { educationEntries } from '@/constants/education'
 import { jobEntries } from '@/constants/jobs'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries } from '@/constants/projects'
+import { createMetadata } from '@/constants/system'
 import { techtalkEntries } from '@/constants/techtalks'
 import {
   getCareerClientIds,
@@ -25,11 +25,12 @@ import {
   getProjectClientIds
 } from '@/utils/career'
 
-const metadata: Metadata = {
+const metadata = createMetadata({
   title: 'Tony Ko / Experience',
   description:
-    'The service record: every role, talk, and credential behind two decades of design and engineering.'
-}
+    'The service record: every role, talk, and credential behind two decades of design and engineering.',
+  path: '/experience'
+})
 
 const ExperiencePage = () => {
   // render vars

@@ -17,7 +17,14 @@ import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
 import { projectEntriesByCategory } from '@/constants/projects'
+import { appData, createMetadata } from '@/constants/system'
 import { testimonialEntries } from '@/constants/testimonials'
+
+const metadata = createMetadata({
+  title: appData.title,
+  description: appData.description,
+  path: '/'
+})
 
 const HomePage = () => {
   // render vars
@@ -112,3 +119,4 @@ const HomePage = () => {
 }
 
 export default HomePage
+export { metadata }

@@ -23,15 +23,15 @@ as branches and PRs, not listed here.
 - [x] **m06 — Experience**
   - The service record: hero readouts, the employment ledger (employers grouped, roles as
     accordion rows), the speaking log, the education log, contact block
-- [ ] **m07 — Boot sequence**
-  - Boot sequence (loading screen)
-- [x] **m08 — Nav overlay**
+- [x] **m07 — Nav overlay**
   - Full-screen menu rebuilt in the annotation language, not yet designed
-- [x] **m09 — Background Canvas**
+- [x] **m08 — Background Canvas**
   - Animated topographic contour field in the persistent shell.
-- [ ] **m10 — Flagship choreography**
+- [~] **m09 — Polish**
+  - Coherence pass: Heading decode reveals, 404/error easter eggs, all pages have ograph and page/metadata
+- [ ] **m10 — Boot sequence**
+  - Boot sequence (loading screen)
+- [ ] **m11 — Flagship choreography**
   - Scroll choreography on the all routes
-- [ ] **m11 — Polish**
-  - Coherence pass: cuts, decode reveals, scan wipes, easter eggs, all pages have ograph and page/metadata
 - [ ] **m12 — Launch**
   - SEO verified, analytics live, performance budgets met, domain cutover

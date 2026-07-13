@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import {
   ApertureIcon,
   BlocksIcon,
@@ -16,12 +15,14 @@ import { GlobalContact } from '@/components/organisms/global-contact'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
+import { createMetadata } from '@/constants/system'
 
-const metadata: Metadata = {
+const metadata = createMetadata({
   title: 'Tony Ko / About',
   description:
-    'Design was the first language I spoke fluently. How I work, my process, and the details.'
-}
+    'Design was the first language I spoke fluently. How I work, my process, and the details.',
+  path: '/about'
+})
 
 const AboutPage = () => {
   // render vars

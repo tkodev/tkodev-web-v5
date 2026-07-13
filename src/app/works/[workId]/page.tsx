@@ -15,7 +15,7 @@ import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
-import { appData } from '@/constants/system'
+import { appData, createMetadata } from '@/constants/system'
 import { type PageProps } from '@/types/system'
 import { getProjectMainAsset } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
@@ -30,15 +30,12 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   if (!project) return {}
 
   const ogAsset = getProjectMainAsset(project)
-  return {
+  return createMetadata({
     title: `Tony Ko / ${project.basic.title}`,
     description: project.basic.desc,
-    openGraph: {
-      images: [
-        { url: `${appData.url}${ogAsset.src}`, width: ogAsset.width, height: ogAsset.height }
-      ]
-    }
-  }
+    path: `/works/${project.id}`,
+    image: { url: `${appData.url}${ogAsset.src}`, width: ogAsset.width, height: ogAsset.height }
+  })
 }
 
 const WorkDetailPage = async (props: PageProps) => {

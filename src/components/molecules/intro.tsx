@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Decode } from '@/components/atoms/decode'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -24,7 +25,9 @@ const Intro = forwardRef<IntroRef, IntroProps>((props, ref) => {
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.subtitle())}>{subtitle}</div>
-      <div className={cn(styles.title())}>{title}</div>
+      <div className={cn(styles.title())}>
+        <Decode>{title}</Decode>
+      </div>
       {!!desc && <div className={cn(styles.desc())}>{desc}</div>}
     </div>
   )
