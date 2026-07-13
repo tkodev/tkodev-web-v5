@@ -12,7 +12,7 @@ import { personEntryById } from '@/constants/profile'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['h-18 w-full', 'fixed top-0 left-0']),
+  root: cva(['h-18 w-full', 'fixed top-0 left-0 z-20']),
 
   veil: cva([
     'pointer-events-none fixed -top-0.5 left-0 h-18 w-full',
