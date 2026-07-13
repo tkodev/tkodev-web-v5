@@ -47,7 +47,7 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
   const { className, ...rest } = props
 
   // render vars
-  const opacity = 0.2
+  const opacity = 0.3
 
   // jsx
   return (
