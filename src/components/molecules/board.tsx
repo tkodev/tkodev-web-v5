@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
+import { Decode } from '@/components/atoms/decode'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -32,7 +33,9 @@ const Board = forwardRef<BoardRef, BoardProps>((props, ref) => {
       <div className={cn(styles.subtitle())}>{subtitle}</div>
       {!!title && (
         <div className={cn(styles.title())}>
-          <h2>{title}</h2>
+          <h2>
+            <Decode text={title} />
+          </h2>
         </div>
       )}
       {!!children && <div className={cn(styles.content({ className }))}>{children}</div>}

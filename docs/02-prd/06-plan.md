@@ -27,11 +27,9 @@ as branches and PRs, not listed here.
   - Full-screen menu rebuilt in the annotation language, not yet designed
 - [x] **m08 — Background Canvas**
   - Animated topographic contour field in the persistent shell.
-- [~] **m09 — Polish**
+- [x] **m09 — Polish**
   - Coherence pass: Heading decode reveals, 404/error easter eggs, all pages have ograph and page/metadata
-- [ ] **m10 — Boot sequence**
-  - Boot sequence (loading screen)
-- [ ] **m11 — Flagship choreography**
+- [ ] **m10 — Flagship choreography**
   - Scroll choreography on the all routes
-- [ ] **m12 — Launch**
+- [ ] **m11 — Launch**
   - SEO verified, analytics live, performance budgets met, domain cutover

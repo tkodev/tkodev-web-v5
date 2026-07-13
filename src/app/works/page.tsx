@@ -12,11 +12,12 @@ import { shuffle } from '@/utils/array'
 import { getProjectMainAsset } from '@/utils/career'
 import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata(
-  'Tony Ko / Works',
-  'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
-  '/works'
-)
+const metadata = createMetadata({
+  title: 'Tony Ko / Works',
+  description:
+    'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
+  path: '/works'
+})
 
 const WorksPage = () => {
   // render vars

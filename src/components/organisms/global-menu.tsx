@@ -53,7 +53,7 @@ const GlobalMenu = (props: GlobalMenuProps) => {
 
   // jsx
   return (
-    <Drawer direction="top" open={isOpen} onOpenChange={handleOpenChange}>
+    <Drawer direction="top" open={isOpen} onOpenChange={handleOpenChange} autoFocus>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className={cn(styles.root())} size="full">
         <DrawerHeader className={cn(styles.header())}>
