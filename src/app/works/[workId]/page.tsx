@@ -99,7 +99,7 @@ const WorkDetailPage = async (props: PageProps) => {
             metaEntries
           }}
           hudProps={{
-            title: '1A.0 / Dossier //',
+            title: 'WD.0 / Dossier //',
             subtitle: '// Case File',
             accent1: '[ File Open ]',
             accent2: '[ Evidence Logged ]'
@@ -109,7 +109,7 @@ const WorkDetailPage = async (props: PageProps) => {
       <Section id="wins" height="auto" width="md">
         <ProjectWins
           statementProps={{
-            subtitle: '1A.1 / Wins //',
+            subtitle: 'WD.1 / Wins //',
             title: extended?.win ?? basic.subtitle,
             children: basic.desc
           }}
@@ -127,7 +127,7 @@ const WorkDetailPage = async (props: PageProps) => {
             <ProjectStory
               storyProps={{
                 direction: index % 2 === 0 ? 'left' : 'right',
-                index: `1A.${index + 2}`,
+                index: `WD.${index + 2}`,
                 story
               }}
             />
@@ -138,7 +138,7 @@ const WorkDetailPage = async (props: PageProps) => {
         const key = `plate-${asset.src}`
         return (
           <Section key={key} id={`plate-${index + 1}`} height="auto" width="lg">
-            <ProjectVisuals visualsProps={{ asset, index: `1A.${stories.length + index + 2}` }} />
+            <ProjectVisuals visualsProps={{ asset, index: `WD.${stories.length + index + 2}` }} />
           </Section>
         )
       })}
@@ -158,7 +158,7 @@ const WorkDetailPage = async (props: PageProps) => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: `1A.${stories.length + visuals.length + 2} / Contact //` }}
+          boardProps={{ subtitle: `WD.${stories.length + visuals.length + 2} / Contact //` }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
