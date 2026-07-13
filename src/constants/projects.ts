@@ -45,17 +45,52 @@ const projectEntries: ProjectEntry[] = [
       visuals: [
         {
           type: 'image',
-          src: '/career/projects/tkodev-web/tkodev-works-archive.png',
-          width: 3840,
-          height: 2160,
-          alt: 'tko.dev — Works Archive'
+          src: '/career/projects/tkodev-web/tkodev-works-featured.png',
+          width: 2880,
+          height: 1620,
+          alt: 'tko.dev — Selected Works'
         },
         {
           type: 'image',
-          src: '/career/projects/tkodev-web/tkodev-works-featured.png',
-          width: 3840,
-          height: 2160,
-          alt: 'tko.dev — Featured Works'
+          src: '/career/projects/tkodev-web/tkodev-experience.png',
+          width: 2880,
+          height: 1620,
+          alt: 'tko.dev — Experience Service Record'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-about.png',
+          width: 2880,
+          height: 1620,
+          alt: 'tko.dev — About Identity File'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-about-method.png',
+          width: 2880,
+          height: 1620,
+          alt: 'tko.dev — About Method and Process'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-detail-figure.png',
+          width: 2880,
+          height: 1620,
+          alt: 'tko.dev — Work Detail Annotated Figure'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-mobile-1.png',
+          width: 1920,
+          height: 1080,
+          alt: 'tko.dev — Mobile: work detail, about, and process'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/tkodev-mobile-2.png',
+          width: 1920,
+          height: 1080,
+          alt: 'tko.dev — Mobile: experience, works, and home heroes'
         }
       ],
       stories: [
@@ -64,8 +99,8 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/tkodev-web/tkodev-home.png',
-            width: 3840,
-            height: 2160,
+            width: 2880,
+            height: 1620,
             alt: 'tko.dev — Cinematic Portfolio Homepage'
           },
           title: 'Semantic Token Architecture and Cinematic Lifecycle',
@@ -76,8 +111,8 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/tkodev-web/tkodev-works.png',
-            width: 3840,
-            height: 2160,
+            width: 2880,
+            height: 1620,
             alt: 'tko.dev — Works Index'
           },
           title: 'Work Index as Visual Evidence',
@@ -88,8 +123,8 @@ const projectEntries: ProjectEntry[] = [
           asset: {
             type: 'image',
             src: '/career/projects/tkodev-web/tkodev-works-detail.png',
-            width: 3840,
-            height: 2160,
+            width: 2880,
+            height: 1620,
             alt: 'tko.dev — Project Dossier'
           },
           title: 'Case Study System and Authored Data',

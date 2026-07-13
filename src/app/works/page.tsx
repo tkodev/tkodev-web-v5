@@ -8,6 +8,7 @@ import { Section } from '@/components/templates/section'
 import { placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
+import { appdata } from '@/constants/system'
 import { shuffle } from '@/utils/array'
 import { getProjectMainAsset } from '@/utils/career'
 import { createMetadata } from '@/utils/system'
@@ -16,7 +17,8 @@ const metadata = createMetadata({
   title: 'Tony Ko / Works',
   description:
     'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
-  path: '/works'
+  path: '/works',
+  image: { url: `${appdata.url}/images/ograph/works.png`, width: 1200, height: 630 }
 })
 
 const WorksPage = () => {

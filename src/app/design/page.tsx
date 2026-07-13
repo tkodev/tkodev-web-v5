@@ -66,6 +66,7 @@ import { jobEntries } from '@/constants/jobs'
 import { headerEntries, placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
+import { appdata } from '@/constants/system'
 import { techtalkEntries } from '@/constants/techtalks'
 import { testimonialEntries } from '@/constants/testimonials'
 import { getCareerYears, getJobGroups, getProjectMainAsset } from '@/utils/career'
@@ -75,6 +76,7 @@ const metadata = createMetadata({
   title: 'Tony Ko / Design System',
   description: 'The living styleguide for tko.dev v5: tokens, ramps, and primitives.',
   path: '/design',
+  image: { url: `${appdata.url}/images/ograph/design.png`, width: 1200, height: 630 },
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } }
 })
 

@@ -45,26 +45,20 @@ const Decode: FC<DecodeProps> = (props) => {
   const [displayText, setDisplayText] = useState(text?.split('') ?? [])
 
   // render vars
-  // the whole reveal always lands in `total`; the default scales with length but caps at 2s
   const total = duration ?? Math.min(400 + text.length * 40, 2000)
 
   useEffect(() => {
-    // hold until the heading scrolls into view
     if (!inView) return
-    // reduced motion: skip the scramble; displayText already holds the real text
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const chars = text.split('')
     let raf = 0
     let start = 0
-    // time-based reveal: progress derives from elapsed / total, so the finish is exactly `total`
-    // regardless of length, instead of a per-tick counter the timer floor stretches out
     const step = (now: number) => {
       if (!start) start = now
       const progress = Math.min((now - start) / total, 1)
       const revealed = progress * chars.length
       setDisplayText(
-        // scramble everything except spaces and newlines
         chars.map((l, i) =>
           l === ' ' || l === '\n' || i < revealed ? l : alphabets[getRandomInt(alphabets.length)]
         )

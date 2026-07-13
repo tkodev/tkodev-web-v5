@@ -17,6 +17,7 @@ import { educationEntries } from '@/constants/education'
 import { jobEntries } from '@/constants/jobs'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries } from '@/constants/projects'
+import { appdata } from '@/constants/system'
 import { techtalkEntries } from '@/constants/techtalks'
 import {
   getCareerClientIds,
@@ -30,7 +31,8 @@ const metadata = createMetadata({
   title: 'Tony Ko / Experience',
   description:
     'The service record: every role, talk, and credential behind two decades of design and engineering.',
-  path: '/experience'
+  path: '/experience',
+  image: { url: `${appdata.url}/images/ograph/experience.png`, width: 1200, height: 630 }
 })
 
 const ExperiencePage = () => {

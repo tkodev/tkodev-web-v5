@@ -8,7 +8,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['w-full', 'flex flex-col gap-8 px-4']),
   frame: cva(['aspect-video w-full', 'p-4']),
-  img: cva('bg-card size-full rounded-xs object-cover'),
+  img: cva('bg-background size-full rounded-xs object-cover'),
 
   caption: cva([
     'flex flex-wrap items-center justify-between gap-4',

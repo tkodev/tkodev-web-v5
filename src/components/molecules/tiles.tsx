@@ -8,8 +8,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center overflow-hidden']),
   grid: cva('grid w-full shrink-0 grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5'),
-  // hidden until its image loads, then boots in like the reticle lines
-  tile: cva(['bg-card rounded-sm', 'relative aspect-video overflow-hidden sm:last:hidden'], {
+  tile: cva(['bg-background rounded-sm', 'relative aspect-video overflow-hidden sm:last:hidden'], {
     variants: {
       loaded: {
         true: 'animate-boot-in fill-mode-both opacity-100 motion-reduce:animate-none',

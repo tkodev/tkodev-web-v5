@@ -46,7 +46,6 @@ const GlobalMenu = (props: GlobalMenuProps) => {
   const [openPath, setOpenPath] = useState<string | null>(null)
 
   // render vars
-  // the menu is open only for the route it was opened on, so navigating closes it
   const isOpen = openPath === pathname
   const handleOpenChange = (open: boolean) => setOpenPath(open ? pathname : null)
   const handleNavigate = () => setOpenPath(null)

@@ -16,13 +16,15 @@ import { GlobalContact } from '@/components/organisms/global-contact'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
+import { appdata } from '@/constants/system'
 import { createMetadata } from '@/utils/system'
 
 const metadata = createMetadata({
   title: 'Tony Ko / About',
   description:
     'Design was the first language I spoke fluently. How I work, my process, and the details.',
-  path: '/about'
+  path: '/about',
+  image: { url: `${appdata.url}/images/ograph/about.png`, width: 1200, height: 630 }
 })
 
 const AboutPage = () => {

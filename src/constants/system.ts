@@ -6,24 +6,14 @@ const appdata = {
   siteName: 'tko.dev',
   description:
     "I'm Tony Ko, a Staff Software Engineer with a proven track record of delivering high-performing, secure, and accessible software solutions for top North American brands, including Aeroplan, Air Miles, and Toyota. My expertise spans web,  mobile, browser extensions, and embedded systems, backed by a strong foundation in  TypeScript, Lua, and C. Passionate about fostering team growth, I blend technical excellence with mentorship to lead impactful projects that drive innovation and achieve business goals",
-  url: 'https://tko.dev'
+  url: 'https://www.tko.dev'
 }
 
-/** An Open Graph image: its absolute URL and pixel dimensions. */
-type OgImage = {
-  url: string
-  width: number
-  height: number
-}
-
-/** The site-wide Open Graph and Twitter card image. */
-const defaultOgImage: OgImage = {
-  url: `${appdata.url}/images/favicons/preview.png`,
-  width: 1200,
-  height: 630
-}
-
-/** Root Next.js metadata: title, description, Open Graph, Twitter, icons. */
+/**
+ * Root Next.js metadata: title, description, Open Graph, Twitter, icons. The site-wide
+ * OG/Twitter image is the home surface (1200×630); other surfaces pass their own from
+ * `public/images/ograph/` inline to `createMetadata`.
+ */
 const defaultMetadata: Metadata = {
   metadataBase: new URL(appdata.url),
   title: appdata.title,
@@ -34,7 +24,7 @@ const defaultMetadata: Metadata = {
     description: appdata.description,
     url: appdata.url,
     siteName: appdata.siteName,
-    images: [defaultOgImage],
+    images: [{ url: `${appdata.url}/images/ograph/home.png`, width: 1200, height: 630 }],
     locale: 'en_CA',
     type: 'website'
   },
@@ -42,7 +32,9 @@ const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: appdata.title,
     description: appdata.description,
-    images: [{ ...defaultOgImage, alt: appdata.title }]
+    images: [
+      { url: `${appdata.url}/images/ograph/home.png`, width: 1200, height: 630, alt: appdata.title }
+    ]
   },
   icons: {
     icon: [
@@ -62,5 +54,4 @@ const consoleSignal = {
   prompt: '📡 Open a channel'
 }
 
-export { appdata, consoleSignal, defaultMetadata, defaultOgImage }
-export type { OgImage }
+export { appdata, consoleSignal, defaultMetadata }
