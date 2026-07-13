@@ -16,7 +16,7 @@ import { createMetadata } from '@/utils/system'
 const metadata = createMetadata({
   title: 'Tony Ko / Works',
   description:
-    'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
+    'Verified builds across loyalty, fintech, industrial, and retail sectors. 30+ deployments. No simulations.',
   path: '/works',
   image: { url: `${appdata.url}/images/ograph/works.png`, width: 1200, height: 630 }
 })
@@ -49,7 +49,7 @@ const WorksPage = () => {
           introProps={{
             title: 'Assets Deployed',
             subtitle: 'Signal Acquired',
-            desc: 'Verified builds across loyalty, fintech, industrial, \nand retail sectors. 25+ deployments.'
+            desc: 'Verified builds across loyalty, fintech, industrial, \nand retail sectors. 30+ deployments.'
           }}
         />
       </Section>

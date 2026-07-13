@@ -5,7 +5,7 @@ const appdata = {
   title: 'Tony Ko / Portfolio',
   siteName: 'tko.dev',
   description:
-    "I'm Tony Ko, a Staff Software Engineer with a proven track record of delivering high-performing, secure, and accessible software solutions for top North American brands, including Aeroplan, Air Miles, and Toyota. My expertise spans web,  mobile, browser extensions, and embedded systems, backed by a strong foundation in  TypeScript, Lua, and C. Passionate about fostering team growth, I blend technical excellence with mentorship to lead impactful projects that drive innovation and achieve business goals",
+    'Tony Ko, Staff Software Engineer and Design Engineer in Toronto. 9+ years and 30+ shipped projects across Aeroplan, Loblaw Digital, and Beyond MPD, where engineering depth meets design.',
   url: 'https://www.tko.dev'
 }
 
