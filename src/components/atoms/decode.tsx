@@ -23,7 +23,8 @@ type DecodeProps = {
   className?: string
 }
 
-const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+// exclude the wide glyphs (M, W) so scrambling doesn't expand the line width
+const alphabets = 'ABCDEFGHIJKLNOPQRSTUVXYZ'.split('')
 
 const Decode: FC<DecodeProps> = (props) => {
   // props
@@ -63,8 +64,9 @@ const Decode: FC<DecodeProps> = (props) => {
       const progress = Math.min((now - start) / total, 1)
       const revealed = progress * chars.length
       setDisplayText(
+        // scramble everything except spaces and newlines
         chars.map((l, i) =>
-          l === ' ' || l === '\n' || i < revealed ? l : alphabets[getRandomInt(26)]
+          l === ' ' || l === '\n' || i < revealed ? l : alphabets[getRandomInt(alphabets.length)]
         )
       )
       if (progress < 1) raf = requestAnimationFrame(step)

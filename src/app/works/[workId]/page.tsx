@@ -36,16 +36,16 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   if (!project) return {}
 
   const ogAsset = getProjectMainAsset(project)
-  return createMetadata(
-    `Tony Ko / ${project.basic.title}`,
-    project.basic.desc,
-    `/works/${project.id}`,
-    {
+  return createMetadata({
+    title: `Tony Ko / ${project.basic.title}`,
+    description: project.basic.desc,
+    path: `/works/${project.id}`,
+    image: {
       url: `${appdata.url}${ogAsset.src}`,
       width: ogAsset.width,
       height: ogAsset.height
     }
-  )
+  })
 }
 
 const WorkDetailPage = async (props: PageProps) => {

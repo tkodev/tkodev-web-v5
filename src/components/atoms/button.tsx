@@ -8,14 +8,13 @@ const styles = {
     [
       'group/button inline-flex shrink-0 items-center justify-center',
       'text-e4 font-expressive font-medium whitespace-nowrap uppercase',
-      'rounded-sm border border-transparent bg-clip-padding',
+      'rounded-sm border border-transparent',
       'transition-all outline-none select-none',
       'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-3',
       'aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 aria-invalid:ring-3',
       'active:not-aria-[haspopup]:translate-y-px',
       'disabled:pointer-events-none disabled:opacity-50',
-      "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-      'backdrop-blur-sm'
+      "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
     ],
     {
       variants: {
@@ -49,28 +48,36 @@ const styles = {
           'icon-xl': ['size-10']
         },
         variant: {
-          primary: ['bg-primary text-primary-foreground', 'hover:bg-primary/80'],
+          primary: [
+            'bg-primary text-primary-foreground',
+            'hover:bg-primary/80',
+            'backdrop-blur-sm'
+          ],
           outline: [
-            'border-border bg-background',
+            'border-border bg-background/80',
             'hover:bg-muted hover:text-foreground',
             'aria-expanded:bg-muted aria-expanded:text-foreground',
-            'dark:border-input dark:bg-input/30 dark:hover:bg-input/50'
+            'dark:border-input dark:bg-input/30 dark:hover:bg-input/50',
+            'backdrop-blur-sm'
           ],
           secondary: [
-            'bg-secondary text-secondary-foreground',
+            'bg-secondary/80 text-secondary-foreground',
             'hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]',
-            'aria-expanded:bg-secondary aria-expanded:text-secondary-foreground'
+            'aria-expanded:bg-secondary aria-expanded:text-secondary-foreground',
+            'backdrop-blur-sm'
           ],
           ghost: [
-            'hover:bg-muted hover:text-foreground',
+            'hover:bg-muted/80 hover:text-foreground',
             'aria-expanded:bg-muted aria-expanded:text-foreground',
-            'dark:hover:bg-muted/50'
+            'dark:hover:bg-muted/50',
+            'backdrop-blur-sm'
           ],
           destructive: [
             'bg-destructive/10 text-destructive',
             'hover:bg-destructive/20',
             'focus-visible:border-destructive/40 focus-visible:ring-destructive/20',
-            'dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40'
+            'dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40',
+            'backdrop-blur-sm'
           ],
           link: ['text-primary px-0', 'underline-offset-6 hover:underline']
         }

@@ -21,7 +21,11 @@ import { appdata } from '@/constants/system'
 import { testimonialEntries } from '@/constants/testimonials'
 import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata(appdata.title, appdata.description, '/')
+const metadata = createMetadata({
+  title: appdata.title,
+  description: appdata.description,
+  path: '/'
+})
 
 const HomePage = () => {
   // render vars

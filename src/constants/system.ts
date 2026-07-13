@@ -57,9 +57,9 @@ const defaultMetadata: Metadata = {
 
 /** Easter egg: a briefing left in the devtools console for the curious. */
 const consoleSignal = {
-  stamp: ' SIGNAL ACQUIRED ',
-  message: 'You found the console. If you build things worth annotating, so do I.',
-  prompt: 'Open a channel'
+  stamp: '📡 SIGNAL ACQUIRED',
+  message: '📡 You found the console. If you build things worth annotating, so do I.',
+  prompt: '📡 Open a channel'
 }
 
 export { appdata, consoleSignal, defaultMetadata, defaultOgImage }

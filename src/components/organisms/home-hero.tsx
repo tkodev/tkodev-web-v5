@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
+import { Intro, type IntroProps } from '@/components/atoms/intro'
 import { Reticle } from '@/components/atoms/reticle'
-import { Intro, type IntroProps } from '@/components/molecules/intro'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {

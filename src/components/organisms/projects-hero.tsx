@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
-import { Intro, type IntroProps } from '@/components/molecules/intro'
+import { Intro, type IntroProps } from '@/components/atoms/intro'
 import { Tiles } from '@/components/molecules/tiles'
 import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'

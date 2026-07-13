@@ -25,11 +25,12 @@ import {
 } from '@/utils/career'
 import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata(
-  'Tony Ko / Experience',
-  'The service record: every role, talk, and credential behind two decades of design and engineering.',
-  '/experience'
-)
+const metadata = createMetadata({
+  title: 'Tony Ko / Experience',
+  description:
+    'The service record: every role, talk, and credential behind two decades of design and engineering.',
+  path: '/experience'
+})
 
 const ExperiencePage = () => {
   // render vars

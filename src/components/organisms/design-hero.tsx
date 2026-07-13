@@ -10,14 +10,14 @@ const styles = {
   intro: cva(['absolute top-1/2 left-1/2 -translate-1/2'])
 }
 
-type AboutHeroRef = HTMLDivElement
-type AboutHeroProps = HTMLAttributes<AboutHeroRef> &
+type DesignHeroRef = HTMLDivElement
+type DesignHeroProps = HTMLAttributes<DesignHeroRef> &
   VariantProps<typeof styles.root> & {
     hudProps: HudProps
     introProps: IntroProps
   }
 
-const AboutHero = forwardRef<AboutHeroRef, AboutHeroProps>((props, ref) => {
+const DesignHero = forwardRef<DesignHeroRef, DesignHeroProps>((props, ref) => {
   // props
   const { hudProps, introProps, children, className, ...rest } = props
 
@@ -32,7 +32,7 @@ const AboutHero = forwardRef<AboutHeroRef, AboutHeroProps>((props, ref) => {
     </div>
   )
 })
-AboutHero.displayName = 'AboutHero'
+DesignHero.displayName = 'DesignHero'
 
-export { AboutHero }
-export type { AboutHeroProps, AboutHeroRef }
+export { DesignHero }
+export type { DesignHeroProps, DesignHeroRef }
