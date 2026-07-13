@@ -5,17 +5,11 @@ import { formatInTimeZone } from 'date-fns-tz'
 import { appTimeZone } from '@/constants/date'
 import { footerEntries } from '@/constants/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
+import { Veil } from '../atoms/veil'
 import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva(['h-18 w-full', 'fixed bottom-0 left-0 z-10']),
-
-  veil: cva([
-    'pointer-events-none fixed -bottom-0.5 left-0 h-18 w-full',
-    'from-background bg-linear-to-t from-25% to-transparent',
-    'backdrop-blur-xl',
-    '[mask-image:linear-gradient(to_top,#000_25%,transparent)]'
-  ]),
 
   container: cva([
     'h-16 w-full max-w-7xl',
@@ -49,7 +43,7 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.veil())} />
+      <Veil side="bottom" />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>© Tony Ko {year}</div>

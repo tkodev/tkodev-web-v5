@@ -442,7 +442,7 @@ const projectEntries: ProjectEntry[] = [
       ],
       tools: ['Node.js', 'RabbitMQ', 'tRPC', 'gRPC', 'SVG', 'Jest', 'Figma'],
       stats: [
-        { title: 'Data points tracked in real time', value: '10,000+' },
+        { title: 'Real-time data points', value: '10,000+' },
         { title: 'Data refresh tolerance', value: '<1s' },
         { title: 'Embedded delivery', value: '18mo' }
       ]

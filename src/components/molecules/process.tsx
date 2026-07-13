@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Reveal } from '@/components/atoms/reveal'
 import { type SvgComponent } from '@/types/system'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
@@ -76,21 +77,23 @@ const Process = forwardRef<ProcessRef, ProcessProps>((props, ref) => {
         const numeral = String(index + 1).padStart(2, '0')
         const direction = index % 2 === 0 ? 'left' : 'right'
         return (
-          <div key={key} className={cn(styles.step({ direction }))}>
-            <div className={cn(styles.visual())} aria-hidden>
-              <div className={cn(styles.numeralFrame())}>
-                <p className={cn(styles.numeral())}>{numeral}</p>
+          <Reveal key={key} asChild>
+            <div className={cn(styles.step({ direction }))}>
+              <div className={cn(styles.visual())} aria-hidden>
+                <div className={cn(styles.numeralFrame())}>
+                  <p className={cn(styles.numeral())}>{numeral}</p>
+                </div>
+                <div className={cn(styles.labelFrame())}>
+                  <p className={cn(styles.label())}>{label}</p>
+                </div>
+                <IconComp className={cn(styles.icon())} strokeWidth={0.25} />
               </div>
-              <div className={cn(styles.labelFrame())}>
-                <p className={cn(styles.label())}>{label}</p>
+              <div className={cn(styles.col({ direction }))}>
+                <h2 className={cn(styles.title())}>{title}</h2>
+                <p className={cn(styles.desc())}>{desc}</p>
               </div>
-              <IconComp className={cn(styles.icon())} strokeWidth={0.25} />
             </div>
-            <div className={cn(styles.col({ direction }))}>
-              <h2 className={cn(styles.title())}>{title}</h2>
-              <p className={cn(styles.desc())}>{desc}</p>
-            </div>
-          </div>
+          </Reveal>
         )
       })}
     </div>

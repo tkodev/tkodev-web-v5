@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Reveal } from '@/components/atoms/reveal'
 import { Project } from '@/components/molecules/project'
 import { ProjectEntry } from '@/types/career'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -26,7 +27,11 @@ const ProjectsArchived = forwardRef<ProjectsArchivedRef, ProjectsArchivedProps>(
       <Board {...boardProps} className={cn(styles.board())}>
         {projectEntries.map((projectEntry) => {
           const key = `archive-${projectEntry.id}-card`
-          return <Project key={key} project={projectEntry} />
+          return (
+            <Reveal key={key} asChild>
+              <Project project={projectEntry} />
+            </Reveal>
+          )
         })}
       </Board>
     </div>

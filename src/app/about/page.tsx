@@ -7,6 +7,7 @@ import {
   LocateFixedIcon,
   MailIcon
 } from 'lucide-react'
+import { Reveal } from '@/components/atoms/reveal'
 import { AboutDetails } from '@/components/organisms/about-details'
 import { AboutHero } from '@/components/organisms/about-hero'
 import { AboutMethod } from '@/components/organisms/about-method'
@@ -48,14 +49,16 @@ const AboutPage = () => {
         />
       </Section>
       <Section id="method" height="auto" width="md">
-        <AboutMethod
-          statementProps={{
-            subtitle: 'A.1 / Method //',
-            title: 'How I Work',
-            children:
-              "I get uncomfortable when design and engineering aren't talking. \n\nNot because disagreement is bad. But when the person writing the spec has never opened a pull request, and the person opening pull requests has never sat next to a user, something important gets lost between the idea and the thing that ships. \n\nI've spent most of my career in that gap. Sitting across from designers in Figma and across from engineers in a terminal. Building the component library and the component. Writing the accessibility brief and implementing the focus trap."
-          }}
-        />
+        <Reveal className="size-full">
+          <AboutMethod
+            statementProps={{
+              subtitle: 'A.1 / Method //',
+              title: 'How I Work',
+              children:
+                "I get uncomfortable when design and engineering aren't talking. \n\nNot because disagreement is bad. But when the person writing the spec has never opened a pull request, and the person opening pull requests has never sat next to a user, something important gets lost between the idea and the thing that ships. \n\nI've spent most of my career in that gap. Sitting across from designers in Figma and across from engineers in a terminal. Building the component library and the component. Writing the accessibility brief and implementing the focus trap."
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="process" height="auto" width="lg">
         <AboutProcess
@@ -86,14 +89,16 @@ const AboutPage = () => {
         />
       </Section>
       <Section id="details" height="auto" width="md">
-        <AboutDetails
-          statementProps={{
-            subtitle: 'A.3 / Origin //',
-            title: 'The Details',
-            children:
-              "I started in interior design. Forty-something client projects across residential and commercial. You learn quickly that people rarely know what they want until they're standing in the wrong version. \n\nI believe taste is a technical skill. You can develop it. It improves your judgment about what to build, how to build it, and when to stop."
-          }}
-        />
+        <Reveal className="size-full">
+          <AboutDetails
+            statementProps={{
+              subtitle: 'A.3 / Origin //',
+              title: 'The Details',
+              children:
+                "I started in interior design. Forty-something client projects across residential and commercial. You learn quickly that people rarely know what they want until they're standing in the wrong version. \n\nI believe taste is a technical skill. You can develop it. It improves your judgment about what to build, how to build it, and when to stop."
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact

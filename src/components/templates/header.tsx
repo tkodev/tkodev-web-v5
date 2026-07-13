@@ -4,6 +4,7 @@ import { FC, type HTMLAttributes } from 'react'
 import { MenuIcon } from 'lucide-react'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
+import { Veil } from '@/components/atoms/veil'
 import { Identity, type IdentityProps } from '@/components/molecules/identity'
 import { Nav } from '@/components/molecules/nav'
 import { GlobalMenu } from '@/components/organisms/global-menu'
@@ -13,13 +14,6 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['h-18 w-full', 'fixed top-0 left-0 z-20']),
-
-  veil: cva([
-    'pointer-events-none fixed -top-0.5 left-0 h-18 w-full',
-    'from-background bg-linear-to-b from-25% to-transparent',
-    'backdrop-blur-xl',
-    '[mask-image:linear-gradient(to_bottom,#000_25%,transparent)]'
-  ]),
 
   container: cva(['h-16 w-full max-w-7xl', 'fixed top-1 left-1/2 mx-auto -translate-x-1/2 px-4']),
   bar: cva('animate-boot-down flex size-full items-center justify-between gap-8 px-4', {
@@ -59,7 +53,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
-      <div className={cn(styles.veil())} />
+      <Veil side="top" />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>

@@ -29,7 +29,12 @@ as branches and PRs, not listed here.
   - Animated topographic contour field in the persistent shell.
 - [x] **m09 — Polish**
   - Coherence pass: Heading decode reveals, 404/error easter eggs, all pages have ograph and page/metadata
-- [ ] **m10 — Flagship choreography**
-  - Scroll choreography on the all routes
-- [ ] **m11 — Launch**
+- [x] **m10 — Motion & choreography**
+  - Scroll choreography across every route from one shared system: `Reveal`
+    fade-and-rise on scroll-in (sections and list items: card cascades, stat rows,
+    story figures, process steps), counting readouts (`Counter`), and image-gated
+    CSS boot-in on the hero tiles. The flagship reads richest by content, not
+    bespoke code. Page cuts and a pinned scroll-scrubbed scrollytelling scene are
+    deferred as direction.
+- [x] **m11 — Launch**
   - SEO verified, analytics live, performance budgets met, domain cutover

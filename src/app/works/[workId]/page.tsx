@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, PresentationIcon } from 'lucide-react'
+import { Reveal } from '@/components/atoms/reveal'
 import { GlobalContact } from '@/components/organisms/global-contact'
 import { ProjectHero } from '@/components/organisms/project-hero'
 import { ProjectNext } from '@/components/organisms/project-next'
@@ -107,13 +108,15 @@ const WorkDetailPage = async (props: PageProps) => {
         />
       </Section>
       <Section id="wins" height="auto" width="md">
-        <ProjectWins
-          statementProps={{
-            subtitle: 'WD.1 / Wins //',
-            title: extended?.win ?? basic.subtitle,
-            children: basic.desc
-          }}
-        />
+        <Reveal className="size-full">
+          <ProjectWins
+            statementProps={{
+              subtitle: 'WD.1 / Wins //',
+              title: extended?.win ?? basic.subtitle,
+              children: basic.desc
+            }}
+          />
+        </Reveal>
       </Section>
       {statEntries.length > 0 && (
         <Section id="stats" height="auto" width="md">
@@ -143,18 +146,20 @@ const WorkDetailPage = async (props: PageProps) => {
         )
       })}
       <Section id="next" height="auto" width="lg">
-        <ProjectNext
-          asset={getProjectMainAsset(nextProject)}
-          nextProps={{
-            label: 'Next Project',
-            title: nextProject.basic.title,
-            ctaProps: {
-              href: `/works/${nextProject.id}`,
-              icon: PresentationIcon,
-              label: 'View Work'
-            }
-          }}
-        />
+        <Reveal className="size-full">
+          <ProjectNext
+            asset={getProjectMainAsset(nextProject)}
+            nextProps={{
+              label: 'Next Project',
+              title: nextProject.basic.title,
+              ctaProps: {
+                href: `/works/${nextProject.id}`,
+                icon: PresentationIcon,
+                label: 'View Work'
+              }
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon } from 'lucide-react'
 import { Button } from '@/components/atoms/button'
+import { Reveal } from '@/components/atoms/reveal'
 import { type LogEntry } from '@/components/molecules/log'
 import { ExperienceHero } from '@/components/organisms/experience-hero'
 import { ExperienceLogs } from '@/components/organisms/experience-logs'
@@ -94,18 +95,20 @@ const ExperiencePage = () => {
         />
       </Section>
       <Section id="record" height="auto" width="lg">
-        <ExperienceRecord
-          jobGroups={jobGroups}
-          boardProps={{
-            subtitle: 'E.1 / Record //',
-            title: 'Service Record',
-            cta: (
-              <Button size="md" variant="outline" asChild>
-                <Link href={tony.extended?.resume ?? '#'}>Download Resume</Link>
-              </Button>
-            )
-          }}
-        />
+        <Reveal className="size-full">
+          <ExperienceRecord
+            jobGroups={jobGroups}
+            boardProps={{
+              subtitle: 'E.1 / Record //',
+              title: 'Service Record',
+              cta: (
+                <Button size="md" variant="outline" asChild>
+                  <Link href={tony.extended?.resume ?? '#'}>Download Resume</Link>
+                </Button>
+              )
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="summary" height="auto" width="lg">
         <ExperienceSummary
@@ -120,16 +123,20 @@ const ExperiencePage = () => {
         />
       </Section>
       <Section id="talks" height="auto" width="lg">
-        <ExperienceLogs
-          boardProps={{ subtitle: 'E.3 / Signals //', title: 'Speaking' }}
-          logEntries={talkEntries}
-        />
+        <Reveal className="size-full">
+          <ExperienceLogs
+            boardProps={{ subtitle: 'E.3 / Signals //', title: 'Speaking' }}
+            logEntries={talkEntries}
+          />
+        </Reveal>
       </Section>
       <Section id="education" height="auto" width="lg">
-        <ExperienceLogs
-          boardProps={{ subtitle: 'E.4 / Training //', title: 'Education' }}
-          logEntries={schoolEntries}
-        />
+        <Reveal className="size-full">
+          <ExperienceLogs
+            boardProps={{ subtitle: 'E.4 / Training //', title: 'Education' }}
+            logEntries={schoolEntries}
+          />
+        </Reveal>
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact

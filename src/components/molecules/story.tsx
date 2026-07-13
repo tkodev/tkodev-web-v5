@@ -1,6 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Asset } from '@/components/atoms/asset'
 import { Card } from '@/components/atoms/card'
+import { Reveal } from '@/components/atoms/reveal'
 import { type StoryEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
@@ -50,14 +51,18 @@ const Story = forwardRef<StoryRef, StoryProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ direction, className }))} {...rest}>
-      <Card className={cn(styles.frame())}>
-        <Asset className={cn(styles.img())} asset={asset} />
-      </Card>
-      <div className={cn(styles.col({ direction }))}>
-        <p className={cn(styles.figure())}>{index} / Figure //</p>
-        <h2 className={cn(styles.title())}>{title}</h2>
-        <p className={cn(styles.body())}>{body}</p>
-      </div>
+      <Reveal asChild>
+        <Card className={cn(styles.frame())}>
+          <Asset className={cn(styles.img())} asset={asset} />
+        </Card>
+      </Reveal>
+      <Reveal asChild>
+        <div className={cn(styles.col({ direction }))}>
+          <p className={cn(styles.figure())}>{index} / Figure //</p>
+          <h2 className={cn(styles.title())}>{title}</h2>
+          <p className={cn(styles.body())}>{body}</p>
+        </div>
+      </Reveal>
     </div>
   )
 })

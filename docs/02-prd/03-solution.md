@@ -95,9 +95,13 @@ shipped work. **Visuals** are the supporting plates: extra media that broadens t
 record with range, detail, atmosphere, or proof of polish, never load-bearing for
 the narrative. Stories tell the story; visuals widen the file.
 
-Direction: one flagship (Beyond MPD, the earned centerpiece) gets scroll
-choreography on this same route (pinned scenes, telemetry-style data reveals),
-built last, on top of the proven dossier system.
+Every work detail runs the shared choreography (§The motion system): the figures
+reveal on scroll-in, the story copy alongside them, and the stats count from
+zero. The flagship (Beyond MPD, the earned centerpiece) reads richest because it
+carries the most stories, stats, and plates, not because it runs bespoke code.
+Direction: a pinned, scroll-scrubbed scrollytelling scene (telemetry-style data
+reveals) layered on this same route as a focused build, on top of the proven
+dossier system.
 
 ### Experience: the service record *(no Figma frame)*
 
@@ -149,12 +153,23 @@ Motion is a grammar, not garnish:
 
 - **Sequences**: the boot (progress → reveal) and the nav overlay (open/close)
   as choreographed moments.
-- **Entrances**: sections reveal with staggered children, never wholesale blocks.
+- **Entrances**: content reveals as it scrolls into view, fading and lifting in,
+  per section and per list item (card cascades, stat rows, story figures, process
+  steps), never a wholesale page-load flash. Values are defined once in
+  `constants/motion.ts` and consumed through the `Reveal` primitive, which merges
+  onto its child (`asChild`) so no wrapper element is introduced.
+- **Boot**: above-the-fold hero elements animate in with the CSS `animate-boot-in`,
+  staggered like the reticle lines: the reticle itself, and the work tiles on the
+  works and work-detail heroes, each tile held until its image loads so nothing
+  boots in empty.
+- **Readouts**: counters roll from zero to their true value the first time they
+  scroll into view (`Counter`); every displayed value stays honest.
 - **Ambient**: the testimonial marquee drift, the scroll-cue pulse; the site
   feels *on* even at rest.
 - **Micro**: accordion expand/collapse (~0.2s); hover states fast (≤150ms).
-- Direction: page **cuts** (fast fades-through-black), **decode** label reveals,
-  and **scan** figure wipes, adopted as the design matures.
+- Direction: **decode** label reveals beyond headings, page **cuts** between
+  routes, and a pinned, scroll-scrubbed scrollytelling scene for the flagship
+  (§Work detail: the dossier), adopted as the design matures.
 
 ## Edge cases
 

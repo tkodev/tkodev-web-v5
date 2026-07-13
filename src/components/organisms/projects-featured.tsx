@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Reveal } from '@/components/atoms/reveal'
 import { Project } from '@/components/molecules/project'
 import { ProjectEntry } from '@/types/career'
 import { type SvgComponent } from '@/types/system'
@@ -51,7 +52,11 @@ const ProjectsFeatured = forwardRef<ProjectsFeaturedRef, ProjectsFeaturedProps>(
       >
         {projectEntries.map((projectEntry) => {
           const key = `featured-${projectEntry.id}-card`
-          return <Project key={key} project={projectEntry} href={`/works/${projectEntry.id}`} />
+          return (
+            <Reveal key={key} asChild>
+              <Project project={projectEntry} href={`/works/${projectEntry.id}`} />
+            </Reveal>
+          )
         })}
       </Board>
     </div>
