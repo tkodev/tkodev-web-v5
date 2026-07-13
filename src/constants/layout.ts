@@ -1,4 +1,3 @@
-import { SunMoonIcon, UserStarIcon } from 'lucide-react'
 import { AssetEntry, NavEntry } from '@/types/layout'
 
 /** Fallback image for entries without their own media. */
@@ -35,18 +34,12 @@ const headerEntries: NavEntry[] = [
   }
 ]
 
-/** Utility controls rendered in the footer (music, theme). */
+/** Utility controls rendered in the footer: jump to the page's transmission section. */
 const footerEntries: NavEntry[] = [
   {
-    intent: 'music',
-    href: 'https://uppbeat.io/track/justin-marshall-elias/an-empty-bus',
-    icon: UserStarIcon,
-    variant: 'link',
-    isVisible: true
-  },
-  {
-    intent: 'theme',
-    icon: SunMoonIcon,
+    intent: 'url',
+    href: '#contact',
+    name: 'Contact',
     variant: 'link',
     isVisible: true
   }

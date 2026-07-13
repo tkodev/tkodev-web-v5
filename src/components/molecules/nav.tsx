@@ -37,8 +37,8 @@ const Nav = forwardRef<NavRef, NavProps>((props, ref) => {
       {entries.map((props, index) => {
         const { intent, href, name, icon, isVisible, variant, ...rest } = props
         const linkHref = href || '#'
-        const linkTarget =
-          !linkHref.startsWith('/') || linkHref.endsWith('.pdf') ? '_blank' : undefined
+        const isInternal = linkHref.startsWith('/') || linkHref.startsWith('#')
+        const linkTarget = !isInternal || linkHref.endsWith('.pdf') ? '_blank' : undefined
         const key = `nav-item-${index}`
 
         if (!isVisible) {

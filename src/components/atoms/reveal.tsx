@@ -19,11 +19,7 @@ type RevealProps = {
   asChild?: boolean
   /** Fraction of the element in view before it reveals (default `motionReveal.amount`). */
   amount?: number
-  /**
-   * Mark this a horizontal-rail item (featured/selected works). On small screens a card
-   * parked off-screen shows only a thin sliver, which never meets the default `amount`
-   * threshold, so it reveals on any visible portion (`motionReveal.railAmount`) instead.
-   */
+  /* Mark this a horizontal-rail item (featured/selected works) so it reveals more items */
   rail?: boolean
   className?: string
 }
