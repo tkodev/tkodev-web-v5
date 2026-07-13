@@ -17,8 +17,8 @@ const styles = {
 // Tuning
 const baseAlpha = 0.1 // faint lines
 const indexAlpha = 0.15 // index lines
-const fps = 10 // render cap; GPU-side now, so a smooth rate is cheap
-const timeScale = 0.01 // how fast the terrain evolves (per second)
+const fps = 15 // render cap; GPU-side now, so a smooth rate is cheap
+const timeScale = 0.02 // how fast the terrain evolves (per second)
 const noiseFreq = 0.005 // spatial scale: higher = zoomed further out = far more lines on screen
 const baseWidth = 2 // contour line width in px
 const indexWidth = 2
@@ -31,8 +31,8 @@ const warpOctaves = 2 // octaves for the domain-warp field
 const warpAmp = 1.1 // warp strength: what bends round rings into map-like ridges and valleys
 const lacunarity = 2 // frequency multiplier per octave
 const gain = 0.5 // amplitude falloff per octave
-const panX = 2.5 // horizontal drift (px/s)
-const panY = -1.5 // vertical drift (px/s)
+const panX = 3.5 // horizontal drift (px/s)
+const panY = -2 // vertical drift (px/s)
 const maxDpr = 1.5 // cap devicePixelRatio: fragment fill + blur cost scales with pixel count
 
 // GLSL float literal: guarantees a decimal point so integers don't become invalid `int` tokens.
