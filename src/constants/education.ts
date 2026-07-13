@@ -2,6 +2,7 @@ import { fromZonedTime } from 'date-fns-tz'
 import { type EducationEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+/** Education history, newest first. */
 const educationEntries: EducationEntry[] = [
   {
     id: 'free-code-camp-full-stack-development',

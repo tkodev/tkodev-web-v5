@@ -1,4 +1,9 @@
-// Parse a hex colour (#rgb or #rrggbb) into normalized 0–1 RGB, for WebGL/canvas consumers.
+/**
+ * Parse a hex colour (`#rgb` or `#rrggbb`) into normalized 0-1 RGB, for WebGL/canvas consumers.
+ *
+ * @param hex - The hex colour string, with or without a leading `#`.
+ * @returns The red, green, and blue channels, each normalized to 0-1.
+ */
 const hexToRgb = (hex: string): [number, number, number] => {
   const clean = hex.replace('#', '').trim()
   const full =

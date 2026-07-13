@@ -8,9 +8,10 @@ Runtime, language, and what "done" requires.
 
 1. **pnpm only.** Never npm or yarn. Node ≥ 24.
 2. **TypeScript strict.** No `any` escape hatches; domain types live in `types/`.
-3. **A server started for verification is killed when the check ends**: a `pnpm dev` or `pnpm start` run to confirm a change holds the port and outlives the task otherwise, so the next run collides or, worse, verifies against stale output. Long-running servers the human started are theirs to stop.
-4. **A verification server runs on its own port and dies by its own pid.** Start it with an explicit `-p` well clear of `3000`, capture the pid (`pnpm start -p 3987 & echo $!`), and kill that pid. Never `pkill -f next-server` or any name match: it matches every Next process on the machine, including the human's dev server, and rule 3 leaves that one theirs to stop.
-5. **Tests are [testing.md](testing.md)'s concern.**
+3. **Exported constants, hooks, types, and utils carry TSDoc.** Every export in `constants/`, `hooks/`, `types/`, and `utils/` opens with a `/** */` block: a one-line summary, plus `@param`/`@returns` for functions where the signature does not already say it, and per-member docs on non-obvious type fields; the doc is the contract a caller reads without opening the body. Components document themselves through their props types, not TSDoc.
+4. **A server started for verification is killed when the check ends**: a `pnpm dev` or `pnpm start` run to confirm a change holds the port and outlives the task otherwise, so the next run collides or, worse, verifies against stale output. Long-running servers the human started are theirs to stop.
+5. **A verification server runs on its own port and dies by its own pid.** Start it with an explicit `-p` well clear of `3000`, capture the pid (`pnpm start -p 3987 & echo $!`), and kill that pid. Never `pkill -f next-server` or any name match: it matches every Next process on the machine, including the human's dev server, and rule 4 leaves that one theirs to stop.
+6. **Tests are [testing.md](testing.md)'s concern.**
 
 ## Concepts
 

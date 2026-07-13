@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Button } from '@/components/atoms/button'
+import { Decode } from '@/components/atoms/decode'
 import { Icon } from '@/components/atoms/icon'
 import { Logo } from '@/components/atoms/logo'
 import { type SvgComponent } from '@/types/system'
@@ -44,7 +45,9 @@ const Contact = forwardRef<ContactRef, ContactProps>((props, ref) => {
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.info())}>
-        <h2 className={cn(styles.title())}>{title}</h2>
+        <h2 className={cn(styles.title())}>
+          <Decode text={title} />
+        </h2>
         <p className={cn(styles.desc())}>{desc}</p>
         <div className={cn(styles.channels())}>
           {channelEntries.map((channelEntry) => {

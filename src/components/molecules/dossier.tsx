@@ -1,5 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Badge } from '@/components/atoms/badge'
+import { Decode } from '@/components/atoms/decode'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -39,7 +40,9 @@ const Dossier = forwardRef<DossierRef, DossierProps>((props, ref) => {
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.header())}>
         <p className={cn(styles.tagline())}>{tagline}</p>
-        <h1 className={cn(styles.title())}>{title}</h1>
+        <h1 className={cn(styles.title())}>
+          <Decode text={title} />
+        </h1>
         <p className={cn(styles.desc())}>{desc}</p>
       </div>
       {!!badges?.length && (

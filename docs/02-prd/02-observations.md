@@ -116,14 +116,6 @@ Both instincts are real and they conflict as page mechanics.
 (home), ledger + reel (works index), scroll choreography (one flagship case study
 only), quiet dossier (other work details). Site-wide parallax scrolljacking is out.
 
-### Risk: frosted glass vs the military theme
-
-The glass trend reads soft and consumer; the references are hard: hairlines, matte black.
-
-**Direction.** No frosted glass. The skeuomorphism that fits the theme is the
-**artifact**: work presented as dossiers, spec sheets, with stamped metadata. Depth comes from hairline
-borders and blend modes, not blur.
-
 ### Risk: the aesthetic reads as borrowed
 
 Military/HUD styling is a well-worn trend; on most portfolios it's costume.

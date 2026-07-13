@@ -5,7 +5,7 @@ import { Footer } from '@/components/templates/footer'
 import { Header } from '@/components/templates/header'
 import { Overlay } from '@/components/templates/overlay'
 import { Underlay } from '@/components/templates/underlay'
-import { appData, metaData } from '@/constants/system'
+import { appdata, defaultMetadata } from '@/constants/system'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { geistMonoFont, geistSansFont } from '@/fonts/geist'
 import { cn, cva } from '@/utils/theme'
@@ -53,5 +53,6 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
   )
 }
 
-export { metaData as metadata, appData as pagedata }
+export { defaultMetadata as metadata }
+export { appdata as pagedata }
 export default LayoutPage

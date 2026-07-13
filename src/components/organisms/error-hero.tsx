@@ -1,4 +1,4 @@
-import { forwardRef, type HTMLAttributes } from 'react'
+import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Reticle } from '@/components/atoms/reticle'
 import { Intro, type IntroProps } from '@/components/molecules/intro'
@@ -10,14 +10,15 @@ const styles = {
   intro: cva(['absolute top-1/2 left-1/2 -translate-1/2'])
 }
 
-type HomeHeroRef = HTMLDivElement
-type HomeHeroProps = HTMLAttributes<HomeHeroRef> &
+type ErrorHeroRef = HTMLDivElement
+type ErrorHeroProps = HTMLAttributes<ErrorHeroRef> &
   VariantProps<typeof styles.root> & {
     hudProps: HudProps
     introProps: IntroProps
+    children?: ReactNode
   }
 
-const HomeHero = forwardRef<HomeHeroRef, HomeHeroProps>((props, ref) => {
+const ErrorHero = forwardRef<ErrorHeroRef, ErrorHeroProps>((props, ref) => {
   // props
   const { hudProps, introProps, children, className, ...rest } = props
 
@@ -32,7 +33,7 @@ const HomeHero = forwardRef<HomeHeroRef, HomeHeroProps>((props, ref) => {
     </div>
   )
 })
-HomeHero.displayName = 'HomeHero'
+ErrorHero.displayName = 'ErrorHero'
 
-export { HomeHero }
-export type { HomeHeroProps, HomeHeroRef }
+export { ErrorHero }
+export type { ErrorHeroProps, ErrorHeroRef }

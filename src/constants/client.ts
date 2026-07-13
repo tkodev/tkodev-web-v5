@@ -1,6 +1,7 @@
 import keyBy from 'lodash/keyBy'
 import { type ClientEntry } from '@/types/career'
 
+/** Every client, agency, employer, and school referenced across career data, in curated order. */
 const clientEntries: ClientEntry[] = [
   {
     id: 'air-canada',
@@ -699,6 +700,7 @@ const clientEntries: ClientEntry[] = [
   }
 ]
 
+/** `clientEntries` keyed by `id` for direct lookup. */
 const clientById = keyBy(clientEntries, (clientEntry) => clientEntry.id)
 
 export { clientById, clientEntries }

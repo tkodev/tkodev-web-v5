@@ -6,12 +6,12 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center overflow-hidden']),
   grid: cva('grid w-full shrink-0 grid-cols-3 gap-2 sm:grid-cols-4 lg:grid-cols-5'),
-  tile: cva([
-    'bg-muted relative aspect-video overflow-hidden rounded-sm sm:last:hidden',
+  tile: cva(['bg-background/80 relative aspect-video overflow-hidden rounded-sm sm:last:hidden']),
+  img: cva([
+    'absolute inset-0 size-full object-cover',
     'opacity-15 hover:scale-105 hover:opacity-30',
     'transition-all duration-1000'
-  ]),
-  img: cva('absolute inset-0 size-full object-cover')
+  ])
 }
 
 type TilesRef = HTMLDivElement

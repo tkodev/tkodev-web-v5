@@ -4,6 +4,7 @@ import keyBy from 'lodash/keyBy'
 import { type ProjectEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+/** Every project, newest first; the source of truth for works surfaces and home cards. */
 const projectEntries: ProjectEntry[] = [
   {
     id: 'tkodev-web',
@@ -2203,7 +2204,9 @@ const projectEntries: ProjectEntry[] = [
   }
 ]
 
+/** `projectEntries` keyed by `id` for direct lookup. */
 const projectEntryById = keyBy(projectEntries, (projectEntry) => projectEntry.id)
+/** `projectEntries` grouped by their `basic.category`. */
 const projectEntriesByCategory = groupBy(
   projectEntries,
   (projectEntry) => projectEntry.basic.category

@@ -20,7 +20,7 @@ type AboutHeroProps = HTMLAttributes<AboutHeroRef> &
 
 const AboutHero = forwardRef<AboutHeroRef, AboutHeroProps>((props, ref) => {
   // props
-  const { hudProps, introProps, className, ...rest } = props
+  const { hudProps, introProps, children, className, ...rest } = props
 
   // jsx
   return (
@@ -28,7 +28,9 @@ const AboutHero = forwardRef<AboutHeroRef, AboutHeroProps>((props, ref) => {
       <Reticle className={cn(styles.reticle())} />
       <Hud {...hudProps} />
       <div className={cn(styles.overlay())}>
-        <Intro className={cn(styles.intro())} {...introProps} />
+        <Intro className={cn(styles.intro())} {...introProps}>
+          {children}
+        </Intro>
       </div>
     </div>
   )

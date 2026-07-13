@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Decode } from '@/components/atoms/decode'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -23,7 +24,9 @@ const Statement = forwardRef<StatementRef, StatementProps>((props, ref) => {
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {!!subtitle && <div className={cn(styles.subtitle())}>{subtitle}</div>}
-      <h2 className={cn(styles.title())}>{title}</h2>
+      <h2 className={cn(styles.title())}>
+        <Decode text={title} />
+      </h2>
       {!!children && <div className={cn(styles.body())}>{children}</div>}
     </div>
   )
