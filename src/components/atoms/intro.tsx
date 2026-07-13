@@ -7,7 +7,7 @@ const styles = {
   subtitle: cva('text-muted-foreground text-e4 font-expressive uppercase'),
   title: cva('text-h1 font-heading whitespace-pre-line uppercase'),
   desc: cva('text-muted-foreground text-sm whitespace-pre-line'),
-  cta: cva('')
+  cta: cva('flex flex-col items-center gap-2')
 }
 
 type IntroRef = HTMLDivElement

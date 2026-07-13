@@ -1,6 +1,7 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Asset } from '@/components/atoms/asset'
 import { Card } from '@/components/atoms/card'
+import { Reveal } from '@/components/atoms/reveal'
 import { type AssetEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
@@ -31,13 +32,17 @@ const Visuals = forwardRef<VisualsRef, VisualsProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Card className={cn(styles.frame())}>
-        <Asset className={cn(styles.img())} asset={asset} />
-      </Card>
-      <div className={cn(styles.caption())}>
-        <p className={cn(styles.captionIndex())}>{index} / Figure //</p>
-        <p className={cn(styles.captionLabel())}>{asset.alt}</p>
-      </div>
+      <Reveal asChild>
+        <Card className={cn(styles.frame())}>
+          <Asset className={cn(styles.img())} asset={asset} />
+        </Card>
+      </Reveal>
+      <Reveal asChild>
+        <div className={cn(styles.caption())}>
+          <p className={cn(styles.captionIndex())}>{index} / Figure //</p>
+          <p className={cn(styles.captionLabel())}>{asset.alt}</p>
+        </div>
+      </Reveal>
     </div>
   )
 })

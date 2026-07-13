@@ -7,6 +7,7 @@ import {
   MailIcon,
   Palette
 } from 'lucide-react'
+import { Reveal } from '@/components/atoms/reveal'
 import { GlobalContact } from '@/components/organisms/global-contact'
 import { HomeHero } from '@/components/organisms/home-hero'
 import { HomeOverview } from '@/components/organisms/home-overview'
@@ -64,41 +65,47 @@ const HomePage = () => {
         />
       </Section>
       <Section id="statement" height="auto" width="sm">
-        <HomeStatement
-          statementProps={{
-            subtitle: 'H.2 / Statement //',
-            title: 'Good engineering is invisible. \nGood design is why you stay.'
-          }}
-        />
+        <Reveal className="size-full">
+          <HomeStatement
+            statementProps={{
+              subtitle: 'H.2 / Statement //',
+              title: 'Good engineering is invisible. \nGood design is why you stay.'
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="overview" height="auto" width="md">
-        <HomeOverview
-          bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
-          boardProps={{ subtitle: 'H.3 / Overview //' }}
-          bioProps={{
-            title: 'Bio',
-            desc: 'Staff Software Engineer with 9+ years shipping cross-platform systems for Telus Digital, Aeroplan, Air Miles, Toyota, and Loblaw Digital. Unique product-design-engineering career experience.',
-            photo: tony.media?.photo
-          }}
-          competenciesProps={{
-            title: 'Core Competencies',
-            competencyEntries: tony.extended?.competencies ?? []
-          }}
-        />
+        <Reveal className="size-full">
+          <HomeOverview
+            bioCtaProps={{ href: '/experience', icon: BriefcaseIcon, label: 'View Experience' }}
+            boardProps={{ subtitle: 'H.3 / Overview //' }}
+            bioProps={{
+              title: 'Bio',
+              desc: 'Staff Software Engineer with 9+ years shipping cross-platform systems for Telus Digital, Aeroplan, Air Miles, Toyota, and Loblaw Digital. Unique product-design-engineering career experience.',
+              photo: tony.media?.photo
+            }}
+            competenciesProps={{
+              title: 'Core Competencies',
+              competencyEntries: tony.extended?.competencies ?? []
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="testimonials" height="auto" width="lg">
-        <HomeTestimonials
-          testimonialEntries={tonyTestimonialEntries}
-          boardProps={{
-            subtitle: 'H.4 / Testimonials //',
-            title: 'What People Say'
-          }}
-          ctaProps={{
-            href: 'https://www.linkedin.com/in/tkodev/details/recommendations/',
-            icon: ExternalLinkIcon,
-            label: 'View All Testimonials'
-          }}
-        />
+        <Reveal className="size-full">
+          <HomeTestimonials
+            testimonialEntries={tonyTestimonialEntries}
+            boardProps={{
+              subtitle: 'H.4 / Testimonials //',
+              title: 'What People Say'
+            }}
+            ctaProps={{
+              href: 'https://www.linkedin.com/in/tkodev/details/recommendations/',
+              icon: ExternalLinkIcon,
+              label: 'View All Testimonials'
+            }}
+          />
+        </Reveal>
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact

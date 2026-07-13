@@ -1,4 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Reveal } from '@/components/atoms/reveal'
 import { Board, type BoardProps } from '@/components/molecules/board'
 import { Contact, type ChannelEntry } from '@/components/molecules/contact'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -23,9 +24,11 @@ const GlobalContact = forwardRef<GlobalContactRef, GlobalContactProps>((props, r
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Board {...boardProps}>
-        <Contact channelEntries={channelEntries} desc={desc} title={title} />
-      </Board>
+      <Reveal className="w-full">
+        <Board {...boardProps}>
+          <Contact channelEntries={channelEntries} desc={desc} title={title} />
+        </Board>
+      </Reveal>
     </div>
   )
 })

@@ -1,4 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Counter } from '@/components/atoms/counter'
+import { Reveal } from '@/components/atoms/reveal'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -29,10 +31,14 @@ const Stats = forwardRef<StatsRef, StatsProps>((props, ref) => {
       {statEntries.map((statEntry) => {
         const key = `stat-${statEntry.title}`
         return (
-          <div key={key} className={cn(styles.stat())}>
-            <p className={cn(styles.value())}>{statEntry.value}</p>
-            <p className={cn(styles.label())}>{statEntry.title}</p>
-          </div>
+          <Reveal key={key} asChild>
+            <div className={cn(styles.stat())}>
+              <p className={cn(styles.value())}>
+                <Counter value={statEntry.value} />
+              </p>
+              <p className={cn(styles.label())}>{statEntry.title}</p>
+            </div>
+          </Reveal>
         )
       })}
     </div>

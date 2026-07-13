@@ -89,7 +89,10 @@ The data model:
 
 ## Motion
 
-- The futuristic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above.
+- The futuristic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above; the settled motion grammar is [03-solution.md](03-solution.md) §The motion system's concern.
+- **Motion tokens** live in `constants/motion.ts` (durations, easings mirroring the `--brand-ease-*` CSS tokens, reveal distance/blur, and the framer `revealItem` variant), the one source components import so no motion magic numbers scatter.
+- **Scroll choreography** is two client atoms: `Reveal` (fade + rise on scroll-in, `asChild`-capable so it merges onto its child rather than adding a wrapper) applied per section and per list item, and `Counter` (rolls a readout to its true value on scroll-in, via `react-countup`). Both read framer's `useReducedMotion` and degrade to a static, readable state.
+- **Hero boot-in** is CSS, not framer: `Tiles`/`Tile` carry `animate-boot-in` (staggered, `motion-reduce:animate-none`), each tile gated on its image's `load` event so it never boots in empty; the reticle animates the same way.
 
 ## Background canvas
 
