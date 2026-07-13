@@ -7,7 +7,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['size-full', 'relative overflow-visible']),
-  tiles: cva(['size-full', 'absolute top-0 left-0']),
+  tiles: cva(['absolute inset-0']),
   intro: cva(['absolute top-1/2 left-1/2 -translate-1/2'])
 }
 
