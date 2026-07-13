@@ -19,26 +19,29 @@ type RevealProps = {
   asChild?: boolean
   /** Fraction of the element in view before it reveals (default `motionReveal.amount`). */
   amount?: number
+  /**
+   * Mark this a horizontal-rail item (featured/selected works). On small screens a card
+   * parked off-screen shows only a thin sliver, which never meets the default `amount`
+   * threshold, so it reveals on any visible portion (`motionReveal.railAmount`) instead.
+   */
+  rail?: boolean
   className?: string
 }
 
 /**
  * Fades and lifts its content in the first time it scrolls into view. Each Reveal
- * triggers on its own intersection, so a list reveals as its items enter rather
- * than depending on a parent container's threshold. With `asChild` it merges onto
- * the single child element (no wrapper); otherwise it wraps in a `div`. Renders
- * static under `prefers-reduced-motion`, so the content is present and readable
- * with no transform.
+ * triggers on its own intersection.
  */
 const Reveal = forwardRef<RevealRef, RevealProps>((props, ref) => {
   // props
-  const { children, asChild = false, amount = motionReveal.amount, className } = props
+  const { children, asChild = false, amount = motionReveal.amount, rail = false, className } = props
 
   // hooks
   const reduced = useReducedMotion()
 
   // render vars
   const Comp = asChild ? MotionSlot : motion.div
+  const viewport = { once: true, amount: rail ? motionReveal.railAmount : amount }
 
   // jsx
   if (reduced) {
@@ -55,7 +58,7 @@ const Reveal = forwardRef<RevealRef, RevealProps>((props, ref) => {
       className={cn(styles.root({ className }))}
       initial="hidden"
       variants={revealItem}
-      viewport={{ once: true, amount }}
+      viewport={viewport}
       whileInView="shown"
     >
       {children}

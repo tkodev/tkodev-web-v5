@@ -93,8 +93,6 @@ const Cursor: FC = () => {
     const hasIcons = pointer && Object.values(icons).every(Boolean)
     if (!ring || !wave) return
 
-    document.documentElement.dataset.cursor = 'active'
-
     let rafId: number
     let mouseX = 0
     let mouseY = 0
@@ -145,18 +143,33 @@ const Cursor: FC = () => {
       wave.style.animation = 'var(--animate-cursor-wave)'
     }
 
+    const onFocus = () => {
+      document.documentElement.dataset.cursor = 'active'
+      ring.style.opacity = '1'
+      if (hasIcons) pointer!.style.opacity = '1'
+    }
+
+    const onBlur = () => {
+      delete document.documentElement.dataset.cursor
+      ring.style.opacity = '0'
+      if (hasIcons) pointer!.style.opacity = '0'
+    }
+
     window.addEventListener('mousemove', onMouseMove, { passive: true })
     window.addEventListener('mouseover', onMouseOver, { passive: true })
     window.addEventListener('mousedown', onMouseDown, { passive: true })
+    window.addEventListener('focus', onFocus)
+    window.addEventListener('blur', onBlur)
     rafId = requestAnimationFrame(tick)
-    ring.style.opacity = '1'
-    if (hasIcons) pointer!.style.opacity = '1'
+    if (document.hasFocus()) onFocus()
 
     return () => {
       delete document.documentElement.dataset.cursor
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseover', onMouseOver)
       window.removeEventListener('mousedown', onMouseDown)
+      window.removeEventListener('focus', onFocus)
+      window.removeEventListener('blur', onBlur)
       cancelAnimationFrame(rafId)
     }
   }, [])

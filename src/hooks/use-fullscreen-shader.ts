@@ -108,6 +108,7 @@ const useFullscreenShader = (config: FullscreenShaderConfig) => {
       gl.clearColor(0, 0, 0, 0)
 
       resize()
+      render()
       return true
     }
 
@@ -126,7 +127,7 @@ const useFullscreenShader = (config: FullscreenShaderConfig) => {
 
     const onResize = () => {
       resize()
-      if (reduced) render()
+      render()
     }
 
     const onLost = (e: Event) => {

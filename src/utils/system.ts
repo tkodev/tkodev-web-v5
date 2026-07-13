@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { appdata, defaultMetadata, defaultOgImage, type OgImage } from '@/constants/system'
+import { appdata, defaultMetadata } from '@/constants/system'
+import { type OgImage } from '@/types/system'
 
 type CreateMetadataOptions = {
   title: string
@@ -16,7 +17,7 @@ type CreateMetadataOptions = {
  * @param options.title - Page title, used for the tab, Open Graph, and Twitter.
  * @param options.description - Page description, shared across the meta, OG, and Twitter tags.
  * @param options.path - Route path appended to the site URL for the canonical link (e.g. `/works`).
- * @param options.image - Open Graph / Twitter image; defaults to the site preview image.
+ * @param options.image - Open Graph / Twitter image; omit to inherit the root home image.
  * @param options.robots - Robots directives; omit to inherit the root defaults (indexable).
  * @returns A Next.js Metadata object for the route.
  */
@@ -24,7 +25,7 @@ const createMetadata = ({
   title,
   description,
   path = '',
-  image = defaultOgImage,
+  image,
   robots
 }: CreateMetadataOptions): Metadata => {
   const canonical = `${appdata.url}${path}`
@@ -39,13 +40,13 @@ const createMetadata = ({
       title,
       description,
       url: canonical,
-      images: [image]
+      ...(image ? { images: [image] } : {})
     },
     twitter: {
       ...defaultMetadata.twitter,
       title,
       description,
-      images: [{ ...image, alt: title }]
+      ...(image ? { images: [{ ...image, alt: title }] } : {})
     }
   }
 }

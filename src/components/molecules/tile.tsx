@@ -7,8 +7,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(['relative size-full p-4', 'flex items-center justify-center']),
-  // hidden until its image loads, then boots in like the reticle lines
-  tile: cva(['bg-card rounded-sm', 'relative aspect-video h-8/10 w-auto overflow-hidden'], {
+  tile: cva(['bg-background rounded-sm', 'relative aspect-video h-8/10 w-auto overflow-hidden'], {
     variants: {
       loaded: {
         true: 'animate-boot-in fill-mode-both opacity-100 motion-reduce:animate-none',

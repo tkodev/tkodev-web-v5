@@ -25,7 +25,7 @@ const styles = {
   assetCell: cva('flex size-full items-center p-4'),
   assetFrame: cva('relative aspect-video w-full overflow-hidden rounded-xs'),
   img: cva([
-    'bg-card absolute inset-0 size-full object-cover',
+    'bg-background absolute inset-0 size-full object-cover',
     'scale-100 opacity-30 transition duration-500',
     'group-hover/ticker:scale-105 group-hover/ticker:opacity-100'
   ]),

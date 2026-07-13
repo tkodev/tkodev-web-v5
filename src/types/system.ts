@@ -7,10 +7,15 @@ type SvgComponent = ForwardRefExoticComponent<
 
 /** The props an App Router page receives: route params and query, both async in Next.js 16. */
 type PageProps = {
-  /** Dynamic route segments, keyed by segment name. */
   params: Promise<{ [key: string]: string }>
-  /** URL query string values, single or repeated per key. */
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export type { PageProps, SvgComponent }
+/** An Open Graph image: its absolute URL and pixel dimensions. */
+type OgImage = {
+  url: string
+  width: number
+  height: number
+}
+
+export type { OgImage, PageProps, SvgComponent }

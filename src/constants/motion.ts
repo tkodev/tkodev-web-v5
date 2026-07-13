@@ -14,11 +14,17 @@ const motionEasings = {
   inOut: [0.4, 0, 0.2, 1]
 } as const
 
-/** Distance (px) a revealing element rises from, the blur it clears, and its trigger point. */
+/**
+ * Distance (px) a revealing element rises from, the blur it clears, and its trigger points.
+ * `railAmount` is the lenient threshold for horizontal-rail items (featured/selected works):
+ * a card parked off-screen shows only a thin sliver, so it reveals on any visible portion
+ * rather than the `amount` fraction a stacked section waits for.
+ */
 const motionReveal = {
   distance: 24,
   blur: 8,
-  amount: 0.3
+  amount: 0.3,
+  railAmount: 0.01
 } as const
 
 /** The `Reveal` variant: the fade + rise + de-blur an element runs when it enters view. */

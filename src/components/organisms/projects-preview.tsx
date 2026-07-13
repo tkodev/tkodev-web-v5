@@ -51,7 +51,7 @@ const ProjectsPreview = forwardRef<ProjectsPreviewRef, ProjectsPreviewProps>((pr
         {projectEntries.map((projectEntry) => {
           const key = `featured-${projectEntry.id}-card`
           return (
-            <Reveal key={key} asChild>
+            <Reveal key={key} asChild rail>
               <Project project={projectEntry} href={`/works/${projectEntry.id}`} />
             </Reveal>
           )

@@ -23,7 +23,6 @@ import { formatAttribution } from '@/utils/string'
 import { createMetadata } from '@/utils/system'
 
 // Only featured projects own a detail page; unknown or archive-only ids 404.
-// Next requires route segment config as an inline export, so the block-export rule is waived here.
 // eslint-disable-next-line no-restricted-syntax
 export const dynamicParams = false
 
@@ -36,16 +35,11 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   const project = workId ? projectEntryById[workId] : undefined
   if (!project) return {}
 
-  const ogAsset = getProjectMainAsset(project)
   return createMetadata({
     title: `Tony Ko / ${project.basic.title}`,
     description: project.basic.desc,
     path: `/works/${project.id}`,
-    image: {
-      url: `${appdata.url}${ogAsset.src}`,
-      width: ogAsset.width,
-      height: ogAsset.height
-    }
+    image: { url: `${appdata.url}/images/ograph/works.png`, width: 1200, height: 630 }
   })
 }
 
