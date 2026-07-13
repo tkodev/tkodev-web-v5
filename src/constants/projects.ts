@@ -11,8 +11,8 @@ const projectEntries: ProjectEntry[] = [
     basic: {
       title: 'tko.dev',
       subtitle:
-        'Cinematic portfolio built from scratch — token architecture, five-state lifecycle, full Framer Motion system.',
-      desc: 'A cinematic personal portfolio built entirely from scratch — no template, no component-library skin. A semantic design-token architecture underpins the visual system, a five-state Zustand lifecycle choreographs the loading sequence, page transitions, and ambient audio, and a Framer Motion layer drives every reveal. Full light and dark theming throughout, with Claude Code and Cursor used to accelerate delivery without ever ceding design ownership.',
+        'Portfolio built from scratch — semantic token architecture, cinematic boot sequence, WebGL field, full Framer Motion reveal system.',
+      desc: 'A personal portfolio built entirely from scratch — no template, no component-library skin. A semantic design-token architecture underpins a monochrome, dark-first command surface, a cinematic boot sequence and a Framer Motion layer choreograph every reveal, and a WebGL contour field animates the underlay. Presented as a declassified engineering dossier: the work is the evidence, the interface is the instrument around it. Built with Claude Code without ever ceding design ownership.',
       role: 'Design Engineer',
       category: 'featured',
       startDate: fromZonedTime('2025-03-01', appTimeZone)
@@ -21,25 +21,17 @@ const projectEntries: ProjectEntry[] = [
       duties: ['software engineering', 'design engineering'],
       win: 'Designed and shipped a cinematic portfolio, end to end.',
       impact:
-        'A live production site demonstrating full-stack design engineering: from semantic token architecture to Framer Motion choreography to Zustand state lifecycle management.',
+        'A live production site demonstrating full-stack design engineering: from semantic token architecture to Framer Motion choreography to a WebGL contour field in the underlay.',
       skills: [
         'Design Systems',
         'Semantic Tokens',
         'Animation',
-        'State Management',
-        'Light/Dark Theming',
+        'WebGL',
+        'Motion Design',
         'Next.js',
         'TypeScript'
       ],
-      tools: [
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'Framer Motion',
-        'Zustand',
-        'Claude Code',
-        'Cursor'
-      ]
+      tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'WebGL', 'Claude Code']
     },
     media: {
       visuals: [
@@ -103,8 +95,8 @@ const projectEntries: ProjectEntry[] = [
             height: 1620,
             alt: 'tko.dev — Cinematic Portfolio Homepage'
           },
-          title: 'Semantic Token Architecture and Cinematic Lifecycle',
-          body: 'Designed and shipped the portfolio as its own proof of work: a cinematic interface built from scratch, not a template or component-library skin. The homepage is the first signal, but the deeper system is semantic token architecture, a five-state Zustand lifecycle, Framer Motion choreography, and an interaction language that makes the site feel like a live engineering dossier.'
+          title: 'Semantic Token Architecture and Cinematic Boot Sequence',
+          body: 'Designed and shipped the portfolio as its own proof of work: a cinematic interface built from scratch, not a template or component-library skin. The homepage is the first signal, but the deeper system is semantic token architecture, a cinematic boot sequence, Framer Motion choreography, a WebGL contour field, and an interaction language that makes the site feel like a live engineering dossier.'
         },
         {
           id: 'works-index',
