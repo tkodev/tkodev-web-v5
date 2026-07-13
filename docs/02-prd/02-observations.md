@@ -11,7 +11,7 @@ design lives in [03-solution.md](03-solution.md).
 A portfolio that proves a design engineer's range through visuals, with almost no
 prose, while wearing a military/control-system aesthetic that could collapse into
 either a generic dark dashboard or decorative cosplay. The hard part is making the
-aesthetic *load-bearing*: every cinematic and HUD element must be on-brand and
+aesthetic *load-bearing*: every futuristic and HUD element must be on-brand and
 crafted (honest wherever it displays a value), and the chrome must never outshine
 the work it exists to present.
 
@@ -19,7 +19,7 @@ the work it exists to present.
 
 ### Risk: the feeling rings false
 
-The site's job is to convey a strong feeling: cinematic, precise, seasoned. The
+The site's job is to convey a strong feeling: futuristic, precise, seasoned. The
 military/HUD aesthetic is also a well-worn trend, and the moment any element feels
 pasted-on, generic, or cheaply fake, the whole fiction collapses into template
 cosplay: the exact opposite of the seasoned-engineer signal. This is not an
@@ -77,9 +77,8 @@ canvas; the redesign promotes that 15% to the load-bearing system.
 
 - Verbatim shadcn zinc palette; `card` equals `background`, so every surface is a
   16%-white hairline box.
-- One baked background image supplies all atmosphere, color, and grain on every
-  page (a wallpaper, not a system), and it carries orange while work imagery sits
-  dark: backwards from the color rule.
+- One background supplies all atmosphere, color and it is monochrome while work imagery sits
+  coloured.
 - Rings and reticles are flattened PNG exports: nothing can animate, scan, or boot.
 - Type maxes at 60px on 1920px frames; typography-as-image is timid.
 - The nav overlay is a plain centered list with none of the accent language.
@@ -92,7 +91,7 @@ canvas; the redesign promotes that 15% to the load-bearing system.
 Common thread: **all of them replace "cards describing work" with a surface that
 behaves.** Structure is bespoke (a non-scrolling viewport, a hairline ledger, a
 horizontal reel); there is always one physical/textural layer a template can't ship
-(custom cursor, film grain, drag inertia, canvas-in-cell generative art); media is
+(custom cursor, canvas-in-cell generative art); media is
 autonomous (autoplaying loops, intro sequences) so visuals carry the narrative.
 Text collapses to labels: coordinates, timestamps, `01 //` indices.
 
@@ -101,7 +100,6 @@ Standout techniques adopted (see [03-solution.md](03-solution.md) for where):
 - micheledu: single-viewport instrument panel; biography as live widgets.
 - ctxdc: hairline cell/ledger architecture; canvas as just another cell.
 - rauno: the work atom: muted autoplay loop + title + date, nothing else.
-- naughtyduk: global film-grain compositing; grab-to-scroll reel with snap.
 - gmunk: mosaic archive; monochrome chassis, chromatic cargo.
 - acustable: earned restraint; testimonials threaded as ambient status readouts.
 - midlife: the skeuomorphism guardrail: a rendered control must function or be cut.
@@ -120,13 +118,11 @@ only), quiet dossier (other work details). Site-wide parallax scrolljacking is o
 
 ### Risk: frosted glass vs the military theme
 
-The glass trend reads soft and consumer; the references are hard: hairlines,
-grain, matte black.
+The glass trend reads soft and consumer; the references are hard: hairlines, matte black.
 
 **Direction.** No frosted glass. The skeuomorphism that fits the theme is the
-**artifact**: work presented as dossiers, spec sheets, tickets, film strips,
-physical-feeling documents with stamped metadata. Depth comes from grain, hairline
-borders, and blend modes, not blur.
+**artifact**: work presented as dossiers, spec sheets, with stamped metadata. Depth comes from hairline
+borders and blend modes, not blur.
 
 ### Risk: the aesthetic reads as borrowed
 
@@ -134,7 +130,7 @@ Military/HUD styling is a well-worn trend; on most portfolios it's costume.
 
 **Direction.** Lean into the fact that it's earned. Beyond MPD (PLC-connected rig
 telemetry), the observability/OpenTelemetry work, and the industrial design are
-literally this subject matter. The flagship case study gets the cinematic
+literally this subject matter. The flagship case study gets the futuristic
 treatment; work is annotated like engineering documentation (the wireframe
 spec-sheet presentation fits the CAD work natively). The site never claims the
 aesthetic; the work justifies it.
@@ -165,8 +161,8 @@ display face may join later as a fourth voice if a concrete use earns it.
 
 ### Risk: token sprawl (a ton of custom values vs a standardized system)
 
-A bespoke design accumulates custom values fast: colors, tracking ratios, grain
-parameters, easings. Scattered through components they become unmaintainable; but
+A bespoke design accumulates custom values fast: colors, tracking ratios,
+easings. Scattered through components they become unmaintainable; but
 flattening them into one giant token list buries the standardized vocabulary the
 app should speak.
 
@@ -188,7 +184,7 @@ shadcn has no word for the concept. Same pattern for type: three named scales
 The noir direction is dark by definition; a light mode would be a second, half-committed design.
 
 **Direction.** The toggle dies ([04-design.md](04-design.md) §Color): depth over
-breadth; grain, blend modes, and edge-lit hairlines designed once, properly. The
+breadth; blend modes and edge-lit hairlines designed once, properly. The
 light theme survives for inverse-color sections.
 
 ### Risk: text: where prose survives
@@ -203,8 +199,8 @@ marketing copy.
 
 ## 5. What to Prototype First
 
-The riskiest unknown is the **cinematic system over real data**. Foundations
-delivers the ingredients (design tokens, the type scales, the grain layer),
+The riskiest unknown is the **motion system over real data**. Foundations
+delivers the ingredients (design tokens, the type scales, the background canvas),
 gated on the `/design` specimen; the **proving surface** then composes them end
 to end: the boot sequence and the home instrument panel, exercising canvas
 performance, reduced-motion gating, the honest-readout rule wired to

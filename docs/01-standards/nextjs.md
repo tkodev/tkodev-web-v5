@@ -35,7 +35,6 @@ Runtime, language, and what "done" requires.
        ├── types/        # domain types
        ├── themes/       # CSS token files (theme.css entry, helpers)
        ├── fonts/        # next/font/local loader modules
-       ├── stores/       # zustand stores: global state only
        ├── providers/    # context providers wired in the root layout
        ├── hooks/        # shared React hooks
        └── utils/        # helpers (cn/cva re-exports, dates, strings)
