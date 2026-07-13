@@ -11,7 +11,7 @@ A concept not yet in the Figma is marked **direction**: research, not contract
 **A declassified engineering dossier.** A near-black, monochrome command surface
 where the work (telemetry UIs, CAD renders, architectural drawings, Web 1.0
 relics) is presented as evidence, annotated and indexed like technical
-documentation: accent labels (`1.1 / PROJECTS //`), incrementing figure numbers,
+documentation: accent labels (`W.1 / PROJECTS //`), incrementing figure numbers,
 corner bracket annotations (`[ spec validated ]`), command copy ("SYNCHRONIZING",
 "SIGNAL ACQUIRED", "ASSETS DEPLOYED").
 
@@ -82,7 +82,7 @@ line of positioning, corner annotations. Below it, indexed evidence sections:
 Quiet and document-like: designation tagline, display title, badge row, and the
 meta footer (CLIENT / LOCATION / YEAR / TEAM), then the evidence: an intro
 statement, real stats, a testimonial where one exists, alternating annotated
-figures with incrementing `figure N.0` indices, and full-width media plates.
+figures with incrementing `WD.N` indices, and full-width media plates.
 
 The figures and the plates carry different weight. **Stories** are the annotated
 figures: each pairs one media asset with copy that explains the work behind the

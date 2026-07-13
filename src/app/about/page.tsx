@@ -34,7 +34,7 @@ const AboutPage = () => {
       <Section id="about-hero">
         <AboutHero
           hudProps={{
-            title: '3.0 / About //',
+            title: 'A.0 / About //',
             subtitle: '// Identity File',
             accent1: '[ Profile Loaded ]',
             accent2: '[ Signal Clear ]',
@@ -50,7 +50,7 @@ const AboutPage = () => {
       <Section id="method" height="auto" width="md">
         <AboutMethod
           statementProps={{
-            subtitle: '3.1 / Method //',
+            subtitle: 'A.1 / Method //',
             title: 'How I Work',
             children:
               "I get uncomfortable when design and engineering aren't talking. \n\nNot because disagreement is bad. But when the person writing the spec has never opened a pull request, and the person opening pull requests has never sat next to a user, something important gets lost between the idea and the thing that ships. \n\nI've spent most of my career in that gap. Sitting across from designers in Figma and across from engineers in a terminal. Building the component library and the component. Writing the accessibility brief and implementing the focus trap."
@@ -59,7 +59,7 @@ const AboutPage = () => {
       </Section>
       <Section id="process" height="auto" width="lg">
         <AboutProcess
-          subtitle="3.2 / Process //"
+          subtitle="A.2 / Process //"
           processEntries={[
             {
               id: 'discovery',
@@ -88,7 +88,7 @@ const AboutPage = () => {
       <Section id="details" height="auto" width="md">
         <AboutDetails
           statementProps={{
-            subtitle: '3.3 / Origin //',
+            subtitle: 'A.3 / Origin //',
             title: 'The Details',
             children:
               "I started in interior design. Forty-something client projects across residential and commercial. You learn quickly that people rarely know what they want until they're standing in the wrong version. \n\nI believe taste is a technical skill. You can develop it. It improves your judgment about what to build, how to build it, and when to stop."
@@ -97,7 +97,7 @@ const AboutPage = () => {
       </Section>
       <Section id="contact" height="auto" width="lg">
         <GlobalContact
-          boardProps={{ subtitle: '3.4 / Contact //' }}
+          boardProps={{ subtitle: 'A.4 / Contact //' }}
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
