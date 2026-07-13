@@ -1,8 +1,9 @@
 import { forwardRef, type HTMLAttributes } from 'react'
+import { Contour } from '@/components/atoms/contour'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('')
+  root: cva('pointer-events-none fixed inset-0')
 }
 
 type UnderlayRef = HTMLDivElement
@@ -13,7 +14,7 @@ const Underlay = forwardRef<UnderlayRef, UnderlayProps>((props, ref) => {
 
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      {/*  */}
+      <Contour />
     </div>
   )
 })
