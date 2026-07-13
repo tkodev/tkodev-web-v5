@@ -35,7 +35,7 @@ The work is the content. The site is the instrument around it.
 
 ## The aesthetic intent
 
-**Dark noir: serious but cinematic.** A control-system / military / observability
+**Dark noir: serious but futuristic.** A control-system / military / observability
 aesthetic that is *earned*, not costume: Tony actually built PLC-connected oil-rig
 control interfaces and telemetry platforms. The site presents work the way a
 declassified engineering dossier presents evidence: annotated, indexed, precise.
@@ -50,8 +50,7 @@ Two pillars, both non-negotiable:
    in service of the feeling. Precision instead of theatrics: the failure mode is
    not ornament, it's ornament that feels cheap, and a fake readout is the worst
    case because it's both.
-2. **The experience is cinematic.** Boot sequence, scene-cut transitions, film
-   grain, darkness with density at the edges, media that plays itself. The COD MW2
+2. **The experience is futuristic.** Boot sequence, darkness with density at the edges, media that plays itself. The COD MW2
    (original) loading-screen energy: information-dense, atmospheric, alive.
 
 **Less saturation in the chrome; hue arrives only
@@ -61,7 +60,7 @@ it means something.
 ## What it must not be
 
 - A component-library card site (bootstrap/shadcn/mui look): bespoke over templated.
-- Frosted glass: clashes with the military theme; grain and hairlines instead.
+- Frosted glass: clashes with the military theme; hairlines and blend modes instead.
 - A parallax scrolljack site: cinema lives in moments, not in the page mechanic.
 - Copy-heavy: text collapses to labels, designations, and metadata; prose only
   where a visitor opts into depth.
@@ -78,5 +77,5 @@ it means something.
 | [naughtyduk.com](https://naughtyduk.com/) | Film grain layer, intro title sequence, grab-scroll physics |
 | [midlife.engineering](https://www.midlife.engineering/) | Usable skeuomorphism: a rendered control must function |
 | [Shopify Editions W26](https://www.shopify.com/editions/winter2026) | Scroll choreography for one flagship narrative |
-| COD MW2 loading screens | Cinematic briefing energy; the boot sequence |
+| COD MW2 loading screens | Futuristic briefing energy; the boot sequence |
 | Moodboards (July 2026 session) | HUD edge-density, grain posters with one red accent, dossier/ticket artifacts, wireframe spec-sheet work presentation, dot-matrix generative fields, small expanded uppercase accent type |

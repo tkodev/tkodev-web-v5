@@ -14,7 +14,6 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Primitives | **shadcn** (new-york style, Radix underneath), themed to the v5 tokens |
 | Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color) |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
-| State | **zustand**: global stores only (§State and motion) |
 | Icons | `lucide-react` (sole icon library) |
 | Linting | **ESLint 9** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no standalone Prettier (the shared config runs it as a lint rule) |
 | Testing | **Vitest**: `pnpm test` |
@@ -63,7 +62,7 @@ The folder layout follows the Next.js folder-structure standard
     └── 02-prd/          # the numbered product docs, read in order
 ```
 
-How the v5 pieces land in the standard folders: `app/` mirrors the route map above; `stores/` and `providers/` hold the state layer described in §State and motion; `public/` assets are sourced from career-notes.
+How the v5 pieces land in the standard folders: `app/` mirrors the route map above; `providers/` holds the context providers wired in the root layout; `public/` assets are sourced from career-notes.
 
 ## Data layer
 
@@ -86,14 +85,17 @@ The data model:
 
 ## Theming architecture
 
-`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: `@import 'tailwindcss'`, imports `helpers.css`, defines the two theme blocks inline (values from [04-design.md](04-design.md)), hardcodes `dark` on the root (`color-scheme: dark`), and declares the `@theme {}` block (colors, radius, gap, breakpoints, fonts, text styles, animations). Inverse sections apply `.light` locally; components stay token-only and invert for free. No `next-themes`, no theme variants, no mount-gating.
+`themes/theme.css` is the single CSS entry imported by `app/layout.tsx`: it pulls in Tailwind and `helpers.css`, defines both theme blocks (values from [04-design.md](04-design.md)), hardcodes `dark` on the root, and declares the `@theme {}` block. Inverse sections apply `.light` locally and components invert for free. The `dark:` variant is rebound to that `.light` boundary (`@custom-variant dark (&:not(.light):not(.light *))`) so it follows the theme, not the visitor's OS.
 
-The `dark:` variant is redeclared in the same file, as `@custom-variant dark (&:not(.light):not(.light *))`. Tailwind v4 compiles `dark:` to a `prefers-color-scheme` media query by default: a second theme switch this site never sets, so any `dark:` utility left on that default keys off the visitor's OS rather than the theme, and fails to invert inside a `.light` scope. Redeclaring binds the variant to the same `.light` boundary the token blocks use. A theme provider would not fix this, since the variant, not a class on the root, is what selects the branch.
+## Motion
 
-## State and motion
+- The futuristic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above.
 
-- The cinematic layer (boot sequence, nav-overlay open/close, section entrance reveals, marquee drift, micro-interactions) is implemented per the Motion stack choice above.
-- Two **zustand** stores: the site **lifecycle** (`loading → ready`, driving the boot sequence and entrance choreography) and the **nav overlay** (open/closed, driving header/footer swaps and focus trapping).
+## Background canvas
+
+A WebGL2 fragment shader renders an animated topographic contour field in the underlay behind all content (`components/atoms/contour.tsx`): domain-warped gradient-noise terrain drawn as `fwidth`-antialiased iso-lines, monochrome (`--foreground`), with bolder index contours, slow drift, an edge-density mask so the centre breathes, and a tilt-shift blur. It is DPR-aware and frame-capped, pauses while the tab is hidden or the window is unfocused, and renders a single static frame under `prefers-reduced-motion`. Tuning constants are injected into the shader; motion is not yet tokenized ([04-design.md](04-design.md) §Motion).
+
+Rejected directions (kept for the record): dot-matrix 3D terrain, an assembling dot field, an ascii silhouette, an isometric scan dot cloud.
 
 ## Rendering model
 

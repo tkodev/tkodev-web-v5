@@ -145,4 +145,4 @@ Spacing steps for flex/grid gaps and rhythm within components.
 
 ## Motion
 
-Motion is not tokenized in Figma. The settled motion grammar lives in [03-solution.md](03-solution.md) §The cinematic system; when motion tokens land in Figma (durations, easings), this section becomes their transcription.
+Motion is not tokenized in Figma. The settled motion grammar lives in [03-solution.md](03-solution.md) §The motion system; when motion tokens land in Figma (durations, easings), this section becomes their transcription.

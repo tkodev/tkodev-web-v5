@@ -19,7 +19,7 @@ The layers, top to bottom:
 
 | Layer | What it is |
 | --- | --- |
-| **Chassis** | Near-black base, alpha-white hairlines, textured underlays, annotation density at the edges (centers breathe). Film grain: direction |
+| **Chassis** | Near-black base, alpha-white hairlines, textured underlays, annotation density at the edges (centers breathe) |
 | **Voice** | The three settled type scales (heading Alliance display, accent small expanded uppercase, body Geist prose) plus a tabular-mono **data scale**: direction |
 | **Payload** | The work: media in bordered mattes carrying the site's color (the brief's chrome rule applied) |
 | **Signal** | Direction: one accent color, small-scale and functional only |
@@ -102,7 +102,7 @@ built last, on top of the proven dossier system.
 ### Experience: the service record *(no Figma frame)*
 
 Career history as its own surface, all real career data; dense and scannable, no prose
-per entry. The signature interaction is the ledger itself, not a new cinematic moment.
+per entry. The signature interaction is the ledger itself, not a new futuristic moment.
 
 - **Hero**: the brand instrument, identity only.
 - **Record**: the employment ledger. Roles collapse into one indexed row per employer
@@ -143,7 +143,7 @@ only and the footer swaps to a close control. Direction: rebuild the list in the
 annotation language, with indexed entries (`01 // WORKS`), staggered reveal, and
 a current-location marker.
 
-## The cinematic system
+## The motion system
 
 Motion is a grammar, not garnish:
 
@@ -166,9 +166,7 @@ Motion is a grammar, not garnish:
   a visible-by-default equivalent.
 - **Media failure**: a loop that fails to load shows its monochrome poster, never
   a black hole.
-- **Work without motion media**: stills get the matte treatment; the system can't
-  require video.
-- **Slow connections**: grain is generated (SVG/canvas), not a texture download;
+- **Slow connections**: the background canvas is generated, not a texture download;
   loading cover behaviour is §Boot sequence's.
 
 ## Why this shape

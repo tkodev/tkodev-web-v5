@@ -27,12 +27,3 @@
   transform-box: fill-box;
 }
 
-/* Grain — generated film grain; parameters live in the brand layer.
-   Animated imperceptibly slowly; static under reduced motion. */
-@utility grain {
-  opacity: var(--brand-grain-opacity);
-  animation: grain-shift var(--brand-grain-period) steps(10) infinite;
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-}
