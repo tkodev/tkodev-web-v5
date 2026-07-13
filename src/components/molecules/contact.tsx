@@ -46,7 +46,7 @@ const Contact = forwardRef<ContactRef, ContactProps>((props, ref) => {
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.info())}>
         <h2 className={cn(styles.title())}>
-          <Decode>{title}</Decode>
+          <Decode text={title} />
         </h2>
         <p className={cn(styles.desc())}>{desc}</p>
         <div className={cn(styles.channels())}>

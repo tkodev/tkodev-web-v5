@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-const appData = {
+/** Core site identity: title, name, description, and canonical URL. */
+const appdata = {
   title: 'Tony Ko / Portfolio',
   siteName: 'tko.dev',
   description:
@@ -8,54 +9,41 @@ const appData = {
   url: 'https://tko.dev'
 }
 
-const previewImage = {
-  url: `${appData.url}/images/favicons/preview.png`,
-  width: 1200,
-  height: 630
-}
-
+/** An Open Graph image: its absolute URL and pixel dimensions. */
 type OgImage = {
   url: string
   width: number
   height: number
 }
 
-type CreateMetadataInput = {
-  title: string
-  description: string
-  path?: string
-  image?: OgImage
+/** The site-wide Open Graph and Twitter card image. */
+const defaultOgImage: OgImage = {
+  url: `${appdata.url}/images/favicons/preview.png`,
+  width: 1200,
+  height: 630
 }
 
-// builds a full per-route metadata block (canonical + og + twitter) from the root defaults
-const createMetadata = (input: CreateMetadataInput): Metadata => {
-  const { title, description, path = '', image = previewImage } = input
-  const canonical = `${appData.url}${path}`
-  return {
-    title,
-    description,
-    alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      siteName: appData.siteName,
-      images: [image],
-      locale: 'en_CA',
-      type: 'website'
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [{ ...image, alt: title }]
-    }
-  }
-}
-
-const metaData: Metadata = {
-  metadataBase: new URL(appData.url),
-  ...createMetadata({ title: appData.title, description: appData.description }),
+/** Root Next.js metadata: title, description, Open Graph, Twitter, icons. */
+const defaultMetadata: Metadata = {
+  metadataBase: new URL(appdata.url),
+  title: appdata.title,
+  description: appdata.description,
+  alternates: { canonical: appdata.url },
+  openGraph: {
+    title: appdata.title,
+    description: appdata.description,
+    url: appdata.url,
+    siteName: appdata.siteName,
+    images: [defaultOgImage],
+    locale: 'en_CA',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: appdata.title,
+    description: appdata.description,
+    images: [{ ...defaultOgImage, alt: appdata.title }]
+  },
   icons: {
     icon: [
       { url: '/images/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -67,5 +55,12 @@ const metaData: Metadata = {
   }
 }
 
-export { appData, createMetadata, metaData }
+/** Easter egg: a briefing left in the devtools console for the curious. */
+const consoleSignal = {
+  stamp: ' SIGNAL ACQUIRED ',
+  message: 'You found the console. If you build things worth annotating, so do I.',
+  prompt: 'Open a channel'
+}
+
+export { appdata, consoleSignal, defaultMetadata, defaultOgImage }
 export type { OgImage }

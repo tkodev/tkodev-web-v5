@@ -15,13 +15,19 @@ import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntryById } from '@/constants/projects'
-import { appData, createMetadata } from '@/constants/system'
+import { appdata } from '@/constants/system'
 import { type PageProps } from '@/types/system'
-import { getProjectMainAsset } from '@/utils/career'
+import { getFeaturedProjectIds, getProjectMainAsset } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
+import { createMetadata } from '@/utils/system'
+
+// Only featured projects own a detail page; unknown or archive-only ids 404.
+// Next requires route segment config as an inline export, so the block-export rule is waived here.
+// eslint-disable-next-line no-restricted-syntax
+export const dynamicParams = false
 
 const generateStaticParams = () => {
-  return projectEntries.map((projectEntry) => ({ workId: projectEntry.id }))
+  return getFeaturedProjectIds(projectEntries).map((workId) => ({ workId }))
 }
 
 const generateMetadata = async (props: PageProps): Promise<Metadata> => {
@@ -30,12 +36,16 @@ const generateMetadata = async (props: PageProps): Promise<Metadata> => {
   if (!project) return {}
 
   const ogAsset = getProjectMainAsset(project)
-  return createMetadata({
-    title: `Tony Ko / ${project.basic.title}`,
-    description: project.basic.desc,
-    path: `/works/${project.id}`,
-    image: { url: `${appData.url}${ogAsset.src}`, width: ogAsset.width, height: ogAsset.height }
-  })
+  return createMetadata(
+    `Tony Ko / ${project.basic.title}`,
+    project.basic.desc,
+    `/works/${project.id}`,
+    {
+      url: `${appdata.url}${ogAsset.src}`,
+      width: ogAsset.width,
+      height: ogAsset.height
+    }
+  )
 }
 
 const WorkDetailPage = async (props: PageProps) => {

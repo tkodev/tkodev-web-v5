@@ -21,14 +21,16 @@ type ProjectsHeroProps = HTMLAttributes<ProjectsHeroRef> &
 
 const ProjectsHero = forwardRef<ProjectsHeroRef, ProjectsHeroProps>((props, ref) => {
   // props
-  const { hudProps, introProps, tileAssets, className, ...rest } = props
+  const { hudProps, introProps, tileAssets, children, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <Tiles className={cn(styles.tiles())} assets={tileAssets} />
       <Hud {...hudProps} />
-      <Intro className={cn(styles.intro())} {...introProps} />
+      <Intro className={cn(styles.intro())} {...introProps}>
+        {children}
+      </Intro>
     </div>
   )
 })

@@ -3,10 +3,10 @@ import { Slot } from 'radix-ui'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['rounded-sm border', 'bg-background/30 backdrop-blur-xs'], {
+  root: cva(['rounded-sm border', 'bg-background/80 backdrop-blur-xs'], {
     variants: {
       isHover: {
-        true: 'hover:bg-muted transition-colors duration-500',
+        true: 'hover:bg-muted/80 transition-colors duration-500',
         false: ''
       }
     },

@@ -1,9 +1,10 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Cursor } from '@/components/atoms/cursor'
+import { Signal } from '@/components/atoms/signal'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('pointer-events-none fixed inset-0')
+  root: cva('contents')
 }
 
 type OverlayRef = HTMLDivElement
@@ -14,6 +15,7 @@ const Overlay = forwardRef<OverlayRef, OverlayProps>((props, ref) => {
 
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+      <Signal />
       <Cursor />
     </div>
   )

@@ -16,7 +16,6 @@ import { educationEntries } from '@/constants/education'
 import { jobEntries } from '@/constants/jobs'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries } from '@/constants/projects'
-import { createMetadata } from '@/constants/system'
 import { techtalkEntries } from '@/constants/techtalks'
 import {
   getCareerClientIds,
@@ -24,13 +23,13 @@ import {
   getJobGroups,
   getProjectClientIds
 } from '@/utils/career'
+import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata({
-  title: 'Tony Ko / Experience',
-  description:
-    'The service record: every role, talk, and credential behind two decades of design and engineering.',
-  path: '/experience'
-})
+const metadata = createMetadata(
+  'Tony Ko / Experience',
+  'The service record: every role, talk, and credential behind two decades of design and engineering.',
+  '/experience'
+)
 
 const ExperiencePage = () => {
   // render vars

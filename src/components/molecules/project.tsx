@@ -26,7 +26,8 @@ const styles = {
   assetFrame: cva('relative aspect-video w-full overflow-hidden rounded-xs'),
   img: cva([
     'bg-card absolute inset-0 size-full object-cover',
-    'opacity-30 transition-opacity duration-500 group-hover/ticker:opacity-100'
+    'scale-100 opacity-30 transition duration-500',
+    'group-hover/ticker:scale-105 group-hover/ticker:opacity-100'
   ]),
   logo: cva([
     'absolute inset-0 m-auto h-auto w-1/2 object-contain',

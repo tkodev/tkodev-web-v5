@@ -41,7 +41,7 @@ const Dossier = forwardRef<DossierRef, DossierProps>((props, ref) => {
       <div className={cn(styles.header())}>
         <p className={cn(styles.tagline())}>{tagline}</p>
         <h1 className={cn(styles.title())}>
-          <Decode>{title}</Decode>
+          <Decode text={title} />
         </h1>
         <p className={cn(styles.desc())}>{desc}</p>
       </div>

@@ -1,7 +1,7 @@
 import { SunMoonIcon, UserStarIcon } from 'lucide-react'
 import { AssetEntry, NavEntry } from '@/types/layout'
 
-// Fallback image for entries without their own media.
+/** Fallback image for entries without their own media. */
 const placeholderAsset: AssetEntry = {
   type: 'image',
   src: '/images/placeholder/placeholder.png',
@@ -10,6 +10,7 @@ const placeholderAsset: AssetEntry = {
   alt: 'Tko.dev'
 }
 
+/** Primary navigation links rendered in the header. */
 const headerEntries: NavEntry[] = [
   {
     intent: 'url',
@@ -34,6 +35,7 @@ const headerEntries: NavEntry[] = [
   }
 ]
 
+/** Utility controls rendered in the footer (music, theme). */
 const footerEntries: NavEntry[] = [
   {
     intent: 'music',

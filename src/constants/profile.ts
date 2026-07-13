@@ -1,6 +1,7 @@
 import keyBy from 'lodash/keyBy'
 import { type PersonEntry } from '@/types/career'
 
+/** Tony and every collaborator referenced across career data; the first entry is Tony. */
 const personEntries: PersonEntry[] = [
   {
     id: 'tony',
@@ -257,6 +258,7 @@ const personEntries: PersonEntry[] = [
   }
 ]
 
+/** `personEntries` keyed by `id` for direct lookup. */
 const personEntryById = keyBy(personEntries, (personEntry) => personEntry.id)
 
 export { personEntries, personEntryById }

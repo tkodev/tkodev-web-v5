@@ -60,8 +60,7 @@ it means something.
 ## What it must not be
 
 - A component-library card site (bootstrap/shadcn/mui look): bespoke over templated.
-- Frosted glass: clashes with the military theme; hairlines and blend modes instead.
-- A parallax scrolljack site: cinema lives in moments, not in the page mechanic.
+- A parallax scrolljack site: motion lives in moments, not in the page mechanic.
 - Copy-heavy: text collapses to labels, designations, and metadata; prose only
   where a visitor opts into depth.
 

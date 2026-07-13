@@ -25,7 +25,7 @@ const Statement = forwardRef<StatementRef, StatementProps>((props, ref) => {
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       {!!subtitle && <div className={cn(styles.subtitle())}>{subtitle}</div>}
       <h2 className={cn(styles.title())}>
-        <Decode>{title}</Decode>
+        <Decode text={title} />
       </h2>
       {!!children && <div className={cn(styles.body())}>{children}</div>}
     </div>

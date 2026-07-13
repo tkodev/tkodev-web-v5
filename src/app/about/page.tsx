@@ -15,14 +15,13 @@ import { GlobalContact } from '@/components/organisms/global-contact'
 import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
-import { createMetadata } from '@/constants/system'
+import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata({
-  title: 'Tony Ko / About',
-  description:
-    'Design was the first language I spoke fluently. How I work, my process, and the details.',
-  path: '/about'
-})
+const metadata = createMetadata(
+  'Tony Ko / About',
+  'Design was the first language I spoke fluently. How I work, my process, and the details.',
+  '/about'
+)
 
 const AboutPage = () => {
   // render vars

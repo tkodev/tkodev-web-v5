@@ -6,7 +6,8 @@ const styles = {
   root: cva('relative flex max-w-86 flex-col items-center justify-center gap-4 text-center'),
   subtitle: cva('text-muted-foreground text-e4 font-expressive uppercase'),
   title: cva('text-h1 font-heading whitespace-pre-line uppercase'),
-  desc: cva('text-muted-foreground text-sm whitespace-pre-line')
+  desc: cva('text-muted-foreground text-sm whitespace-pre-line'),
+  cta: cva('')
 }
 
 type IntroRef = HTMLDivElement
@@ -19,16 +20,17 @@ type IntroProps = HTMLAttributes<IntroRef> &
 
 const Intro = forwardRef<IntroRef, IntroProps>((props, ref) => {
   // props
-  const { title, subtitle, desc, className, ...rest } = props
+  const { title, subtitle, children, desc, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.subtitle())}>{subtitle}</div>
       <div className={cn(styles.title())}>
-        <Decode>{title}</Decode>
+        <Decode text={title} />
       </div>
       {!!desc && <div className={cn(styles.desc())}>{desc}</div>}
+      {!!children && <div className={cn(styles.cta())}>{children}</div>}
     </div>
   )
 })

@@ -17,14 +17,11 @@ import { Main } from '@/components/templates/main'
 import { Section } from '@/components/templates/section'
 import { personEntryById } from '@/constants/profile'
 import { projectEntriesByCategory } from '@/constants/projects'
-import { appData, createMetadata } from '@/constants/system'
+import { appdata } from '@/constants/system'
 import { testimonialEntries } from '@/constants/testimonials'
+import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata({
-  title: appData.title,
-  description: appData.description,
-  path: '/'
-})
+const metadata = createMetadata(appdata.title, appdata.description, '/')
 
 const HomePage = () => {
   // render vars

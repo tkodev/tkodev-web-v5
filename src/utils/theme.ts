@@ -11,10 +11,17 @@ const twMerge = extendTailwindMerge({
   }
 })
 
+/**
+ * Compose class names with `clsx` then dedupe with the theme-aware `twMerge`; the single className entry point for components.
+ *
+ * @param inputs - Class values in any `clsx`-accepted form.
+ * @returns The merged, conflict-resolved className string.
+ */
 const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))
 }
 
 export { cn }
+/** Re-export `cva` and `VariantProps` so components import variants and the className helper from one place. */
 export { cva } from 'class-variance-authority'
 export type { VariantProps } from 'class-variance-authority'

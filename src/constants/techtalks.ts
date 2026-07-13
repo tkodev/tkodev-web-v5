@@ -2,6 +2,7 @@ import { fromZonedTime } from 'date-fns-tz'
 import { type TechtalkEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+/** Speaking log of tech talks, newest first. */
 const techtalkEntries: TechtalkEntry[] = [
   {
     id: 'cross-browser-extensions',

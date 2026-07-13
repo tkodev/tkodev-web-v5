@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef, type FC } from 'react'
+import { useRef, type FC } from 'react'
+import { useFullscreenShader } from '@/hooks/use-fullscreen-shader'
 import { hexToRgb } from '@/utils/color'
 import { cn, cva } from '@/utils/theme'
-import { createProgram } from '@/utils/webgl'
 
 const styles = {
   root: cva(['bg-background animate-fade-in pointer-events-none fixed inset-0 size-full']),
@@ -37,13 +37,6 @@ const maxDpr = 1.5 // cap devicePixelRatio: fragment fill + blur cost scales wit
 
 // GLSL float literal: guarantees a decimal point so integers don't become invalid `int` tokens.
 const f = (n: number) => (Number.isInteger(n) ? n.toFixed(1) : String(n))
-
-const vertSrc = `#version 300 es
-void main() {
-  // fullscreen triangle from gl_VertexID: no attribute buffers needed
-  vec2 v = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2);
-  gl_Position = vec4(v * 2.0 - 1.0, 0.0, 1.0);
-}`
 
 const fragSrc = `#version 300 es
 precision highp float;
@@ -144,116 +137,20 @@ const Contour: FC<ContourProps> = (props) => {
   const { className } = props
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const gl = canvas.getContext('webgl2', { antialias: false, alpha: true })
-    if (!gl) return // no WebGL2: leave the canvas transparent, the black page background shows
-
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const strokeHex =
-      getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim() ||
-      '#fafafa'
-    const stroke = hexToRgb(strokeHex)
-
-    let program: WebGLProgram | null = null
-    let uTime: WebGLUniformLocation | null = null
-    let uDpr: WebGLUniformLocation | null = null
-    let rafId = 0
-    let lastDraw = 0 // timestamp of the last drawn frame (fps throttle)
-    let lastTick = performance.now() // timestamp of the last active tick, for the time delta
-    let elapsed = 0 // accumulated *active* seconds; frozen while paused so time never jumps
-    let dpr = 1
-    const interval = 1000 / fps
-
-    const active = () => !document.hidden && document.hasFocus()
-
-    const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, maxDpr)
-      const w = Math.round(window.innerWidth * dpr)
-      const h = Math.round(window.innerHeight * dpr)
-      canvas.width = w
-      canvas.height = h
-      canvas.style.width = `${window.innerWidth}px`
-      canvas.style.height = `${window.innerHeight}px`
-      gl.viewport(0, 0, w, h)
-      if (uDpr) gl.uniform1f(uDpr, dpr)
+  useFullscreenShader({
+    canvasRef,
+    fragSrc,
+    fps,
+    maxDpr,
+    label: 'contour',
+    uniforms: () => {
+      // stroke reads the live --foreground token at boot so the field matches the theme
+      const strokeHex =
+        getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim() ||
+        '#fafafa'
+      return { uStroke: hexToRgb(strokeHex) }
     }
-
-    const render = () => {
-      if (uTime) gl.uniform1f(uTime, elapsed)
-      gl.clear(gl.COLOR_BUFFER_BIT)
-      gl.drawArrays(gl.TRIANGLES, 0, 3)
-    }
-
-    const boot = () => {
-      program = createProgram(gl, vertSrc, fragSrc, 'contour')
-      if (!program) return false
-      gl.useProgram(program)
-
-      uTime = gl.getUniformLocation(program, 'uTime')
-      uDpr = gl.getUniformLocation(program, 'uDpr')
-      gl.uniform3fv(gl.getUniformLocation(program, 'uStroke'), stroke)
-
-      gl.enable(gl.BLEND)
-      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
-      gl.clearColor(0, 0, 0, 0)
-
-      resize()
-      return true
-    }
-
-    const loop = (now: number) => {
-      rafId = requestAnimationFrame(loop)
-      if (!active()) {
-        lastTick = now // hold time steady while paused; resume without a jump
-        return
-      }
-      elapsed += (now - lastTick) / 1000
-      lastTick = now
-      if (now - lastDraw < interval) return
-      lastDraw = now
-      render()
-    }
-
-    const onResize = () => {
-      resize()
-      if (reduced) render()
-    }
-
-    const onLost = (e: Event) => {
-      e.preventDefault()
-      cancelAnimationFrame(rafId)
-    }
-    const onRestored = () => {
-      if (boot() && !reduced) {
-        lastTick = performance.now()
-        rafId = requestAnimationFrame(loop)
-      }
-    }
-
-    canvas.addEventListener('webglcontextlost', onLost)
-    canvas.addEventListener('webglcontextrestored', onRestored)
-    window.addEventListener('resize', onResize, { passive: true })
-
-    if (boot()) {
-      if (reduced) {
-        render()
-      } else {
-        lastTick = performance.now()
-        rafId = requestAnimationFrame(loop)
-      }
-    }
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      window.removeEventListener('resize', onResize)
-      canvas.removeEventListener('webglcontextlost', onLost)
-      canvas.removeEventListener('webglcontextrestored', onRestored)
-      gl.getExtension('WEBGL_lose_context')?.loseContext()
-    }
-  }, [])
+  })
 
   return (
     <>

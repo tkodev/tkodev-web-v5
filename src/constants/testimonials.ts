@@ -2,6 +2,7 @@ import { fromZonedTime } from 'date-fns-tz'
 import { type TestimonialEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+/** Testimonials Tony received and wrote, newest first; each links an author to a recipient. */
 const testimonialEntries: TestimonialEntry[] = [
   {
     id: 'jax-to-tony',

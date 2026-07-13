@@ -8,16 +8,15 @@ import { Section } from '@/components/templates/section'
 import { placeholderAsset } from '@/constants/layout'
 import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
-import { createMetadata } from '@/constants/system'
 import { shuffle } from '@/utils/array'
 import { getProjectMainAsset } from '@/utils/career'
+import { createMetadata } from '@/utils/system'
 
-const metadata = createMetadata({
-  title: 'Tony Ko / Works',
-  description:
-    'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
-  path: '/works'
-})
+const metadata = createMetadata(
+  'Tony Ko / Works',
+  'Verified builds across loyalty, fintech, industrial, and retail sectors. 25+ deployments. No simulations.',
+  '/works'
+)
 
 const WorksPage = () => {
   // render vars

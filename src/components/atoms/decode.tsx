@@ -1,80 +1,94 @@
 'use client'
 
-import { useEffect, useRef, useState, type FC, type HTMLAttributes } from 'react'
-import { cn, cva, type VariantProps } from '@/utils/theme'
+import { useEffect, useRef, useState, type FC } from 'react'
+import { AnimatePresence, motion, useInView, type Variants } from 'motion/react'
+import { getRandomInt } from '@/utils/number'
+import { cn, cva } from '@/utils/theme'
 
 const styles = {
-  root: cva('')
+  root: cva('inline scale-100 cursor-default overflow-hidden'),
+  letter: cva('', {
+    variants: {
+      isValid: {
+        true: 'w-3'
+      }
+    }
+  })
 }
 
-// hypertext glyph pool: uppercase alphanumerics plus a few instrument symbols
-const glyphPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/<>[]#*'
+type DecodeProps = {
+  text: string
+  duration?: number
+  framerProps?: Variants
+  className?: string
+}
 
-type DecodeRef = HTMLSpanElement
-type DecodeProps = HTMLAttributes<DecodeRef> &
-  VariantProps<typeof styles.root> & {
-    children: string
-    durationMs?: number
-    glyphs?: string
-  }
+const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 const Decode: FC<DecodeProps> = (props) => {
   // props
-  const { children, durationMs = 900, glyphs = glyphPool, className, ...rest } = props
+  const {
+    text,
+    duration,
+    framerProps = {
+      initial: { opacity: 0, y: -10 },
+      animate: { opacity: 1, y: 0 },
+      exit: { opacity: 0, y: 3 }
+    },
+    className
+  } = props
 
   // hooks
-  const rootRef = useRef<DecodeRef>(null)
-  const [display, setDisplay] = useState(children)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(rootRef, { once: true, amount: 0.4 })
+  const [displayText, setDisplayText] = useState(text?.split('') ?? [])
+
+  // render vars
+  // the whole reveal always lands in `total`; the default scales with length but caps at 2s
+  const total = duration ?? Math.min(400 + text.length * 40, 2000)
 
   useEffect(() => {
-    // display initializes to the real text, so the DOM (and crawlers) always hold true text
-    const root = rootRef.current
-    if (!root) return
+    // hold until the heading scrolls into view
+    if (!inView) return
+    // reduced motion: skip the scramble; displayText already holds the real text
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    let frame = 0
+    const chars = text.split('')
+    let raf = 0
     let start = 0
-
-    const scramble = (now: number) => {
+    // time-based reveal: progress derives from elapsed / total, so the finish is exactly `total`
+    // regardless of length, instead of a per-tick counter the timer floor stretches out
+    const step = (now: number) => {
       if (!start) start = now
-      const progress = Math.min((now - start) / durationMs, 1)
-      const revealed = Math.floor(progress * children.length)
-      let next = ''
-      for (let index = 0; index < children.length; index += 1) {
-        const char = children[index]
-        // whitespace stays fixed so word and line shape never shift
-        if (char === ' ' || char === '\n' || index < revealed) next += char
-        else next += glyphs[Math.floor(Math.random() * glyphs.length)]
-      }
-      setDisplay(next)
-      if (progress < 1) frame = requestAnimationFrame(scramble)
-      else setDisplay(children)
+      const progress = Math.min((now - start) / total, 1)
+      const revealed = progress * chars.length
+      setDisplayText(
+        chars.map((l, i) =>
+          l === ' ' || l === '\n' || i < revealed ? l : alphabets[getRandomInt(26)]
+        )
+      )
+      if (progress < 1) raf = requestAnimationFrame(step)
+      else setDisplayText(chars)
     }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [inView, text, total])
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        if (!entry?.isIntersecting) return
-        observer.disconnect()
-        frame = requestAnimationFrame(scramble)
-      },
-      { threshold: 0.4 }
-    )
-    observer.observe(root)
-
-    return () => {
-      cancelAnimationFrame(frame)
-      observer.disconnect()
-    }
-  }, [children, durationMs, glyphs])
-
-  // jsx
   return (
-    <span ref={rootRef} className={cn(styles.root({ className }))} {...rest}>
-      {display}
-    </span>
+    <div ref={rootRef} className={cn(styles.root())}>
+      <AnimatePresence mode="sync">
+        {displayText.map((letter, i) => (
+          <motion.span
+            key={i}
+            className={cn(styles.letter({ isValid: letter === ' ', className }))}
+            {...framerProps}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </AnimatePresence>
+    </div>
   )
 }
 
 export { Decode }
-export type { DecodeProps, DecodeRef }

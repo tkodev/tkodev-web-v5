@@ -94,16 +94,18 @@ const DrawerOverlay = (props: ComponentProps<typeof DrawerPrimitive.Overlay>) =>
 }
 
 type DrawerContentProps = ComponentProps<typeof DrawerPrimitive.Content> &
-  VariantProps<typeof styles.content>
+  VariantProps<typeof styles.content> & {
+    disableOverlay?: boolean
+  }
 
 const DrawerContent = (props: DrawerContentProps) => {
   // props
-  const { size, className, children, ...rest } = props
+  const { size, disableOverlay, className, children, ...rest } = props
 
   // jsx
   return (
     <DrawerPortal data-slot="drawer-portal">
-      <DrawerOverlay />
+      {!disableOverlay && <DrawerOverlay />}
       <Card className={cn(styles.content({ size, className }))} asChild>
         <DrawerPrimitive.Content data-slot="drawer-content" {...rest}>
           <div className={cn(styles.handle())} />

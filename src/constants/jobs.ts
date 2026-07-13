@@ -2,6 +2,7 @@ import { fromZonedTime } from 'date-fns-tz'
 import { type JobEntry } from '@/types/career'
 import { appTimeZone } from './date'
 
+/** Display labels for each job engagement type. */
 const jobTypeLabels: Record<JobEntry['basic']['type'], string> = {
   contract: 'Contract',
   'full-time': 'Full Time',
@@ -9,6 +10,7 @@ const jobTypeLabels: Record<JobEntry['basic']['type'], string> = {
   break: 'Independent'
 }
 
+/** Employment history, newest first; an entry with no `endDate` is current. */
 const jobEntries: JobEntry[] = [
   {
     id: 'career-break',
