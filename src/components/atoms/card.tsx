@@ -3,7 +3,7 @@ import { Slot } from 'radix-ui'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['bg-background/30 rounded-sm border backdrop-blur-sm'], {
+  root: cva(['rounded-sm border', 'bg-background/10 backdrop-blur-xs'], {
     variants: {
       isHover: {
         true: 'hover:bg-muted transition-colors duration-500',

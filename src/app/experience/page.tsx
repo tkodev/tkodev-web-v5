@@ -35,16 +35,11 @@ const ExperiencePage = () => {
   // render vars
   const tony = personEntryById['tony']
   const jobGroups = getJobGroups(jobEntries)
-  // Years of experience count from the software career; the earlier interior-design
-  // role at kos-interior-design is a separate discipline and does not count.
   const softwareJobEntries = jobEntries.filter(
     (jobEntry) => jobEntry.parents.employerId !== 'kos-interior-design'
   )
   const careerYears = getCareerYears(softwareJobEntries)
-  // Self-directed work is not a client engagement, so tkodev is excluded from the count.
   const clientIds = getProjectClientIds(projectEntries).filter((clientId) => clientId !== 'tkodev')
-  // Only commercial clients that ship a dark-theme logo appear on the wall:
-  // education institutions and self-directed work are not clients and are excluded.
   const logoClients = getCareerClientIds(jobEntries, projectEntries)
     .map((clientId) => clientById[clientId])
     .filter((clientEntry) => !!clientEntry?.media?.dark)
