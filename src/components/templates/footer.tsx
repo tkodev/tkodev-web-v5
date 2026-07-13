@@ -8,7 +8,7 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Nav } from '../molecules/nav'
 
 const styles = {
-  root: cva(['h-18 w-full', 'fixed bottom-0 left-0']),
+  root: cva(['h-18 w-full', 'fixed bottom-0 left-0 z-10']),
 
   veil: cva([
     'pointer-events-none fixed -bottom-0.5 left-0 h-18 w-full',

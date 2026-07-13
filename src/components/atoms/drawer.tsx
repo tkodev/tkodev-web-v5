@@ -7,13 +7,13 @@ import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
   overlay: cva([
-    'bg-background/80 fixed inset-0 z-50',
+    'bg-background/80 fixed inset-0 z-20',
     'data-open:animate-in data-open:fade-in-0',
     'data-closed:animate-out data-closed:fade-out-0'
   ]),
   content: cva(
     [
-      'group/drawer-content fixed z-50 flex flex-col',
+      'group/drawer-content fixed z-20 flex flex-col',
       'text-sm',
       'data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0',
       'data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0',

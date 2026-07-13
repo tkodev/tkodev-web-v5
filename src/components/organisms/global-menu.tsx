@@ -20,7 +20,7 @@ import { NavEntry } from '@/types/layout'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
-  root: cva('bg-background px-4'),
+  root: cva('px-4'),
   header: cva(['h-18 max-w-7xl shrink-0 px-4', 'flex flex-row items-center justify-between gap-8']),
   body: cva(['max-w-7xl grow overflow-y-auto px-4', 'flex flex-col items-center justify-center']),
   footer: cva([
