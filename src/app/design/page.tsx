@@ -579,13 +579,15 @@ const DesignPage = () => {
               I get uncomfortable when design and engineering are not talking.
             </Statement>
             <Process processEntries={processEntries} subtitle="D.11 / Process //" />
-            <Contact
-              channelEntries={channelEntries}
-              title="Get in Touch"
-              desc={
-                "I'm based in Toronto, Canada. \nOpen to roles where engineering and product need to work closely together."
-              }
-            />
+            <div id="contact" className="scroll-mt-20">
+              <Contact
+                channelEntries={channelEntries}
+                title="Get in Touch"
+                desc={
+                  "I'm based in Toronto, Canada. \nOpen to roles where engineering and product need to work closely together."
+                }
+              />
+            </div>
           </div>
         </Board>
       </Section>

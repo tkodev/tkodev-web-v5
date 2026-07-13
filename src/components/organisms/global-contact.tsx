@@ -5,7 +5,8 @@ import { Contact, type ChannelEntry } from '@/components/molecules/contact'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva(['size-full', 'flex items-center justify-center'])
+  // scroll-mt clears the fixed header (h-18) when the footer contact control jumps here
+  root: cva(['size-full scroll-mt-20', 'flex items-center justify-center'])
 }
 
 type GlobalContactRef = HTMLDivElement
@@ -23,7 +24,7 @@ const GlobalContact = forwardRef<GlobalContactRef, GlobalContactProps>((props, r
 
   // jsx
   return (
-    <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
+    <div ref={ref} id="contact" className={cn(styles.root({ className }))} {...rest}>
       <Reveal className="w-full">
         <Board {...boardProps}>
           <Contact channelEntries={channelEntries} desc={desc} title={title} />
