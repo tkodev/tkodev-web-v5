@@ -959,7 +959,7 @@ const projectEntries: ProjectEntry[] = [
         'Internal scaffolding tool that cut new client setup to one command, plus a white-label product catalog.',
       desc: "Built Quantum Mob's white-label product catalog and an internal project scaffolding tool that automated CI/CD pipeline generation — reducing new client project setup to a one-command process, adopted across client engagements.",
       role: 'Team Lead',
-      category: 'featured',
+      category: 'inactive',
       startDate: fromZonedTime('2020-09-01', appTimeZone),
       endDate: fromZonedTime('2020-10-01', appTimeZone)
     },
