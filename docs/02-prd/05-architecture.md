@@ -66,11 +66,7 @@ How the v5 pieces land in the standard folders: `app/` mirrors the route map abo
 
 ## Data layer
 
-**Source of truth:** `src/types/` + `src/constants/` (`client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`, and their types). This repo owns its career data directly: content is authored and edited here, with no vendoring and no one-way sync. The structured career data package at `ops/notes/tkodev/career-notes/profiles/structured/` seeded the initial types and constants; it is an origin, not an upstream to write back to.
-
-**Read order:** implementation reads `src/constants/` first; career-notes is consulted only when `constants/` lacks the fact, in its own order: `profiles/structured/`, then `profiles/linkedin/` and `profiles/website/`. The fact then lands in `constants/`, which owns it from that point on.
-
-Site copy is real career fact, authored in `constants/` and grounded in the career-notes record (`profiles/website/`, `about/`), never invented.
+**Source of truth:** `src/types/` + `src/constants/` (`client.ts`, `jobs.ts`, `projects.ts`, `profile.ts`, `date.ts`, and their types). This repo owns its career data directly. The linkedin career data package at `ops/notes/tkodev/career-notes/profiles/linkedin/` seeded the initial types and constants. career-notes' `profiles/linkedin/` is consulted only when `constants/` lacks the fact.
 
 The data model:
 

@@ -26,7 +26,7 @@ pnpm test         # vitest
 ## Design and data sources
 
 - **Design:** [tkodev-design-v5](https://www.figma.com/design/zUdcG1LrZ6lzQXqT01euMe/tkodev-design-v5) (tokens + component library) and [tkodev-web-v5](https://www.figma.com/design/XcvIouVcagv7vGRRLEy6Gj/tkodev-web-v5) (page designs).
-- **Data:** owned directly in `types/` + `constants/`, seeded from the structured career package in the private [career-notes](https://github.com/tkodev/career-notes) repo (local: `ops/notes/tkodev/career-notes/profiles/structured`).
+- **Data:** owned directly in `types/` + `constants/`, seeded from the linkedin profile in the private [career-notes](https://github.com/tkodev/career-notes) repo (local: `ops/notes/tkodev/career-notes/profiles/linkedin`).
 
 ## Docs
 
