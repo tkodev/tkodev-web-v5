@@ -48,7 +48,7 @@ const Footer: FC<FooterProps> = (props) => {
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>© Tony Ko {year}</div>
           <div className={cn(styles.right())}>
-            <Nav entries={footerEntries} />
+            <Nav aria-label="Footer" entries={footerEntries} />
           </div>
         </div>
       </div>

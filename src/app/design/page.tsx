@@ -515,11 +515,11 @@ const DesignPage = () => {
             </div>
             <div className="border-t pt-8">
               <p className="text-e4 font-expressive text-muted-foreground mb-4 uppercase">Nav</p>
-              <Nav entries={headerEntries} />
+              <Nav aria-label="Nav specimen" entries={headerEntries} />
             </div>
             <div className="border-t pt-8">
               <p className="text-e4 font-expressive text-muted-foreground mb-4 uppercase">Menu</p>
-              <Menu entries={headerEntries} />
+              <Menu aria-label="Menu specimen" entries={headerEntries} />
             </div>
             <div className="border-t pt-8">
               <p className="text-e4 font-expressive text-muted-foreground mb-4 uppercase">Emblem</p>

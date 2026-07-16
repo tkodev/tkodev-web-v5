@@ -67,7 +67,7 @@ const GlobalMenu = (props: GlobalMenuProps) => {
           </DrawerClose>
         </DrawerHeader>
         <div className={cn(styles.body())}>
-          <Menu entries={entries} onNavigate={handleNavigate} />
+          <Menu aria-label="Menu" entries={entries} onNavigate={handleNavigate} />
         </div>
         <div className={cn(styles.footer())}>
           <p>{'// Menu //'}</p>
