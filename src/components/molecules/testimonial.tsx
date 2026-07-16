@@ -9,7 +9,7 @@ const styles = {
   root: cva('flex flex-col'),
 
   quoteCell: cva('grow border-b p-4'),
-  quote: cva('text-muted-foreground line-clamp-9 text-sm whitespace-pre-line italic'),
+  quote: cva('text-foreground line-clamp-9 text-sm whitespace-pre-line'),
 
   footerCell: cva('flex items-center gap-4 px-4 py-4'),
   photo: cva('size-12 rounded-sm object-cover'),
@@ -46,7 +46,7 @@ const Testimonial = forwardRef<TestimonialRef, TestimonialProps>((props, ref) =>
   return (
     <Card ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.quoteCell())}>
-        <blockquote className={cn(styles.quote())}>&ldquo;{basic.desc}&rdquo;</blockquote>
+        <blockquote className={cn(styles.quote())}>{basic.desc}</blockquote>
       </div>
       <div className={cn(styles.footerCell())}>
         {photo ? (

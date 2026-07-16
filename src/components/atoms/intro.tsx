@@ -3,10 +3,10 @@ import { Decode } from '@/components/atoms/decode'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('relative flex max-w-100 flex-col items-center justify-center gap-4 text-center'),
-  subtitle: cva('text-muted-foreground text-e4 font-expressive uppercase'),
+  root: cva('relative flex max-w-100 flex-col items-center justify-center gap-2 text-center'),
+  subtitle: cva('text-foreground text-e4 font-expressive mb-2 uppercase'),
   title: cva('text-h1 font-heading whitespace-pre-line uppercase'),
-  desc: cva('text-muted-foreground text-sm whitespace-pre-line'),
+  desc: cva('text-foreground text-sm whitespace-pre-line'),
   cta: cva('flex flex-col items-center gap-2')
 }
 
