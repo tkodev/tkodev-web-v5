@@ -17,8 +17,6 @@ const styles = {
     ],
     {
       variants: {
-        // the outer marks boot in from off-centre, so under reduced motion they fade in
-        // place like the middle one rather than travelling their own height
         position: {
           1: 'animate-boot-down motion-reduce:animate-fade-in',
           2: 'animate-fade-in',

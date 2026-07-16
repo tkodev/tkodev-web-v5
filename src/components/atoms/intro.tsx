@@ -26,9 +26,9 @@ const Intro = forwardRef<IntroRef, IntroProps>((props, ref) => {
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.subtitle())}>{subtitle}</div>
-      <div className={cn(styles.title())}>
+      <h1 className={cn(styles.title())}>
         <Decode text={title} />
-      </div>
+      </h1>
       {!!desc && <div className={cn(styles.desc())}>{desc}</div>}
       {!!children && <div className={cn(styles.cta())}>{children}</div>}
     </div>
