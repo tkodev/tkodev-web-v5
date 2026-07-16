@@ -3,7 +3,7 @@
 import { forwardRef, type ReactNode } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Slot } from 'radix-ui'
-import { motionReveal, revealItem } from '@/constants/motion'
+import { motionReveal, revealItem, revealItemReduced } from '@/constants/motion'
 import { cn, cva } from '@/utils/theme'
 
 const styles = {
@@ -26,7 +26,9 @@ type RevealProps = {
 
 /**
  * Fades and lifts its content in the first time it scrolls into view. Each Reveal
- * triggers on its own intersection.
+ * triggers on its own intersection. Under reduced motion the content fades without
+ * travelling; it always animates rather than rendering statically, because the server
+ * cannot know the preference and only the animation clears the SSR-rendered start state.
  */
 const Reveal = forwardRef<RevealRef, RevealProps>((props, ref) => {
   // props
@@ -40,20 +42,12 @@ const Reveal = forwardRef<RevealRef, RevealProps>((props, ref) => {
   const viewport = { once: true, amount: rail ? motionReveal.railAmount : amount }
 
   // jsx
-  if (reduced) {
-    const Static = asChild ? Slot.Root : 'div'
-    return (
-      <Static ref={ref} className={cn(styles.root({ className }))}>
-        {children}
-      </Static>
-    )
-  }
   return (
     <Comp
       ref={ref}
       className={cn(styles.root({ className }))}
       initial="hidden"
-      variants={revealItem}
+      variants={reduced ? revealItemReduced : revealItem}
       viewport={viewport}
       whileInView="shown"
     >
