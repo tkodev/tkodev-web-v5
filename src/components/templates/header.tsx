@@ -60,7 +60,7 @@ const Header: FC<HeaderProps> = (props) => {
             <Identity {...identityProps} />
           </div>
           <div className={cn(styles.right())}>
-            <Nav className={cn(styles.nav())} entries={headerEntries} />
+            <Nav className={cn(styles.nav())} aria-label="Primary" entries={headerEntries} />
             <GlobalMenu entries={headerEntries} identityProps={identityProps}>
               <Button className={cn(styles.trigger())} variant="link">
                 <Icon icon={MenuIcon} size="sm" />
