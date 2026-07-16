@@ -42,7 +42,7 @@ const Ticker: FC<TickerProps> = (props) => {
 
   // jsx
   return (
-    <span ref={rootRef} className={cn(styles.root({ className }))} tabIndex={0} {...rest}>
+    <span ref={rootRef} className={cn(styles.root({ className }))} {...rest}>
       <span className={cn(styles.content())}>{children}</span>
     </span>
   )

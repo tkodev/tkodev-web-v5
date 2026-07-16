@@ -15,7 +15,7 @@ How the app is shaped: stack, information architecture, repo structure, data lay
 | Theming | Two themes, hardcoded to dark ([04-design.md](04-design.md) §Color) |
 | Motion | CSS animations first; **framer motion** (`motion`) for choreography CSS can't express (loading sequence, nav overlay) |
 | Icons | `lucide-react` (sole icon library) |
-| Linting | **ESLint 9** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`); no Biome, no standalone Prettier (the shared config runs it as a lint rule) |
+| Linting | **ESLint 9** flat config via [`@tkodev/eslint-config-next`](https://github.com/tkodev/eslint-config-next) (`github:tkodev/eslint-config-next`), extended with `eslint-plugin-jsx-a11y` (strict) so the accessibility floor is a lint error rather than a review note; no Biome, no standalone Prettier (the shared config runs it as a lint rule) |
 | Testing | **Vitest**: `pnpm test` |
 | Fonts | `next/font/local`: Alliance No.2, Geist, Geist Mono |
 | Dates | `date-fns` / `date-fns-tz` |
