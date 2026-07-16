@@ -21,7 +21,7 @@ const styles = {
   name: cva('text-md'),
   span: cva('text-e4 font-expressive text-muted-foreground uppercase'),
   location: cva('text-e4 font-expressive text-muted-foreground uppercase'),
-  desc: cva('text-muted-foreground text-sm whitespace-pre-line'),
+  desc: cva('text-foreground text-sm whitespace-pre-line'),
   skills: cva('flex flex-wrap gap-2')
 }
 

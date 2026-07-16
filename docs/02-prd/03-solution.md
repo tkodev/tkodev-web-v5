@@ -174,8 +174,11 @@ Motion is a grammar, not garnish:
 ## Edge cases
 
 - **Reduced motion**: the boot sequence is absent (§Boot sequence); canvas
-  instruments render their static state, loops replaced by posters. Every state
-  readable with zero motion.
+  instruments render their static state, loops replaced by posters; the marquee rows
+  become plain scrollers, since a stopped drift would strand every entry past the edge
+  out of reach. Reveals and the reticle fade in place rather than travelling: they still
+  animate, because the server cannot know the preference and the animation is what clears
+  the rendered start state. Every state readable with zero motion.
 - **Mobile**: the instrument panel recomposes (edge-density becomes top/bottom
   strips); grab-reel becomes native touch scroll; hover-revealed metadata must have
   a visible-by-default equivalent.

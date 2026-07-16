@@ -27,13 +27,21 @@ const motionReveal = {
   railAmount: 0.01
 } as const
 
+/**
+ * The resting state a `Reveal` starts from, shared by both variants below. It is rendered
+ * on the server, where the reduced-motion preference is unknowable, so both variants must
+ * open from it: a client that hydrated a different `hidden` state would mismatch, and React
+ * does not patch up inline-style mismatches, stranding the element at `opacity: 0`.
+ */
+const revealHidden = {
+  opacity: 0,
+  y: motionReveal.distance,
+  filter: `blur(${motionReveal.blur}px)`
+} as const
+
 /** The `Reveal` variant: the fade + rise + de-blur an element runs when it enters view. */
 const revealItem: Variants = {
-  hidden: {
-    opacity: 0,
-    y: motionReveal.distance,
-    filter: `blur(${motionReveal.blur}px)`
-  },
+  hidden: revealHidden,
   shown: {
     opacity: 1,
     y: 0,
@@ -45,4 +53,25 @@ const revealItem: Variants = {
   }
 }
 
-export { motionDurations, motionEasings, motionReveal, revealItem }
+/**
+ * The reduced-motion `Reveal` variant: the rise and de-blur snap to their resting values
+ * while the opacity still fades, so the element arrives without travelling. Opacity alone
+ * carries no vestibular cost, and the element must still animate to `shown`: it is the only
+ * thing that clears the server-rendered `hidden` style.
+ */
+const revealItemReduced: Variants = {
+  hidden: revealHidden,
+  shown: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: motionDurations.base,
+      ease: motionEasings.out,
+      y: { duration: 0 },
+      filter: { duration: 0 }
+    }
+  }
+}
+
+export { motionDurations, motionEasings, motionReveal, revealItem, revealItemReduced }

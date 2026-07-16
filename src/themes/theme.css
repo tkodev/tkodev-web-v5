@@ -351,3 +351,20 @@
 		opacity: 0;
 	}
 }
+
+/* reduced motion */
+
+/* Vaul drives the drawer panel from its own injected stylesheet, so `motion-reduce:`
+   utilities cannot reach it. Swap its slide keyframes for a fade: the panel still
+   announces its arrival, without travelling the height of the viewport. */
+@media (prefers-reduced-motion: reduce) {
+	[data-vaul-drawer][data-state='open'] {
+		animation-name: fade-in !important;
+		transition: none !important;
+	}
+
+	[data-vaul-drawer][data-state='closed'] {
+		animation-name: fade-out !important;
+		transition: none !important;
+	}
+}
