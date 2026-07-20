@@ -16,20 +16,23 @@ const styles = {
   root: cva(['h-18 w-full', 'fixed top-0 left-0 z-20']),
 
   container: cva(['h-16 w-full max-w-7xl', 'fixed top-1 left-1/2 mx-auto -translate-x-1/2 px-4']),
-  bar: cva('animate-boot-down flex size-full items-center justify-between gap-8 px-4', {
-    variants: {
-      variant: {
-        bar: [
-          'bg-background/30 border-border rounded-full border shadow-md',
-          'backdrop-blur-lg backdrop-filter'
-        ],
-        flat: 'rounded-none border-none bg-transparent shadow-none'
+  bar: cva(
+    'animate-boot-down motion-reduce:animate-fade-in flex size-full items-center justify-between gap-8 px-4',
+    {
+      variants: {
+        variant: {
+          bar: [
+            'bg-background/30 border-border rounded-full border shadow-md',
+            'backdrop-blur-lg backdrop-filter'
+          ],
+          flat: 'rounded-none border-none bg-transparent shadow-none'
+        }
+      },
+      defaultVariants: {
+        variant: 'flat'
       }
-    },
-    defaultVariants: {
-      variant: 'flat'
     }
-  }),
+  ),
 
   left: cva('flex h-full items-center gap-2'),
   right: cva('no-scrollbar flex h-full items-center gap-2 overflow-x-auto'),
