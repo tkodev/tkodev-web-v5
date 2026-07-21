@@ -17,14 +17,14 @@ const styles = {
 // Tuning
 const baseAlpha = 0.1 // faint lines
 const indexAlpha = 0.15 // index lines
-const fps = 15 // render cap; GPU-side now, so a smooth rate is cheap
-const timeScale = 0.02 // how fast the terrain evolves (per second)
+const fps = 12 // render cap; GPU-side now, so a smooth rate is cheap
+const timeScale = 0.025 // how fast the terrain evolves (per second)
 const noiseFreq = 0.005 // spatial scale: higher = zoomed further out = far more lines on screen
 const baseWidth = 2 // contour line width in px
-const indexWidth = 2
+const indexWidth = 2 // index line width in px
 const levels = 28 // number of contour thresholds (high = lots of tightly packed bands)
-const levelMin = 0.3 // lowest / highest terrain value a contour tracks
-const levelMax = 0.7
+const levelMin = 0.3 // lowest terrain value a contour tracks
+const levelMax = 0.7 // highest terrain value a contour tracks
 const indexEvery = 6 // every Nth contour is a bolder "index" line, as on real topo maps
 const mainOctaves = 4 // fractal octaves for the terrain height field
 const warpOctaves = 2 // octaves for the domain-warp field
