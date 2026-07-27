@@ -69,7 +69,12 @@ import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
 import { appdata } from '@/constants/system'
 import { techtalkEntries } from '@/constants/techtalks'
 import { testimonialEntries } from '@/constants/testimonials'
-import { getCareerYears, getJobGroups, getProjectMainAsset } from '@/utils/career'
+import {
+  getCareerYears,
+  getJobGroups,
+  getProjectMainAsset,
+  getProjectMainThumb
+} from '@/utils/career'
 import { createMetadata } from '@/utils/system'
 
 const metadata = createMetadata({
@@ -153,8 +158,9 @@ const DesignPage = () => {
   const specimenStory = specimenProject.media?.stories?.[0]
   const specimenVisual = specimenProject.media?.visuals?.[0]
   const mainAsset = getProjectMainAsset(specimenProject)
+  const mainThumb = getProjectMainThumb(specimenProject)
   const tileAssets = projectEntries
-    .map((projectEntry) => getProjectMainAsset(projectEntry))
+    .map((projectEntry) => getProjectMainThumb(projectEntry))
     .filter((asset) => asset.src !== placeholderAsset.src)
     .slice(0, 10)
 
@@ -551,7 +557,7 @@ const DesignPage = () => {
                 <p className="text-e4 font-expressive text-muted-foreground absolute top-3 left-3 z-10 uppercase">
                   Tile
                 </p>
-                <Tile asset={mainAsset} />
+                <Tile asset={mainThumb} />
               </div>
               <div className="relative h-56 overflow-hidden rounded-sm border">
                 <p className="text-e4 font-expressive text-muted-foreground absolute top-3 left-3 z-10 uppercase">

@@ -122,6 +122,22 @@ const projectEntries: ProjectEntry[] = [
           title: 'Case Study System and Authored Data',
           body: 'Modeled the portfolio around structured career constants rather than page-specific copy: each project carries metadata, stats, story assets, visuals, collaborators, and client relationships. The project dossier view proves that architecture by turning the same data into cinematic hero tiles, story sections, evidence plates, next-project navigation, metadata, and SEO.'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'tko.dev — Cinematic Portfolio Homepage'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/tkodev-web/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'tko.dev — Cinematic Portfolio Homepage'
+        }
       ]
     },
     parents: {
@@ -209,6 +225,22 @@ const projectEntries: ProjectEntry[] = [
           width: 2110,
           height: 1282,
           alt: 'Gridflow Library — saved-imagery moodboard collections and tag sets'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/gridflow-app/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Gridflow marketing landing page — "Plan your grid as a whole"'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/gridflow-app/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Gridflow marketing landing page — "Plan your grid as a whole"'
         }
       ]
     },
@@ -306,6 +338,22 @@ const projectEntries: ProjectEntry[] = [
           title: 'Role-Based Onboarding Funnels',
           body: 'Mapped community growth into role-based funnels for speakers, hosts, sponsors, and volunteers. Each path translates a vague "I want to help" into expectations, benefits, and a next step, reflecting the product work behind the site: clarify the audience, reduce ambiguity, and convert goodwill into active participation.'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/techtank-next/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'TechTank Toronto — Community Homepage'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/techtank-next/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'TechTank Toronto — Community Homepage'
+        }
       ]
     },
     parents: {
@@ -345,6 +393,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/approved-by-acca/www.approvedbyacca.ca_(1080p).png',
           width: 3840,
           height: 2160,
+          alt: 'Approved by Acca — Mortgage Agent Landing Page'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/approved-by-acca/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Approved by Acca — Mortgage Agent Landing Page'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/approved-by-acca/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Approved by Acca — Mortgage Agent Landing Page'
         }
       ]
@@ -432,6 +496,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Storefront Instrumentation at Scale',
           body: 'Shaped the SDK around real commerce surfaces instead of a clean-room demo: divergent Next.js versions, browser and server runtimes, and line-of-business requirements all had to fit one instrumentation model. The Shoppers storefront anchors the story because it proves the abstraction on a production-scale experience with frontend performance, traces, errors, and SLO signals flowing into VictoriaMetrics, Tempo, and Grafana.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/loblaw-perfect-experience/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Loblaw Perfect Experience — Grafana Dashboard'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/loblaw-perfect-experience/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Loblaw Perfect Experience — Grafana Dashboard'
         }
       ]
     },
@@ -542,6 +622,22 @@ const projectEntries: ProjectEntry[] = [
           title: 'Basic Tripping Controls',
           body: 'Translated the same safety-critical model into a basic mode for operators who need fast control over static pressure, dynamic pressure, and hookload thresholds. This is where product judgment and engineering constraints meet: preserve the rig visualization and live gauges, reduce the input surface, and keep the workflow dependable under field pressure.'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/beyond-mpd-olympus/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Beyond MPD — Ramp Control Interface'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/beyond-mpd-olympus/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Beyond MPD — Ramp Control Interface'
+        }
       ]
     },
     parents: {
@@ -635,6 +731,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Account Onboarding and Card Dashboard',
           body: 'Built the everyday account surfaces customers rely on after launch: onboarding, balance review, pending and posted transactions, bill payment, reloads, and card actions. These screens are user-facing proof of the platform work beneath them, where shared flows, configuration points, CI/CD, Sentry, and Mixpanel made releases reliable across iOS, Android, and web.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/paypower-prepaid-mastercard/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'PayPower Mastercard App — Product Overview'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/paypower-prepaid-mastercard/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'PayPower Mastercard App — Product Overview'
         }
       ]
     },
@@ -738,6 +850,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Multi-Level Caching and Performance',
           body: 'Owned the delivery shape alongside the product owner: PRDs, estimates, client expectations, and the caching strategy needed to support hundreds of retail sites. The multi-level cache reduced backend load while keeping activation and offer states responsive, turning a first-of-its-kind browser extension into a shippable product for a national loyalty platform.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/aeroplan-shopping-button/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Aeroplan Shopping Button — Cross-Browser Architecture'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/aeroplan-shopping-button/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Aeroplan Shopping Button — Cross-Browser Architecture'
         }
       ]
     },
@@ -857,6 +985,22 @@ const projectEntries: ProjectEntry[] = [
           title: 'Accessibility Compliance — AODA AA / WCAG 2.0',
           body: 'Led five engineers through a full AODA/WCAG 2.0 AA accessibility overhaul across the React/Redux application. The engagement covered structural semantics, focus management, ARIA roles, keyboard navigation, colour contrast, and regression protection, with 80%+ test coverage across critical components using React Testing Library and Jest.'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/aeroplan-estore/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Aeroplan eStore — Initial Architecture and MVP'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/aeroplan-estore/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Aeroplan eStore — Initial Architecture and MVP'
+        }
       ]
     },
     parents: {
@@ -942,6 +1086,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Figma-to-Production Dashboard System',
           body: 'Designed the full interface and design system in Figma, then carried it into production as the sole owner of the dashboard experience. The UI work was not surface polish: reusable components, typography, color semantics, and interaction patterns made a dense operational tool feel coherent for an architectural engineering firm.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/rocmar-dashboard/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'RocMar Employee Dashboard — Data Integration Overview'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/rocmar-dashboard/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'RocMar Employee Dashboard — Data Integration Overview'
         }
       ]
     },
@@ -1081,6 +1241,22 @@ const projectEntries: ProjectEntry[] = [
           title: 'Accessible Education for Reward Mechanics',
           body: 'Turned reward mechanics into clear, accessible interface sections that could explain earning paths without overwhelming the user. The How to Earn screen supports the story because it shows the balance the work required: brand expression, AODA/WCAG 2.0 AA compliance, responsive component behavior, and Jest/Nock-backed confidence in a shared codebase.'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/air-miles-rewards-portal/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Air Miles Landing Portal'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/air-miles-rewards-portal/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Air Miles Landing Portal'
+        }
       ]
     },
     parents: {
@@ -1121,6 +1297,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/moda-match/modamatch.png',
           width: 1920,
           height: 1080,
+          alt: 'Moda Match — Virtual Fitting Room'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/moda-match/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Moda Match — Virtual Fitting Room'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/moda-match/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Moda Match — Virtual Fitting Room'
         }
       ]
@@ -1180,6 +1372,22 @@ const projectEntries: ProjectEntry[] = [
           height: 1080,
           alt: 'Cardinal Meats & Food Service — Website & CMS'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/cardinal-meats/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Cardinal Meats & Food Service — Website & CMS'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/cardinal-meats/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Cardinal Meats & Food Service — Website & CMS'
+        }
       ]
     },
     parents: {
@@ -1237,6 +1445,22 @@ const projectEntries: ProjectEntry[] = [
           height: 1080,
           alt: 'Weiser — Canadian Catalog Website'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/weiser/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Weiser — Canadian Catalog Website'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/weiser/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Weiser — Canadian Catalog Website'
+        }
       ]
     },
     parents: {
@@ -1284,6 +1508,22 @@ const projectEntries: ProjectEntry[] = [
           height: 1748,
           alt: 'Canada Chiropractic Protective Association — Infographic'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/ccpa/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Canada Chiropractic Protective Association — Website & CMS'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/ccpa/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Canada Chiropractic Protective Association — Website & CMS'
+        }
       ]
     },
     parents: {
@@ -1315,6 +1555,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/canada-dry-enter-pin/canadadry.png',
           width: 1920,
           height: 1080,
+          alt: 'Canada Dry — Enter PIN Contest'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/canada-dry-enter-pin/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Canada Dry — Enter PIN Contest'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/canada-dry-enter-pin/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Canada Dry — Enter PIN Contest'
         }
       ]
@@ -1355,6 +1611,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/canada-dry/canadadry.png',
           width: 1920,
           height: 1080,
+          alt: 'Canada Dry — Website'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/canada-dry/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Canada Dry — Website'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/canada-dry/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Canada Dry — Website'
         }
       ]
@@ -1398,6 +1670,22 @@ const projectEntries: ProjectEntry[] = [
           height: 1080,
           alt: 'Monogram — Canadian Catalog Website'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/monogram/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Monogram — Canadian Catalog Website'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/monogram/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Monogram — Canadian Catalog Website'
+        }
       ]
     },
     parents: {
@@ -1430,6 +1718,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/parents-canada/parents.png',
           width: 1920,
           height: 1080,
+          alt: 'Parents Canada — Magazine Website'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/parents-canada/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Parents Canada — Magazine Website'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/parents-canada/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Parents Canada — Magazine Website'
         }
       ]
@@ -1479,6 +1783,22 @@ const projectEntries: ProjectEntry[] = [
           height: 1652,
           alt: 'Toffifee — Spin Animation'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/toffifee-spin-to-win/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Toffifee — Spin to Win Contest'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/toffifee-spin-to-win/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Toffifee — Spin to Win Contest'
+        }
       ]
     },
     parents: {
@@ -1526,6 +1846,22 @@ const projectEntries: ProjectEntry[] = [
           height: 796,
           alt: 'Toyota — Bring Your Toyota Home Contest (Full)'
         }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/bring-your-toyota-home/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Toyota — Bring Your Toyota Home Contest'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/bring-your-toyota-home/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Toyota — Bring Your Toyota Home Contest'
+        }
       ]
     },
     parents: {
@@ -1563,6 +1899,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/toyota-make-a-date/toyota.webp',
           width: 900,
           height: 574,
+          alt: 'Toyota — Make a Date Contest'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/toyota-make-a-date/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Toyota — Make a Date Contest'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/toyota-make-a-date/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'Toyota — Make a Date Contest'
         }
       ]
@@ -1603,6 +1955,22 @@ const projectEntries: ProjectEntry[] = [
           src: '/career/projects/baby-jogger/babyjogger.png',
           width: 1920,
           height: 1080,
+          alt: 'BabyJogger — Canadian Catalog Website'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/baby-jogger/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'BabyJogger — Canadian Catalog Website'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/baby-jogger/thumb-half.webp',
+          width: 480,
+          height: 270,
           alt: 'BabyJogger — Canadian Catalog Website'
         }
       ]
@@ -1701,6 +2069,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Game Logic, Timers, and Everyday Tools',
           body: 'Built small games and utility apps to practice the product behavior that still matters in larger systems: state, timing, input handling, conditional logic, feedback loops, and error recovery. Tic Tac Toe, Simon Says, the Pomodoro timer, calculator, and weather widget became a compact proving ground for the same muscle used later on production teams: translate an expected experience into dependable interface logic.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/early-software-engineering/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Early Software Engineering — Full-Stack Foundation'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/early-software-engineering/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Early Software Engineering — Full-Stack Foundation'
         }
       ]
     },
@@ -1839,6 +2223,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Identity Systems for Social Platforms',
           body: 'Built full visual identities for early social spaces like Xanga, where a profile was less a feed and more a self-authored website. The variant supports the story because it shows more than decoration: color, layout, typography, illustration, and mood all working together inside platform constraints. Long before formal design systems, I was already shaping reusable visual language around identity, audience, and atmosphere.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/web10-era/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: 'Web 1.0 Era — PixelInfinity.ca Theme'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/web10-era/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: 'Web 1.0 Era — PixelInfinity.ca Theme'
         }
       ]
     },
@@ -2019,6 +2419,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Material, Volume, and Atmosphere',
           body: 'Refined the interior as a relationship between mass, void, texture, and daylight rather than a collection of decorated rooms. The second cutaway shows that design judgment at a quieter level: how surfaces meet, how volumes stack, and how a space can feel calm while still carrying architectural tension. It is portfolio evidence of taste — proportion, restraint, and spatial composition under real constraints.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/interiors-architecture/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: "Interior & Architecture Design — 1800's Queen St. Modernization"
+        },
+        {
+          type: 'image',
+          src: '/career/projects/interiors-architecture/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: "Interior & Architecture Design — 1800's Queen St. Modernization"
         }
       ]
     },
@@ -2221,6 +2637,22 @@ const projectEntries: ProjectEntry[] = [
           },
           title: 'Fitment, Fabrication, and Iteration',
           body: 'Used Fusion 360, Blender, laser-cutting constraints, and 3D printing to turn hardware problems into manufacturable parts: compact PC cases, water-cooling blocks, adapter mounts, fittings, desk accessories, trophies, keyfobs, and everyday objects. The screenshots show the range, but the portfolio signal is taste under constraint: measure carefully, prototype honestly, refine the geometry, and keep every visual decision accountable to how the object is held, installed, seen, and used.'
+        }
+      ],
+      thumbs: [
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/thumb-card.webp',
+          width: 960,
+          height: 540,
+          alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
+        },
+        {
+          type: 'image',
+          src: '/career/projects/industrial-design/thumb-half.webp',
+          width: 480,
+          height: 270,
+          alt: '3D Modeling — Bekant Server Rack for NAS and SFF Servers'
         }
       ]
     },

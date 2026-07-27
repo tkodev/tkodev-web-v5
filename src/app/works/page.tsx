@@ -10,7 +10,7 @@ import { personEntryById } from '@/constants/profile'
 import { projectEntries, projectEntriesByCategory } from '@/constants/projects'
 import { appdata } from '@/constants/system'
 import { shuffle } from '@/utils/array'
-import { getProjectMainAsset } from '@/utils/career'
+import { getProjectMainThumb } from '@/utils/career'
 import { createMetadata } from '@/utils/system'
 
 const metadata = createMetadata({
@@ -29,7 +29,7 @@ const WorksPage = () => {
   )
   const tileAssets = shuffle(
     projectEntries
-      .map((projectEntry) => getProjectMainAsset(projectEntry))
+      .map((projectEntry) => getProjectMainThumb(projectEntry))
       .filter((asset) => asset.src !== placeholderAsset.src)
   ).slice(0, 21)
 
