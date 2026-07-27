@@ -15,6 +15,15 @@ const getProjectMainAsset = (project: ProjectEntry): AssetEntry => {
 }
 
 /**
+ * A project's card thumbnail: the card-sized thumb, falling back to the site placeholder.
+ *
+ * @param project - The project to read media from.
+ */
+const getProjectMainThumb = (project: ProjectEntry): AssetEntry => {
+  return project.media?.thumbs?.[0] ?? placeholderAsset
+}
+
+/**
  * The ids of projects that own a detail page: only featured entries link to `/works/[workId]`.
  *
  * @param projectEntries - All project entries to filter.
@@ -152,6 +161,7 @@ export {
   getFeaturedProjectIds,
   getJobGroups,
   getProjectClientIds,
-  getProjectMainAsset
+  getProjectMainAsset,
+  getProjectMainThumb
 }
 export type { JobGroup }

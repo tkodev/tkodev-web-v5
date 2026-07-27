@@ -7,7 +7,7 @@ import { Ticker } from '@/components/atoms/ticker'
 import { clientById } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { ProjectEntry } from '@/types/career'
-import { getProjectMainAsset } from '@/utils/career'
+import { getProjectMainThumb } from '@/utils/career'
 import { formatAttribution } from '@/utils/string'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Badge } from '../atoms/badge'
@@ -62,7 +62,7 @@ const Project = forwardRef<ProjectRef, ProjectProps>((props, ref) => {
   const { basic, extended, parents } = project
 
   // render vars
-  const asset = getProjectMainAsset(project)
+  const asset = getProjectMainThumb(project)
   const client = clientById[parents.clientId] ?? undefined
   const clientLogo = client?.media?.dark
   const agency = parents?.agencyId ? clientById[parents?.agencyId] : undefined
