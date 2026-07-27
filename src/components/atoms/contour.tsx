@@ -17,6 +17,8 @@ const styles = {
 // Tuning
 const baseAlpha = 0.1 // faint lines
 const indexAlpha = 0.15 // index lines
+const fillAlphaMin = 0 // elevation tint at the lowest tracked terrain value
+const fillAlphaMax = 0.025 // elevation tint at the highest tracked terrain value; stays faint so lines still read as the focal layer
 const fps = 12 // render cap; GPU-side now, so a smooth rate is cheap
 const timeScale = 0.025 // how fast the terrain evolves (per second)
 const noiseFreq = 0.005 // spatial scale: higher = zoomed further out = far more lines on screen
@@ -127,7 +129,12 @@ void main() {
   float alpha = mix(${f(baseAlpha)}, ${f(indexAlpha)}, isIndex);
   float line = (1.0 - smoothstep(0.0, halfWidth * g + 1e-6, di)) * alpha * inRange;
 
-  outColor = vec4(uStroke, line);
+  // elevation tint: a faint fill under the lines, rising with terrain height so higher ground reads
+  // slightly denser, same monochrome stroke color as the lines.
+  float fill = mix(${f(fillAlphaMin)}, ${f(fillAlphaMax)}, clamp(t / float(${levels - 1}), 0.0, 1.0)) * inRange;
+  float shade = line + fill * (1.0 - line);
+
+  outColor = vec4(uStroke, shade);
 }`
 
 type ContourRef = HTMLCanvasElement
