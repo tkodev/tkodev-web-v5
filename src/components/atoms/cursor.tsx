@@ -53,7 +53,7 @@ type IconConfig = {
   offset?: 'none' | 'pointer'
 }
 
-const RingLerp = 0.1 // higher is faster
+const RingLerp = 0.15 // higher is faster
 const IconLerp = 1
 const Pointers: Record<CursorState, IconConfig> = {
   default: { icon: PlusIcon, scale: 1 },
