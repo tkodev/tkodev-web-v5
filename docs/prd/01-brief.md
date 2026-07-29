@@ -43,13 +43,18 @@ declassified engineering dossier presents evidence: annotated, indexed, precise.
 Two pillars, both non-negotiable:
 
 1. **On-brand, and honest where it speaks.** The HUD layer has two tiers. A
-   *readout* (anything displaying a value: a number, date, coordinate, count,
-   progress) is always true, sourced from the career data, runtime, or the build.
-   *Atmosphere* (reticles, rings, scanlines, fields) needs no data behind it;
-   it needs craft and brand coherence: drawn in the system's language, deliberate,
-   in service of the feeling. Precision instead of theatrics: the failure mode is
-   not ornament, it's ornament that feels cheap, and a fake readout is the worst
-   case because it's both.
+   *readout* (a value presented as describing something real: career data, site
+   state, runtime, or the build: a stat, a date, a counter, a coordinate tied to
+   an actual place) is always true. *Atmosphere* (reticles, rings, scanlines,
+   fields, dial faces) needs no data behind it; it needs craft and brand
+   coherence: drawn in the system's language, deliberate, in service of the
+   feeling. This includes instrument furniture that *looks* numeric (dial
+   tick scales, HUD gauge chrome, reticle telemetry blocks) as long as it never
+   claims to represent a specific real quantity: it's the printed face of the
+   instrument, not a measurement. Precision instead of theatrics: the failure
+   mode is not ornament, it's ornament that feels cheap, and a readout claiming
+   to be a real, specific quantity while being fake is the worst case because
+   it's both.
 2. **The experience is futuristic.** Boot sequence, darkness with density at the edges, media that plays itself. The COD MW2
    (original) loading-screen energy: information-dense, atmospheric, alive.
 

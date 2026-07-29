@@ -1,7 +1,9 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Intro, type IntroProps } from '@/components/atoms/intro'
-import { Reticle } from '@/components/atoms/reticle'
+import { ReticleDial } from '@/components/atoms/reticle-dial'
+import { appTimeZone } from '@/constants/date'
+import { projectEntries } from '@/constants/projects'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -24,7 +26,13 @@ const DesignHero = forwardRef<DesignHeroRef, DesignHeroProps>((props, ref) => {
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Reticle className={cn(styles.reticle())} />
+      <ReticleDial
+        className={cn(styles.reticle())}
+        readouts={[
+          { label: 'Shipped', value: `${projectEntries.length} Projects` },
+          { label: 'Zone', value: appTimeZone.replace('_', ' ').toUpperCase() }
+        ]}
+      />
       <Hud {...hudProps} />
       <Intro className={cn(styles.intro())} {...introProps}>
         {children}

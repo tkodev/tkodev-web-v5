@@ -1,7 +1,7 @@
 import { forwardRef, type HTMLAttributes, type ReactNode } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Intro, type IntroProps } from '@/components/atoms/intro'
-import { Reticle } from '@/components/atoms/reticle'
+import { ReticleDial, type ReticleDialReadout } from '@/components/atoms/reticle-dial'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -15,17 +15,19 @@ type ErrorHeroProps = HTMLAttributes<ErrorHeroRef> &
   VariantProps<typeof styles.root> & {
     hudProps: HudProps
     introProps: IntroProps
+    /** Boxed readouts on the reticle's side rails. Real data only. */
+    readouts?: ReticleDialReadout[]
     children?: ReactNode
   }
 
 const ErrorHero = forwardRef<ErrorHeroRef, ErrorHeroProps>((props, ref) => {
   // props
-  const { hudProps, introProps, children, className, ...rest } = props
+  const { hudProps, introProps, readouts, children, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      <Reticle className={cn(styles.reticle())} />
+      <ReticleDial className={cn(styles.reticle())} readouts={readouts} />
       <Hud {...hudProps} />
       <Intro className={cn(styles.intro())} {...introProps}>
         {children}

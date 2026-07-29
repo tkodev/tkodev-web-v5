@@ -61,6 +61,7 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
       {...rest}
     >
       <g className={cn(styles.lines())}>
+        <rect fill="transparent" x="0" y="0" height="896" width="1168" />
         <g opacity={opacity}>
           <circle cx="584" cy="448" r="347.5" stroke="currentColor" strokeWidth="25" />
           <circle cx="584" cy="448" r="447.5" stroke="currentColor" />

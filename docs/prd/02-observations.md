@@ -29,11 +29,14 @@ argument against cheap ornament.
 **Direction.** The two-tier readout/atmosphere rule ([01-brief.md](01-brief.md)
 pillar 1). Applied concretely: the clock is the real time, the coordinates are
 Toronto's, the counters derive from the career constants, figure numbers actually
-increment, the version stamp is the real build; one obviously-fake readout poisons
-trust in all the rest. What gets cut is not ornament but *off-brand* ornament: the
-element that could appear on any dark-dashboard Dribbble shot. Precision instead of
-theatrics is what separates acustable.com from that pile; feeling instead of
-sterility is what separates it from an admin panel.
+increment, the version stamp is the real build; one obviously-fake readout claiming
+to be a real, specific quantity poisons trust in all the rest. Instrument chrome
+that plays a numeric HUD (a dial's tick scale, a reticle's telemetry-block filler)
+is atmosphere, not a readout, as long as it never claims a specific real quantity;
+it does not need to be true, only on-brand. What gets cut is not ornament but
+*off-brand* ornament: the element that could appear on any dark-dashboard Dribbble
+shot. Precision instead of theatrics is what separates acustable.com from that
+pile; feeling instead of sterility is what separates it from an admin panel.
 
 ### Risk: chrome outshining work
 
