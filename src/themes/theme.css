@@ -206,6 +206,7 @@
   --animate-boot-down: boot-down 1.5s var(--brand-ease-out);
   --animate-boot-up: boot-up 1.5s var(--brand-ease-out);
   --animate-boot-in: boot-in 1.5s var(--brand-ease-out);
+  --animate-boot-in-blur: boot-in-blur 1.5s var(--brand-ease-out);
   --animate-boot-out: boot-out 1.5s var(--brand-ease-out);
   --animate-fade-in: fade-in 1.5s var(--brand-ease-out);
   --animate-fade-out: fade-out 1.5s var(--brand-ease-out);
@@ -336,6 +337,19 @@
 	}
 	to {
 		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes boot-in-blur {
+	from {
+		transform: scale(0.85);
+		filter: blur(8px);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		filter: blur(0px);
 		opacity: 1;
 	}
 }

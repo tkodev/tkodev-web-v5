@@ -3,8 +3,8 @@ import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Intro, type IntroProps } from '@/components/atoms/intro'
 import { ReticleDial } from '@/components/atoms/reticle-dial'
 import { appTimeZone } from '@/constants/date'
+import { projectEntries } from '@/constants/projects'
 import { cn, cva, type VariantProps } from '@/utils/theme'
-import pkg from '../../../package.json'
 
 const styles = {
   root: cva(['size-full', 'relative overflow-visible']),
@@ -29,7 +29,7 @@ const DesignHero = forwardRef<DesignHeroRef, DesignHeroProps>((props, ref) => {
       <ReticleDial
         className={cn(styles.reticle())}
         readouts={[
-          { label: 'Build', value: `v${pkg.version}` },
+          { label: 'Shipped', value: `${projectEntries.length} Projects` },
           { label: 'Zone', value: appTimeZone.replace('_', ' ').toUpperCase() }
         ]}
       />

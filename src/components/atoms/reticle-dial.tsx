@@ -5,7 +5,22 @@ const styles = {
   root: cva('text-muted-foreground aspect-square overflow-visible'),
   ring: cva('svg-origin animate-drift origin-center motion-reduce:animate-none'),
   readoutLabel: cva('text-e4 font-expressive fill-muted-foreground uppercase'),
-  readoutValue: cva('text-e4 font-expressive fill-foreground uppercase')
+  readoutValue: cva('text-e4 font-expressive fill-foreground uppercase'),
+  panelGroup: cva('opacity-0 transition-opacity duration-1000 xl:opacity-70'),
+  readoutGroup: cva('opacity-0 transition-opacity duration-1000 xl:opacity-80'),
+  // boot-in, staggered per top-level child; last delay (500ms) + the 1.5s boot-in-blur
+  // duration caps the total sequence at 2s
+  bootGroup: cva([
+    '*:svg-origin *:origin-center',
+    '*:animate-boot-in-blur *:fill-mode-both motion-reduce:*:animate-none',
+    '[&>*:nth-child(2)]:[animation-delay:50ms]',
+    '[&>*:nth-child(3)]:[animation-delay:100ms]',
+    '[&>*:nth-child(4)]:[animation-delay:200ms]',
+    '[&>*:nth-child(5)]:[animation-delay:400ms]',
+    '[&>*:nth-child(6)]:[animation-delay:600ms]',
+    '[&>*:nth-child(7)]:[animation-delay:800ms]',
+    '[&>*:nth-child(n+8)]:[animation-delay:1200ms]'
+  ])
 }
 
 type ReticleDialReadout = {
@@ -40,8 +55,8 @@ const arcPath = (radius: number, angleFrom: number, angleTo: number) => {
   return `M${start.x} ${start.y} A${radius} ${radius} 0 ${largeArc} 1 ${end.x} ${end.y}`
 }
 
-// closer to the original reticle's second-largest ring (r347.5 in an 896-tall viewBox)
-const circleRadius = 340
+// fills the frame the way the original reticle's outer ring (r447.5) did in its 896-tall viewBox
+const circleRadius = 378
 const bracketRadius = circleRadius + 40
 const railOffset = bracketRadius + 45
 
@@ -97,28 +112,28 @@ const panelReadouts = [
     label: 'Drift',
     value: '1.0',
     x: cx - railOffset - 18,
-    y: cy - 220,
+    y: cy - 207,
     textAnchor: 'end' as const
   },
   {
     label: 'Gain',
     value: '5.7',
     x: cx + railOffset + 18,
-    y: cy - 220,
+    y: cy - 207,
     textAnchor: 'start' as const
   },
   {
     label: 'Trim',
     value: '0.52',
     x: cx - railOffset - 18,
-    y: cy + 240,
+    y: cy + 207,
     textAnchor: 'end' as const
   },
   {
     label: 'Scale',
     value: '2.485',
     x: cx + railOffset + 18,
-    y: cy + 240,
+    y: cy + 207,
     textAnchor: 'start' as const
   }
 ]
@@ -153,159 +168,175 @@ const ReticleDial = forwardRef<ReticleDialRef, ReticleDialProps>((props, ref) =>
       {...rest}
     >
       <g opacity={opacity}>
-        {/* main circle */}
-        <circle cx={cx} cy={cy} r={circleRadius} stroke="currentColor" />
-        <circle cx={cx} cy={cy} fill="currentColor" r="3" stroke="none" />
+        <g className={cn(styles.bootGroup())}>
+          {/* main circle */}
+          <circle cx={cx} cy={cy} r={circleRadius} stroke="currentColor" />
+          <circle cx={cx} cy={cy} fill="currentColor" r="3" stroke="none" />
 
-        {/* inset thick ring, same weight as the original reticle's second-largest ring */}
-        <circle cx={cx} cy={cy} r={circleRadius - 70} stroke="currentColor" strokeWidth={25} />
+          {/* inset thick ring, same weight as the original reticle's second-largest ring */}
+          <circle cx={cx} cy={cy} r={circleRadius - 70} stroke="currentColor" strokeWidth={25} />
 
-        {/* fine dial texture ring */}
-        <g className={cn(styles.ring())}>
-          {fineTicks.map((tick) => (
-            <line
-              key={tick.key}
-              stroke="currentColor"
-              strokeWidth={0.75}
-              x1={tick.x1}
-              x2={tick.x2}
-              y1={tick.y1}
-              y2={tick.y2}
-            />
-          ))}
-        </g>
+          {/* the original reticle's two smaller fine-line inner circles, at their original size */}
+          <circle cx={cx} cy={cy} r={239.5} stroke="currentColor" />
+          <circle cx={cx} cy={cy} r={149.5} stroke="currentColor" />
 
-        {/* flanking arc brackets */}
-        <g>
-          <path d={arcPath(bracketRadius, -55, 55)} stroke="currentColor" />
-          <path d={arcPath(bracketRadius, 125, 235)} stroke="currentColor" />
-          {bracketTicks.map((tick) => (
-            <line
-              key={tick.key}
-              stroke="currentColor"
-              strokeWidth={1}
-              x1={tick.x1}
-              x2={tick.x2}
-              y1={tick.y1}
-              y2={tick.y2}
-            />
-          ))}
-        </g>
-
-        {/* chevrons on the main circle, mirrored across the center horizon */}
-        <path
-          d={`M${topChevron.x - 10} ${topChevron.y + 16} L${topChevronTip.x} ${topChevronTip.y} L${topChevron.x + 10} ${topChevron.y + 16}`}
-          stroke="currentColor"
-        />
-        <path
-          d={`M${bottomChevron.x - 10} ${bottomChevron.y - 16} L${bottomChevronTip.x} ${bottomChevronTip.y} L${bottomChevron.x + 10} ${bottomChevron.y - 16}`}
-          stroke="currentColor"
-        />
-
-        {/* crosshair ladder */}
-        <g>
-          {ladderRungs.map((rung) => (
-            <g key={rung.key}>
-              <line
-                stroke="currentColor"
-                x1={cx - rung.width - 40}
-                x2={cx - 40}
-                y1={rung.y}
-                y2={rung.y}
-              />
-              <line
-                stroke="currentColor"
-                x1={cx + 40}
-                x2={cx + rung.width + 40}
-                y1={rung.y}
-                y2={rung.y}
-              />
-            </g>
-          ))}
-          <line stroke="currentColor" x1={cx - 30} x2={cx + 30} y1={cy} y2={cy} />
-          <line stroke="currentColor" x1={cx} x2={cx} y1={cy - 12} y2={cy + 12} />
-        </g>
-
-        {/* side rail rulers */}
-        {[cx - railOffset, cx + railOffset].map((railX) => (
-          <g key={railX}>
-            <line stroke="currentColor" x1={railX} x2={railX} y1={cy - 176} y2={cy + 176} />
-            {railTicks.map((tick) => (
+          {/* fine dial texture ring */}
+          <g className={cn(styles.ring())}>
+            {fineTicks.map((tick) => (
               <line
                 key={tick.key}
                 stroke="currentColor"
-                x1={railX - tick.width / 2}
-                x2={railX + tick.width / 2}
-                y1={tick.y}
-                y2={tick.y}
+                strokeWidth={0.75}
+                x1={tick.x1}
+                x2={tick.x2}
+                y1={tick.y1}
+                y2={tick.y2}
               />
             ))}
           </g>
-        ))}
 
-        {/* corner registration marks */}
-        {cornerMarks.map((corner) => (
-          <rect
-            key={`${corner.x}-${corner.y}`}
-            stroke="currentColor"
-            x={corner.x - 5}
-            y={corner.y - 5}
-            height="10"
-            width="10"
-          />
-        ))}
-
-        {/* fixed HUD panel furniture: decorative, not a readout */}
-        {panelReadouts.map((panel) => (
-          <g key={panel.label}>
-            <text
-              className={cn(styles.readoutLabel())}
-              textAnchor={panel.textAnchor}
-              x={panel.x}
-              y={panel.y}
-            >
-              {panel.label}
-            </text>
-            <text
-              className={cn(styles.readoutValue())}
-              textAnchor={panel.textAnchor}
-              x={panel.x}
-              y={panel.y + 22}
-            >
-              {panel.value}
-            </text>
+          {/* flanking arc brackets */}
+          <g>
+            <path d={arcPath(bracketRadius, -55, 55)} stroke="currentColor" />
+            <path d={arcPath(bracketRadius, 125, 235)} stroke="currentColor" />
+            {bracketTicks.map((tick) => (
+              <line
+                key={tick.key}
+                stroke="currentColor"
+                strokeWidth={1}
+                x1={tick.x1}
+                x2={tick.x2}
+                y1={tick.y1}
+                y2={tick.y2}
+              />
+            ))}
           </g>
-        ))}
+
+          {/* chevrons on the main circle, mirrored across the center horizon */}
+          <path
+            d={`M${topChevron.x - 10} ${topChevron.y + 16} L${topChevronTip.x} ${topChevronTip.y} L${topChevron.x + 10} ${topChevron.y + 16}`}
+            stroke="currentColor"
+          />
+          <path
+            d={`M${bottomChevron.x - 10} ${bottomChevron.y - 16} L${bottomChevronTip.x} ${bottomChevronTip.y} L${bottomChevron.x + 10} ${bottomChevron.y - 16}`}
+            stroke="currentColor"
+          />
+
+          {/* crosshair ladder */}
+          <g>
+            {ladderRungs.map((rung) => (
+              <g key={rung.key}>
+                <line
+                  stroke="currentColor"
+                  x1={cx - rung.width - 40}
+                  x2={cx - 40}
+                  y1={rung.y}
+                  y2={rung.y}
+                />
+                <line
+                  stroke="currentColor"
+                  x1={cx + 40}
+                  x2={cx + rung.width + 40}
+                  y1={rung.y}
+                  y2={rung.y}
+                />
+              </g>
+            ))}
+            <line stroke="currentColor" x1={cx - 30} x2={cx + 30} y1={cy} y2={cy} />
+            <line stroke="currentColor" x1={cx} x2={cx} y1={cy - 12} y2={cy + 12} />
+          </g>
+
+          {/* side rail rulers */}
+          <g>
+            {[cx - railOffset, cx + railOffset].map((railX) => (
+              <g key={railX}>
+                <line stroke="currentColor" x1={railX} x2={railX} y1={cy - 176} y2={cy + 176} />
+                {railTicks.map((tick) => (
+                  <line
+                    key={tick.key}
+                    stroke="currentColor"
+                    x1={railX - tick.width / 2}
+                    x2={railX + tick.width / 2}
+                    y1={tick.y}
+                    y2={tick.y}
+                  />
+                ))}
+              </g>
+            ))}
+          </g>
+
+          {/* corner registration marks */}
+          <g>
+            {cornerMarks.map((corner) => (
+              <rect
+                key={`${corner.x}-${corner.y}`}
+                stroke="currentColor"
+                x={corner.x - 5}
+                y={corner.y - 5}
+                height="10"
+                width="10"
+              />
+            ))}
+          </g>
+
+          {/* fixed HUD panel furniture: decorative, not a readout */}
+          <g className={cn(styles.panelGroup())}>
+            {panelReadouts.map((panel) => (
+              <g key={panel.label}>
+                <text
+                  className={cn(styles.readoutLabel())}
+                  textAnchor={panel.textAnchor}
+                  x={panel.x}
+                  y={panel.y}
+                >
+                  {panel.label}
+                </text>
+                <text
+                  className={cn(styles.readoutValue())}
+                  textAnchor={panel.textAnchor}
+                  x={panel.x}
+                  y={panel.y + 11}
+                >
+                  {panel.value}
+                </text>
+              </g>
+            ))}
+          </g>
+        </g>
       </g>
 
       {/* boxed readouts on the rails: real data only, nothing renders without it */}
-      {readouts?.slice(0, 2).map((readout, i) => {
-        const anchor = railAnchors[i]
-        return (
-          <g key={readout.label} opacity={0.8}>
-            <text
-              className={cn(styles.readoutLabel())}
-              textAnchor={anchor.textAnchor}
-              x={anchor.x}
-              y={cy - 10}
-            >
-              {readout.label}
-            </text>
-            <text
-              className={cn(styles.readoutValue())}
-              textAnchor={anchor.textAnchor}
-              x={anchor.x}
-              y={cy + 16}
-            >
-              {readout.value}
-            </text>
-          </g>
-        )
-      })}
+      {!!readouts?.length && (
+        <g className={cn(styles.readoutGroup(), styles.bootGroup())}>
+          {readouts.slice(0, 2).map((readout, i) => {
+            const anchor = railAnchors[i]
+            return (
+              <g key={readout.label}>
+                <text
+                  className={cn(styles.readoutLabel())}
+                  textAnchor={anchor.textAnchor}
+                  x={anchor.x}
+                  y={cy - 10}
+                >
+                  {readout.label}
+                </text>
+                <text
+                  className={cn(styles.readoutValue())}
+                  textAnchor={anchor.textAnchor}
+                  x={anchor.x}
+                  y={cy + 3}
+                >
+                  {readout.value}
+                </text>
+              </g>
+            )
+          })}
+        </g>
+      )}
     </svg>
   )
 })
 ReticleDial.displayName = 'ReticleDial'
 
 export { ReticleDial }
-export type { ReticleDialProps, ReticleDialRef }
+export type { ReticleDialProps, ReticleDialReadout, ReticleDialRef }
