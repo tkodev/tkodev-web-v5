@@ -216,6 +216,7 @@ const DesignPage = () => {
     <Main>
       <Section id="design-hero">
         <DesignHero
+          reticleVariant="branded"
           hudProps={{
             title: 'D.0 / Design System //',
             subtitle: '// Living Styleguide',
