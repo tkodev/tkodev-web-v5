@@ -1,5 +1,4 @@
 import { forwardRef, type HTMLAttributes } from 'react'
-import { Asset } from '@/components/atoms/asset'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Dossier, type DossierProps } from '@/components/molecules/dossier'
 import { Tile } from '@/components/molecules/tile'
@@ -10,8 +9,7 @@ const styles = {
   root: cva(['size-full', 'flex flex-col']),
   stage: cva(['relative grow', 'flex items-center justify-center', 'min-h-0']),
   hud: cva('absolute inset-0'),
-  tile: cva('aspect-video w-full'),
-  logo: cva('absolute inset-0 m-auto h-auto w-1/6 object-contain')
+  tile: cva('aspect-video w-full')
 }
 
 type ProjectHeroRef = HTMLDivElement
@@ -32,8 +30,7 @@ const ProjectHero = forwardRef<ProjectHeroRef, ProjectHeroProps>((props, ref) =>
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
       <div className={cn(styles.stage())}>
         <Hud className={cn(styles.hud())} {...hudProps} />
-        <Tile className={cn(styles.tile())} asset={asset} />
-        {!!logo && <Asset className={cn(styles.logo())} asset={logo} />}
+        <Tile className={cn(styles.tile())} asset={asset} logo={logo} />
       </div>
       <Dossier {...dossierProps} />
     </div>

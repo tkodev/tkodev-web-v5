@@ -33,7 +33,7 @@ import { Hud } from '@/components/atoms/hud'
 import { Icon } from '@/components/atoms/icon'
 import { Logo } from '@/components/atoms/logo'
 import { Marquee } from '@/components/atoms/marquee'
-import { Reticle } from '@/components/atoms/reticle'
+import { ReticleLogo } from '@/components/atoms/reticle-logo'
 import { Signature } from '@/components/atoms/signature'
 import { Ticker } from '@/components/atoms/ticker'
 import { Bio } from '@/components/molecules/bio'
@@ -216,7 +216,7 @@ const DesignPage = () => {
     <Main>
       <Section id="design-hero">
         <DesignHero
-          reticleVariant="branded"
+          reticle="logo"
           hudProps={{
             title: 'D.0 / Design System //',
             subtitle: '// Living Styleguide',
@@ -369,7 +369,7 @@ const DesignPage = () => {
               </Marquee>
             </div>
             <div className="overflow-hidden border-t pt-8">
-              <Reticle className="mx-auto w-full max-w-xl" />
+              <ReticleLogo className="mx-auto w-full max-w-xl" />
             </div>
           </div>
         </Board>

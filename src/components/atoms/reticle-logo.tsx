@@ -32,10 +32,10 @@ const styles = {
   ])
 }
 
-type ReticleRef = SVGSVGElement
-type ReticleProps = SVGAttributes<ReticleRef> & VariantProps<typeof styles.root>
+type ReticleLogoRef = SVGSVGElement
+type ReticleLogoProps = SVGAttributes<ReticleLogoRef> & VariantProps<typeof styles.root>
 
-const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
+const ReticleLogo = forwardRef<ReticleLogoRef, ReticleLogoProps>((props, ref) => {
   // props
   const { className, ...rest } = props
 
@@ -148,7 +148,7 @@ const Reticle = forwardRef<ReticleRef, ReticleProps>((props, ref) => {
     </svg>
   )
 })
-Reticle.displayName = 'Reticle'
+ReticleLogo.displayName = 'ReticleLogo'
 
-export { Reticle }
-export type { ReticleProps, ReticleRef }
+export { ReticleLogo }
+export type { ReticleLogoProps, ReticleLogoRef }
