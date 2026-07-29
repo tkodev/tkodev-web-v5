@@ -1,8 +1,8 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { Hud, type HudProps } from '@/components/atoms/hud'
 import { Intro, type IntroProps } from '@/components/atoms/intro'
-import { Reticle } from '@/components/atoms/reticle'
 import { ReticleDial, type ReticleDialReadout } from '@/components/atoms/reticle-dial'
+import { ReticleLogo } from '@/components/atoms/reticle-logo'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 
 const styles = {
@@ -17,30 +17,22 @@ type ExperienceHeroProps = HTMLAttributes<ExperienceHeroRef> &
     hudProps: HudProps
     introProps: IntroProps
     /** Which reticle atom to render. Defaults to the tick-dial variant. */
-    reticleVariant?: 'dial' | 'branded'
+    reticle?: 'dial' | 'logo'
     /** Boxed readouts on the reticle's side rails, dial variant only. Real data only. */
     readouts?: ReticleDialReadout[]
   }
 
 const ExperienceHero = forwardRef<ExperienceHeroRef, ExperienceHeroProps>((props, ref) => {
   // props
-  const {
-    hudProps,
-    introProps,
-    reticleVariant = 'dial',
-    readouts,
-    children,
-    className,
-    ...rest
-  } = props
+  const { hudProps, introProps, reticle = 'dial', readouts, children, className, ...rest } = props
 
   // jsx
   return (
     <div ref={ref} className={cn(styles.root({ className }))} {...rest}>
-      {reticleVariant === 'dial' ? (
+      {reticle === 'dial' ? (
         <ReticleDial className={cn(styles.reticle())} readouts={readouts} />
       ) : (
-        <Reticle className={cn(styles.reticle())} />
+        <ReticleLogo className={cn(styles.reticle())} />
       )}
       <Hud {...hudProps} />
       <Intro className={cn(styles.intro())} {...introProps}>

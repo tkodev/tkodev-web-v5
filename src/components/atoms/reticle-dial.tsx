@@ -24,16 +24,13 @@ const styles = {
 }
 
 type ReticleDialReadout = {
-  /** Small caps label above the value, e.g. a designation or unit. */
   label: string
-  /** The real value the label describes; never a placeholder. */
   value: string
 }
 
 type ReticleDialRef = SVGSVGElement
 type ReticleDialProps = SVGAttributes<ReticleDialRef> &
   VariantProps<typeof styles.root> & {
-    /** Boxed readouts on the side rails: index 0 left, index 1 right. Real data only. */
     readouts?: ReticleDialReadout[]
   }
 
