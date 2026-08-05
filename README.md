@@ -30,7 +30,7 @@ pnpm test         # vitest
 
 ## Docs
 
-Rules by topic (process, writing, nextjs, components, data, testing, performance, accessibility, seo, git) are vendored as skills under `.claude/skills/` and `.agents/skills/`, symlinked from the shared [harness-skills](https://github.com/tkodev/harness-skills) library and loaded automatically via skill discovery. The PRD ([docs/prd/](docs/prd/)) is a numbered pipeline ending in the plan (the live milestone list):
+Rules by topic (process, writing, nextjs, components, data, testing, performance, accessibility, seo, git) are vendored as skills under `.claude/skills/` and `.agents/skills/`, symlinked from the shared [software-skills](https://github.com/tkodev/software-skills) library and loaded automatically via skill discovery. The PRD ([docs/prd/](docs/prd/)) is a numbered pipeline ending in the plan (the live milestone list):
 
 | Doc | What it owns |
 | --- | --- |
