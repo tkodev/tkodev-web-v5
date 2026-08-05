@@ -43,4 +43,4 @@ Rules by topic (process, writing, nextjs, components, data, testing, performance
 
 ## Other
 
-For AI-agent orientation, see [AGENTS.md](AGENTS.md) (CLAUDE.md symlinks to it).
+For AI-agent orientation, see [CLAUDE.md](CLAUDE.md) (CLAUDE.md symlinks to it).
