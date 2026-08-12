@@ -1,4 +1,4 @@
-import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, Palette } from 'lucide-react'
+import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, Palette, PhoneIcon } from 'lucide-react'
 import { GlobalContact } from '@/components/organisms/global-contact'
 import { ProjectsArchived } from '@/components/organisms/projects-archived'
 import { ProjectsFeatured } from '@/components/organisms/projects-featured'
@@ -78,6 +78,11 @@ const WorksPage = () => {
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
+            {
+              href: `tel:${tony.extended?.phone?.replace(/[^+\d]/g, '')}`,
+              icon: PhoneIcon,
+              label: tony.extended?.phone ?? ''
+            },
             { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
             { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume' },
             { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }

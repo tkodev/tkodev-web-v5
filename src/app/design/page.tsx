@@ -6,6 +6,7 @@ import {
   IdCardIcon,
   MailIcon,
   PanelBottomIcon,
+  PhoneIcon,
   PresentationIcon
 } from 'lucide-react'
 import {
@@ -189,6 +190,11 @@ const DesignPage = () => {
 
   const channelEntries = [
     { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
+    {
+      href: `tel:${tony.extended?.phone?.replace(/[^+\d]/g, '')}`,
+      icon: PhoneIcon,
+      label: tony.extended?.phone ?? ''
+    },
     { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
     { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume' },
     { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { formatInTimeZone } from 'date-fns-tz'
-import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon } from 'lucide-react'
+import { ContactIcon, GitBranchIcon, IdCardIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import { Button } from '@/components/atoms/button'
 import { Reveal } from '@/components/atoms/reveal'
 import { type LogEntry } from '@/components/molecules/log'
@@ -146,6 +146,11 @@ const ExperiencePage = () => {
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
+            {
+              href: `tel:${tony.extended?.phone?.replace(/[^+\d]/g, '')}`,
+              icon: PhoneIcon,
+              label: tony.extended?.phone ?? ''
+            },
             { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
             { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume' },
             { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }
