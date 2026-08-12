@@ -5,7 +5,8 @@ import {
   GitBranchIcon,
   IdCardIcon,
   MailIcon,
-  Palette
+  Palette,
+  PhoneIcon
 } from 'lucide-react'
 import { Reveal } from '@/components/atoms/reveal'
 import { GlobalContact } from '@/components/organisms/global-contact'
@@ -113,6 +114,11 @@ const HomePage = () => {
           title="Get in Touch"
           channelEntries={[
             { href: `mailto:${tony.extended?.email}`, icon: MailIcon, label: 'tony@tko.dev' },
+            {
+              href: `tel:${tony.extended?.phone?.replace(/[^+\d]/g, '')}`,
+              icon: PhoneIcon,
+              label: tony.extended?.phone ?? ''
+            },
             { href: tony.extended?.linkedin ?? '#', icon: ContactIcon, label: 'LinkedIn' },
             { href: tony.extended?.resume ?? '#', icon: IdCardIcon, label: 'Resume' },
             { href: tony.extended?.github ?? '#', icon: GitBranchIcon, label: 'GitHub' }
