@@ -1,4 +1,4 @@
-# CLAUDE.md
+# Agent Instructions
 
 Guidance for AI coding agents working in this repository: tkodev-web-v5, the v5 redesign of [tko.dev](https://tko.dev/), Tony Ko's cinematic personal portfolio. This file does not restate project details; it points at the canonical docs, which drive the implementation.
 
